@@ -1,5 +1,5 @@
 {
-  "name": "prefix",
+  "name": "henflix",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.5.5",
@@ -28,13 +28,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/henrytan0705/preflix.git"
+    "url": "git+https://github.com/henrytan0705/henflix.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/henrytan0705/preflix/issues"
+    "url": "https://github.com/henrytan0705/henflix/issues"
   },
-  "homepage": "https://github.com/henrytan0705/preflix#readme"
+  "homepage": "https://github.com/henrytan0705/henflix#readme"
 }

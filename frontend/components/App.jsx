@@ -8,7 +8,7 @@ import { Route } from 'react-router-dom';
 const App = () => {
     return (
         <div>
-           
+           <h1>HENFLIX IS LIVE!!</h1>
 
             <Route path="" component={signup_form_container}/>
             <Route path="" component={login_form_container}/>

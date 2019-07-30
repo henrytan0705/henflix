@@ -3,10 +3,12 @@ import React from 'react';
 class SessionForm extends React.Component {
 
     render() {
-        <div>
+        return(
+            <div>
 
-            
-        </div>
+
+            </div>
+        )
     }
 }
 

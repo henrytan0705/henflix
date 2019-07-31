@@ -4,6 +4,7 @@ import LoginFormContainer from './session/login_form_container';
 import NavbarContainer from './navbar/navbar_container.js';
 
 import { Route, Switch } from 'react-router-dom';
+import { AuthRoute } from '../utils/route_util';
 
 const App = () => {
     return (
@@ -11,8 +12,8 @@ const App = () => {
            <h1>HENFLIX IS LIVE!!</h1>
             {/* <Switch> */}
                 <Route path="/" component={NavbarContainer}/>
-                <Route exact path="/signup" component={SignupFormContainer}/>
-                <Route exact path="/login" component={LoginFormContainer}/>
+                <AuthRoute exact path="/signup" component={SignupFormContainer}/>
+                <AuthRoute exact path="/login" component={LoginFormContainer}/>
                 {/* <Route path="/browse" component=""/> */}
             {/* </Switch> */}
         </div>

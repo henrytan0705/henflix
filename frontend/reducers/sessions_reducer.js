@@ -5,7 +5,7 @@ const _nullSession = {
     id: null
 }
 
-const sessionsReducer = (state = {}, action) => {
+const sessionsReducer = (state = _nullSession, action) => {
     Object.freeze(state);
     // debugger
     switch (action.type) {

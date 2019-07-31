@@ -1,7 +1,7 @@
 import React from 'react';
-import signup_form_container from './session/signup_form_container';
-import login_form_container from './session/login_form_container';
-import navbar_container from './navbar/navbar_container.js';
+import SignupFormContainer from './session/signup_form_container';
+import LoginFormContainer from './session/login_form_container';
+import NavbarContainer from './navbar/navbar_container.js';
 
 import { Route, Switch } from 'react-router-dom';
 
@@ -10,9 +10,10 @@ const App = () => {
         <div>
            <h1>HENFLIX IS LIVE!!</h1>
             {/* <Switch> */}
-                <Route path="/" component={navbar_container}/>
-                <Route path="/signup" component={signup_form_container}/>
-                <Route path="/login" component={login_form_container}/>
+                <Route path="/" component={NavbarContainer}/>
+                <Route exact path="/signup" component={SignupFormContainer}/>
+                <Route exact path="/login" component={LoginFormContainer}/>
+                {/* <Route path="/browse" component=""/> */}
             {/* </Switch> */}
         </div>
     )

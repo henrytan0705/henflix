@@ -1,10 +1,11 @@
 import React from 'react'; 
 import { Link } from 'react-router-dom';
 
-export default ({currentUser , logout}) => { 
+const Navbar = ({currentUser , logout}) => { 
+    debugger
     const display = currentUser ? (
         <div className="signed-in-navbar">
-            <Link className="logo" to="/browse"></Link>
+            <Link className="logo" to="/browse">HENFLIX</Link>
             <button>Home</button>
             <button>TV Shows</button>
             <button>Movies</button>
@@ -15,6 +16,7 @@ export default ({currentUser , logout}) => {
             <button>DVD</button>
             <button></button>
             <button>Account</button>
+            <button onClick={logout}>Log Out</button>
         </div>
     ) : (
         <div className="login-navbar">
@@ -31,3 +33,5 @@ export default ({currentUser , logout}) => {
         </header>
     )
 }
+
+export default Navbar;

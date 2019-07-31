@@ -13,7 +13,8 @@ class SessionForm extends React.Component {
     handleSubmit(e){
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.formAction(user);
+        this.props.formAction(user)
+            .then(() => this.props.history.push("/"))
     }
 
     update(field) {
@@ -21,9 +22,9 @@ class SessionForm extends React.Component {
     }
 
     render() {
-        if (this.props.user) { 
-            this.props.history.push("/");
-        }
+        // if (this.props.currentUser) { 
+        //     this.props.history.push("/");
+        // }
 
         return(
             <div className="session-form">
@@ -37,7 +38,6 @@ class SessionForm extends React.Component {
                     <br/>
                     <input type="submit" value={this.props.formType}/>
                 </form>
-
             </div>
         )
     }

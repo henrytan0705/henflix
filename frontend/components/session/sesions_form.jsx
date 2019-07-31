@@ -15,7 +15,6 @@ class SessionForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.formAction(user)
-            // .then(() => this.props.history.push("/"))
     }
 
     update(field) {
@@ -26,8 +25,15 @@ class SessionForm extends React.Component {
         const formlink = this.props.formType === "Sign In" ? "/signup" : "/login";
         const linkName = this.props.formType === "Sign In" ? "Sign Up" : "Sign In";
 
+        const errors = this.props.errors.map((err, index) => {
+            return <li key={index}>{err}</li>
+        })
+        
         return(
             <div className="session-form">
+                <ul>
+                    {errors}
+                </ul> 
 
                 <h2>{this.props.formType}</h2>
 

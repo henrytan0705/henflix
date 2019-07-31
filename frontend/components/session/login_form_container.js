@@ -3,7 +3,6 @@ import SessionForm from './sesions_form';
 import { login } from '../../actions/session_actions.js';
 
 const msp = state => {
-    // debugger
     return {
         currentUser: state.session.userId,
         formType: "Sign In",

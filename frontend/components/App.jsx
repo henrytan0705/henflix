@@ -8,14 +8,16 @@ import { AuthRoute } from '../utils/route_util';
 const App = () => {
     return (
         <div className="splash">
-        <div className="splash-background">
-            <img className="bg" src="https://assets.nflxext.com/ffe/siteui/vlv3/f1e267d6-6c89-4764-b978-5f074b26bea5/b3971fff-4585-4604-83a5-c2d03571d56b/US-en-20190722-popsignuptwoweeks-perspective_alpha_website_small.jpg" />
-        </div>
-            <div className="">
+            <header className="navbar">
                 <Route path="/" component={NavbarContainer}/>
-                <AuthRoute exact path="/signup" component={SignupFormContainer}/>
-                <AuthRoute exact path="/login" component={LoginFormContainer}/>
+            </header>
+
+            <div>
+                {/* <img className="bg" src="https://assets.nflxext.com/ffe/siteui/vlv3/f1e267d6-6c89-4764-b978-5f074b26bea5/b3971fff-4585-4604-83a5-c2d03571d56b/US-en-20190722-popsignuptwoweeks-perspective_alpha_website_small.jpg" /> */}
+                <AuthRoute path="/signup" component={SignupFormContainer}/>
+                <AuthRoute path="/login" component={LoginFormContainer}/>
             </div>
+        
                 {/* <Route path="/browse" component=""/> */}
         </div>
     )

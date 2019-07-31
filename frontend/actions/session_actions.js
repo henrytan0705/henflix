@@ -32,14 +32,12 @@ export const signup = user => dispatch => {
 }
 
 export const login = user => dispatch => {
-    debugger
     return UserAPIUtil.login(user)
         .then(user => dispatch(receiveCurrentUser(user)))
         .fail(errors => dispatch(receiveErrors(errors.responseJSON)))
 }
 
 export const logout = () => dispatch => {
-    debugger
     return UserAPIUtil.logout()
         .then(() => dispatch(logoutUser()))
         .fail(errors => dispatch(receiveErrors(errors.responseJSON)))

@@ -7,11 +7,10 @@ const _nullSession = {
 
 const sessionsReducer = (state = _nullSession, action) => {
     Object.freeze(state);
-    // debugger
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
             const { user } = action;
-            return merge({}, state, {["userId"]: Object.values(user)[0].id})
+            return merge({}, {["userId"]: user.id});
         case LOGOUT_USER:
             return _nullSession;
         case RECEIVE_ERRORS:

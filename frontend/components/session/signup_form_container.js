@@ -3,15 +3,16 @@ import SessionForm from './sesions_form';
 import { signup } from '../../actions/session_actions.js';
 
 const msp = state => {
+    debugger
     return {
-        user: state.user,
+        user: state.session.id,
         formType: "Signup"
     }
 }
 
 const mdp = dispatch => {
     return {
-        signup: user => dispatch(signup(user))
+        formAction: user => dispatch(signup(user))
     }
 }
 

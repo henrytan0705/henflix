@@ -1,15 +1,16 @@
 import { connect } from 'react-redux';
 import Navbar from './navbar';
+import { logout } from '../../actions/session_actions';
 
 const msp = state => {
     return {
-
+        user : state.entities.users
     }
 }
 
 const mdp = dispatch => {
     return {
-
+        logout: () => dispatch(logout())
     }
 }
 

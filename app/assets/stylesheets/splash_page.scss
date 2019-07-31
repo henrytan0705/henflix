@@ -1,8 +1,29 @@
 body {
-    background-color: pink;
+    // background-color: pink;
+    // background: url(https://i0.wp.com/windowscustomization.com/wp-content/uploads/2019/04/Otori-Sama.gif?zoom=2&fit=768%2C432&quality=80&strip=all&ssl=1);
+    // background: url(https://images3.alphacoders.com/666/666878.jpg);
+    // background: url(https://musicart.xboxlive.com/6/cfa2fc8a-0000-0000-0000-000000000009/504/image.jpg?w=1920&h=1080);
+    // background: url(https://images8.alphacoders.com/800/800168.jpg);
+    // background: url("https://assets.nflxext.com/ffe/siteui/vlv3/f1e267d6-6c89-4764-b978-5f074b26bea5/b3971fff-4585-4604-83a5-c2d03571d56b/US-en-20190722-popsignuptwoweeks-perspective_alpha_website_small.jpg");
+}
+
+.bg{
+    // display: block;
+   height: 100%;
+//    background: url(https://assets.nflxext.com/ffe/siteui/vlv3/f1e267d6-6c89-4764-b978-5f074b26bea5/b3971fff-4585-4604-83a5-c2d03571d56b/US-en-20190722-popsignuptwoweeks-perspective_alpha_website_small.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .splash {
-    // background: url();
-    background-color: lightblue;
+    height: 100%;
+}
+.splash-background {
+    height: 100%;
+}
+
+.root {
+    height: 100%;
 }

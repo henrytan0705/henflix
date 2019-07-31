@@ -3,6 +3,7 @@ import * as UserAPIUtil from '../utils/user_api_utils';
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const LOGOUT_USER = "LOG_OUT_USER";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+export const CLEAR_ERRORS = "CLEAR_ERRORS"; 
 
 export const receiveCurrentUser = user => {
     return { 
@@ -22,6 +23,12 @@ export const receiveErrors = (errors) => ({
     errors
 })
 
+export const clearErrors = () => { 
+    debugger
+    return { 
+        type: CLEAR_ERRORS
+    }
+}
 
 //////////////////////////Thunk actions///////////////////////////
 
@@ -42,3 +49,4 @@ export const logout = () => dispatch => {
         .then(() => dispatch(logoutUser()))
         .fail(errors => dispatch(receiveErrors(errors.responseJSON)))
 }
+

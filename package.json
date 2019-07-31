@@ -7,7 +7,6 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
     "lodash": "^4.17.15",
-    "logger": "0.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.1.0",

@@ -9,9 +9,10 @@ const App = () => {
     return (
         <div>
            <h1>HENFLIX IS LIVE!!</h1>
-            <a href="https://www.netflix.com/browse">HENFLIX</a>
-            <Route path="" component={signup_form_container}/>
-            <Route path="" component={login_form_container}/>
+
+            <Route path="/" component=""/>
+            <Route path="/signup" component={signup_form_container}/>
+            <Route path="/login" component={login_form_container}/>
         </div>
     )
 };

@@ -2,7 +2,7 @@
     <script type="text/javascript">
         window.currentUser = <%= render(
             "api/users/show.json.jbuilder", 
-            user :currentUser).html_safe %>
+            user: currentUser).html_safe %>
     </script>
 
 <% end %>

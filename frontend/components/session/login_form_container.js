@@ -2,11 +2,10 @@ import { connect } from 'react-redux';
 import SessionForm from './sesions_form';
 import { login } from '../../actions/session_actions.js';
 
-const msp = (state) => {
+const msp = state => {
     // debugger
-
     return {
-        currentUser: state.session.id,
+        currentUser: state.session.userId,
         formType: "Sign In"
     }
 }

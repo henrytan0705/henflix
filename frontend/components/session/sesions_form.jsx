@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {
     constructor(props) { 
@@ -14,7 +15,7 @@ class SessionForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.formAction(user)
-            .then(() => this.props.history.push("/browse"))
+            .then(() => this.props.history.push("/"))
     }
 
     update(field) {
@@ -22,9 +23,8 @@ class SessionForm extends React.Component {
     }
 
     render() {
-        // if (this.props.currentUser) { 
-        //     this.props.history.push("/");
-        // }
+        const formlink = this.props.formType === "Sign In" ? "/signup" : "/login";
+        const linkName = this.props.formType === "Sign In" ? "Sign Up" : "Sign In";
 
         return(
             <div className="session-form">
@@ -38,6 +38,7 @@ class SessionForm extends React.Component {
                     <br/>
                     <input type="submit" value={this.props.formType}/>
                 </form>
+                <Link to={formlink}>{linkName}</Link>
             </div>
         )
     }

@@ -5,8 +5,8 @@ import { signup } from '../../actions/session_actions.js';
 const msp = state => {
     debugger
     return {
-        currentUser: state.session.id,
-        formType: "Sign up"
+        currentUser: state.session.userId,
+        formType: "Sign Up"
     }
 }
 

@@ -7,7 +7,7 @@ const msp = (state) => {
 
     return {
         user: state.session.id,
-        formType: "Login"
+        formType: "Sign In"
     }
 }
 

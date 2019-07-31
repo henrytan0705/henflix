@@ -19,7 +19,7 @@ export default ({currentUser , logout}) => {
     ) : (
         <div className="login-navbar">
             <Link className="logo" to="/">HENFLIX</Link>
-            <Link className="btn" to="/login">Log In</Link>
+            <Link className="btn" to="/login">Sign In</Link>
        </div>
     )
 

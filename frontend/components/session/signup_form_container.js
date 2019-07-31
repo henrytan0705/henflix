@@ -6,7 +6,7 @@ const msp = state => {
     debugger
     return {
         user: state.session.id,
-        formType: "Signup"
+        formType: "Sign up"
     }
 }
 

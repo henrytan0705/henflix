@@ -43,6 +43,10 @@ class SessionForm extends React.Component {
             return <li key={index}>{err}</li>
         })
         
+        const demo = (this.props.formType === "Sign In") ? (
+            <button onClick={this.demoLogin}>DEMO LOGIN</button>
+        ) : null
+
         return(
             <div className="session-form">
                 <ul>
@@ -52,15 +56,15 @@ class SessionForm extends React.Component {
                 <h2>{this.props.formType}</h2>
 
                 <form onSubmit={this.handleSubmit}>
-                    <input type="email" value={this.state.email} onChange={this.update("email")} placeholder="Email or phone number"/>
+                    <input className="email-button" type="email" value={this.state.email} onChange={this.update("email")} placeholder="Email or phone number"/>
                      <br/>
-                    <input type="password" value={this.state.password} onChange={this.update("password")} placeholder="Password"/>
+                    <input className="password-button" type="password" value={this.state.password} onChange={this.update("password")} placeholder="Password"/>
                     <br/>
-                    <input type="submit" value={this.props.formType}/>
+                    <input className="submit-button" type="submit" value={this.props.formType}/>
                 </form>
                 <Link to={formlink}>{linkName}</Link>
                 <br/>
-                <button onClick={this.demoLogin}>DEMO LOGIN</button>
+                {demo}
             </div>
         )
     }

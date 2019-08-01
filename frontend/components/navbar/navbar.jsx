@@ -15,7 +15,13 @@ const Navbar = ({currentUser , logout}) => {
             <button>DVD</button>
             <button></button>
             <button>Account</button>
-            <button onClick={logout}>Log Out</button>
+            <select name="" id="">
+                <option value="">Manage Profile</option>
+                <option value="">Account</option>
+                <option value="">Help Center</option>
+                <option value="">Sign uut of Netflix</option>
+                {/* <button onClick={logout}>Log Out</button> */}
+            </select>
         </nav>
     ) : (
         <nav className="login-navbar">
@@ -23,7 +29,7 @@ const Navbar = ({currentUser , logout}) => {
                 {/* <img src="../../../app/assets/images/logo.png" /> */}
                 <img src="https://fontmeme.com/permalink/190801/672c9b4cb0dcf4b4c351a7c3b05e52ea.png" />
             </Link>
-            <Link className="btn" to="/login">Sign In</Link>
+            <Link className="sign-in-btn" to="/login">Sign In</Link>
        </nav>
     )
 

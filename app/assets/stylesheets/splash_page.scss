@@ -1,10 +1,6 @@
-// html, body{
-//   padding: 0;
-//   margin: 0;
-// }
-
-html{
+html, body {
   height: 100%;
+  font-family: 'Helvetica Neue', 'Helvetica,Arial' ,' sans-serif';
 }
 
 .splash, .form-page {
@@ -22,21 +18,31 @@ html{
     z-index: -1;
     top: 0;
     opacity: 1.2;
-    display: block;
+    // display: flex;
+    // flex-direction: column; 
+    // align-items: center;
 }
 
 .splash-message  h1 {
-    font-size: 90px;
+    font-size: 70px;
+    font-weight: 700;
+    margin: 0 0 30px;
+    line-height: 1.1em;
     color: white;
+    text-shadow: 1px 1px 10px black;
 }
 
 .splash-message h3 {
-    font-size: 30px;
+    font-size: 28px;
+    font-weight: 300;
+    margin: 0 0 30px;
+    line-height: 1.25em;
     color: white;
 }
 
 .splash-message p {
-    font-size: 25px;
+    font-size: 20px;
+    font-weight: 300;
     color: white;
 }
 
@@ -46,9 +52,13 @@ html{
     display: flex;
     flex-direction: column;
     align-items: center;
-    // text-shadow: 2px 2px gray;
+    margin-top: 100px;
+    letter-spacing: .2px;
 }
 
+.splash-sign-in-link {
+    text-decoration: underline;
+}
 
 
 
@@ -85,6 +95,8 @@ html{
     font-size: 20px;
 }
 
+////////////////////////////////////////
+
 .session-form {
     display: flex;
     justify-content: center;
@@ -119,27 +131,29 @@ button {
     margin: 5px;
 }
 
-.btn {
-    // border: 3px solid black;
-    border-radius: 5px;
+////////////////////////////////
+
+.sign-in-btn {
+    border-radius: 3px;
+    background-color: rgb(229, 9, 20);
     color: white;
-    background-color: red;
-    font-weight: 300;
-    font-size: 20px;
-    height: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    font-weight: 400;
+    font-size: 16x;
+    height: 16px;
+    padding-left: 17px;
+    padding-right: 17px;
+    padding-top: 7px;
+    padding-bottom: 7px;
     margin-right: 4vw;
     margin-top: 1vw;
+    float: right;
 }
 
 .logo {
-    font-size: 45px;
+    // font-size: 00px;
+    // height: px;
     margin-top: 1vw;
 }
-
 
 .login-navbar {
     display: flex;
@@ -148,11 +162,14 @@ button {
     color: red;
     overflow: hidden;
     height: 10%;
+    margin-top: 10px;
 }
 
 .logo {
     margin-right: 33vw;
 }
+
+////////////////////////////////
 
 .errors {
     color: red;

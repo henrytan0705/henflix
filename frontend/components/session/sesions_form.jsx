@@ -68,11 +68,16 @@ class SessionForm extends React.Component {
                             <br/>
                             <input className="submit-button" type="submit" value={this.props.formType}/>
                         </form>
+                        
                         <div className="">
                             {demo}
                             <br/>
                             {linkText}
-                            <Link className="link-button" to={formlink} onClick={this.props.clearErrors}>{linkName}</Link>
+                            <Link className="link-button" 
+                                to={formlink} 
+                                onClick={this.props.clearErrors}>
+                                    {linkName}
+                            </Link>
                         </div>
                     </div>
                 </div>

@@ -19,7 +19,7 @@ html, body {
     background-repeat: no-repeat;
     position: absolute;
     transform: scale(1.2);
-    top: 0;
+    top: 10px;
     // -webkit-filter: brightness(55%);
     // filter: brightness(55%);
     // display: flex;
@@ -63,10 +63,21 @@ html, body {
     text-size-adjust: 100%;
 }
 
-.splash-sign-in-link {
-    text-decoration: underline;
+.splash-top-message {
+    
 }
 
+.splash-redirect {
+    display: flex;
+    
+}
+
+.splash-sign-in-link {
+    text-decoration: underline;
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+}
 
 
 ///////////////////////////////////////////
@@ -87,44 +98,114 @@ html, body {
 
 .form-page {
     transform: scale(1.2);
+    z-index: 0;
 }
 
 
 .signed-in-navbar {
     display: flex;
     justify-content: space-between;
-    background:black;
+    background:gray;
     color: white;
     padding-left: 10px;
     padding-right: 20px;
     font-size: 20px;
+    border: 2px solid black;
 }
 
+.signed-in-navbar button {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.search-bar{
+    border: 1px solid black;
+    background-color: lightgrey;
+    color: black;
+}
 ////////////////////////////////////////
 
 .session-form {
     display: flex;
-    justify-content: center;
+    border: 2px solid black;
     background-color: black;
-    opacity: 0.8;
+    opacity: 0.55;
     font-size: 20px;
     color: white;
-    // width: 400px;
-    // margin-left: 5px;
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    right: 50%;
+    
+    // position: absolute;
+    // top: 20%;
+    // left: 50%;
+    // right: 50%;
+
+    min-height: 500px;
+    min-width: 380px;
+    padding: 40px 20px 50px 20px;
+    // padding: 0;
+    width: 450px;
+    // margin-top: 0;
+    // margin-bottom: 90px;
+    justify-content: center;
+    // position: fixed;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+    // margin: auto;
 }
 
-.email, .password, .submit-button, .demo-button {
+.form{
+    // background-color: black;
+    // opacity: 0.6;
+    // min-height: 660px;
+    // min-width: 380px;
+    // padding: 60px 68px 40px;
+    width: 300px;
+
+}
+
+.email, .password, .demo-button {
     display: block;
     border: 1px solid gray;
-    margin: 5px;
+    margin: 0px;
+    border-radius: 3px;
+    padding-left: 22px;
+    padding-right: 22px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 300px;
 }
 
 .email, .password {
-    background-color: #333;
+    background-color: #333333;
+}
+
+.submit-button {
+    border: 1px solid gray;
+    width: 300px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: red;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 60px;
+}
+
+
+.submit-button, .email, .password, .demo-button {
+    border-radius: 3px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.formtype {
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-size: 32px;
+}
+
+.password {
+    margin-bottom: 20px;
 }
 
 .link-button {
@@ -159,6 +240,11 @@ button {
     // height: 10vw;
     margin-top: 18px;
     margin-right: 33vw;
+    padding: 0;
+}
+
+.logo-image {
+    height: 60px;
 }
 
 .login-navbar {
@@ -174,9 +260,15 @@ button {
 ////////////////////////////////
 
 .errors {
+    // display: block;
     color: red;
+    background-color: none;
 }
 
+.errors-display {
+    text-align: left;
+}
+//////////////////////////////////
 .nav-bar {
     position: relative;
     z-index: 1;
@@ -184,24 +276,27 @@ button {
 
 ///////// drop down ///////////
 
-ul{
+.user-dropdown{
     padding: 0;
     list-style: none;
     background: gray;
-    margin-right: 30px;
+    margin-right: 50px;
 }
+
 ul li{
     display: inline-block;
     position: relative;
     line-height: 26px;
     text-align: right;
 }
+
 ul li a{
     display: block;
     padding: 8px 25px;
     color: #333;
     text-decoration: none;
 }
+
 ul li a:hover{
     color: #fff;
     background: black;
@@ -215,9 +310,22 @@ ul li ul.dropdown{
     z-index: 999;
     left: 0;
 }
+
 ul li:hover ul.dropdown{
     display: block; /* Display the dropdown */
 }
+
 ul li ul.dropdown li{
     display: block;
+}
+
+.fa-user-circle {
+    color:black;
+    margin-top: 10px;
+}
+
+.user-dropdown{ 
+    border: 1px solid black;
+    padding-left: 10px;
+    padding-right: 10px;
 }

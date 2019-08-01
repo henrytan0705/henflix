@@ -10,13 +10,13 @@ const Navbar = ({currentUser , logout}) => {
             <button>Movies</button>
             <button>Recently Added</button>
             <button>My List</button>
-            <button></button>
+            <input className="search-bar" type="text" placeholder="Titles, people, genres"></input>
             <button>KIDS</button>
             <button>DVD</button>
             <button></button>
-            <ul>
-                <li>
-                    <a>A</a>
+            <ul class="user-dropdown">
+                <li>   
+                    <i class="fas fa-user-circle"></i>
                     <ul class="dropdown">
                         <li><a>Account</a></li>
                         <li><a>Help Center</a></li>
@@ -29,7 +29,7 @@ const Navbar = ({currentUser , logout}) => {
         <nav className="login-navbar">
             <Link className="logo" to="/">
                 {/* <img src="../../../app/assets/images/logo.png" /> */}
-                <img src="https://fontmeme.com/permalink/190801/672c9b4cb0dcf4b4c351a7c3b05e52ea.png" />
+                <img className="logo-image" src="https://fontmeme.com/permalink/190801/672c9b4cb0dcf4b4c351a7c3b05e52ea.png" />
             </Link>
             <Link className="sign-in-btn" to="/login">Sign In</Link>
        </nav>

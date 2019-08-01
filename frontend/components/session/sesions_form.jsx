@@ -52,35 +52,39 @@ class SessionForm extends React.Component {
 
         return(
             <div className="form-page">
+            {/* <div className="form-bg"> */}
                 <div className="session-form">
-
-                    <div className="form">
-                        <ul>
-                            {errors}
-                        </ul> 
-
-                        <h2>{this.props.formType}</h2>
-
-                        <form onSubmit={this.handleSubmit}>
-                            <input className="email" type="email" value={this.state.email} onChange={this.update("email")} placeholder="Email or phone number"/>
-                            <br/>
-                            <input className="password" type="password" value={this.state.password} onChange={this.update("password")} placeholder="Password"/>
-                            <br/>
-                            <input className="submit-button" type="submit" value={this.props.formType}/>
-                        </form>
-                        
-                        <div className="">
-                            {demo}
-                            <br/>
-                            {linkText}
-                            <Link className="link-button" 
-                                to={formlink} 
-                                onClick={this.props.clearErrors}>
-                                    {linkName}
-                            </Link>
+                    <form className="form" onSubmit={this.handleSubmit}>
+                        <div className="errors-display">
+                            <ul>
+                                {errors}
+                            </ul> 
                         </div>
-                    </div>
+
+                        <h2 className="formtype">{this.props.formType}</h2>
+                        {/* <div> */}
+                            {/* <label>Email or phone number */}
+                                <input className="email" type="email" value={this.state.email} onChange={this.update("email")} placeholder="Email or phone number"/>
+                            {/* </label> */}
+                        {/* </div> */}
+                        <br/>
+                        <input className="password" type="password" value={this.state.password} onChange={this.update("password")} placeholder="Password"/>
+                        <br/>
+                        <input className="submit-button" type="submit" value={this.props.formType}/>
+                    
+                        {demo}
+                        <br/>
+                        {linkText}
+
+                        <Link className="link-button" 
+                            to={formlink} 
+                            onClick={this.props.clearErrors}>
+                                {linkName}
+                        </Link>
+                    </form>
+
                 </div>
+                {/* </div> */}
             </div>
         )
     }

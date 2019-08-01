@@ -40,12 +40,7 @@ html{
     height: 100%;
 }
 
-.login-navbar {
-    display: flex;
-    justify-content: center;
-    font-size: 90px;
-    color: red;
-}
+
 
 .signed-in-navbar {
     display: flex;
@@ -54,21 +49,49 @@ html{
     color: white;
     padding-left: 10px;
     padding-right: 20px;
-    font-size: 40px;
+    font-size: 20px;
 }
 
 .session-form {
-    background:black;
+    background: black;
     opacity: 0.5;
     font-size: 20px;
     color: white;
 }
 
-.email-button , .password-button, .submit-button {
-    border: 5px solid black;
+.email-button , .password-button, .submit-button, .link-button, .demo-button {
+    display: block;
+    border: 1px solid white;
     padding: 5px;
 }
 
 // input: [email] {
 //     border: 5px solid black;
 // }
+
+br {
+    // border: 5px solid black;
+}
+
+form {
+    // border: 1px solid black;
+}
+button {
+    padding: 5px;
+}
+
+.btn {
+    // border: 3px solid black;
+    border-radius: 5px;
+    color: white;
+    background-color: red;
+    font-weight: 300;
+}
+
+
+.login-navbar {
+    display: flex;
+    justify-content: space-between;
+    font-size: 50px;
+    color: red;
+}

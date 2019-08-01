@@ -3,7 +3,7 @@ body {
     // background: url(https://images3.alphacoders.com/666/666878.jpg);
     // background: url(https://musicart.xboxlive.com/6/cfa2fc8a-0000-0000-0000-000000000009/504/image.jpg?w=1920&h=1080);
     // background: url(https://images8.alphacoders.com/800/800168.jpg);
-    // background: url("https://assets.nflxext.com/ffe/siteui/vlv3/f1e267d6-6c89-4764-b978-5f074b26bea5/b3971fff-4585-4604-83a5-c2d03571d56b/US-en-20190722-popsignuptwoweeks-perspective_alpha_website_small.jpg");
+    background: url("https://assets.nflxext.com/ffe/siteui/vlv3/f1e267d6-6c89-4764-b978-5f074b26bea5/b3971fff-4585-4604-83a5-c2d03571d56b/US-en-20190722-popsignuptwoweeks-perspective_alpha_website_small.jpg");
 
 }
 
@@ -41,7 +41,6 @@ html{
 }
 
 
-
 .signed-in-navbar {
     display: flex;
     justify-content: space-between;
@@ -53,31 +52,39 @@ html{
 }
 
 .session-form {
+    display: flex;
+    justify-content: center;
     background: black;
-    opacity: 0.5;
+    opacity: 0.8;
     font-size: 20px;
     color: white;
+    // width: 400px;
+    // margin-left: 5px;
 }
 
-.email-button , .password-button, .submit-button, .link-button, .demo-button {
+.email, .password, .submit-button, .demo-button {
     display: block;
-    border: 1px solid white;
-    padding: 5px;
+    border: 1px solid gray;
+    margin: 5px;
 }
 
-// input: [email] {
-//     border: 5px solid black;
-// }
-
-br {
-    // border: 5px solid black;
+.email, .password {
+    background-color: #333;
 }
 
-form {
+.link-button {
+    margin: 5px;
+}
+
+.session-form-outer {
     // border: 1px solid black;
+    // display: flex;
+    // flex-direction: column;
+    // width: 300px;
+    // justify-content: center;
 }
 button {
-    padding: 5px;
+    margin: 5px;
 }
 
 .btn {
@@ -86,12 +93,28 @@ button {
     color: white;
     background-color: red;
     font-weight: 300;
+    font-size: 20px;
+    height: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.logo {
+    font-size: 45px;
+
 }
 
 
 .login-navbar {
     display: flex;
     justify-content: space-between;
-    font-size: 50px;
+    // font-size: 50px;
+    color: red;
+    // background-color: black;
+}
+
+.errors {
     color: red;
 }

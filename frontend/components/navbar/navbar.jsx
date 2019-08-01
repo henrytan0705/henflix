@@ -14,14 +14,16 @@ const Navbar = ({currentUser , logout}) => {
             <button>KIDS</button>
             <button>DVD</button>
             <button></button>
-            <button>Account</button>
-            <select name="" id="">
-                <option value="">Manage Profile</option>
-                <option value="">Account</option>
-                <option value="">Help Center</option>
-                <option value="">Sign uut of Netflix</option>
-                {/* <button onClick={logout}>Log Out</button> */}
-            </select>
+            <ul>
+                <li>
+                    <a>A</a>
+                    <ul class="dropdown">
+                        <li><a>Account</a></li>
+                        <li><a>Help Center</a></li>
+                        <li><Link onClick={logout} to="/">Log out</Link></li>
+                    </ul>
+                </li>
+            </ul>
         </nav>
     ) : (
         <nav className="login-navbar">

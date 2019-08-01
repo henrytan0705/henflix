@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let store;
     let body = document.getElementsByTagName('BODY')[0];
-    debugger
+    // debugger
     if (window.currentUser) {
         // debugger
         const preloadedState = {

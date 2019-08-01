@@ -6,6 +6,8 @@ import { Route } from 'react-router-dom';
 import { AuthRoute } from '../utils/route_util';
 
 const App = () => {
+
+    
     return (
         <div className="splash">
             <header className="navbar">

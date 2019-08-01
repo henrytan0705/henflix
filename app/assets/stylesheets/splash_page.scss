@@ -1,43 +1,77 @@
-body {
-    // background: url(https://i0.wp.com/windowscustomization.com/wp-content/uploads/2019/04/Otori-Sama.gif?zoom=2&fit=768%2C432&quality=80&strip=all&ssl=1);
-    // background: url(https://images3.alphacoders.com/666/666878.jpg);
-    // background: url(https://musicart.xboxlive.com/6/cfa2fc8a-0000-0000-0000-000000000009/504/image.jpg?w=1920&h=1080);
-    // background: url(https://images8.alphacoders.com/800/800168.jpg);
-    background: url("https://assets.nflxext.com/ffe/siteui/vlv3/f1e267d6-6c89-4764-b978-5f074b26bea5/b3971fff-4585-4604-83a5-c2d03571d56b/US-en-20190722-popsignuptwoweeks-perspective_alpha_website_small.jpg");
-
-}
-
-html, body{
-  padding: 0;
-  margin: 0;
-}
+// html, body{
+//   padding: 0;
+//   margin: 0;
+// }
 
 html{
   height: 100%;
 }
 
-// body{
-//     min-height: 100%;
-//     background: url(https://assets.nflxext.com/ffe/siteui/vlv3/f1e267d6-6c89-4764-b978-5f074b26bea5/b3971fff-4585-4604-83a5-c2d03571d56b/US-en-20190722-popsignuptwoweeks-perspective_alpha_website_small.jpg);
-//     -webkit-background-size: cover;
-//     -moz-background-size: cover;
-//     -o-background-size: cover;
-//     background-size: cover;
-//     background-repeat: no-repeat;
-// }
-
-.bg {
+.splash, .form-page {
+    width: 100%;
+    height: 100vh;
     min-height: 100%;
-    background: url(https://assets.nflxext.com/ffe/siteui/vlv3/f1e267d6-6c89-4764-b978-5f074b26bea5/b3971fff-4585-4604-83a5-c2d03571d56b/US-en-20190722-popsignuptwoweeks-perspective_alpha_website_small.jpg);
+    // background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://assets.nflxext.com/ffe/siteui/vlv3/f1e267d6-6c89-4764-b978-5f074b26bea5/b3971fff-4585-4604-83a5-c2d03571d56b/US-en-20190722-popsignuptwoweeks-perspective_alpha_website_small.jpg);
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://i.ytimg.com/vi/j_2-8115ZAs/maxresdefault.jpg);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     background-repeat: no-repeat;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    opacity: 1.2;
+    display: block;
 }
 
-.splash {
-    height: 100%;
+.splash-message  h1 {
+    font-size: 90px;
+    color: white;
+}
+
+.splash-message h3 {
+    font-size: 30px;
+    color: white;
+}
+
+.splash-message p {
+    font-size: 25px;
+    color: white;
+}
+
+.splash-message {
+    position: relative;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // text-shadow: 2px 2px gray;
+}
+
+
+
+
+///////////////////////////////////////////
+
+
+
+
+
+.footer {
+    height: 10%;
+    width: 100%;
+    background-color: black;
+    display: inline-block;
+    position: absolute;
+    top: 90%;
+    color: white;
+}
+
+/////////////////////////////////////////
+
+.form-page {
+    transform: scale(1.2);
 }
 
 
@@ -54,12 +88,16 @@ html{
 .session-form {
     display: flex;
     justify-content: center;
-    background: black;
+    background-color: black;
     opacity: 0.8;
     font-size: 20px;
     color: white;
     // width: 400px;
     // margin-left: 5px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    right: 50%;
 }
 
 .email, .password, .submit-button, .demo-button {
@@ -77,13 +115,6 @@ html{
     color: red;
 }
 
-.session-form-outer {
-    // border: 1px solid black;
-    // display: flex;
-    // flex-direction: column;
-    // width: 300px;
-    // justify-content: center;
-}
 button {
     margin: 5px;
 }
@@ -100,22 +131,34 @@ button {
     padding-right: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
+    margin-right: 4vw;
+    margin-top: 1vw;
 }
 
 .logo {
     font-size: 45px;
-
+    margin-top: 1vw;
 }
 
 
 .login-navbar {
     display: flex;
-    justify-content: space-between;
-    // font-size: 50px;
+    justify-content: flex-end;
+    // text-align: right;
     color: red;
-    // background-color: black;
+    overflow: hidden;
+    height: 10%;
+}
+
+.logo {
+    margin-right: 33vw;
 }
 
 .errors {
     color: red;
+}
+
+.nav-bar {
+    position: relative;
+    z-index: 1;
 }

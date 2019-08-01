@@ -51,31 +51,31 @@ class SessionForm extends React.Component {
             "New to Netflix?" : "Already have an account?"
 
         return(
-            <div className="">
-            <div className="session-form">
+            <div className="form-page">
+                <div className="session-form">
 
-                <div className="form">
-                    <ul>
-                        {errors}
-                    </ul> 
+                    <div className="form">
+                        <ul>
+                            {errors}
+                        </ul> 
 
-                    <h2>{this.props.formType}</h2>
+                        <h2>{this.props.formType}</h2>
 
-                    <form onSubmit={this.handleSubmit}>
-                        <input className="email" type="email" value={this.state.email} onChange={this.update("email")} placeholder="Email or phone number"/>
-                        <br/>
-                        <input className="password" type="password" value={this.state.password} onChange={this.update("password")} placeholder="Password"/>
-                        <br/>
-                        <input className="submit-button" type="submit" value={this.props.formType}/>
-                    </form>
-                    <div className="">
-                        {demo}
-                        <br/>
-                        {linkText}
-                        <Link className="link-button" to={formlink} onClick={this.props.clearErrors}>{linkName}</Link>
+                        <form onSubmit={this.handleSubmit}>
+                            <input className="email" type="email" value={this.state.email} onChange={this.update("email")} placeholder="Email or phone number"/>
+                            <br/>
+                            <input className="password" type="password" value={this.state.password} onChange={this.update("password")} placeholder="Password"/>
+                            <br/>
+                            <input className="submit-button" type="submit" value={this.props.formType}/>
+                        </form>
+                        <div className="">
+                            {demo}
+                            <br/>
+                            {linkText}
+                            <Link className="link-button" to={formlink} onClick={this.props.clearErrors}>{linkName}</Link>
+                        </div>
                     </div>
                 </div>
-            </div>
             </div>
         )
     }

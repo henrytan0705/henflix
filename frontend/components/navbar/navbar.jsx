@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = ({currentUser , logout}) => { 
     const display = currentUser ? (
-        <div className="signed-in-navbar">
+        <nav className="signed-in-navbar">
             <Link className="logo" to="/browse">HENFLIX</Link>
             <button>Home</button>
             <button>TV Shows</button>
@@ -16,20 +16,20 @@ const Navbar = ({currentUser , logout}) => {
             <button></button>
             <button>Account</button>
             <button onClick={logout}>Log Out</button>
-        </div>
+        </nav>
     ) : (
         <nav className="login-navbar">
-            <Link className="logo" to="/">HENFLIX</Link>
+            <Link className="logo" to="/">
+                {/* <img src="../../../app/assets/images/logo.png" /> */}
+                <img src="https://fontmeme.com/permalink/190801/672c9b4cb0dcf4b4c351a7c3b05e52ea.png" />
+            </Link>
             <Link className="btn" to="/login">Sign In</Link>
        </nav>
     )
 
-
     return (
         <header className="nav-bar">
-            <div>
-                {display}
-            </div>
+            {display}
         </header>
     )
 }

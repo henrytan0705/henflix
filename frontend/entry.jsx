@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //TESTING
 
     let store;
-    let body = document.getElementsByTagName('BODY')[0];
+
     // debugger
     if (window.currentUser) {
         // debugger
@@ -27,16 +27,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
         store = configureStore(preloadedState);
-        // body.classlist.remove('bg');
-        body.className -= "bg;"
+
     } else {
         // debugger
-        // body.classlist.add('bg');
-        body.className += "bg;"
         store = configureStore();
-        // debugger
     }
-    // root.className
 
     //TESTING
     // const store = configureStore();

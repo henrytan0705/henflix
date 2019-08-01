@@ -50,6 +50,9 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'annotate'
+  gem 'guard'
+  gem 'guard-livereload', '~> 2.5', require: false
+  gem "rack-livereload"
 end
 
 group :test do

@@ -4,7 +4,7 @@ class Footer extends React.Component {
     render() {
         return (
             <div className="footer">
-                <h1>FOOTER TO BE COMPLETED</h1>
+                <h1>FOOTER TO BE REVISITED</h1>
             </div>
         )
     }

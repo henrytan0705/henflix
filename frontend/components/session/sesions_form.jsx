@@ -49,7 +49,7 @@ class SessionForm extends React.Component {
 
         const linkText = (this.props.formType === "Sign In") ? 
             "New to Netflix?" : "Already have an account?"
-
+            
         return(
             <div className="form-page">
             {/* <div className="form-bg"> */}
@@ -58,7 +58,7 @@ class SessionForm extends React.Component {
                         <div className="errors-display">
                             <ul>
                                 {errors}
-                            </ul> 
+                            </ul>
                         </div>
 
                         <h2 className="formtype">{this.props.formType}</h2>

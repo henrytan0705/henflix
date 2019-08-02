@@ -14,10 +14,10 @@ const Navbar = ({currentUser , logout}) => {
             <button>KIDS</button>
             <button>DVD</button>
             <button></button>
-            <ul class="user-dropdown">
+            <ul className="user-dropdown">
                 <li>   
-                    <i class="fas fa-user-circle"></i>
-                    <ul class="dropdown">
+                    <i className="fas fa-user-circle"></i>
+                    <ul className="dropdown">
                         <li><a>Account</a></li>
                         <li><a>Help Center</a></li>
                         <li><Link onClick={logout} to="/">Log out</Link></li>
@@ -27,11 +27,18 @@ const Navbar = ({currentUser , logout}) => {
         </nav>
     ) : (
         <nav className="login-navbar">
-            <Link className="logo" to="/">
+            <div className="log">
+            <Link to="/">
+                {/* <img url={window.logo}/> */}
                 {/* <img src="../../../app/assets/images/logo.png" /> */}
                 <img className="logo-image" src="https://fontmeme.com/permalink/190801/672c9b4cb0dcf4b4c351a7c3b05e52ea.png" />
+                {/* <img className="logo-image" ${this.props.navBarPosition" src="https://fontmeme.com/permalink/190801/672c9b4cb0dcf4b4c351a7c3b05e52ea.png" /> */}
             </Link>
+            </div>
+
+            <div>
             <Link className="sign-in-btn" to="/login">Sign In</Link>
+            </div>
        </nav>
     )
 

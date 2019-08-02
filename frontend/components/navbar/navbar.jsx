@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = ({currentUser , logout}) => { 
     const display = currentUser ? (
-        <nav className="signed-in-navbar">
+        <div className="signed-in-navbar nav-bar">
             <Link className="logo" to="/browse">HENFLIX</Link>
             <button>Home</button>
             <button>TV Shows</button>
@@ -24,28 +24,21 @@ const Navbar = ({currentUser , logout}) => {
                     </ul>
                 </li>
             </ul>
-        </nav>
+        </div>
     ) : (
-        <nav className="login-navbar">
-            <div className="log">
-            <Link to="/">
-                {/* <img url={window.logo}/> */}
-                {/* <img src="../../../app/assets/images/logo.png" /> */}
-                <img className="logo-image" src="https://fontmeme.com/permalink/190801/672c9b4cb0dcf4b4c351a7c3b05e52ea.png" />
-                {/* <img className="logo-image" ${this.props.navBarPosition" src="https://fontmeme.com/permalink/190801/672c9b4cb0dcf4b4c351a7c3b05e52ea.png" /> */}
+        <div className="splash-navbar nav-bar">          
+            <Link to="/" className="logo-wrapper">
+                <img className="logo-image" src={window.logo}/>
             </Link>
-            </div>
-
-            <div>
-            <Link className="sign-in-btn" to="/login">Sign In</Link>
-            </div>
-       </nav>
+           
+            <Link className="sign-in-btn" to="/login">Sign In</Link>    
+       </div>
     )
 
     return (
-        <header className="nav-bar">
+        <>
             {display}
-        </header>
+        </>
     )
 }
 

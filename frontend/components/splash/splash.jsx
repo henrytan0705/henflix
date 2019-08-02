@@ -51,7 +51,7 @@ class Splash extends React.Component {
     <div className="splash">
             <div className="splash-wrapper">
                 <div className="splash-message-wrapper">
-                    <h1 className="splash-message-1">See what's next</h1>
+                    <h1 className="splash-message-1">See what's next.</h1>
                     <h1 className="splash-message-2">
                         WATCH ANYWHERE. CANCEL ANYTIME.
                     </h1>
@@ -64,7 +64,8 @@ class Splash extends React.Component {
                         <Link 
                             to="/browse"
                             className="splash-demo-button-text">
-                            TRY 30 DAYS FREE
+                            <span>TRY 30 DAYS FREE</span>
+                            <span className="arrow"></span>
                         </Link>
                     </button>
                 </div>

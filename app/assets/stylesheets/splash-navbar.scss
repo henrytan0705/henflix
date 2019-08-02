@@ -3,3 +3,36 @@
     z-index: 1;
     width: 100vw;
 }
+
+.splash-navbar {
+    height: 90px;
+}
+
+.logo-wrapper {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.logo-image {
+    height: 70px;
+}
+
+.sign-in-btn {
+    border-radius: 3px;
+    background-color: #e50914;
+    color: white;
+    font-weight: 400;
+    font-size: 16px;
+    height: 16px;
+    padding: 7px 17px;
+    margin: 18px 3% 0;
+    float: right;
+    line-height: normal;
+}
+
+.sign-in-btn:hover {
+    background-color: #ff0000;
+}

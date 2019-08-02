@@ -3,7 +3,14 @@ html, body {
     height: 100vh;
     width: 100vw;
     font-family: 'Helvetica Neue', 'Helvetica,Arial', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    direction: ltr;
+    background-color: black;
 }
+
+// div {
+//     display: block;
+// }
 
 ////////////////////////////////////////
 
@@ -19,6 +26,19 @@ html, body {
     background-repeat: no-repeat;
     position: absolute;
     top: 0;
+}
+
+.splash {
+    transition: height .2s linear;
+    max-height: 180vw;
+    display: inline-block;
+}
+
+@media (orientation: landscape), (min-width: 1000px){
+.splash {
+    height: 100vh;
+    margin-bottom: -7vh;
+}
 }
 
 // .splash-message  h1 {
@@ -98,13 +118,60 @@ html, body {
     display: block;
 }
 
+@media (orientation: landscape), (min-width: 1000px) {
+.splash-wrapper {
+    // position: absolute;
+    bottom: 44px;
+    transform: none;
+    text-align: center;
+    max-width: 100%;
+    z-index: 13;
+    min-height: 550px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding-top: 60px;
+    top: 18%;
+}
+}
+
+// @media (max-width: 1000px) and (orientation: landscape){
+// .splash-wrapper {
+//     top: 60%;
+//     max-width: 60%;
+// }
+// }
+
+@media (min-width: 658px), (orientation: landscape){
+    .splash-wrapper .splash-message-1 {
+        font-size: 60px;
+        margin: 0 0 30px;
+    }
+}
+
+@media (min-width: 1000px) {
+.splash-message-wrapper .splash-message-2 {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.25em;
+    margin: 0 0 30px;
+}
+}
+
+@media (min-width: 658px){
+.splash-wrapper .splash-message-2 {
+    font-size: 24px;
+    margin: 0 0 30px;
+}
+}
+
 .splash-message-1 {
-    font-size: 70px;
+    font-size: 80px;
     font-weight: 700;
     margin: 0 0 30px;
     line-height: 1.1em;
     color: white;
     text-shadow: 1px 1px 10px black;
+    letter-spacing: 0.2px;
 }
 
 .splash-message-2 {
@@ -113,10 +180,11 @@ html, body {
     margin: 0 0 30px;
     line-height: 1.25em;
     color: white;
+    letter-spacing: 0.2px;
 }
 
 .splash-demo-button {
-    background-color: red;
+    background-color: #e50914;
     padding-left: 35px;
     padding-right: 35px;
     padding-top: 15px;
@@ -124,24 +192,40 @@ html, body {
     border-radius: 2px;
 }
 
+.splash-demo-button:hover {
+    background-color: #ff0000;
+}
+
 .splash-demo-button-text {
     font-size: 30px;
     color: white;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 3px;
+}
+
+.arrow {
+    background-image: url(https://assets.nflxext.com/ffe/siteui/acquisition/home/chevron-right-whitespace.png);
+    background-repeat: no-repeat;
+    background-position: 0 3px;
+    margin-left: .5em;
+    width: 1em;
+    height: .8em;
+    display: inline-block;
+    background-size: contain;
 }
 
 .splash-redirect-container {
     margin-top: 25px;
     display: flex;
     justify-content: center;
-    font-size: 18px;
-    color: white;
+    font-size: 1.2rem;
+    padding: 1rem 0 0;
+    color: #fff;
     letter-spacing: 0.6px;
 }
 
 .splash-redirect-message {
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .splash-redirect-spacing{
@@ -149,8 +233,8 @@ html, body {
 }
 
 .splash-redirect-link {
-    text-decoration: underline;
-    font-weight: 500;
+    text-decoration-line: underline;
+    font-weight: 700;
 }
 
 
@@ -278,48 +362,6 @@ html, body {
 button {
     margin: 5px;
 }
-
-////////////////////////////////
-
-.sign-in-btn {
-    border-radius: 3px;
-    background-color: rgb(229, 9, 20);
-    color: white;
-    font-weight: 400;
-    font-size: 16x;
-    height: 16px;
-    padding-left: 17px;
-    padding-right: 17px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    margin-top: 18px;
-    margin-left: 42px;
-    margin-right: 42px;
-    float: right;
-}
-
-.logo {
-    // height: 10vw;
-    margin-top: 18px;
-    // margin-right: 33vw;
-    padding: 0;
-    // display: flex;
-    // justify-content: center;
-}
-
-.logo-image {
-    height: 75px;
-}
-
-.login-navbar {
-    display: flex;
-    justify-content: flex-end;
-    // justify-content: center;
-    color: red;
-    overflow: hidden;
-
-}
-
 
 
 ////////////////////////////////

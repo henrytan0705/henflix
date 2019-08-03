@@ -6,10 +6,12 @@ class SessionForm extends React.Component {
         super(props); 
         this.state = {
             email: "",
-            password: ""
+            password: "",
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.demoLogin = this.demoLogin.bind(this);
+        // this.displayErrors = this.displayErrors.bind(this);
+        // this.errors = [];
     }
 
     componentWillUnmount(){
@@ -20,6 +22,8 @@ class SessionForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.formAction(user)
+        // debugger
+        // this.displayErrors();
     }
 
     update(field) {
@@ -35,13 +39,36 @@ class SessionForm extends React.Component {
         this.props.formAction(user);
     }
 
+    // displayErrors(){
+    //     // debugger
+    //     // this.errors = this.errorsArray;
+    //     debugger
+    //     this.errors = this.props.errors.map(err => err);
+    //     this.render();
+        // if(this.state.email.includes('@') && (this.state.email.includes('.com'))){
+        //     this.errors[0] = " ";
+        // }
+
+        // if(this.state.password.length > 5 && this.state.password.length < 60){
+        //     this.errors[1] = " ";
+        // }
+    // }
+
     render() {
         const formlink = this.props.formType === "Sign In" ? "/signup" : "/login";
         const linkName = this.props.formType === "Sign In" ? "Sign Up" : "Sign In";
 
-        const errors = this.props.errors.map((err, index) => {
-            return <li className="errors" key={index}>{err}</li>
-        })
+
+        // this.displayErrors(this.props.errors);
+        // this.errorsArray = [];
+
+        // this.props.errors.map((err,idx) => {
+        //     debugger
+        //     return this.errorsArray[idx] = err
+        // })
+
+        // this.displayErrors(this.errorsArray);
+        // debugger
         
         const demo = (this.props.formType === "Sign In") ? (
             <button className="demo-button" onClick={this.demoLogin}>DEMO LOGIN</button>
@@ -55,20 +82,17 @@ class SessionForm extends React.Component {
             {/* <div className="form-bg"> */}
                 <div className="session-form">
                     <form className="form" onSubmit={this.handleSubmit}>
-                        <div className="errors-display">
-                            <ul>
-                                {errors}
-                            </ul>
-                        </div>
 
                         <h2 className="formtype">{this.props.formType}</h2>
-                        {/* <div> */}
-                            {/* <label>Email or phone number */}
-                                <input className="email" type="email" value={this.state.email} onChange={this.update("email")} placeholder="Email or phone number"/>
-                            {/* </label> */}
-                        {/* </div> */}
+                     
+                        <input className="email" type="text" value={this.state.email} onChange={this.update("email")} placeholder="Email or phone number"/>
+                        <div className="errors">{this.props.errors[0]}</div>
+
                         <br/>
+
                         <input className="password" type="password" value={this.state.password} onChange={this.update("password")} placeholder="Password"/>
+                        <div className="errors">{this.props.errors[1]}</div>
+
                         <br/>
                         <input className="submit-button" type="submit" value={this.props.formType}/>
                     

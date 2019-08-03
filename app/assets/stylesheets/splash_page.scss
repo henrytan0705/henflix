@@ -41,67 +41,6 @@ html, body {
 }
 }
 
-// .splash-message  h1 {
-//     font-size: 70px;
-//     font-weight: 700;
-//     margin: 0 0 30px;
-//     line-height: 1.1em;
-//     color: white;
-//     text-shadow: 1px 1px 10px black;
-// }
-
-// .splash-message h3 {
-//     font-size: 28px;
-//     font-weight: 300;
-//     margin: 0 0 30px;
-//     line-height: 1.25em;
-//     color: white;
-// }
-
-// .splash-message p {
-//     font-size: 20px;
-//     font-weight: 300;
-//     color: white;
-// }
-
-// .splash-message {
-//     filter: brightness(100%);
-//     position: relative;
-//     top: 100px;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     margin-top: 100px;
-//     letter-spacing: .2px;
-//     // opacity: 1;
-//     text-size-adjust: 100%;
-// }
-
-
-// .splash-redirect {
-//     display: flex;
-    
-// }
-
-// .splash-redirect-link {
-//     text-decoration: underline;
-//     font-size: 20px;
-//     font-weight: 400;
-//     color: white;
-// }
-
-// .splash-demo-button {
-//     font-size: 30px;
-//     color: white;
-//     background-color: red;
-//     // padding: 5px;
-//     padding-left: 35px;
-//     padding-right: 35px;
-//     padding-top: 15px;
-//     padding-bottom: 15px;
-//     margin-bottom: 20px;
-// }
-
 .splash {
     text-align: center;
 }
@@ -238,8 +177,6 @@ html, body {
 }
 
 
-
-
 /////////////////////////////////////////
 
 .form-page {
@@ -275,7 +212,8 @@ html, body {
     display: flex;
     border: 2px solid black;
     background-color: black;
-    opacity: 0.55;
+    // opacity: 0.6;
+    
     font-size: 20px;
     color: white;
     
@@ -321,8 +259,12 @@ html, body {
     width: 300px;
 }
 
+.demo-button {
+    background-color: green;
+}
 .email, .password {
     background-color: #333333;
+    color: #8c8c8c;
 }
 
 .submit-button {
@@ -368,7 +310,7 @@ button {
 
 .errors {
     // display: block;
-    color: red;
+    color: #e87c03;
     background-color: none;
 }
 

@@ -72,7 +72,7 @@ class Splash extends React.Component {
 
                 <div className="splash-redirect-container">
                     <p className="splash-redirect-message">Have an account?</p>
-                    <span class="splash-redirect-spacing"></span>
+                    <span className="splash-redirect-spacing"></span>
                     <Link 
                         to="/login"
                         className="splash-redirect-link">

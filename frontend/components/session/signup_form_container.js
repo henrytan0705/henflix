@@ -13,7 +13,7 @@ const msp = state => {
 const mdp = dispatch => {
     return {
         formAction: user => dispatch(signup(user)),
-        clearErrors: () => dispatch(clearErrors())
+        clearErrors: () => dispatch(clearErrors()),
     }
 }
 

@@ -8,10 +8,10 @@ const msp = state => {
     }
 }
 
-const mdp = dispatch => {
-    return {
+// const mdp = dispatch => {
+//     return {
 
-    }
-}
+//     }
+// }
 
-export default connect(msp, mdp)(Main);
+export default connect(msp)(Main);

@@ -9,8 +9,11 @@ class Main extends React.Component {
     render() {
         return(
             <div>
-                <NavbarMainContainer/>
-                <h1>HELLO</h1>
+                <NavbarMainContainer/> 
+                <div>
+                    {/* <VideoDisplay/>
+                    <VideoSection/> */}
+                </div>
 
             </div>
         )

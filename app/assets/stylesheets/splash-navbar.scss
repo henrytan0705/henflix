@@ -1,11 +1,8 @@
-.nav-bar {
+.splash-navbar {
+    height: 90px;
     position: relative;
     z-index: 1;
     width: 100vw;
-}
-
-.splash-navbar {
-    height: 90px;
 }
 
 .logo-wrapper {
@@ -17,6 +14,7 @@
 }
 
 .logo-image {
+    margin-top: 18px;
     height: 70px;
 }
 

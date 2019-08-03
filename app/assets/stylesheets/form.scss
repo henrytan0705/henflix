@@ -1,0 +1,120 @@
+.form-page {
+    display:block;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://i.ytimg.com/vi/j_2-8115ZAs/maxresdefault.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    // overflow: hidden;
+    // top: 90px;
+
+}
+
+.session-form {
+    display: flex;
+    border: 2px solid black;
+    background-color: black;
+    opacity: 0.7;
+    // position: absolute;
+    // top: 15%;
+    // left: 0%;
+
+    font-size: 20px;
+    color: white;
+
+    min-height: 500px;
+    min-width: 380px;
+    padding: 40px 20px 50px 20px;
+    // padding: 0;
+    width: 450px;
+    // margin-top: 0;
+    // margin-bottom: 90px;
+    justify-content: center;
+    // position: fixed;
+    margin-top: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    // margin-top: 100px;
+    // margin: auto;
+}
+
+.form{
+    display: block;
+    width: 300px;
+}
+
+.email, .password, .demo-button {
+    display: block;
+    border: 1px solid gray;
+    margin: 0px;
+    border-radius: 3px;
+    padding-left: 22px;
+    padding-right: 22px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 300px;
+}
+
+.demo-button {
+    background-color: green;
+}
+.email, .password {
+    background-color: #333333;
+    color: #8c8c8c;
+}
+
+.submit-button {
+    border: 1px solid gray;
+    width: 300px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: red;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 60px;
+}
+
+
+.submit-button, .email, .password, .demo-button {
+    border-radius: 3px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.formtype {
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-size: 32px;
+}
+
+.password {
+    margin-bottom: 20px;
+}
+
+.link-button {
+    margin: 5px;
+    color: red;
+}
+
+button {
+    margin: 5px;
+}
+
+
+////////////////////////////////
+
+.errors {
+    // display: block;
+    color: #e87c03;
+    background-color: none;
+}
+
+.errors-display {
+    text-align: left;
+}
+//////////////////////////////////

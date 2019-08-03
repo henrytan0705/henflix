@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import NavbarFormContainer from '../navbar/navbar_form_container';
 
 class SessionForm extends React.Component {
     constructor(props) { 
@@ -10,8 +11,6 @@ class SessionForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.demoLogin = this.demoLogin.bind(this);
-        // this.displayErrors = this.displayErrors.bind(this);
-        // this.errors = [];
     }
 
     componentWillUnmount(){
@@ -39,36 +38,10 @@ class SessionForm extends React.Component {
         this.props.formAction(user);
     }
 
-    // displayErrors(){
-    //     // debugger
-    //     // this.errors = this.errorsArray;
-    //     debugger
-    //     this.errors = this.props.errors.map(err => err);
-    //     this.render();
-        // if(this.state.email.includes('@') && (this.state.email.includes('.com'))){
-        //     this.errors[0] = " ";
-        // }
-
-        // if(this.state.password.length > 5 && this.state.password.length < 60){
-        //     this.errors[1] = " ";
-        // }
-    // }
-
     render() {
         const formlink = this.props.formType === "Sign In" ? "/signup" : "/login";
         const linkName = this.props.formType === "Sign In" ? "Sign Up" : "Sign In";
 
-
-        // this.displayErrors(this.props.errors);
-        // this.errorsArray = [];
-
-        // this.props.errors.map((err,idx) => {
-        //     debugger
-        //     return this.errorsArray[idx] = err
-        // })
-
-        // this.displayErrors(this.errorsArray);
-        // debugger
         
         const demo = (this.props.formType === "Sign In") ? (
             <button className="demo-button" onClick={this.demoLogin}>DEMO LOGIN</button>
@@ -78,8 +51,9 @@ class SessionForm extends React.Component {
             "New to Netflix?" : "Already have an account?"
             
         return(
+            <>
+            <NavbarFormContainer/>
             <div className="form-page">
-            {/* <div className="form-bg"> */}
                 <div className="session-form">
                     <form className="form" onSubmit={this.handleSubmit}>
 
@@ -106,10 +80,9 @@ class SessionForm extends React.Component {
                                 {linkName}
                         </Link>
                     </form>
-
                 </div>
-                {/* </div> */}
             </div>
+            </>
         )
     }
 }

@@ -3,7 +3,7 @@ import SignupFormContainer from './session/signup_form_container';
 import LoginFormContainer from './session/login_form_container';
 // import NavbarContainer from './navbar/navbar_container';
 import SplashContainer from './splash/splash_container';
-import MainContainer from './main/main_Container';
+import MainContainer from './main/main_container';
 // import Main from './main/main';
 // import Footer from './footer/footer';
 import { Route } from 'react-router-dom';

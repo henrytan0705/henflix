@@ -1,5 +1,7 @@
 import React from 'react';
 import NavbarMainContainer from '../navbar/navbar_main_container';
+import VideoDisplay from './video/video_display';
+import VideoSection from './video/video_section';
 
 class Main extends React.Component {
     constructor(props){
@@ -11,8 +13,8 @@ class Main extends React.Component {
             <div>
                 <NavbarMainContainer/> 
                 <div>
-                    {/* <VideoDisplay/>
-                    <VideoSection/> */}
+                    <VideoDisplay/>
+                    <VideoSection/>
                 </div>
 
             </div>

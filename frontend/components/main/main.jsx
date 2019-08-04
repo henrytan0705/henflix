@@ -1,7 +1,7 @@
 import React from 'react';
 import NavbarMainContainer from '../navbar/navbar_main_container';
-import VideoDisplay from './video/video_display';
-import VideoSection from './video/video_section';
+import VideoDisplayContainer from './video/display/video_display_container';
+import VideoSection from './video/content/video_section';
 
 class Main extends React.Component {
     constructor(props){
@@ -10,10 +10,10 @@ class Main extends React.Component {
 
     render() {
         return(
-            <div>
+            <div className="main-page">
                 <NavbarMainContainer/> 
-                <div>
-                    <VideoDisplay/>
+                <div className="main-content">
+                    <VideoDisplayContainer/>
                     <VideoSection/>
                 </div>
 

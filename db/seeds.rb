@@ -20,6 +20,12 @@ User.create(email:"demoLogin@gmail.com" ,password:"asdf1234")
 angryBird = Video.create(title:"The Angry Birds Movie 2", description:"Red, Chuck, Bomb and the rest of their feathered friends are surprised when a green pig suggests that they put aside their differences and unite to fight a common threat. Aggressive birds from an island covered in ice are planning to use an elaborate weapon to destroy the fowl and swine way of life. After picking their best and brightest, the birds and pigs come up with a scheme to infiltrate the island, deactivate the device and return to their respective paradises intact.", year:"2019", genre_id:1)
 # angryBird.photo.attach(io: File.open("/Users/henry/Desktop/fullstack/henflix/app/assets/images/the_angry_birds_movie.jpg"), filename:"angry_birds_2.jpg")
 # angryBird.video_url.attach(io: File.open("/Users/henry/Desktop/VIDEOS/angry_birds_2.mp4"), filename:"angry_birds_2.mp4")
+photo = EzDownload.open("https://active-storage-aa-seed.s3.amazonaws.com/the_angry_birds_movie.jpg")
+video = EzDownload.open("https://active-storage-aa-seed.s3.amazonaws.com/angry_birds_2.mp4")
+angryBird.photo.attach(io: photo,  filename:"angry_birds_2.jpg")
+angryBird.video_url.attach(io: video, filename:"angry_birds_2.mp4")
+
+
 
 Genre.create(genre:"Animation")
 # Genre.create(genre:"") 

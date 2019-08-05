@@ -35,6 +35,7 @@ class VideoDisplay extends React.Component {
                         {/* Your browser does not support the video tag. */}
                     </video>
                 </div>
+                    {/* <button>Pause</button> */}
             </div>
         )
     }

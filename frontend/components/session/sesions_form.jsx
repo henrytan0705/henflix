@@ -52,34 +52,36 @@ class SessionForm extends React.Component {
             
         return(
             <>
-            <NavbarFormContainer/>
-            <div className="form-page">
-                <div className="session-form">
-                    <form className="form" onSubmit={this.handleSubmit}>
+            <div>
+                <NavbarFormContainer/>
+                <div className="form-page">
+                    <div className="session-form">
+                        <form className="form" onSubmit={this.handleSubmit}>
 
-                        <h2 className="formtype">{this.props.formType}</h2>
-                     
-                        <input className="email" type="text" value={this.state.email} onChange={this.update("email")} placeholder="Email or phone number"/>
-                        <div className="errors">{this.props.errors[0]}</div>
+                            <h2 className="formtype">{this.props.formType}</h2>
+                        
+                            <input className="email" type="text" value={this.state.email} onChange={this.update("email")} placeholder="Email or phone number"/>
+                            <div className="errors">{this.props.errors[0]}</div>
 
-                        <br/>
+                            <br/>
 
-                        <input className="password" type="password" value={this.state.password} onChange={this.update("password")} placeholder="Password"/>
-                        <div className="errors">{this.props.errors[1]}</div>
+                            <input className="password" type="password" value={this.state.password} onChange={this.update("password")} placeholder="Password"/>
+                            <div className="errors">{this.props.errors[1]}</div>
 
-                        <br/>
-                        <input className="submit-button" type="submit" value={this.props.formType}/>
-                    
-                        {demo}
-                        <br/>
-                        {linkText}
+                            <br/>
+                            <input className="submit-button" type="submit" value={this.props.formType}/>
+                        
+                            {demo}
+                            <br/>
+                            {linkText}
 
-                        <Link className="link-button" 
-                            to={formlink} 
-                            onClick={this.props.clearErrors}>
-                                {linkName}
-                        </Link>
-                    </form>
+                            <Link className="link-button" 
+                                to={formlink} 
+                                onClick={this.props.clearErrors}>
+                                    {linkName}
+                            </Link>
+                        </form>
+                    </div>
                 </div>
             </div>
             </>

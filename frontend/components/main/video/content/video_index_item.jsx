@@ -6,18 +6,16 @@ class VideoIndexItem extends React.Component {
         this.playTrailer = this.playTrailer.bind(this);
         this.showThumbnail = this.showThumbnail.bind(this);
         this.state = {
-            hover: false
+            hover: false 
         }
     }
 
     componentDidMount(){
         // this.props.retrieveVideo(2);
+        // this.props.retrieveVideos();
     }
 
     playTrailer(){
-        // this.setState({
-        //     hover: true
-        // })
         setTimeout(
             function () {
                 this.setState({ hover: true });
@@ -28,15 +26,11 @@ class VideoIndexItem extends React.Component {
     }
 
     showThumbnail(){
-        // this.setState({
-        //     hover: false
-        // })
-
         setTimeout(
             function () {
                 this.setState({ hover: false });
             }
-                .bind(this),
+            .bind(this),
             500
         );
     }
@@ -50,7 +44,7 @@ class VideoIndexItem extends React.Component {
             videoUrl: "", 
         }
 
-        let content = this.state.hover === false ? (
+        let content1 = this.state.hover === false ? (
                 <img className="video-thumbnail"
                     src={video.photoUrl}
                     onMouseOver={this.playTrailer}
@@ -67,12 +61,7 @@ class VideoIndexItem extends React.Component {
         return (
             <div className="video-index-item">
                 <h1 className="category">Trending Now</h1>
-                {content}
-                {/* <img className="video-thumbnail" 
-                    src={video.photoUrl}
-                    onMouseDown=""
-                /> */}
-                {/* <video className="video-item" src={video.videoUrl}></video> */}
+                {content1}
             </div>
         )
     }

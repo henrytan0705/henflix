@@ -4,14 +4,14 @@ import VideoIndexItem from './video_index_item';
 
 const msp = state => {
     return {
-        video: state.videos[2],
-        videos: state.videos
+        // video: state.videos[2],
+        // videos: state.videos
     }
 }
 
 const mdp = dispatch => {
     return {
-        retrieveVideo: (id) => dispatch(retrieveVideo(id)),
+        // retrieveVideo: (id) => dispatch(retrieveVideo(id)),
         retrieveVideos: () => dispatch(retrieveVideos())
     }
 }

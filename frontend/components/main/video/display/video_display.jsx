@@ -23,6 +23,7 @@ class VideoDisplay extends React.Component {
             }
         
         }
+        debugger
         return (
             <div className="video-display">
                 {/* <h1>THIS IS THE VIDEOS DISPLAY COMPONENT</h1> */}

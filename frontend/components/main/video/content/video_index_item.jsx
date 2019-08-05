@@ -28,9 +28,17 @@ class VideoIndexItem extends React.Component {
     }
 
     showThumbnail(){
-        this.setState({
-            hover: false
-        })
+        // this.setState({
+        //     hover: false
+        // })
+
+        setTimeout(
+            function () {
+                this.setState({ hover: false });
+            }
+                .bind(this),
+            1000
+        );
     }
 
     render(){   

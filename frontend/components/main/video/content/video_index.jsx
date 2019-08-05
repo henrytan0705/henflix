@@ -7,7 +7,6 @@ class VideoIndex extends React.Component {
     }
 
     componentDidMount() {
-        debugger
         this.props.retrieveVideos();
     }
 
@@ -18,7 +17,7 @@ class VideoIndex extends React.Component {
         let videoItems = Object.values(videos).map((video,idx) => {
             return (<VideoIndexItemContainer key={idx} video={video}/>)
         }) 
-        debugger
+      
         return (
             <div className="video-index">
                 {videoItems}

@@ -3,7 +3,6 @@ import VideoIndex from './video_index';
 import { retrieveVideos } from '../../../../actions/video_actions';
 
 const msp = state => {
-    debugger
     return {
         videos: state.videos
     }

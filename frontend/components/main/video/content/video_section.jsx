@@ -5,7 +5,10 @@ class VideoSection extends React.Component {
     render() {
         return (
             <div className="video-section">
-                <VideoIndexContainer/>
+                {/* <div className="trending"> */}
+                    <h1>Trending Now</h1>
+                    <VideoIndexContainer/>
+                {/* </div> */}
             </div>
         )
     }

@@ -4,7 +4,7 @@ import VideoDisplay from './video_display';
 
 const msp = state => {
     return {
-        video: state.videos[2] 
+        video: state.videos[3] 
     }
 }
 

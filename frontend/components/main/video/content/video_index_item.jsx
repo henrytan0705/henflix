@@ -60,7 +60,6 @@ class VideoIndexItem extends React.Component {
 
         return (
             <div className="video-index-item">
-                <h1 className="category">Trending Now</h1>
                 {content1}
             </div>
         )

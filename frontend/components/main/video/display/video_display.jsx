@@ -26,8 +26,8 @@ class VideoDisplay extends React.Component {
                     {/* <h1>{video.title}</h1> */}
                     {/* <p>{video.description}</p> */}
                     {/* <h2>{video.year}</h2> */}
-                    {/* <video className="display-video" src={video.videoUrl} autoPlay> </video> */}
-                    <video className="display-video" src={video.videoUrl} > </video>
+                    <video className="display-video" src={video.videoUrl} autoPlay> </video>
+                    {/* <video className="display-video" src={video.videoUrl} > </video> */}
                 </div>
             </div>
         )

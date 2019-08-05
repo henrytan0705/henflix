@@ -15,9 +15,16 @@ class VideoIndexItem extends React.Component {
     }
 
     playTrailer(){
-        this.setState({
-            hover: true
-        })
+        // this.setState({
+        //     hover: true
+        // })
+        setTimeout(
+            function () {
+                this.setState({ hover: true });
+            }
+            .bind(this),
+            1500
+        );
     }
 
     showThumbnail(){

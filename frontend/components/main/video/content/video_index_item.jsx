@@ -37,7 +37,7 @@ class VideoIndexItem extends React.Component {
                 this.setState({ hover: false });
             }
                 .bind(this),
-            1000
+            500
         );
     }
 

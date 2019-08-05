@@ -6,7 +6,7 @@ class VideoDisplay extends React.Component {
     }
 
     componentDidMount(){
-        this.props.retrieveVideo(1)
+        this.props.retrieveVideo(2)
     }
 
 

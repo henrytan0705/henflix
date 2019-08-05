@@ -16,17 +16,23 @@ ul li a{
     display: block;
     padding: 8px 25px;
     color: #333;
+    // color: #333;
+    color: white;
     text-decoration: none;
 }
 
 ul li a:hover{
-    color: #fff;
+    color: white;
     background: black;
+    // position: relative;
+    // z-index: 25;
+    // overflow: hidden;
 }
 
 ul li ul.dropdown{
     min-width: 125px; /* Set width of the dropdown */
-    background: #f2f2f2;
+    // background: #f2f2f2;
+    background: black;
     display: none;
     position: absolute;
     z-index: 999;
@@ -35,6 +41,9 @@ ul li ul.dropdown{
 
 ul li:hover ul.dropdown{
     display: block; /* Display the dropdown */
+    position: relative;
+    z-index: 25;
+    overflow: hidden;
 }
 
 ul li ul.dropdown li{
@@ -47,7 +56,7 @@ ul li ul.dropdown li{
 }
 
 .user-dropdown{ 
-    border: 1px solid black;
+    border: 1px solid white;
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -58,21 +67,24 @@ ul li ul.dropdown li{
     z-index: 0;
 }
 
-
 .signed-in-navbar {
     display: flex;
     justify-content: space-between;
-    background:gray;
+    // background:gray;
     color: white;
     padding-left: 10px;
     padding-right: 20px;
     font-size: 20px;
-    border: 2px solid black;
+    // border: 2px solid black;
+    overflow: hidden;
+    position:relative;
+    z-index: 20;
 }
 
 .signed-in-navbar button {
     border: 1px solid black;
     padding: 5px;
+    // background: red;
 }
 
 .search-bar{

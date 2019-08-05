@@ -1,4 +1,4 @@
-import  { connect } from 'react-redux';
+import { connect } from 'react-redux';
 import { retrieveVideo } from '../../../../actions/video_actions';
 import VideoDisplay from './video_display';
 

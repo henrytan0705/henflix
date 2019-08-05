@@ -1,11 +1,11 @@
 import React from 'react'
-import VideoIndexItem from './video_index_item';
+import VideoIndexItemContainer from './video_index_item_container';
 
 class VideoIndex extends React.Component {
     render() {
         return (
             <div className="video-index">
-                <VideoIndexItem />
+                <VideoIndexItemContainer />
             </div>
         )
     }

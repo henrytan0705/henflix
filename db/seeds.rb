@@ -22,7 +22,7 @@ angryBird = Video.create(title:"The Angry Birds Movie 2", description:"Red, Chuc
 # angryBird.video_url.attach(io: File.open("/Users/henry/Desktop/VIDEOS/angry_birds_2.mp4"), filename:"angry_birds_2.mp4")
 
 Genre.create(genre:"Animation")
-# Genre.create(genre:"")
+# Genre.create(genre:"") 
 # Genre.create(genre:"")
 # Genre.create(genre:"")
 # Genre.create(genre:"")

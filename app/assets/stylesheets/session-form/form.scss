@@ -13,6 +13,7 @@
 // }
 
 .form-background{
+    // background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://assets.nflxext.com/ffe/siteui/vlv3/f1e267d6-6c89-4764-b978-5f074b26bea5/b3971fff-4585-4604-83a5-c2d03571d56b/US-en-20190722-popsignuptwoweeks-perspective_alpha_website_small.jpg);
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(http://saltypopcorn.com.au/wp-content/uploads/2016/05/1280x720-gmX.jpg);
     background-size: 100%;
     height: 100vh;
@@ -160,7 +161,7 @@
 
 
 .form-content {
-    background-color: rgba(0,0,0,.90);
+    background-color: rgba(0,0,0,.8);
     border-radius: 4px;
     box-sizing: border-box;
     display: flex;
@@ -192,12 +193,12 @@
 }
 
 .formtype {
-    margin: 0 0 10px 0;
+    // margin: 0 0 10px 0;
     padding: 0;
     color: white;
     font-size:32px;
     font-weight: 700;
-    margin-bottom:28px;
+    // margin-bottom: 28px;
     display: block;
     margin-block-start: 0.67em;
     margin-block-end: 0.67em;
@@ -317,6 +318,9 @@ label {
     max-width: 100%;
     border-radius: 4px;
     margin-top: 25px;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
     // margin-bottom: 150px;
 }
 

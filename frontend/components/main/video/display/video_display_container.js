@@ -1,16 +1,18 @@
 import { connect } from 'react-redux';
-import { retrieveVideo } from '../../../../actions/video_actions';
+import { retrieveVideo, retrieveVideos } from '../../../../actions/video_actions';
 import VideoDisplay from './video_display';
 
 const msp = state => {
     return {
-        video: state.videos[3] 
+        video: state.videos[3],
+        // video: state.videos.first
     }
 }
 
 const mdp = dispatch => {
     return {
-        retrieveVideo: (id) => dispatch(retrieveVideo(id))
+        retrieveVideo: (id) => dispatch(retrieveVideo(id)),
+        retrieveVideos: () => dispatch(retrieveVideos())
     }
 }
 

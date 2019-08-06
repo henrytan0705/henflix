@@ -3,7 +3,14 @@ import React from 'react';
 class VideoDisplay extends React.Component {
     constructor(props) {
         super(props);
+        // this.togglePlay = this.togglePlay.bind(this);
     }
+
+    // togglePlay(e) {
+    //     if(e.keyCode === 32) {
+    //         this.refs.featureRef.pause()
+    //     }
+    // }
 
     componentDidMount(){
         this.props.retrieveVideo(3);
@@ -26,8 +33,14 @@ class VideoDisplay extends React.Component {
                     {/* <h1>{video.title}</h1> */}
                     {/* <p>{video.description}</p> */}
                     {/* <h2>{video.year}</h2> */}
-                    <video className="display-video" src={video.videoUrl} autoPlay> </video>
-                    {/* <video className="display-video" src={video.videoUrl} > </video> */}
+                    <video 
+                        className="display-video" 
+                        src={video.videoUrl} 
+                        autoPlay
+                        // onKeyPress={this.togglePlay}
+                        ref="featureRef"
+                    > 
+                    </video>
                 </div>
             </div>
         )

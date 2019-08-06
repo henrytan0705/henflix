@@ -47,14 +47,17 @@ class VideoIndexItem extends React.Component {
         let content1 = this.state.hover === false ? (
                 <img className="video-thumbnail"
                     src={video.photoUrl}
-                    onMouseOver={this.playTrailer}
-                />) 
-            : (
+                    // onMouseOver={this.playTrailer}
+                    onClick={this.playTrailer}
+                />
+            ) : (
                 <video 
                     className="video-item" 
                     src={video.videoUrl} 
                     autoPlay
-                    onMouseOut={this.showThumbnail}>
+                    // onMouseOut={this.showThumbnail}
+                    onClick={this.showThumbnail}
+                >
                 </video>
             );
 

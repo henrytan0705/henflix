@@ -6,13 +6,14 @@ const msp = state => {
     return {
         // video: state.videos[2],
         // videos: state.videos
+        // genre: ""
     }
 }
 
 const mdp = dispatch => {
     return {
         // retrieveVideo: (id) => dispatch(retrieveVideo(id)),
-        retrieveVideos: () => dispatch(retrieveVideos())
+        // retrieveVideos: () => dispatch(retrieveVideos())
     }
 }
 

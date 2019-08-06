@@ -11,3 +11,11 @@ export const fetchVideo = id => {
         url: `/api/videos/${id}`
     });
 }
+
+// export const fetchGenreVideos = (id) => {
+//     return $.ajax({
+//         method: "GET",
+//         url: `/api/genres/${id}`
+//     })
+// }
+

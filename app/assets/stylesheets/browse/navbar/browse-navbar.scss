@@ -77,8 +77,11 @@ ul li ul.dropdown li{
     font-size: 20px;
     // border: 2px solid black;
     overflow: hidden;
-    position:relative;
+    // position:relative;
     z-index: 20;
+    position: sticky;
+    top: 0;
+    background-color: black;
 }
 
 .signed-in-navbar button {

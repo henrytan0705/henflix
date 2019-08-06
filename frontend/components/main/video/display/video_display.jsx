@@ -3,17 +3,12 @@ import React from 'react';
 class VideoDisplay extends React.Component {
     constructor(props) {
         super(props);
-        // this.togglePlay = this.togglePlay.bind(this);
+        // debugger
     }
 
-    // togglePlay(e) {
-    //     if(e.keyCode === 32) {
-    //         this.refs.featureRef.pause()
-    //     }
-    // }
 
     componentDidMount(){
-        this.props.retrieveVideo(3);
+        // this.props.retrieveVideo();
     }
 
 

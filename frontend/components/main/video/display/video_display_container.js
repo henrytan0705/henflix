@@ -4,14 +4,13 @@ import VideoDisplay from './video_display';
 
 const msp = state => {
     return {
-        video: state.videos[3],
-        // video: state.videos.first
+        // video: state.videos[18],
     }
 }
 
 const mdp = dispatch => {
     return {
-        retrieveVideo: (id) => dispatch(retrieveVideo(id)),
+        // retrieveVideo: (id) => dispatch(retrieveVideo(id)),
         retrieveVideos: () => dispatch(retrieveVideos())
     }
 }

@@ -21,7 +21,7 @@ class VideoIndexItem extends React.Component {
                 this.setState({ hover: true });
             }
             .bind(this),
-            1500
+            250
         );
     }
 
@@ -31,7 +31,7 @@ class VideoIndexItem extends React.Component {
                 this.setState({ hover: false });
             }
             .bind(this),
-            500
+            250
         );
     }
 
@@ -47,20 +47,31 @@ class VideoIndexItem extends React.Component {
         let content1 = this.state.hover === false ? (
                 <img className="video-thumbnail"
                     src={video.photoUrl}
-                    // onMouseOver={this.playTrailer}
-                    onClick={this.playTrailer}
+                    onMouseOver={this.playTrailer}
+                    // onClick={this.playTrailer}
                 />
             ) : (
-                <video 
-                    className="video-item" 
-                    src={video.videoUrl} 
-                    autoPlay
-                    // onMouseOut={this.showThumbnail}
-                    onClick={this.showThumbnail}
-                >
-                </video>
+                <>
+                    <video 
+                        className="video-item" 
+                        src={video.videoUrl} 
+                        // src="Users/henry/Desktop/VIDEOS/master_chef_junior.mp4"
+                        autoPlay
+                        onMouseOut={this.showThumbnail}
+                        // onClick={this.showThumbnail}
+                    >
+                    </video>
+
+                    <div className="video-info">
+                        <h1>{video.title}</h1>
+                        <p className="video-description">{video.description}</p>
+                        <h1>{video.genre}</h1>
+                        <h1>{video.year}</h1>
+                    </div>
+                </>
             );
 
+        // debugger
         return (
             <div className="video-index-item">
                 {content1}

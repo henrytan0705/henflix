@@ -1,12 +1,14 @@
 .video-index-item {
     // height: 200px;
     // width: 300px;
-    display: block;
+    display: flex;
     // background-color: yellow;
     position: relative;
     top: 20px;
     left: 20px;
     margin: 0px 15px;
+    // width: 100vw;
+    // height: 300px;
 }
 
 .video-item {
@@ -14,10 +16,10 @@
     width: 600px;
     // background-color: green;
     // -webkit-transition: width 2s, height 2s;
-    // transition: width 2s, height 2s;
 }
 
 .video-thumbnail {
+    transition-delay: 2s;
     height: 180px;
     width: 300px;
     // -webkit-transition: width 2s, height 2s;
@@ -25,3 +27,19 @@
     // background-color: green;
 }
 
+.video-info {
+    background: red;
+    height: 300px;
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.video-description {
+    // display: flex;
+    // flex-direction: column;
+    
+    max-width: 300px;
+    // color: white;
+}

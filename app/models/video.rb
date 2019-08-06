@@ -1,11 +1,15 @@
 class Video < ApplicationRecord
-    validates :title, :description, :year, :genre_id, presence: true
+    validates :title, :description, :year, presence: true
     validates :title, uniqueness: true
 
-    # belongs_to :video_genre,
-    #     foreign_key: :genre_id,
-    #     class_name: :Genre
+    has_many :video_genres,
+        foreign_key: :movie_id,
+        class_name: :VideoGenre
 
+    has_many :genres,
+        through: :video_genres,
+        source: :genre
+    
     has_one_attached :photo
 
     has_one_attached :video_url

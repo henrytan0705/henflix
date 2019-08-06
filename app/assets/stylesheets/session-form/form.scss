@@ -1,100 +1,323 @@
-.form-page {
-    display:block;
-    width: 100vw;
-    height: 100vh;
-    // background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://i.ytimg.com/vi/j_2-8115ZAs/maxresdefault.jpg);
+// .form-wrapper-background {
+//     background-size: cover;
+//     // background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(http://saltypopcorn.com.au/wp-content/uploads/2016/05/1280x720-gmX.jpg);
+//     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) );
+//     height: 100%;
+//     min-height: 100vh;
+//     width: 100%;
+//     display: block;
+//     overflow: hidden;
+//     position: absolute;
+//     z-index: -1;
+//     // opacity: .8;
+// }
+
+.form-background{
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(http://saltypopcorn.com.au/wp-content/uploads/2016/05/1280x720-gmX.jpg);
+    background-size: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    width: 100vw;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
     background-repeat: no-repeat;
     position: absolute;
-    // overflow: hidden;
-    // top: 90px;
-
+    top: 0;
+    // background-size: cover;
 }
 
-.session-form {
-    display: flex;
-    border: 2px solid black;
-    background-color: black;
-    opacity: 0.7;
-    // position: absolute;
-    // top: 15%;
-    // left: 0%;
-
-    font-size: 20px;
-    color: white;
-
-    min-height: 500px;
-    min-width: 380px;
-    padding: 40px 20px 50px 20px;
-    // padding: 0;
-    width: 450px;
-    // margin-top: 0;
-    // margin-bottom: 90px;
-    justify-content: center;
+.form-body {
+    // background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(http://saltypopcorn.com.au/wp-content/uploads/2016/05/1280x720-gmX.jpg);
+    // background-size: cover;
+    // display:block;
+    // width: 100vw;
+    // height: 100vh;
+    // -webkit-background-size: cover;
+    // -moz-background-size: cover;
+    // -o-background-size: cover;
+    // background-repeat: no-repeat;
     // position: fixed;
-    margin-top: 120px;
-    margin-left: auto;
-    margin-right: auto;
-    // margin-top: 100px;
-    // margin: auto;
-}
-
-.form{
-    display: block;
-    width: 300px;
-}
-
-.email, .password, .demo-button {
-    display: block;
-    border: 1px solid gray;
-    margin: 0px;
-    border-radius: 3px;
-    padding-left: 22px;
-    padding-right: 22px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    width: 300px;
-}
-
-.demo-button {
-    background-color: green;
-}
-.email, .password {
-    background-color: #333333;
-    color: #8c8c8c;
-}
-
-.submit-button {
-    border: 1px solid gray;
-    width: 300px;
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color: red;
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 60px;
+    // top: 0;    
+    color: #333;
+    padding: 0 5%;
 }
 
 
-.submit-button, .email, .password, .demo-button {
-    border-radius: 3px;
-    font-size: 16px;
+
+@media only screen and (min-width: 740px) {
+    .form-body {
+        margin: 0 auto -236px;
+        min-height: 100vh;
+        background-color: transparent;
+        max-width: 450px;
+    }
+}
+
+@media only screen and (min-width: 740px) {
+    .form-body::before {
+        content: "";
+        height: 91px;
+        display: block;
+    }
+}
+
+//only use after having footer
+
+// @media only screen and (min-width: 740px) {
+//     .form-body::after {
+//         content: "";
+//         height: 236px;
+//         display: block;
+//     }
+// }
+
+////////////////////////////////////////////////////////////////
+
+
+// .session-form {
+//     display: flex;
+//     border: 2px solid black;
+//     background-color: black;
+//     opacity: 0.7;
+
+//     font-size: 20px;
+//     color: white;
+
+//     min-height: 500px;
+//     min-width: 380px;
+//     padding: 40px 20px 50px 20px;
+//     // padding: 0;
+//     width: 450px;
+//     justify-content: center;
+//     // position: fixed;
+//     margin-top: 120px;
+//     margin-left: auto;
+//     margin-right: auto;
+//     // margin-top: 100px;
+//     // margin: auto;
+// }
+
+// .form{
+//     display: block;
+//     width: 300px;
+// }
+
+// .email, .password, .demo-button {
+//     display: block;
+//     border: 1px solid gray;
+//     margin: 0px;
+//     border-radius: 3px;
+//     padding-left: 22px;
+//     padding-right: 22px;
+//     padding-top: 15px;
+//     padding-bottom: 15px;
+//     width: 300px;
+// }
+
+
+// .email, .password {
+//     background-color: #333333;
+//     color: #8c8c8c;
+// }
+
+// .submit-button {
+//     border: 1px solid gray;
+//     width: 300px;
+//     text-align: center;
+//     padding-top: 10px;
+//     padding-bottom: 10px;
+//     background-color: red;
+//     font-size: 16px;
+//     font-weight: 700;
+//     margin-bottom: 60px;
+// }
+
+
+// .submit-button, .email, .password, .demo-button {
+//     border-radius: 3px;
+//     font-size: 16px;
+//     width: 100%;
+// }
+
+// .formtype {
+//     margin-top: 10px;
+//     margin-bottom: 25px;
+//     font-size: 32px;
+// }
+
+// .password {
+//     margin-bottom: 20px;
+// }
+
+
+
+
+// button {
+//     margin: 5px;
+// }
+
+
+
+.form-content {
+    background-color: rgba(0,0,0,.90);
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    margin: 0;
     width: 100%;
 }
 
-.formtype {
-    margin-top: 10px;
-    margin-bottom: 25px;
-    font-size: 32px;
+@media only screen and (min-width: 740px) {
+    .form-content {
+        min-height: 660px;
+        padding: 60px 68px 40px;
+        margin-bottom: 90px;
+    }
 }
 
-.password {
-    margin-bottom: 20px;
+@media only screen and (min-width: 500px) {
+    .form-content {
+        min-width: 380px;
+    }
+}
+
+.form-main {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+
+}
+
+.formtype {
+    margin: 0 0 10px 0;
+    padding: 0;
+    color: white;
+    font-size:32px;
+    font-weight: 700;
+    margin-bottom:28px;
+    display: block;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.form {
+    display: block;
+    margin-top: 0em;
+    margin-bottom: 0;
+}
+
+.form-email-input, .form-password-input {
+    padding-bottom: 16px;
+    max-width: 100%;
+    display: block;
+}
+
+.input{
+    position: relative;
+}
+
+.email-label-wrapper, .password-label-wrapper {
+    position: relative;
+    border: 0;
+    border-radius:4px;
+}
+
+label {
+    cursor: default;
+}
+
+.email-input, .password-input {
+    background: #333;
+    border-radius: 4px;
+    border: 0;
+    color: #fff;
+    height: 50px;
+    line-height: 50px;
+    padding: 16px 20px 16px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+    display: block;
+    -webkit-appearance: none;
+    font: inherit;
+    margin: 0;
+
+}
+
+.email-input:valid, .password-input:valid {
+    box-shadow: none;
+}
+
+// input {
+//     -webkit-writing-mode: horizontal-tb !important;
+//     text-rendering: auto;
+//     letter-spacing: normal;
+//     word-spacing: normal;
+//     text-transform: none;
+//     text-indent: 0;
+//     text-shadow: none;
+//     text-align: start;
+//     -webkit-rti-ordering: logical;
+//     cursor: text;
+// }
+
+// .email-label {
+//     position: absolute;
+//     top: 33px;
+//     left: 20px;
+//     font-size: 16px;
+//     color: #8c8c8c;
+//     transition: font .1s ease, 
+//         top .1s ease, 
+//         transform .1s ease, 
+//         -webkit-transform .1s ease, 
+//         -moz-transform .1s ease, 
+//         -o-transform .1s ease, translateY(50%);
+//     transform: translateY(-50%);
+// }
+
+// .email-label:focus {
+//     top: -12px;
+//     left: 12px;
+// }
+
+
+.form-button {
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 24px 0 12px;
+    width: 100%;
+    max-width: 100%;
+    padding: 16px;
+    background-color: #e50914;
+    position: relative;
+    color: #fff;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .55);
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    box-sizing: border-box;
+    border: 0;
+    overflow: visible;
+}
+
+
+
+.demo-button {
+    background-color: green;
+    padding: 16px;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 4px;
+    margin-top: 25px;
+    // margin-bottom: 150px;
 }
 
 .link-button {
@@ -102,20 +325,23 @@
     color: red;
 }
 
-button {
-    margin: 5px;
+.link-text {
+    display: block;
+    margin-top: 165px;
+    color: #737373;
+    font-size: 16px;
+    font-weight: 500;
 }
 
-
-////////////////////////////////
+.link-button {
+    color: #fff;
+}
 
 .errors {
     // display: block;
     color: #e87c03;
     background-color: none;
-}
+    padding: 6px 3px;
+    font-size: 13px;
 
-.errors-display {
-    text-align: left;
 }
-//////////////////////////////////

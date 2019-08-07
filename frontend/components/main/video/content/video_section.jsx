@@ -15,8 +15,8 @@ class VideoSection extends React.Component {
                 <VideoIndexContainer genre="Animation" videos={animationVideos}/>
                 {/* <VideoIndexContainer genre="Trending" videos={animationVideos}/> */}
 
-                {/* <h1 className="categories">Food/Horror</h1>
-                <VideoIndexContainer genre="Food" videos={foodVideos}/> */}
+                <h1 className="categories">Food/Horror</h1>
+                <VideoIndexContainer genre="Food" videos={foodVideos}/>
 
                 {/* <h1 className="categories">Action</h1> */}
                 {/* <VideoIndexContainer /> */}  

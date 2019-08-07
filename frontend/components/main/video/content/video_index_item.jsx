@@ -1,6 +1,6 @@
 import React from 'react';
-// import VideoPlayer from ''
 import { Link } from 'react-router-dom';
+import { PlayCircle } from 'react-feather';
 
 class VideoIndexItem extends React.Component {
     constructor(props) {
@@ -47,16 +47,18 @@ class VideoIndexItem extends React.Component {
             videoUrl: "", 
         }
 
+        let path = `/watch/${video.id}`;
+
         let content1 = this.state.hover === false ? (
-                <>
-                <img className="video-thumbnail"
-                    src={video.photoUrl}
-                    // onMouseOver={this.playTrailer}
-                    onClick={this.playTrailer}
-                    // onClick={this.displayVideoDetails}
-                    // onClick={this.openVideoPlayer}
-                />
-                </>
+                <div className="thumbnail-position">
+                    <img className="video-thumbnail"
+                        src={video.photoUrl}
+                        // onMouseOver={this.playTrailer}
+                        onClick={this.playTrailer}
+                        // onClick={this.displayVideoDetails}
+                        // onClick={this.openVideoPlayer}
+                    />
+                </div>
             ) : (
                 <>
                     <video 
@@ -69,9 +71,11 @@ class VideoIndexItem extends React.Component {
                     >
                     </video>
 
-                    <Link to="/watch" 
+                    <Link to={path}
                         onClick={this.setVideoToState(video.id)}
                         className="display-play-button">
+                        <PlayCircle/>
+
                     </Link>
 
                 </>
@@ -80,7 +84,8 @@ class VideoIndexItem extends React.Component {
  
         return (
             <div className="video-index-item "
-                onClick={this.displayDetails}>
+                // onClick={this.displayDetails}
+            >
 
                 {content1}
                 {/* <div className="display-video-details"></div> */}

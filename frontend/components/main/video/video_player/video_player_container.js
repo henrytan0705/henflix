@@ -1,9 +1,12 @@
 import VideoPlayer from './video_player';
 import { connect } from 'react-redux';
+import { retrieveVideo } from '../../../../actions/video_actions';
+import { withRouter } from 'react-router-dom';
 
-
-const msp = state => {
+const msp = (state, ownProps) => {
+    // debugger
     return {
+        path: ownProps.match.params.id,
         currentUser: state.session.userId,
         video: Object.values(state.videoPlayer)[0]
     }
@@ -11,10 +14,10 @@ const msp = state => {
 
 const mdp = dispatch => {
     return {
-
+        retrieveVideo: (id) => dispatch(retrieveVideo(id)),
     }
 }
 
 
 
-export default connect(msp, mdp)(VideoPlayer);
+export default withRouter(connect(msp, mdp)(VideoPlayer));

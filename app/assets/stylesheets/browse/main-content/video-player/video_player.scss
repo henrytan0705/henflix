@@ -16,11 +16,18 @@
 }
 
 .back-button {
-    height: 30px;
-    width: 30px;
-    background: green;
+    // height: 30px;
+    // width: 30px;
+    // background: green;
     position: absolute;
     z-index: 100;
     top: 40px;
     left: 40px;
+}
+
+svg {
+    // fill: white;
+    color: red;
+    // fill: white;
+    // background-color:red;
 }

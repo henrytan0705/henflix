@@ -51,43 +51,8 @@ class SessionForm extends React.Component {
             "New to Netflix?" : "Already have an account?"
             
         return(
-            <>
-            {/* <div> */}
-            
-                <NavbarFormContainer/>
-                {/* <div className="form-page">
-                    <div className="session-form">
-                        <form className="form" onSubmit={this.handleSubmit}>
-
-                            <h2 className="formtype">{this.props.formType}</h2>
-
-                            <div>
-                                <input className="email" type="text" value={this.state.email} onChange={this.update("email")} placeholder="Email or phone number"/>
-                                <div className="errors">{this.props.errors[0]}</div>
-                            </div>
-                           
-
-                            <div>
-                                <input className="password" type="password" value={this.state.password} onChange={this.update("password")} placeholder="Password"/>
-                                <div className="errors">{this.props.errors[1]}</div>
-                            </div>
-                           
-                            <input className="submit-button" type="submit" value={this.props.formType}/>
-                        
-                            {demo}
-                            
-                            {linkText}
-
-                            <Link className="link-button" 
-                                to={formlink} 
-                                onClick={this.props.clearErrors}>
-                                    {linkName}
-                            </Link>
-
-                        </form>
-                    </div>
-                </div>
-            </div> */}
+        <>
+        <NavbarFormContainer/>
         <div className="form-background">
             <div className="form-body">
                 <div>
@@ -128,13 +93,11 @@ class SessionForm extends React.Component {
                                 {demo}
 
                                 <span className="link-text">{linkText}
-
                                     <Link className="link-button"
                                         to={formlink}
                                         onClick={this.props.clearErrors}>
                                         {linkName}
                                     </Link>
-
                                 </span>
                             </form>
                             
@@ -142,8 +105,7 @@ class SessionForm extends React.Component {
                     </div>
                 </div>
             </div>
-
-                </div>
+        </div>
             </>
         )
     }

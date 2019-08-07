@@ -45,7 +45,6 @@
 }
 
 
-
 @media only screen and (min-width: 740px) {
     .form-body {
         margin: 0 auto -236px;
@@ -174,8 +173,8 @@
 @media only screen and (min-width: 740px) {
     .form-content {
         min-height: 660px;
-        padding: 60px 68px 40px;
-        margin-bottom: 90px;
+        padding: 60px 68px 20px;
+        // margin-bottom: 40px;
     }
 }
 
@@ -330,7 +329,7 @@ label {
 
 .link-text {
     display: block;
-    margin-top: 165px;
+    margin-top: 160px;
     color: #737373;
     font-size: 16px;
     font-weight: 500;

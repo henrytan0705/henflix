@@ -54,8 +54,10 @@ tasty.video_url.attach(io: tasty_video, filename:"tasty.mp4")
 
 animation = Genre.create!(genre:"Animation")
 food = Genre.create!(genre:"Food")
+# trending = Genre.create!(genre:"Trending")
 
 VideoGenre.create!(genre: animation , movie: angry_bird)
+# VideoGenre.create!(genre: trending , movie: angry_bird)
 VideoGenre.create!(genre: animation , movie: rio)
 VideoGenre.create!(genre: food, movie: master_chef_junior)
 VideoGenre.create!(genre: food, movie: tasty)

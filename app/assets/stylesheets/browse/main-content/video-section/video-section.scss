@@ -1,7 +1,11 @@
 .video-section {
-    display: inline-block;
+    // display: inline-block;
     // background-color: #141414;
     opacity: 0.9;
     height: 100vh;
-    width: 100vw;
+    border: 1px solid red;
+    // width: 100vw;
+    // display: grid;
+    // grid-template-columns: 100%;
+    // grid-template-rows: [row1-start] 10%  [row1-end] 20% [third-line] 20%;;
 }

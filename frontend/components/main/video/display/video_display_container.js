@@ -11,7 +11,7 @@ const msp = state => {
 const mdp = dispatch => {
     return {
         // retrieveVideo: (id) => dispatch(retrieveVideo(id)),
-        retrieveVideos: () => dispatch(retrieveVideos())
+        // retrieveVideos: () => dispatch(retrieveVideos())
     }
 }
 

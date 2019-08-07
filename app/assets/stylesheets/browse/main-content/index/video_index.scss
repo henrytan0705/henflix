@@ -1,15 +1,29 @@
 .video-index {
-    display: flex;
-    position: relative;
-    top: 2.5vh;
-    left: 2.5vw;
-    height: 30vh;
-    width: 95vw;
+    // display: flex;
+    display: inline-block;
+    // grid-template-columns: 20% 20% 20% 20% 20%;
+    // display: grid;
+    // position: relative;
+    // top: 2.5vh;
+    // left: 2.5vw;
+    height: 25vh;
+    // width: 100vw;
+    // margin: 0 10px;
+    // background-color: red;
+    border: 1px solid white;
 }
 
 .scrolling-wrapper {
-   overflow-x: scroll;
-   overflow-y: hidden;
-   white-space: nowrap;
-   -webkit-overflow-scrolling: touch;
+//    overflow-x: hidden;
+//    overflow-y: hidden;
+//    white-space: nowrap;
+//    -webkit-overflow-scrolling: touch;
+}
+
+.index-size-limit {
+    display: inline-block;
+    border: 1px solid green;
+    // background-color: green;
+    height: 30vh;
+    width: 100vw;
 }

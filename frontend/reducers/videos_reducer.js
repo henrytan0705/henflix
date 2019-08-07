@@ -6,8 +6,8 @@ const videosReducer = (state = {}, action) => {
     switch(action.type){
         case RECEIVE_VIDEOS:
             return merge({}, action.videos);
-        case RECEIVE_VIDEO:
-            return merge({}, { [action.video.id]: action.video});
+        // case RECEIVE_VIDEO:
+            // return merge({}, { [action.video.id]: action.video});
         // case RECEIVE_GENRE_VIDEOS:
         //     return merge({}, state, action.videos);
         default:

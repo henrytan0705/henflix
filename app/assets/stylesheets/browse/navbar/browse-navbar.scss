@@ -82,6 +82,8 @@ ul li ul.dropdown li{
     position: sticky;
     top: 0;
     background-color: black;
+    width: 100vw;
+    // overflow: hidden;
 }
 
 .signed-in-navbar button {

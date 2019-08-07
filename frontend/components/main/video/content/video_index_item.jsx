@@ -1,4 +1,6 @@
 import React from 'react';
+// import VideoPlayer from ''
+import { Link } from 'react-router-dom';
 
 class VideoIndexItem extends React.Component {
     constructor(props) {
@@ -8,11 +10,7 @@ class VideoIndexItem extends React.Component {
         this.state = {
             hover: false 
         }
-    }
-
-    componentDidMount(){
-        // this.props.retrieveVideo(2);
-        // this.props.retrieveVideos();
+        this.setVideoToState = this.setVideoToState.bind(this);
     }
 
     playTrailer(){
@@ -21,7 +19,7 @@ class VideoIndexItem extends React.Component {
                 this.setState({ hover: true });
             }
             .bind(this),
-            250
+            
         );
     }
 
@@ -35,6 +33,11 @@ class VideoIndexItem extends React.Component {
         );
     }
 
+    setVideoToState(id) {
+        this.props.retrieveVideo(id);
+    }
+    
+
     render(){   
         let video = this.props.video || {
             title: "",
@@ -45,36 +48,43 @@ class VideoIndexItem extends React.Component {
         }
 
         let content1 = this.state.hover === false ? (
+                <>
                 <img className="video-thumbnail"
                     src={video.photoUrl}
-                    onMouseOver={this.playTrailer}
-                    // onClick={this.playTrailer}
+                    // onMouseOver={this.playTrailer}
+                    onClick={this.playTrailer}
+                    // onClick={this.displayVideoDetails}
+                    // onClick={this.openVideoPlayer}
                 />
+                </>
             ) : (
                 <>
                     <video 
                         className="video-item" 
                         src={video.videoUrl} 
-                        // src="Users/henry/Desktop/VIDEOS/master_chef_junior.mp4"
                         autoPlay
-                        onMouseOut={this.showThumbnail}
-                        // onClick={this.showThumbnail}
+                        // onMouseOut={this.showThumbnail}
+                        onClick={this.showThumbnail}
+                        // onClick={this.openVideoPlayer}
                     >
                     </video>
 
-                    <div className="video-info">
-                        <h1>{video.title}</h1>
-                        <p className="video-description">{video.description}</p>
-                        <h1>{video.genre}</h1>
-                        <h1>{video.year}</h1>
-                    </div>
+                    <Link to="/watch" 
+                        onClick={this.setVideoToState(video.id)}
+                        className="display-play-button">
+                    </Link>
+
                 </>
             );
 
-        // debugger
+ 
         return (
-            <div className="video-index-item">
+            <div className="video-index-item "
+                onClick={this.displayDetails}>
+
                 {content1}
+                {/* <div className="display-video-details"></div> */}
+
             </div>
         )
     }

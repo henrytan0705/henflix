@@ -26,11 +26,13 @@ class VideoIndex extends React.Component {
         // }) 
 
         return (
-            <div className="video-index scrolling-wrapper"> 
-                {videoItems}
-                {/* {videoItems} */}
-                {/* {videoItems} */}
-                {/* {videoItems} */}
+            <div className="index-size-limit">
+                <div className="video-index scrolling-wrapper"> 
+                    {videoItems}
+                    {/* {videoItems} */}
+                    {/* {videoItems} */}
+                    {/* {videoItems} */}
+                </div>
             </div>
         )
     }

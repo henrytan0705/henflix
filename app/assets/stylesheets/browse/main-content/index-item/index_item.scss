@@ -1,12 +1,12 @@
 .video-index-item {
     // height: 200px;
     // width: 300px;
-    display: flex;
+    // display: flex;
     // background-color: yellow;
-    position: relative;
-    top: 20px;
-    left: 20px;
-    margin: 0px 15px;
+    // position: relative;
+    // top: 15px;
+    // left: 15px;
+    margin: 0px 2.5px;
     // width: 100vw;
     // height: 300px;
 }
@@ -18,10 +18,14 @@
     // -webkit-transition: width 2s, height 2s;
 }
 
-.video-thumbnail {
+.video {
     transition-delay: 2s;
-    height: 180px;
-    width: 300px;
+}
+
+.video-thumbnail {
+    // transition-delay: 2s;
+    height: 20vh;
+    width: 15vw;
     // -webkit-transition: width 2s, height 2s;
     // transition: width 2s, height 2s;
     // background-color: green;

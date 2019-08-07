@@ -1,6 +1,5 @@
 class Api::VideosController < ApplicationController
     def index
-        debugger
         @videos = Video.with_attached_photo.with_attached_video_url.all.includes(:genres)
         render :index
     end

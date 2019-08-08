@@ -82,9 +82,10 @@ ul li ul.dropdown li{
     align-items: center;
 }
 
-// .nav-bg {
-//     background-color: none;
-// }
+.bg {
+    background-color: #141414;
+    transition-duration: 1s;
+}
 
 // html:not([data-scroll='0']) {
 //     nav{

@@ -5,19 +5,34 @@ import { Search, Bell } from 'react-feather';
 class Navbar extends React.Component {
     constructor(props){
         super(props);
-        let yOffset = window.pageYOffset;
+        this.myRef = React.createRef();
+        this.addScrollListener = this.addScrollListener.bind(this);
+        this.state = {scrolled: false}
+    }
 
+    addScrollListener() {
+        // debugger
         window.addEventListener('scroll', () => {
+            let yOffset = window.pageYOffset;
             if (yOffset === 0) {
-                document.getElementsByTagName("nav")[0].style.backgroundColor = "none";
+                if (this.state.scrolled) this.setState({scrolled: false})
             } else {
-                document.getElementsByTagName("nav")[0].style.backgroundColor = "#141414";
+                if (!this.state.scrolled) this.setState({scrolled: true})
             }
         })
     }
 
+    componentDidMount() {
+        // debugger
+        if (this.props.url === "main"){
+            this.addScrollListener();
+        }
+    }
+
     render(){
         let display;
+        const hasBackground = this.state.scrolled ? ("bg"):("")
+        console.log(hasBackground)
         if(this.props.url === "splash") {
             display = (
                 <div className="splash-navbar">          
@@ -40,7 +55,7 @@ class Navbar extends React.Component {
             )
         } else if (this.props.url === "main"){
             display = (
-                <nav className="browse-navbar">
+                <nav className={`browse-navbar ${hasBackground}`}>
                     <Link className="browse-logo" to="/browse">
                         <img className="browse-logo-image" src={window.logo}/>
                     </Link>
@@ -96,7 +111,10 @@ class Navbar extends React.Component {
                 </nav>
             )
         }
-        
+
+    // if (this.props.url === "main"){
+    //     this.addScrollListener();
+    // }
         
     return (
         <>  

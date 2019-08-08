@@ -14,13 +14,18 @@ class VideoIndexItem extends React.Component {
     }
 
     playTrailer(){
-        setTimeout(
+        let playTrailer = setTimeout(
             function () {
                 this.setState({ hover: true });
             }
             .bind(this),
-            500
+            400
         );
+        
+        if(this.stopLoad) {
+           clearTimeout(playTrailer);
+        }
+
     }
 
     showThumbnail(){
@@ -29,14 +34,14 @@ class VideoIndexItem extends React.Component {
                 this.setState({ hover: false });
             }
             .bind(this),
-            500
+            300
         );
+        this.stopLoad = true;
     }
 
     setVideoToState(id) {
         this.props.retrieveVideo(id);
     }
-    
 
     render(){   
         let video = this.props.video || {
@@ -87,7 +92,6 @@ class VideoIndexItem extends React.Component {
                     className="video-thumbnail"
                     poster = { video.photoUrl }
                     onMouseOver={this.playTrailer}
-                    // onClick={this.playTrailer}
                     onMouseOut={this.showThumbnail}
                     >
                 </video >

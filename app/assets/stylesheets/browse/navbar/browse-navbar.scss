@@ -72,7 +72,7 @@ ul li ul.dropdown li{
 .browse-navbar {
     display: flex;
     color: white;
-    background-color:#141414;
+    // background-color:#141414;
     width: 100vw;
     position: fixed;
     top: 0;
@@ -81,6 +81,10 @@ ul li ul.dropdown li{
     height: 68px;
     align-items: center;
 }
+
+// .nav-bg {
+//     background-color: none;
+// }
 
 // html:not([data-scroll='0']) {
 //     nav{

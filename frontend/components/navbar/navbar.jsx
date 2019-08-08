@@ -5,6 +5,15 @@ import { Search, Bell } from 'react-feather';
 class Navbar extends React.Component {
     constructor(props){
         super(props);
+        let yOffset = window.pageYOffset;
+
+        window.addEventListener('scroll', () => {
+            if (yOffset === 0) {
+                document.getElementsByTagName("nav")[0].style.backgroundColor = "none";
+            } else {
+                document.getElementsByTagName("nav")[0].style.backgroundColor = "#141414";
+            }
+        })
     }
 
     render(){
@@ -16,7 +25,9 @@ class Navbar extends React.Component {
                         <img className="logo-image" src={window.logo}/>
                     </Link>
                 
-                    <Link className="sign-in-btn" to="/login">Sign In</Link>    
+                    <Link className="sign-in-btn" to="/login">
+                        Sign In
+                    </Link>    
                 </div>
             )
         } else if (this.props.url === "form") {
@@ -36,10 +47,10 @@ class Navbar extends React.Component {
 
                     <ul className="navbar-left-wrapper">
                         <li className="home-tab selected-tab"><Link className="tab" to="/browse">Home</Link></li>
-                        <li className="nav-tab"><Link className="tab">TV Shows</Link>   </li>
-                        <li className="nav-tab"><Link className="tab">Movies</Link></li>
-                        <li className="nav-tab"><Link className="tab">Recently Added</Link></li>
-                        <li className="nav-tab"><Link className="tab">My List</Link></li>
+                        <li className="nav-tab"><Link className="tab" to="/browse">TV Shows</Link>   </li>
+                        <li className="nav-tab"><Link className="tab" to="/browse">Movies</Link></li>
+                        <li className="nav-tab"><Link className="tab" to="/browse">Recently Added</Link></li>
+                        <li className="nav-tab"><Link className="tab" to="/browse">My List</Link></li>
                     </ul>
 
                     <div className="navbar-right-wrapper">
@@ -54,11 +65,11 @@ class Navbar extends React.Component {
                         </div>
 
                         <div className="nav-tab2">
-                            <Link className="nav-right" to="/kids">KIDS</Link>
+                            <Link className="nav-right" to="/browse">KIDS</Link>
                         </div>
 
                         <div className="nav-tab2">
-                            <Link className="nav-right" to="/subscribe">DVD</Link>
+                            <Link className="nav-right" to="/browse">DVD</Link>
                         </div>
 
                         <div className="nav-tab2">
@@ -74,8 +85,8 @@ class Navbar extends React.Component {
                                 <li>
                                     <i className="fas fa-user-circle"></i>
                                     <ul className="dropdown">
-                                        <li className=""><Link className="nav-right-font">Account</Link></li>
-                                        <li className=""><Link className="nav-right-font">Help Center</Link></li>
+                                        <li className=""><Link className="nav-right-font" to="/browse">Account</Link></li>
+                                        <li className=""><Link className="nav-right-font" to="/browse">Help Center</Link></li>
                                         <li className="" onClick={this.props.logout}><Link className="nav-right-font" to="/">Sign out of Henflix</Link></li>
                                     </ul>
                                 </li>
@@ -85,7 +96,8 @@ class Navbar extends React.Component {
                 </nav>
             )
         }
-
+        
+        
     return (
         <>  
             {display}

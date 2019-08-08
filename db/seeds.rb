@@ -9,6 +9,7 @@
 User.destroy_all
 Video.destroy_all
 Genre.destroy_all
+VideoGenre.destroy_all
 
 User.create!(email: "henry@gmail.com", password:"asdf1234")
 User.create!(email: "danieldog@gmail.com", password:"asdf1234")
@@ -52,35 +53,35 @@ tasty.photo.attach(io: tasty_photo, filename:"tasty.jpg")
 tasty.video_url.attach(io: tasty_video, filename:"tasty.mp4")
 
 
-Video.create!(title:"", description:"", year:"")
-EzDownload.open("")
-EzDownload.open("")
-.photo.attach(io:  , filename:"")
-.video_url.attach(io; "")
+# Video.create!(title:"", description:"", year:"")
+# EzDownload.open("")
+# EzDownload.open("")
+# .photo.attach(io:  , filename:"")
+# .video_url.attach(io; "")
 
-Video.create!(title:"", description:"", year:"")
-EzDownload.open("")
-EzDownload.open("")
-.photo.attach(io:  , filename:"")
-.video_url.attach(io; "")
+# Video.create!(title:"", description:"", year:"")
+# EzDownload.open("")
+# EzDownload.open("")
+# .photo.attach(io:  , filename:"")
+# .video_url.attach(io; "")
 
-Video.create!(title:"", description:"", year:"")
-EzDownload.open("")
-EzDownload.open("")
-.photo.attach(io:  , filename:"")
-.video_url.attach(io; "")
+# Video.create!(title:"", description:"", year:"")
+# EzDownload.open("")
+# EzDownload.open("")
+# .photo.attach(io:  , filename:"")
+# .video_url.attach(io; "")
 
-Video.create!(title:"", description:"", year:"")
-EzDownload.open("")
-EzDownload.open("")
-.photo.attach(io:  , filename:"")
-.video_url.attach(io; "")
+# Video.create!(title:"", description:"", year:"")
+# EzDownload.open("")
+# EzDownload.open("")
+# .photo.attach(io:  , filename:"")
+# .video_url.attach(io; "")
 
-Video.create!(title:"", description:"", year:"")
-EzDownload.open("")
-EzDownload.open("")
-.photo.attach(io:  , filename:"")
-.video_url.attach(io; "")
+# Video.create!(title:"", description:"", year:"")
+# EzDownload.open("")
+# EzDownload.open("")
+# .photo.attach(io:  , filename:"")
+# .video_url.attach(io; "")
 
 
 
@@ -88,7 +89,7 @@ EzDownload.open("")
 # trending = Genre.create!(genre:"Trending")
 animation = Genre.create!(genre:"Animation")
 food = Genre.create!(genre:"Food")
-documentaries = Genre.create!(genre: "Documentary")
+# documentaries = Genre.create!(genre: "Documentary")
 # custom= Genre.create!(genre:"Custom")
 
 # trending = Genre.create!(genre:"Trending")

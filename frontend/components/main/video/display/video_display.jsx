@@ -29,20 +29,20 @@ class VideoDisplay extends React.Component {
                     {/* <p>{video.description}</p> */}
                     {/* <h2>{video.year}</h2> */}
 
-                    {/* <video 
+                    <video 
                         className="display-video" 
                         src={video.videoUrl} 
                         autoPlay
                         // onKeyPress={this.togglePlay}
                         // ref="featureRef"
-                    >  */}
-                    {/* </video>x */}
+                    > 
+                    </video>
                     
-                    <video 
+                    {/* <video 
                         className="display-video" 
                         src={video.videoUrl} 
                     > 
-                    </video>
+                    </video> */}
                 </div>
             </div>
         )

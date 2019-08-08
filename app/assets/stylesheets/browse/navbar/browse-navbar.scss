@@ -33,7 +33,7 @@ ul li a{
 ul li ul.dropdown{
     min-width: 125px; /* Set width of the dropdown */
     // background: #f2f2f2;
-    background: white;
+    // background: white;
     display: none;
     position: absolute;
     z-index: 999;
@@ -51,6 +51,7 @@ ul li:hover ul.dropdown{
     // right: 70px;
     // left: 80%;
     width: 100px;   
+    // transition
 }
 
 ul li ul.dropdown li{
@@ -174,6 +175,14 @@ li {
     padding-left: 15px;
     padding-right: 15px;
     // margin-top: 5px;
+}
+
+.nav-right-font {
+    font-size: 12px;
+}
+
+.nav-right-font:hover {
+    text-decoration: underline;
 }
 
 // .selected-tab {

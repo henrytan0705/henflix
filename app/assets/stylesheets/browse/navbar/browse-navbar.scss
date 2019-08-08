@@ -1,7 +1,7 @@
 .user-dropdown{
     padding: 0;
     list-style: none;
-    background: red;
+    // background: red;
     margin-right: 50px;
     color: white;
 }
@@ -16,28 +16,15 @@ ul li{
 ul li a{
     display: block;
     padding: 8px 25px;
-    // color: #333;
-    // color: #333;
     color: white;
     text-decoration: none;
 }
 
-// ul li a:hover{
-//     color: white;
-//     background: black;
-//     position: relative;
-//     z-index: 25;
-//     overflow: hidden;
-// }
-
 ul li ul.dropdown{
     min-width: 125px; /* Set width of the dropdown */
-    // background: #f2f2f2;
-    // background: white;
     display: none;
     position: absolute;
     z-index: 999;
-    // left: 50px;
     right: 100px;
     top: 50px;
 }
@@ -48,11 +35,20 @@ ul li:hover ul.dropdown{
     background-color: black;
     opacity: 0.75;
     position: fixed;
-    // right: 70px;
-    // left: 80%;
     width: 100px;   
-    // transition
 }
+
+// .dropwdown:hover {
+//     display: block; /* Display the dropdown */
+//     z-index: 25;
+//     background-color: black;
+//     opacity: 0.75;
+//     position: fixed;
+//     // right: 70px;
+//     // left: 80%;
+//     width: 100px;   
+//     // transition
+// }
 
 ul li ul.dropdown li{
     display: block;
@@ -61,6 +57,10 @@ ul li ul.dropdown li{
 .fa-user-circle {
     color:white;
     margin-top: 10px;
+    padding: 10px;
+    background-color:red;
+    position: relative;
+    bottom: 6px;
 }
 
 .user-dropdown{ 
@@ -68,36 +68,6 @@ ul li ul.dropdown li{
     padding-left: 10px;
     padding-right: 10px;
 }
-
-////////////////////////////
-
-// .browse-navbar {
-    // display: flex;
-    // justify-content: space-between;
-    // color: white;
-    // padding-left: 10px;
-    // padding-right: 20px;
-    // font-size: 20px;
-    // overflow: hidden;
-    // z-index: 20;
-    // position: sticky;
-    // top: 0;
-    // background-color: black;
-    // width: 100vw;
-
-// }
-
-// .signed-in-navbar button {
-//     border: 1px solid black;
-//     padding: 5px;
-//     // background: red;
-// }
-
-// .search-bar{
-//     border: 1px solid black;
-//     background-color: lightgrey;
-//     color: black;
-// }
 
 .browse-navbar {
     display: flex;
@@ -155,8 +125,6 @@ li {
 
 .navbar-right-wrapper {
     display: flex;
-    // justify-content: flex end;
-    // justify-content: space-between;
     align-items: center;
     position: absolute;
     right: 0;
@@ -164,17 +132,12 @@ li {
 }
 
 .nav-tab-2 {
-    // margin-left: 20px;
-    // z-index: 250;
-    // padding: 5px;
     background-color: red;
-    // padding: 10px;
 }
 
 .nav-right {
     padding-left: 15px;
     padding-right: 15px;
-    // margin-top: 5px;
 }
 
 .nav-right-font {

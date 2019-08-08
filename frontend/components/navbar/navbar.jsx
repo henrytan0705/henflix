@@ -74,9 +74,9 @@ class Navbar extends React.Component {
                                 <li>
                                     <i className="fas fa-user-circle"></i>
                                     <ul className="dropdown">
-                                        <li className=""><Link className="">Account</Link></li>
-                                        <li className=""><Link className="">Help Center</Link></li>
-                                        <li className="" onClick={this.props.logout}><Link className="" to="/">Sign out of Henflix</Link></li>
+                                        <li className=""><Link className="nav-right-font">Account</Link></li>
+                                        <li className=""><Link className="nav-right-font">Help Center</Link></li>
+                                        <li className="" onClick={this.props.logout}><Link className="nav-right-font" to="/">Sign out of Henflix</Link></li>
                                     </ul>
                                 </li>
                             </ul>

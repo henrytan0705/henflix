@@ -19,7 +19,7 @@ class VideoIndexItem extends React.Component {
                 this.setState({ hover: true });
             }
             .bind(this),
-            300
+            500
         );
     }
 
@@ -87,6 +87,8 @@ class VideoIndexItem extends React.Component {
                     className="video-thumbnail"
                     poster = { video.photoUrl }
                     onMouseOver={this.playTrailer}
+                    // onClick={this.playTrailer}
+                    onMouseOut={this.showThumbnail}
                     >
                 </video >
             </div>

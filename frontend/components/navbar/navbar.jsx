@@ -1,5 +1,6 @@
 import React from 'react'; 
 import { Link } from 'react-router-dom';
+import { Search, Bell } from 'react-feather';
 
 class Navbar extends React.Component {
     constructor(props){
@@ -28,7 +29,7 @@ class Navbar extends React.Component {
             )
         } else if (this.props.url === "main"){
             display = (
-                <div className="browse-navbar">
+                <nav className="browse-navbar">
                     <Link className="browse-logo" to="/browse">
                         <img className="browse-logo-image" src={window.logo}/>
                     </Link>
@@ -45,21 +46,25 @@ class Navbar extends React.Component {
                         <div className="nav-tab2">
                             <div className="search-box">
                                 <button className="search-tab">
-                                    <span className="search-icon"></span>
+                                    <span className="search-icon nav-right">
+                                        <Search />
+                                    </span>
                                 </button>
                             </div>
                         </div>
 
                         <div className="nav-tab2">
-                            <Link to="/kids">KIDS</Link>
+                            <Link className="nav-right" to="/kids">KIDS</Link>
                         </div>
 
                         <div className="nav-tab2">
-                            <Link to="/subscribe">DVD</Link>
+                            <Link className="nav-right" to="/subscribe">DVD</Link>
                         </div>
 
                         <div className="nav-tab2">
-
+                            <span className="nav-right">
+                                <Bell/>
+                            </span>
                         </div>
 
                         <div className="nav-tab2">
@@ -75,7 +80,7 @@ class Navbar extends React.Component {
                             </ul>
                         </div>
                     </div>
-                </div>
+                </nav>
             )
         }
 

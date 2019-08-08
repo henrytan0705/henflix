@@ -12,13 +12,16 @@ class VideoSection extends React.Component {
         return (
             <div className="video-section">
                 {/* {/* <h1 className="categories">Trending Now</h1> */}
-                {/* <VideoIndexContainer genre="Trending" videos={trendingVideos}/> */} */}
+                {/* <VideoIndexContainer genre="Trending" videos={trendingVideos}/> */}
                 
                 <h1 className="categories">Animations</h1>
                 <VideoIndexContainer genre="Animation" videos={animationVideos}/>  
 
                 <h1 className="categories">Food/Horror</h1>
                 <VideoIndexContainer genre="Food" videos={foodVideos}/>
+                
+                <h1 className="categories">Animations</h1>
+                <VideoIndexContainer genre="Animation" videos={animationVideos}/>  
 
             </div>
         )

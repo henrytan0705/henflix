@@ -1,23 +1,10 @@
 .video-index {
-    // display: flex;
-    // margin-right:200px;
-    // grid-template-columns: 20% 20% 20% 20% 20%;
-    // display: grid;
-    // position: relative;
-    // top: 2.5vh;
-    // left: 2.5vw;
-    // overflow: scroll;
-    // margin: 0 10px;
-    // background-color: red;
-    // position: relative;
-    // z-index: 300;
-    // overflow-x: scroll;
-    // overflow-y: hidden;
     display: block;
     height: 25vh;
     width: 100vw;
     // border: 1px solid white;
-    overflow-x: scroll;
+    margin-left: 2.5vw;
+    // overflow-x: scroll;
     white-space: nowrap;
     position: relative;
     top: 2.3vh;

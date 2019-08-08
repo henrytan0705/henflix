@@ -1,7 +1,7 @@
 .user-dropdown{
     padding: 0;
     list-style: none;
-    background: blue;
+    background: red;
     margin-right: 50px;
     color: white;
 }
@@ -37,21 +37,20 @@ ul li ul.dropdown{
     display: none;
     position: absolute;
     z-index: 999;
-    left: 0;
-    top: 100px;
+    // left: 50px;
+    right: 100px;
+    top: 50px;
 }
 
 ul li:hover ul.dropdown{
     display: block; /* Display the dropdown */
-    position: fixed;
     z-index: 25;
-    background-color: red;
-    // right: 300px;
-    // overflow: hidden;
-    // left: 50px;
-    // margin-right: 100px;
-    right: 70px;
-    left: 80%;
+    background-color: black;
+    opacity: 0.75;
+    position: fixed;
+    // right: 70px;
+    // left: 80%;
+    width: 100px;
 }
 
 ul li ul.dropdown li{
@@ -102,7 +101,7 @@ ul li ul.dropdown li{
 .browse-navbar {
     display: flex;
     color: white;
-    background-color: black;
+    background-color:#141414;
     width: 100vw;
     position: fixed;
     top: 0;
@@ -111,6 +110,26 @@ ul li ul.dropdown li{
     height: 68px;
     align-items: center;
 }
+
+// html:not([data-scroll='0']) {
+//     nav{
+//         // background-color: #141414;
+//          display: flex;
+//     color: white;
+//     // background-color:#141414;
+//     width: 100vw;
+//     position: fixed;
+//     top: 0;
+//     z-index: 200;
+//     font-size: 14px;
+//     height: 68px;
+//     align-items: center;
+//     }
+// }
+
+// nav:not([data-scroll='50']) {
+//     background-color:#141414;
+// }
 
 .browse-logo-image {
     height: 30px;
@@ -137,10 +156,10 @@ li {
     display: flex;
     // justify-content: flex end;
     // justify-content: space-between;
+    align-items: center;
     position: absolute;
     right: 0;
     margin-right: 30px;
-
 }
 
 .nav-tab-2 {
@@ -148,7 +167,15 @@ li {
     // z-index: 250;
     // padding: 5px;
     background-color: red;
+    // padding: 10px;
 }
+
+.nav-right {
+    padding-left: 15px;
+    padding-right: 15px;
+    // margin-top: 5px;
+}
+
 // .selected-tab {
     // font-weight: 700;
 // }

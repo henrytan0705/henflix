@@ -87,6 +87,11 @@ ul li ul.dropdown li{
     transition-duration: 1s;
 }
 
+.bg-none {
+    background-color: none;
+    transition-duration: 1s;
+}
+
 // html:not([data-scroll='0']) {
 //     nav{
 //         // background-color: #141414;

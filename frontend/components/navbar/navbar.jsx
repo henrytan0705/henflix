@@ -5,13 +5,11 @@ import { Search, Bell } from 'react-feather';
 class Navbar extends React.Component {
     constructor(props){
         super(props);
-        this.myRef = React.createRef();
-        this.addScrollListener = this.addScrollListener.bind(this);
         this.state = {scrolled: false}
+        this.addScrollListener = this.addScrollListener.bind(this);
     }
 
     addScrollListener() {
-        // debugger
         window.addEventListener('scroll', () => {
             let yOffset = window.pageYOffset;
             if (yOffset === 0) {
@@ -23,7 +21,6 @@ class Navbar extends React.Component {
     }
 
     componentDidMount() {
-        // debugger
         if (this.props.url === "main"){
             this.addScrollListener();
         }
@@ -31,8 +28,8 @@ class Navbar extends React.Component {
 
     render(){
         let display;
-        const hasBackground = this.state.scrolled ? ("bg"):("")
-        console.log(hasBackground)
+        const hasBackground = this.state.scrolled ? "bg" : "bg-none";
+
         if(this.props.url === "splash") {
             display = (
                 <div className="splash-navbar">          

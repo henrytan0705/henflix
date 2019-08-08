@@ -5,27 +5,22 @@ import { PlayCircle } from 'react-feather';
 class VideoIndexItem extends React.Component {
     constructor(props) {
         super(props);
-        this.playTrailer = this.playTrailer.bind(this);
-        this.showThumbnail = this.showThumbnail.bind(this);
         this.state = {
             hover: false 
         }
+        this.playTrailer = this.playTrailer.bind(this);
+        this.showThumbnail = this.showThumbnail.bind(this);
         this.setVideoToState = this.setVideoToState.bind(this);
     }
 
     playTrailer(){
-        let playTrailer = setTimeout(
+        this.playId = setTimeout(
             function () {
                 this.setState({ hover: true });
             }
             .bind(this),
-            400
-        );
-        
-        if(this.stopLoad) {
-           clearTimeout(playTrailer);
-        }
-
+            500
+        );  
     }
 
     showThumbnail(){
@@ -34,9 +29,10 @@ class VideoIndexItem extends React.Component {
                 this.setState({ hover: false });
             }
             .bind(this),
-            300
+            200
         );
-        this.stopLoad = true;
+        
+        clearTimeout(this.playId)
     }
 
     setVideoToState(id) {
@@ -53,37 +49,6 @@ class VideoIndexItem extends React.Component {
         }
 
         let path = `/watch/${video.id}`;
-
-        // let content1 = this.state.hover === false ? (
-        //         <div className="thumbnail-position">
-        //             <img className="video-thumbnail"
-        //                 src={video.photoUrl}
-        //                 onMouseOver={this.playTrailer}
-        //                 // onClick={this.playTrailer}
-        //                 // onClick={this.displayVideoDetails}
-        //             />
-        //         </div>
-        //     ) : (
-        //         <>
-        //             <video 
-        //                 className="video-item" 
-        //                 poster={video.photoUrl}
-        //                 src={video.videoUrl} 
-        //                 // autoPlay
-        //                 onMouseOut={this.showThumbnail}
-        //                 // onClick={this.showThumbnail}
-        //             >
-        //             </video>
-
-        //             <Link to={path}
-        //                 onClick={this.setVideoToState(video.id)}
-        //                 className="display-play-button">
-        //                 <PlayCircle/>
-
-        //             </Link>
-
-        //         </>
-        //     );
 
         let content1 =
             this.state.hover === false ? (
@@ -110,7 +75,6 @@ class VideoIndexItem extends React.Component {
                     onClick={this.setVideoToState(video.id)}
                     className="display-play-button">
                     <PlayCircle />
-
                 </Link>
 
             </>

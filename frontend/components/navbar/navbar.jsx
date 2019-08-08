@@ -62,9 +62,11 @@ class Navbar extends React.Component {
                         </div>
 
                         <div className="nav-tab2">
-                            <span className="nav-right">
-                                <Bell/>
-                            </span>
+                            <button>
+                                <span className="nav-right">
+                                    <Bell/>
+                                </span>
+                            </button>
                         </div>
 
                         <div className="nav-tab2">

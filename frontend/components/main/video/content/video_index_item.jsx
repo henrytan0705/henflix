@@ -19,7 +19,7 @@ class VideoIndexItem extends React.Component {
                 this.setState({ hover: true });
             }
             .bind(this),
-            
+            300
         );
     }
 
@@ -29,7 +29,7 @@ class VideoIndexItem extends React.Component {
                 this.setState({ hover: false });
             }
             .bind(this),
-            250
+            500
         );
     }
 
@@ -49,41 +49,69 @@ class VideoIndexItem extends React.Component {
 
         let path = `/watch/${video.id}`;
 
-        let content1 = this.state.hover === false ? (
-                <div className="thumbnail-position">
-                    <img className="video-thumbnail"
-                        src={video.photoUrl}
-                        // onMouseOver={this.playTrailer}
-                        onClick={this.playTrailer}
-                        // onClick={this.displayVideoDetails}
-                        // onClick={this.openVideoPlayer}
-                    />
-                </div>
+        // let content1 = this.state.hover === false ? (
+        //         <div className="thumbnail-position">
+        //             <img className="video-thumbnail"
+        //                 src={video.photoUrl}
+        //                 onMouseOver={this.playTrailer}
+        //                 // onClick={this.playTrailer}
+        //                 // onClick={this.displayVideoDetails}
+        //             />
+        //         </div>
+        //     ) : (
+        //         <>
+        //             <video 
+        //                 className="video-item" 
+        //                 poster={video.photoUrl}
+        //                 src={video.videoUrl} 
+        //                 // autoPlay
+        //                 onMouseOut={this.showThumbnail}
+        //                 // onClick={this.showThumbnail}
+        //             >
+        //             </video>
+
+        //             <Link to={path}
+        //                 onClick={this.setVideoToState(video.id)}
+        //                 className="display-play-button">
+        //                 <PlayCircle/>
+
+        //             </Link>
+
+        //         </>
+        //     );
+
+        let content1 =
+            this.state.hover === false ? (
+            <div className="thumbnail-position">
+                <video
+                    className="video-thumbnail"
+                    poster = { video.photoUrl }
+                    onMouseOver={this.playTrailer}
+                    >
+                </video >
+            </div>
             ) : (
                 <>
-                    <video 
-                        className="video-item" 
-                        src={video.videoUrl} 
-                        autoPlay
-                        // onMouseOut={this.showThumbnail}
-                        onClick={this.showThumbnail}
-                        // onClick={this.openVideoPlayer}
-                    >
-                    </video>
+                <video
+                    className="video-item"
+                    src={video.videoUrl}
+                    onMouseOut = { this.showThumbnail }
+                    autoPlay
+                >
+                </video >
 
-                    <Link to={path}
-                        onClick={this.setVideoToState(video.id)}
-                        className="display-play-button">
-                        <PlayCircle/>
+                <Link to={path}
+                    onClick={this.setVideoToState(video.id)}
+                    className="display-play-button">
+                    <PlayCircle />
 
-                    </Link>
+                </Link>
 
-                </>
+            </>
             );
-
  
         return (
-            <div className="video-index-item "
+            <div className="video-index-item tabindex='0'"
                 // onClick={this.displayDetails}
             >
 

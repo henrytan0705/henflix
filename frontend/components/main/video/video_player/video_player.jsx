@@ -24,7 +24,10 @@ class VideoPlayer extends React.Component {
                 </video>
 
                 <div className="video-controls">
-                    
+                    <div className="play-button"></div>
+                    <div className="exit-button"></div>
+                    <div className="progress-bar"></div>
+                    <div className="full-screen"></div>
                 </div> 
             </div>
         )

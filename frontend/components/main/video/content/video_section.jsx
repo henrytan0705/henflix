@@ -4,10 +4,11 @@ import VideoIndexContainer from './video_index_container'
 class VideoSection extends React.Component {
     render() {
         let videosArray = Object.values(this.props.videos);
-        // let trendingVideos = videosArray.filter(video => video.genre === "Trending")
+
         let animationVideos = videosArray.filter(video => video.genre === "Animation");
-        // let animationVideos = videosArray.filter(video => video.genres.includes("Trending"));
         let foodVideos = videosArray.filter(video => video.genre === "Food");
+        let liveActionVideos = videosArray.filter(vider => video.genre === "Live Action");
+        let educationalVideos = videos.videosArray.filter(video => video.genre === "Educational")
 
         return (
             <div className="video-section">

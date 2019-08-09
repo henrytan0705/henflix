@@ -5,7 +5,7 @@
     // margin-left: 0.5vw;
     margin-right: 0.2vw;
     overflow: hidden;
-    transition-duration: 0.5s;
+    transition-duration: 0.8s;
     // border: 1px solid red;
 }
 
@@ -13,7 +13,7 @@
     height: 100%;
     width: 20vw;
     // background: black;
-    transition-duration: 1s;
+    transition-duration: 0.8s;
 }
 
 .video-item { //video
@@ -24,27 +24,20 @@
 }
 
 .display-play-button {
-    // display: none;
     display: block;
     width: 20px;
     height: 20px;
-    // background-color:red;
     position: relative;
     z-index: 50;
-    // bottom: 130px;
     bottom: 12vh;
     left: 0.5vw;
 }
 
 .thumbnail-position {
     display: block;
-    // border: 1px solid yellow;
-    // position: relative;
-    // top: 0px;
     height: 25vh;
     width: 100%;
-    // margin: 0 10px;
-    // background-color: black;
+
 }
 
 .video-thumbnail { //video 
@@ -64,7 +57,8 @@
     // border: 1px solid blue;
     height: 100%;
     width: 20vw;
-    transition-duration: 1s;
+    // transition-duration: 0.5s;
+    transition-duration: 0.8s;
 }
 
 

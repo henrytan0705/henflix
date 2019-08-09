@@ -29,7 +29,7 @@ class VideoIndex extends React.Component {
             <div className="index-size-limit">
                 <div className="video-index scrolling-wrapper"> 
                     {videoItems}
-                    {videoItems}
+                    {/* {videoItems} */}
                     {/* {videoItems} */}
                     {/* {videoItems} */}
                 </div>

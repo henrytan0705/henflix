@@ -86,7 +86,7 @@ chick_hatching_video = EzDownload.open("https://active-storage-aa-seed.s3.amazon
 chick_hatching.photo.attach(io: chick_hatching_photo , filename:"chick_hatching.jpg")
 chick_hatching.video_url.attach(io: chick_hatching_video, filename:"chick_hatching.mp4")
 
-tasty_2 = Video.create!(title:"" , description:"", year:"")
+tasty_2 = Video.create!(title:"Homemade Chicken Tikka Masala" , description:"Homemade Chicken Tikka Masala Recipe", year:"2017")
 tasty_2_photo = EzDownload.open("https://active-storage-aa-seed.s3.amazonaws.com/homemade_chicken_tikka_masala.jpg")
 tasty_2_video = EzDownload.open("https://active-storage-aa-seed.s3.amazonaws.com/homemade_chicken_tikka_masala.mp4")
 tasty_2.photo.attach(io: tasty_2_photo, filename:"tasty_2.jpg")

@@ -7,8 +7,8 @@ class VideoSection extends React.Component {
 
         let animationVideos = videosArray.filter(video => video.genre === "Animation");
         let foodVideos = videosArray.filter(video => video.genre === "Food");
-        let liveActionVideos = videosArray.filter(vider => video.genre === "Live Action");
-        let educationalVideos = videos.videosArray.filter(video => video.genre === "Educational")
+        let liveActionVideos = videosArray.filter(video => video.genre === "Live Action");
+        let educationalVideos = videosArray.filter(video => video.genre === "Educational")
 
         return (
             <div className="video-section">
@@ -22,10 +22,10 @@ class VideoSection extends React.Component {
                 <VideoIndexContainer genre="Food" videos={foodVideos}/>
                 
                 <h1 className="categories">Live Action</h1>
-                <VideoIndexContainer genre="Animation" videos={liveActionVideos}/>  
+                <VideoIndexContainer genre="Live Action" videos={liveActionVideos}/>  
 
                 <h1 className="categories">Educational</h1>
-                <VideoIndexContainer genre="Food" videos={educationalVideos}/>
+                <VideoIndexContainer genre="Educational" videos={educationalVideos}/>
 
             </div>
         )

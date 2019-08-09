@@ -19,7 +19,7 @@ class VideoIndexItem extends React.Component {
                 this.setState({ hover: true });
             }
             .bind(this),
-            500
+            750
         );  
     }
 
@@ -29,7 +29,7 @@ class VideoIndexItem extends React.Component {
                 this.setState({ hover: false });
             }
             .bind(this),
-            300
+            400
         );
         
         clearTimeout(this.playId)

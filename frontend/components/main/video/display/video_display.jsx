@@ -31,8 +31,8 @@ class VideoDisplay extends React.Component {
 
                     <video 
                         className="display-video" 
-                        src={video.videoUrl} 
-                        autoPlay
+                        // src={video.videoUrl} 
+                        // autoPlay
                         // onKeyPress={this.togglePlay}
                         // ref="featureRef"
                     > 

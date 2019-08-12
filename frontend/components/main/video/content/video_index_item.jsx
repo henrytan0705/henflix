@@ -123,8 +123,8 @@ class VideoIndexItem extends React.Component {
         
         return (
             <div className="video-index-item tabindex='0'"
-                // onMouseOver={this.playTrailer}
-                // onMouseLeave={this.showThumbnail}
+                onMouseOver={this.playTrailer}
+                onMouseLeave={this.showThumbnail}
                 // onClick={this.showDescription}
             >
                 {content1}

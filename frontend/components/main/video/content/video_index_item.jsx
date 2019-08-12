@@ -14,7 +14,7 @@ class VideoIndexItem extends React.Component {
         this.setVideoToState = this.setVideoToState.bind(this);
         this.showDescription = this.showDescription.bind(this);
         this.description = null;
-        this.vidRef = React.createRef
+        this.vidRef = React.createRef();
     }
 
     playTrailer(){
@@ -28,8 +28,6 @@ class VideoIndexItem extends React.Component {
     }
 
     showThumbnail(){
-        let vid = document.querySelector("video");
-        vid.pause();
         clearTimeout(this.playId);
         this.setState({hover: false});
     }
@@ -55,10 +53,7 @@ class VideoIndexItem extends React.Component {
 
         let content1 =
             this.state.hover === false ? (
-            <div className="thumbnail-position"
-                // onMouseOver={this.playTrailer}
-                // onMouseOut={this.showThumbnail}
-                >
+            <div className="thumbnail-position">
                 <video
                     className="video-thumbnail"
                     poster = { video.photoUrl }
@@ -70,60 +65,23 @@ class VideoIndexItem extends React.Component {
                 <video
                     className="video-item"
                     src={video.videoUrl}
-                    // onMouseLeave={this.showThumbnail}
                     autoPlay
                 >
                 </video >
 
                 <Link to={path}
-                    // onClick={this.setVideoToState(video.id)}
+                    onClick={this.setVideoToState(video.id)}
                     className="display-play-button">
                     <PlayCircle />
                 </Link>
 
             </>
             );
-
-
-//////////////////
-
-        // <div className="thumbnail-position"
-        //         // onMouseOver={this.playTrailer}
-        //         // onMouseOut={this.showThumbnail}
-        // >
-        //     <video
-        //         className="video-thumbnail"
-        //         poster = { video.photoUrl }
-        //         >
-        //     </video >
-        // </div>
-
-
-
-        // let vid = document.querySelector("video");
-
-        // vid.addEventListener("mouseover", () => {
-        //         // vid.classList.remove("video-thumbnail")
-        //         // vid.classList.add("video-item")
-        //         this.play();
-        //     }
-        // );
-
-        // vid.addEventListener("mouseleave", () => {
-        //         // vid.classList.remove("video-thumbnail")
-        //         // vid.classList.add("video-item")
-        //         this.pause();
-        //     }
-        // );
-
-
-//////////////////
-
        
-        
+     
         return (
             <div className="video-index-item tabindex='0'"
-                onMouseOver={this.playTrailer}
+                onMouseEnter={this.playTrailer}
                 onMouseLeave={this.showThumbnail}
                 // onClick={this.showDescription}
             >

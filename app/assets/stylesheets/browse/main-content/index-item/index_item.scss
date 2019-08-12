@@ -5,7 +5,7 @@
     // margin-left: 0.5vw;
     margin-right: 0.2vw;
     overflow: hidden;
-    transition-duration: 0.4s;
+    transition-duration: 0.3s;
     // transition-timing-function: ease-in;
     // transition-timing-function: ease-out;
     // border: 1px solid red;
@@ -16,8 +16,8 @@
     height: 100%;
     width: 20vw;
     background: black;
-    transition-duration: 0.4s;
-    transition-timing-function: ease-in;
+    transition-duration: 0.3s;
+    // transition-timing-function: ease-in;
 }
 
 .video-item { //video
@@ -51,7 +51,7 @@
     // border: 1px solid blue;
     height: 80%;
     width: 15vw;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
 }
 
 .video-thumbnail:hover {

@@ -12,6 +12,7 @@ class VideoIndexItem extends React.Component {
         this.playTrailer = this.playTrailer.bind(this);
         this.showThumbnail = this.showThumbnail.bind(this);
         this.setVideoToState = this.setVideoToState.bind(this);
+        this.showDescription = this.showDescription.bind(this);
         this.description = null;
     }
 
@@ -31,7 +32,7 @@ class VideoIndexItem extends React.Component {
                 this.setState({ hover: false });
             }
             .bind(this),
-            300
+            200
         );
         
         clearTimeout(this.playId);
@@ -42,6 +43,7 @@ class VideoIndexItem extends React.Component {
     }
 
     showDescription() {
+        // debugger
         this.description = <VideoDescriptionContainer video={this.props.video}/>
     }
 
@@ -60,14 +62,10 @@ class VideoIndexItem extends React.Component {
             this.state.hover === false ? (
             <div className="thumbnail-position"
                 onMouseOver={this.playTrailer}
-                // onMouseOut={this.showThumbnail}
                 >
                 <video
                     className="video-thumbnail"
                     poster = { video.photoUrl }
-                    // poster="https://i.ytimg.com/vi/PZheNUuK8jg/maxresdefault.jpg"
-                    // onMouseOver={this.playTrailer}
-                    // onMouseOut={this.showThumbnail}
                     >
                 </video >
             </div>
@@ -76,14 +74,11 @@ class VideoIndexItem extends React.Component {
                 <video
                     className="video-item"
                     src={video.videoUrl}
-                    // onMouseOut = { this.showThumbnail }
-                    // onClick={this.showDescription}
                     autoPlay
                 >
                 </video >
 
                 <Link to={path}
-                // <Link to="/"
                     onClick={this.setVideoToState(video.id)}
                     className="display-play-button">
                     <PlayCircle />
@@ -91,36 +86,18 @@ class VideoIndexItem extends React.Component {
 
             </>
             );
- 
-        // let vid = document.getElementsByClassName("video-thumbnail")[0];
 
-        // vid.addEventListener("mouseover", () => {
-        //     this.play();
-        // })
-
-        // vid.addEventListener("mouseout", () => {
-        //     this.pause();
-        // })
         
         return (
             <div className="video-index-item tabindex='0'"
                 // onMouseOver={this.playTrailer}
-                onMouseLeave={this.showThumbnail}
-                // onClick={this.displayDetails}
+                // onMouseLeave={this.showThumbnail}
+                onMouseOut={this.showThumbnail}
+                onClick={this.showDescription}
             >
                 {content1}
-                {/* <div className="display-video-details"> */}
-                    {/* <h1>{video.title}</h1> 
-                    <h1>{video.year}</h1> 
-                    <p>{video.description}</p> */}
 
-                    {/* <h1>Angry Birds</h1> 
-                    <h1>2019</h1> 
-                    <p>Movie description</p> */}
-
-                    {/* <VideoDescriptionContainer/> */}
                 {this.description}
-                {/* </div> */}
 
             </div>
         )

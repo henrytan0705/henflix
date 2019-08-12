@@ -1,7 +1,10 @@
 .display-video-details {
+    display: block;
     height: 300px;
-    width: 300px;
+    width: 100vw;
     background-color: green;
+
+    // z-index: 100;
 }
 
 .close-description-button {

@@ -23,7 +23,9 @@ class Main extends React.Component {
                 <NavbarMainContainer /> 
                 <div className="main-content">
                     <VideoDisplayContainer video={displayVideo[0]}/>
+                    {/* <VideoDisplayContainer /> */}
                     <VideoSection videos={this.props.videos}/>
+                    {/* <VideoSection/> */}
                 </div>
 
             </div>

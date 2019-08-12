@@ -25,13 +25,13 @@ class VideoIndexItem extends React.Component {
         );  
     }
 
-    showThumbnail(e){
+    showThumbnail(){
         setTimeout(
             function () {
                 this.setState({ hover: false });
             }
             .bind(this),
-            500
+            300
         );
         
         clearTimeout(this.playId);
@@ -50,7 +50,7 @@ class VideoIndexItem extends React.Component {
             title: "",
             description: "",
             year: "",
-            photo: "",
+            photoUrl: "",
             videoUrl: "", 
         }
 
@@ -59,12 +59,13 @@ class VideoIndexItem extends React.Component {
         let content1 =
             this.state.hover === false ? (
             <div className="thumbnail-position"
-                // onMouseOver={this.playTrailer}
+                onMouseOver={this.playTrailer}
                 // onMouseOut={this.showThumbnail}
                 >
                 <video
                     className="video-thumbnail"
                     poster = { video.photoUrl }
+                    // poster="https://i.ytimg.com/vi/PZheNUuK8jg/maxresdefault.jpg"
                     // onMouseOver={this.playTrailer}
                     // onMouseOut={this.showThumbnail}
                     >
@@ -82,6 +83,7 @@ class VideoIndexItem extends React.Component {
                 </video >
 
                 <Link to={path}
+                // <Link to="/"
                     onClick={this.setVideoToState(video.id)}
                     className="display-play-button">
                     <PlayCircle />
@@ -102,7 +104,7 @@ class VideoIndexItem extends React.Component {
         
         return (
             <div className="video-index-item tabindex='0'"
-                onMouseOver={this.playTrailer}
+                // onMouseOver={this.playTrailer}
                 onMouseLeave={this.showThumbnail}
                 // onClick={this.displayDetails}
             >

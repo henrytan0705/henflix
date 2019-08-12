@@ -17,15 +17,19 @@ class VideoSection extends React.Component {
                 
                 <h1 className="categories">Animations</h1>
                 <VideoIndexContainer genre="Animation" videos={animationVideos}/>  
+                {/* <VideoIndexContainer genre="Animation" />   */}
 
                 <h1 className="categories">Food/Horror</h1>
                 <VideoIndexContainer genre="Food" videos={foodVideos}/>
+                {/* <VideoIndexContainer genre="Food" /> */}
                 
                 <h1 className="categories">Live Action</h1>
                 <VideoIndexContainer genre="Live Action" videos={liveActionVideos}/>  
+                {/* <VideoIndexContainer genre="Live Action" />   */}
 
                 <h1 className="categories">Educational</h1>
                 <VideoIndexContainer genre="Educational" videos={educationalVideos}/>
+                {/* <VideoIndexContainer genre="Educational"/> */}
 
             </div>
         )

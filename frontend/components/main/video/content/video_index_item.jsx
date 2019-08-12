@@ -65,8 +65,8 @@ class VideoIndexItem extends React.Component {
                 <video
                     className="video-thumbnail"
                     poster = { video.photoUrl }
-                    onMouseOver={this.playTrailer}
-                    onMouseOut={this.showThumbnail}
+                    // onMouseOver={this.playTrailer}
+                    // onMouseOut={this.showThumbnail}
                     >
                 </video >
             </div>
@@ -102,6 +102,7 @@ class VideoIndexItem extends React.Component {
         
         return (
             <div className="video-index-item tabindex='0'"
+                onMouseOver={this.playTrailer}
                 onMouseLeave={this.showThumbnail}
                 // onClick={this.displayDetails}
             >

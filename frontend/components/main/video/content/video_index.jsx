@@ -18,19 +18,10 @@ class VideoIndex extends React.Component {
             return (<VideoIndexItemContainer key={idx} video={video} />)
         });
 
-        // let videoItems = Object.values(this.props.videos).map((video,idx) => {
-        //     if (video.genre === this.props.genre) {
-        //         // debugger
-        //         return (<VideoIndexItemContainer key={idx} video={video} genre={video.genre}/>)
-        //     }
-        // }) 
-
         return (
             <div className="index-size-limit">
                 <div className="video-index scrolling-wrapper"> 
                     {videoItems}
-                    {/* {videoItems} */}
-                    {/* {videoItems} */}
                     {/* {videoItems} */}
                 </div>
             </div>

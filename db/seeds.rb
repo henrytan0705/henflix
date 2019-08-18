@@ -25,7 +25,6 @@ video = EzDownload.open("https://active-storage-aa-seed.s3.amazonaws.com/angry_b
 angry_bird.photo.attach(io: photo, filename:"angry_birds_2.jpg")
 angry_bird.video_url.attach(io: video, filename:"angry_birds_2.mp4")
 
-
 rio = Video.create!(title:"Rio", description:"In Brazil, various exotic birds are smuggled out of the country. In Moose Lake, Minnesota, a crate with a male Spix's macaw hatchling falls out of a truck and is found by a little girl named Linda Gunderson, who names him Blu. Over the next 15 years,[7] Linda comes to own a bookstore. Highly domesticated and unable to fly because he is scared to, Blu is ridiculed frequently by the Canada geese that come by outside of Linda's bookstore.
 One day, ornithologist Túlio Monteiro invites Blu and Linda to Rio de Janeiro because Blu, who is the last known male of his species, needs to mate with the last known female macaw. Linda initially refuses, but later accepts and they fly to Rio. At Túlio's aviary, Blu meets Jewel, a fiercely independent Spix's macaw female longing to flee back to the wilderness. The macaws are captured by Fernando, an orphaned boy, and a sulphur-crested cockatoo named Nigel, both of whom work for a group of smugglers led by Marcel, who wants to leave the country as soon as possible to secure a black market deal regarding Blu and Jewel.
 While Fernando has second thoughts about his actions, Nigel tells the macaws that he desires to exact revenge on 'pretty birds' after his role on a television program had been ruined by one. However, because of Blu's familiarity with cages, they flee into the jungle. Fernando meets Linda and Túlio and helps them find the birds, while Blu and Jewel meet Rafael, a toco toucan, who offers to take them to his bulldog friend, Luiz, to remove their leg chain.", 
@@ -35,13 +34,11 @@ rio_video = EzDownload.open("https://active-storage-aa-seed.s3.amazonaws.com/rio
 rio.photo.attach(io: rio_photo, filename:"rio.jpg")
 rio.video_url.attach(io: rio_video, filename:"rio.mp4")
 
-
 master_chef_junior = Video.create!(title:"Master Chef Junior", description:"Children who love to cook get a chance to become a MasterChef.", year: "2018")
 master_chef_junior_photo = EzDownload.open("https://active-storage-aa-seed.s3.amazonaws.com/master_chef_junior.jpg")
 master_chef_junior_video = EzDownload.open("https://active-storage-aa-seed.s3.amazonaws.com/master_chef_junior.mp4")
 master_chef_junior.photo.attach(io: master_chef_junior_photo, filename:"master_chef_junior.jpg")
 master_chef_junior.video_url.attach(io: master_chef_junior_video, filename:"master_chef_junior.mp4")
-
 
 tasty = Video.create!(title:"Tasty - 7 Easy Chicken Dinners", description:"7 Easy Chicken Dinners", year:"2016")
 tasty_photo = EzDownload.open("https://active-storage-aa-seed.s3.amazonaws.com/tasty.jpg")

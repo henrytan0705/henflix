@@ -10,7 +10,7 @@ class Main extends React.Component {
 
     componentDidMount(){
         this.props.retrieveVideos();
-    }
+    }nh
 
     render() {
         if(!this.props.videos) return null;

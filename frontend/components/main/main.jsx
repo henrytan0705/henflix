@@ -10,12 +10,12 @@ class Main extends React.Component {
 
     componentDidMount(){
         this.props.retrieveVideos();
-    }nh
+    }
 
     render() {
         if(!this.props.videos) return null;
 
-        let videosArray = Object.values(this.props.videos)
+        let videosArray = Object.values(this.props.videos);
         let displayVideo = videosArray.filter(video => video.title === "The Angry Birds Movie 2");
 
         return(

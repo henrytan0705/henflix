@@ -48,7 +48,7 @@
     margin: 0;
     box-sizing: border-box;
     background-color: black;
-    // border: 1px solid blue;
+    border: 1px solid blue;
     height: 80%;
     width: 15vw;
     transition-duration: 0.5s;
@@ -58,7 +58,7 @@
     display: block;
     margin: 0;
     box-sizing: border-box;
-    // border: 1px solid blue;
+    border: 1px solid red;
     height: 100%;
     width: 20vw;
     transition-duration: 0.6s;
@@ -93,3 +93,8 @@
     // max-width: 300px;
     // color: white;
 // }
+
+.video-index-item-wrapper {
+    display: flex;
+    flex-direction: column;
+}

@@ -7,9 +7,16 @@ class VideoDescription extends React.Component {
         // this.content = null;
     }
 
+    componentDidMount() {
+        // this.props.retrieveVideo(this.props.id);
+    }
+
     render() {
+        // debugger
+        if (!this.props.video) return null;
+
         let video = this.props.video;
-        debugger
+        // debugger
         let content = (
             <>
                 <h1>{video.title}</h1>
@@ -17,8 +24,6 @@ class VideoDescription extends React.Component {
                 <p>{video.description}</p>
             </>
         )
-
-        if (!this.props.video) return null;
 
         return (
             <div className="display-video-details show-description">

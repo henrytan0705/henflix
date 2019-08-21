@@ -44,23 +44,27 @@ class VideoIndexItem extends React.Component {
 
     render(){   
         let video = this.props.video || {
+            id: "",
             title: "",
             description: "",
             year: "",
             photoUrl: "",
             videoUrl: "", 
         }
-
+        
         let path = `/watch/${video.id}`;
-
+        
         let content1 =
             this.state.hover === false ? (
             <div className="thumbnail-position">
                 <video
                     className="video-thumbnail"
+                    // src={video.videoUrl}
                     poster = { video.photoUrl }
+                    onClick={this.props.show(video)}
                     >
                 </video>
+                {/* <span className="description-container" onClick={this.props.show}></span> */}
             </div>
             ) : (
             <>
@@ -68,23 +72,27 @@ class VideoIndexItem extends React.Component {
                     className="video-item"
                     src={video.videoUrl}
                     autoPlay
+                    onClick={this.props.show(video)}
                 >
                 </video>
 
                 <Link to={path}
-                    onClick={this.setVideoToState(video.id)}
+                    onClick={this.setVideoToState(video)}
                     className="display-play-button">
                     <PlayCircle />
                 </Link>
 
+                {/* <span className="description-container" onClick={this.props.show}></span> */}
             </>
             );
-       
+
+        // debugger
      
         return (
             <div className="video-index-item tabindex='0'"
                 onMouseEnter={this.playTrailer}
                 onMouseLeave={this.showThumbnail}
+                // onClick={this.props.show}
                 // onClick={this.showDescription}
             >
                 {content1}

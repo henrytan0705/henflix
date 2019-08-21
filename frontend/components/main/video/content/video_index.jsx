@@ -17,11 +17,13 @@ class VideoIndex extends React.Component {
         // this.props.retrieveVideos();
     }
 
-    showDescription() {
-        
+    showDescription(video) {
         // debugger
-        this.description = <VideoDescriptionContainer/>
-        this.setState({showDescription: true});
+       return () => {
+           this.description = <VideoDescriptionContainer video={video}/>
+           this.setState({showDescription: true});
+           return;
+       }
     }
 
     closeDescription() {
@@ -38,8 +40,8 @@ class VideoIndex extends React.Component {
             // debugger
             return (
                 <>
-                    <VideoIndexItemContainer key={idx} video={video} />
-                    <span className="description-container" onClick={this.showDescription}></span>
+                    <VideoIndexItemContainer key={idx} video={video} show={this.showDescription}/>
+                    {/* <span className="description-container" onClick={this.showDescription}></span> */}
                 </>
             )
         });
@@ -54,13 +56,14 @@ class VideoIndex extends React.Component {
                     </div>
                     
                 </div>
-                    <div>
-                        {this.description}
-                        <button onClick={this.closeDescription}
-                            className="close-description-button">
-                            X
-                        </button>
-                    </div>
+
+                <div>
+                    {this.description}
+                    <button onClick={this.closeDescription}
+                        className="close-description-button">
+                        X
+                    </button>
+                </div>
             </>
         )
     }

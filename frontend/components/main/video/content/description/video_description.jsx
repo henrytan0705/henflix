@@ -8,15 +8,29 @@ class VideoDescription extends React.Component {
     }
 
     render() {
-        debugger
+        // debugger
+        let video = this.props.video;
+
+        if (!this.props.video) return null;
+
         return (
             <div className="display-video-details show-description">
-                {this.content}
-                <h1>DESCRIPTION AREA</h1>
-                <button onClick={this.props.closeDescription} 
-                    className="close-description-button">
-                    X
-                </button>
+                <div className="description-wrapper">
+                
+                    <div className="description-side">
+                        {this.content}
+                        <h1>DESCRIPTION AREA</h1>
+                    </div>
+
+                    <div className="description-video-container">
+                        <video className="description-video" 
+                                src={video.videoUrl} 
+                                autoPlay>
+                        </video>
+                    </div>
+
+                </div>
+                
             </div>
         )
     }

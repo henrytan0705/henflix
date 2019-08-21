@@ -3,8 +3,9 @@ import VideoDescription from './video_description.jsx';
 
 
 const msp = state => {
+    // debugger
     return {
-
+        video: Object.values(state.videoPlayer)[0]
     }
 }
 

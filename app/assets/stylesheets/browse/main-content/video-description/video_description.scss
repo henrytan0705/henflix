@@ -1,10 +1,12 @@
 .display-video-details {
+    // display: grid;
+    // grid-template-columns: 40% 60%;
     display: block;
-    height: 300px;
+    height: 425px;
     width: 100%;
     background-color: green;
-
     // z-index: 100;
+    overflow: hidden;
 }
 
 .close-description-button {
@@ -17,4 +19,21 @@
     width: 10px;
     height: 50px;
     background-color: red;
+}
+
+.description-side {
+    background-color: blue;
+}
+
+.description-wrapper {
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.description-video-container {
+    height: 425px;
+}
+
+.description-video {
+    height: 100%;
 }

@@ -18,12 +18,14 @@ class VideoIndex extends React.Component {
     }
 
     showDescription() {
-        debugger
-        this.description = <VideoDescriptionContainer video={this.props.video} close={this.closeDescription}/>
+        
+        // debugger
+        this.description = <VideoDescriptionContainer/>
         this.setState({showDescription: true});
     }
 
     closeDescription() {
+        // debugger
         this.description = null;
         this.setState({showDescription: false});
     }
@@ -54,6 +56,10 @@ class VideoIndex extends React.Component {
                 </div>
                     <div>
                         {this.description}
+                        <button onClick={this.closeDescription}
+                            className="close-description-button">
+                            X
+                        </button>
                     </div>
             </>
         )

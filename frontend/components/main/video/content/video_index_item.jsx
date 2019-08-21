@@ -58,8 +58,9 @@ class VideoIndexItem extends React.Component {
             this.state.hover === false ? (
             <div className="thumbnail-position">
                 <video
+                    id={`video-${video.id}`}
                     className="video-thumbnail"
-                    // src={video.videoUrl}
+                    src={video.videoUrl}
                     poster = { video.photoUrl }
                     onClick={this.props.show(video)}
                     >

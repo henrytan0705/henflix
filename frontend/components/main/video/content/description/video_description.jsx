@@ -16,12 +16,15 @@ class VideoDescription extends React.Component {
         if (!this.props.video) return null;
 
         let video = this.props.video;
+        let vid = document.getElementById(`video-${video.id}`);
         // debugger
+        
         let content = (
             <>
                 <h1>{video.title}</h1>
                 <h1>{video.year}</h1>
                 <p>{video.description}</p>
+                <h1>{`EST: ${Math.ceil(vid.duration/ 60)} m`}</h1>
             </>
         )
 
@@ -30,12 +33,12 @@ class VideoDescription extends React.Component {
                 <div className="description-wrapper">
                 
                     <div className="description-side">
-                        <h1>DESCRIPTION AREA</h1>
                         {content}
                     </div>
 
                     <div className="description-video-container">
                         <video className="description-video" 
+                                // id="abc"
                                 src={video.videoUrl} 
                                 // controls
                                 autoPlay>

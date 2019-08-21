@@ -2,9 +2,9 @@
     // display: grid;
     // grid-template-columns: 40% 60%;
     display: block;
-    height: 425px;
+    height: 62.5vh;
     width: 100%;
-    background-color: green;
+    background-color: black;
     // z-index: 100;
     overflow: hidden;
 }
@@ -27,13 +27,19 @@
 
 .description-wrapper {
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 35% 65%;
 }
 
 .description-video-container {
-    height: 425px;
+    height: 100%;
+    width: 100%;
 }
 
 .description-video {
     height: 100%;
+    width: 100%;
+}
+
+.description-side {
+    color: white;
 }

@@ -4,12 +4,19 @@ class VideoDescription extends React.Component {
 
     constructor(props) {
         super(props);
-        this.content = null;
+        // this.content = null;
     }
 
     render() {
-        // debugger
         let video = this.props.video;
+        debugger
+        let content = (
+            <>
+                <h1>{video.title}</h1>
+                <h1>{video.year}</h1>
+                <p>{video.description}</p>
+            </>
+        )
 
         if (!this.props.video) return null;
 
@@ -18,13 +25,14 @@ class VideoDescription extends React.Component {
                 <div className="description-wrapper">
                 
                     <div className="description-side">
-                        {this.content}
                         <h1>DESCRIPTION AREA</h1>
+                        {content}
                     </div>
 
                     <div className="description-video-container">
                         <video className="description-video" 
                                 src={video.videoUrl} 
+                                // controls
                                 autoPlay>
                         </video>
                     </div>

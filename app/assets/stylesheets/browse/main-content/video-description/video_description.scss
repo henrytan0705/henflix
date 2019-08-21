@@ -1,7 +1,7 @@
 .display-video-details {
     display: block;
     height: 300px;
-    width: 100vw;
+    width: 100%;
     background-color: green;
 
     // z-index: 100;
@@ -11,4 +11,10 @@
     background-color: red;
     padding: 4px;
     border-radius: 4px;
+}
+
+.description-container {
+    width: 10px;
+    height: 50px;
+    background-color: red;
 }

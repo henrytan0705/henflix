@@ -7,21 +7,13 @@ class VideoDescription extends React.Component {
         this.content = null;
     }
 
-    showDescription() {
-
-    }
-
-    hideDescription() {
-
-    }
-
     render() {
-        
+        debugger
         return (
             <div className="display-video-details show-description">
                 {this.content}
                 <h1>DESCRIPTION AREA</h1>
-                <button onClick={this.hideDescription} 
+                <button onClick={this.props.closeDescription} 
                     className="close-description-button">
                     X
                 </button>

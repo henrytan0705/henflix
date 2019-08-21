@@ -7,14 +7,15 @@ class VideoIndexItem extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            hover: false 
+            hover: false,
+            description: false
         }
         this.playTrailer = this.playTrailer.bind(this);
         this.showThumbnail = this.showThumbnail.bind(this);
         this.setVideoToState = this.setVideoToState.bind(this);
-        this.showDescription = this.showDescription.bind(this);
-        this.description = null;
-        this.vidRef = React.createRef();
+        // this.showDescription = this.showDescription.bind(this);
+        // this.description = null;
+        // this.vidRef = React.createRef();
     }
 
     playTrailer(){
@@ -36,9 +37,10 @@ class VideoIndexItem extends React.Component {
         this.props.retrieveVideo(id);
     }
 
-    showDescription() {
-        this.description = <VideoDescriptionContainer video={this.props.video}/>
-    }
+    // showDescription() {
+    //     this.description = <VideoDescriptionContainer video={this.props.video}/>
+    //     this.setState({description: true})
+    // }
 
     render(){   
         let video = this.props.video || {
@@ -58,7 +60,7 @@ class VideoIndexItem extends React.Component {
                     className="video-thumbnail"
                     poster = { video.photoUrl }
                     >
-                </video >
+                </video>
             </div>
             ) : (
             <>
@@ -67,7 +69,7 @@ class VideoIndexItem extends React.Component {
                     src={video.videoUrl}
                     autoPlay
                 >
-                </video >
+                </video>
 
                 <Link to={path}
                     onClick={this.setVideoToState(video.id)}
@@ -87,7 +89,7 @@ class VideoIndexItem extends React.Component {
             >
                 {content1}
             
-                {this.description}
+                {/* {this.description} */}
 
             </div>
         )

@@ -13,10 +13,11 @@ class VideoDescription extends React.Component {
 
     render() {
         // debugger
-        if (!this.props.video) return null;
+        if (this.props.video === undefined) return null;
 
         let video = this.props.video;
-        let vid = document.getElementById(`video-${video.id}`);
+        // let vid = document.getElementById(`video-${video.id}`);
+        // console.log(vid);
         // debugger
         
         let content = (
@@ -24,7 +25,7 @@ class VideoDescription extends React.Component {
                 <h1>{video.title}</h1>
                 <h1>{video.year}</h1>
                 <p>{video.description}</p>
-                <h1>{`EST: ${Math.ceil(vid.duration/ 60)} m`}</h1>
+                {/* <h1>{`EST: ${Math.ceil(vid.duration/ 60)} m`}</h1> */}
             </>
         )
 

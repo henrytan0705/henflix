@@ -39,10 +39,7 @@ class VideoIndex extends React.Component {
         let videoItems = Object.values(this.props.videos).map((video,idx) => {
             // debugger
             return (
-                <>
-                    <VideoIndexItemContainer key={idx} video={video} show={this.showDescription}/>
-                    {/* <span className="description-container" onClick={this.showDescription}></span> */}
-                </>
+                <VideoIndexItemContainer key={`${video}${idx}`} video={video} show={this.showDescription}/>
             )
         });
 

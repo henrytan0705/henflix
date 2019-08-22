@@ -20,7 +20,7 @@ class VideoIndex extends React.Component {
     showDescription(video) {
         // debugger
        return () => {
-           this.description = <VideoDescriptionContainer video={video}/>
+           this.description = <VideoDescriptionContainer key={`info-${video.id}`} video={video}/>
            this.setState({showDescription: true});
            return;
        }

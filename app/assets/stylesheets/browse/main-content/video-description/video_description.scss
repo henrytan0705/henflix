@@ -2,7 +2,8 @@
     // display: grid;
     // grid-template-columns: 40% 60%;
     display: block;
-    height: 62.5vh;
+    // height: 62.5vh;
+    height: 60vh;
     width: 100%;
     background-color: black;
     // z-index: 100;
@@ -31,6 +32,7 @@
 .description-wrapper {
     display: grid;
     grid-template-columns: 35% 65%;
+    height: 100%;
 }
 
 .description-video-container {

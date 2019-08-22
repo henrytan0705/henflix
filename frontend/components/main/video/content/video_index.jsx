@@ -22,7 +22,6 @@ class VideoIndex extends React.Component {
     }
 
     showDescription(video) {
-        // debugger
        return () => {
            this.description = <VideoDescriptionContainer key={`info-${video.id}`} video={video}/>
            this.setState({showDescription: true});
@@ -31,7 +30,6 @@ class VideoIndex extends React.Component {
     }
 
     closeDescription() {
-        // debugger
         this.description = null;
         this.setState({showDescription: false});
     }
@@ -41,7 +39,7 @@ class VideoIndex extends React.Component {
         if(!this.props.videos) return null;
 
         let videoItems = Object.values(this.props.videos).map((video,idx) => {
-            // debugger
+
             return (
                 <VideoIndexItemContainer key={`${video}${idx}`} video={video} show={this.showDescription}/>
             )
@@ -52,8 +50,6 @@ class VideoIndex extends React.Component {
                 <div className="index-size-limit">
                     <div className="video-index scrolling-wrapper"> 
                         {videoItems}
-                    
-                        {/* {videoItems} */}
                     </div>
                     
                 </div>

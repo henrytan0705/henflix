@@ -46,10 +46,6 @@ class VideoIndexItem extends React.Component {
         
     }
 
-    // showDescription() {
-    //     this.description = <VideoDescriptionContainer video={this.props.video}/>
-    //     this.setState({description: true})
-    // }
 
     render(){   
         let video = this.props.video || {

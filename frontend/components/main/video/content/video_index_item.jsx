@@ -18,10 +18,18 @@ class VideoIndexItem extends React.Component {
         // this.vidRef = React.createRef();
     }
 
+    componentDidMount(){
+        this._mounted = true;
+    }
+
+    componentWillUnmount(){
+        this._mounted = false;
+    }
+
     playTrailer(){
         this.playId = setTimeout(
             function () {
-                this.setState({ hover: true });
+                if (this._mounted) this.setState({ hover: true });
             }
             .bind(this),
             700
@@ -30,11 +38,12 @@ class VideoIndexItem extends React.Component {
 
     showThumbnail(){
         clearTimeout(this.playId);
-        this.setState({hover: false});
+        if (this._mounted) this.setState({hover: false});
     }
 
-    setVideoToState(id) {
-        this.props.retrieveVideo(id);
+    setVideoToState(video) {
+        return () => { this.props.retrieveVideo(video.id);}
+        
     }
 
     // showDescription() {

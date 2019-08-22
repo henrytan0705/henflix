@@ -5,7 +5,8 @@ class Api::VideosController < ApplicationController
     end
 
     def show
-       @video = Video.find(params[:id])
+        @video = Video.find(params[:id])
+        # debugger
        render :show
     end
 end

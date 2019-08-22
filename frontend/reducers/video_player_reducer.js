@@ -6,6 +6,7 @@ const videoPlayerReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_VIDEO:
+            debugger
             return merge({}, action.video);
         default:
             return state;

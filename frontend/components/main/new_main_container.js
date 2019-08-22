@@ -5,7 +5,7 @@ import { retrieveVideos } from '../../actions/video_actions';
 const msp = state => {
     return {
         loggedIn: Boolean(state.session.userId),
-        videos: state.videos
+        videos: state.entities.videos
     }
 }
 

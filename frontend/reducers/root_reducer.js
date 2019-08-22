@@ -9,7 +9,7 @@ const rootReducer = combineReducers({
     entities: entitiesReducer, 
     session: sessionsReducer,
     errors: errors_reducer,
-    videos: videosReducer,
+    // videos: videosReducer,
     videoPlayer: videoPlayerReducer
 });
 

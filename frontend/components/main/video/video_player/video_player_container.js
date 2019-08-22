@@ -8,7 +8,7 @@ const msp = (state, ownProps) => {
     return {
         path: ownProps.match.params.id,
         currentUser: state.session.userId,
-        video: Object.values(state.videoPlayer)[0]
+        video: Object.values(state.ui)[0]
     }
 }
 

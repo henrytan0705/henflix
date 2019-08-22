@@ -14,7 +14,11 @@ class VideoIndex extends React.Component {
     }
 
     componentDidMount() {
-        // this.props.retrieveVideos();
+        this._mounted = true;
+    }
+
+    componentWillUnmount() {
+        this._mounted = false;
     }
 
     showDescription(video) {

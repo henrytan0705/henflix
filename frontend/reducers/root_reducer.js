@@ -9,7 +9,7 @@ const rootReducer = combineReducers({
     session: sessionsReducer,
     errors: errors_reducer,
     ui: videoPlayerReducer,
-    videoPlayer: videoPlayerReducer
+    // videoPlayer: videoPlayerReducer
 });
 
 export default rootReducer;

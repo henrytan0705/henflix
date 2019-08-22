@@ -27,6 +27,7 @@ class VideoIndexItem extends React.Component {
     }
 
     playTrailer(){
+        this.setVideoToState(this.props.video);
         this.playId = setTimeout(
             function () {
                 if (this._mounted) this.setState({ hover: true });
@@ -62,42 +63,35 @@ class VideoIndexItem extends React.Component {
         let content1 =
             this.state.hover === false ? (
             <div className="thumbnail-position">
-                {/* <video
-                    id={`video-${video.id}`}
-                    className="video-thumbnail"
-                    // src={video.videoUrl}
-                    poster = { video.photoUrl }
-                    onClick={this.props.show(video)}
-                    >
-                </video> */}
                     <img
                         id={`video-${video.id}`}
                         className="video-thumbnail"
-                        // src={video.videoUrl}
                         src={video.photoUrl}
                         onClick={this.props.show(video)}
                     >
                     </img>
                 
-                {/* <span className="description-container" onClick={this.props.show}></span> */}
+                {/* <span className="description-container" onClick={this.props.show(video)}></span> */}
             </div>
             ) : (
             <>
+            <Link to={path}
+                >
                 <video
                     className="video-item"
                     src={video.videoUrl}
                     autoPlay
-                    onClick={this.props.show(video)}
                 >
                 </video>
+            </Link>
 
                 <Link to={path}
-                    onClick={this.setVideoToState(video)}
+                    // onClick={this.setVideoToState(video)}
                     className="display-play-button">
                     <PlayCircle />
                 </Link>
 
-                {/* <span className="description-container" onClick={this.props.show}></span> */}
+                <span className="description-container" onClick={this.props.show(video)}></span>
             </>
             );
 
@@ -107,8 +101,6 @@ class VideoIndexItem extends React.Component {
             <div className="video-index-item tabindex='0'"
                 onMouseEnter={this.playTrailer}
                 onMouseLeave={this.showThumbnail}
-                // onClick={this.props.show}
-                // onClick={this.showDescription}
             >
                 {content1}
             

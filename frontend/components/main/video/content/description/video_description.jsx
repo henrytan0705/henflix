@@ -7,11 +7,20 @@ class VideoDescription extends React.Component {
     constructor(props) {
         super(props);
         // this.content = null;
+        this.state = {focus: false}
+        this.setVideoToState = this.setVideoToState.bind(this);
     }
 
     componentDidMount() {
         // this.props.retrieveVideo(this.props.id);
+        this.setVideoToState(this.props.video);
+        this.setState({focus: true})
     }
+
+    setVideoToState(video) {
+        return () => { this.props.retrieveVideo(video.id); }
+    }
+
 
     render() {
         // debugger
@@ -31,6 +40,8 @@ class VideoDescription extends React.Component {
             </>
         )
 
+        let path = `/watch/${video.id}`;
+
         return (
             <div className="display-video-details show-description">
                 <div className="description-wrapper">
@@ -40,8 +51,8 @@ class VideoDescription extends React.Component {
                     </div>
 
                     <div className="description-video-container">
-                        <Link to="/"
-                            // onClick=""
+                        <Link to={path}
+                            onClick={this.setVideoToState(video)}
                             >
                             <video className="description-video" 
                                     src={video.videoUrl} 

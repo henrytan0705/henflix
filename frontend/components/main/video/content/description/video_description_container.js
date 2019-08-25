@@ -1,17 +1,17 @@
 import { connect } from 'react-redux';
 import VideoDescription from './video_description.jsx';
-import { retrieveVideo } from '../../../../../actions/video_actions'
+import { withRouter } from 'react-router-dom';
+import { retrieveVideo } from '../../../../../actions/video_actions';
 
-const msp = state => {
-    // debugger
+const msp = (state, ownProps) => {
     return {
-        // video: Object.values(state.videoPlayer)[0]
+        // path: ownProps.match.params.id
     }
 }
 
 const mdp = dispatch => {
     return {
-        // retrieveVideo: id => dispatch(retrieveVideo(id))
+        retrieveVideo: id => dispatch(retrieveVideo(id))
     }
 }
 

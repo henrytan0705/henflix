@@ -86,7 +86,6 @@ class VideoIndexItem extends React.Component {
             </Link>
 
                 <Link to={path}
-                    // onClick={this.setVideoToState(video)}
                     className="display-play-button">
                     <PlayCircle />
                 </Link>

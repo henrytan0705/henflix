@@ -39,9 +39,7 @@ class VideoDescription extends React.Component {
 
                     <div className="description-video-container">
                         <video className="description-video" 
-                                // id="abc"
                                 src={video.videoUrl} 
-                                // controls
                                 autoPlay>
                         </video>
                     </div>

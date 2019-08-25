@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 class VideoDescription extends React.Component {
 
@@ -38,10 +40,15 @@ class VideoDescription extends React.Component {
                     </div>
 
                     <div className="description-video-container">
-                        <video className="description-video" 
-                                src={video.videoUrl} 
-                                autoPlay>
-                        </video>
+                        <Link to="/"
+                            // onClick=""
+                            >
+                            <video className="description-video" 
+                                    src={video.videoUrl} 
+                                    autoPlay
+                                    >
+                            </video>
+                        </Link>
                     </div>
 
                 </div>

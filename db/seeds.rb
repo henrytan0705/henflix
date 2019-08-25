@@ -96,21 +96,41 @@ animation = Genre.create!(genre:"Animation")
 food = Genre.create!(genre:"Food")
 live_action = Genre.create!(genre:"Live Action")
 educational = Genre.create!(genre:"Educational")
+tv_show = Genre.create!(genre:"TV Show")
+movie = Genre.create!(genre:"Movie")
 
 VideoGenre.create!(genre: animation , movie: angry_bird)
+VideoGenre.create!(genre: movie , movie: angry_bird)
+
 VideoGenre.create!(genre: animation , movie: rio)
+VideoGenre.create!(genre: movie , movie: rio)
+
 VideoGenre.create!(genre: animation , movie: chicken_little)
+VideoGenre.create!(genre: movie , movie: chicken_little)
+
 VideoGenre.create!(genre: animation , movie: chicken_run)
+VideoGenre.create!(genre: movie , movie: chicken_run)
+
 VideoGenre.create!(genre: animation , movie: eggs_change)
+VideoGenre.create!(genre: tv_show , movie: eggs_change)
 
 VideoGenre.create!(genre: food, movie: master_chef_junior)
+VideoGenre.create!(genre: tv_show, movie: master_chef_junior)
+
 VideoGenre.create!(genre: food, movie: tasty)
+VideoGenre.create!(genre: tv_show, movie: tasty)
+
 VideoGenre.create!(genre: food, movie: tasty_2)
+VideoGenre.create!(genre: tv_show, movie: tasty_2)
 
 VideoGenre.create!(genre: live_action, movie:hen_and_chicken)
+VideoGenre.create!(genre: tv_show, movie:hen_and_chicken)
+
 VideoGenre.create!(genre: live_action, movie:chick_hatching)
+VideoGenre.create!(genre: tv_show, movie:chick_hatching)
 
 VideoGenre.create!(genre: educational, movie:chicken_embryo_development)
+VideoGenre.create!(genre: tv_show, movie:chicken_embryo_development)
 
 
 # Genre.create(genre:"") 

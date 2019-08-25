@@ -1,5 +1,5 @@
 # Henflix
-[Live Site])(https://henflix.herokuapp.com)
+[Live Site](henflix.herokuapp.com)
 
 Henflix is a Netflix clone, a media streaming site, built using React/Redux for frontend and Ruby on Rails/PostgreSQL for backend. This site is hosted on Heroku and images/videos are hosted on AWS S3.
 

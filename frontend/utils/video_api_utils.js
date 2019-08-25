@@ -12,10 +12,10 @@ export const fetchVideo = id => {
     });
 }
 
-// export const fetchGenreVideos = (id) => {
-//     return $.ajax({
-//         method: "GET",
-//         url: `/api/genres/${id}`
-//     })
-// }
+export const fetchGenres = () => {
+    return $.ajax({
+        method: "GET",
+        url: "/api/genres"
+    })
+}
 

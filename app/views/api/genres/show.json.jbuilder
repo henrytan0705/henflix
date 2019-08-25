@@ -7,3 +7,5 @@
 # end
 
 json.genre @genre.genre
+
+# @genre.each do |genre|

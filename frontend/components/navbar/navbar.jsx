@@ -64,8 +64,8 @@ class Navbar extends React.Component {
 
                     <ul className="navbar-left-wrapper">
                         <li className="home-tab selected-tab"><Link className="tab" to="/browse">Home</Link></li>
-                        <li className="nav-tab"><Link className="tab" to="/browse">TV Shows</Link>   </li>
-                        <li className="nav-tab"><Link className="tab" to="/browse">Movies</Link></li>
+                        <li className="nav-tab"><Link className="tab" to="/browse/genre/">TV Shows</Link>   </li>
+                        <li className="nav-tab"><Link className="tab" to="/brpwse/genre/">Movies</Link></li>
                         <li className="nav-tab"><Link className="tab" to="/browse">Recently Added</Link></li>
                         <li className="nav-tab"><Link className="tab" to="/browse">My List</Link></li>
                     </ul>

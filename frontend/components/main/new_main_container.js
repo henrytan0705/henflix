@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Main from './main';
-import { retrieveVideos } from '../../actions/video_actions';
+import { retrieveVideos, retrieveGenres } from '../../actions/video_actions';
 
 const msp = state => {
     return {
@@ -11,7 +11,8 @@ const msp = state => {
 
 const mdp = dispatch => {
     return {
-        retrieveVideos: () => dispatch(retrieveVideos())
+        retrieveVideos: () => dispatch(retrieveVideos()),
+        retrieveGenres: () => dispatch(retrieveGenres())
     }
 }
 

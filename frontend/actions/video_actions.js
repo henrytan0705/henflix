@@ -2,7 +2,7 @@ import * as VideoAPIUtil from '../utils/video_api_utils';
 
 export const RECEIVE_VIDEOS = "RECEIVE_VIDEOS";
 export const RECEIVE_VIDEO = "RECEIVE_VIDEO";
-export const RECEIVE_GENRE_VIDEOS = "RECEIVE_GENRE_VIDEOS";
+export const RECEIVE_GENRES = "RECEIVE_GENRES";
 
 export const receiveVideos = (videos) => {
     return {
@@ -32,16 +32,16 @@ export const retrieveVideo = id => dispatch => {
 
 ////////////////////////////////////////////////////////////////
 
-// export const receiveGenreVideos = (videos) => {
-//     return {
-//         type: RECEIVE_GENRE_VIDEOS,
-//         videos
-//     }
-// }
+export const receiveGenres = (genres) => {
+    return {
+        type: RECEIVE_GENRES,
+        genres
+    }
+}
 
 ///////////
 
-// export const retrieveGenreVideos = id => dispatch => {
-//     return VideoAPIUtil.fetchGenreVideos(id)
-//         .then(videos => dispatch(receiveGenreVideos(videos)))
-// }
+export const retrieveGenres = () => dispatch => {
+    return VideoAPIUtil.fetchGenres()
+        .then(genres => dispatch(receiveGenres(genres)))
+}

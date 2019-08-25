@@ -8,7 +8,8 @@ class VideoIndexItem extends React.Component {
         super(props);
         this.state = {
             hover: false,
-            description: false
+            description: false, 
+            focus: false
         }
         this.playTrailer = this.playTrailer.bind(this);
         this.showThumbnail = this.showThumbnail.bind(this);
@@ -46,6 +47,14 @@ class VideoIndexItem extends React.Component {
         return () => { this.props.retrieveVideo(video.id);}
         
     }
+
+    // focusVideo(props, video) {
+    //     return () => {
+    //         props.show(video);
+    //         this.setVideoToState(video);
+    //         this.setState({description: true})
+    //     }
+    // }
 
 
     render(){   
@@ -92,6 +101,7 @@ class VideoIndexItem extends React.Component {
                 </Link>
 
                 <span className="description-container" onClick={this.props.show(video)}></span>
+                {/* <span className="description-container" onClick={this.focusVideo(this.props, video)}></span> */}
             </>
             );
 

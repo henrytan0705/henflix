@@ -1,11 +1,16 @@
 import { connect } from 'react-redux';
 import Main from './main';
 import { retrieveVideos, retrieveGenres } from '../../actions/video_actions';
+import { withRouter } from 'react-router-dom';
 
-const msp = state => {
+
+const msp = (state, ownProps) => {
+    // debugger
     return {
         loggedIn: Boolean(state.session.userId),
-        videos: state.entities.videos
+        videos: state.entities.videos,
+        path: ownProps.location.pathname.split('/'),
+        genres: state.entities.genres
     }
 }
 
@@ -16,4 +21,4 @@ const mdp = dispatch => {
     }
 }
 
-export default connect(msp,mdp)(Main);
+export default withRouter(connect(msp,mdp)(Main));

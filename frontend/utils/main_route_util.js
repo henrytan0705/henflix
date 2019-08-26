@@ -8,9 +8,9 @@ const msp = state => {
     }
 }
 
-const Auth = ({ component: Component, path, exact, loggedIn }) => {
+const Auth = ({ component: Component, path, loggedIn }) => {
     return (
-        <Route path={path} exact={exact} render={(props) => (
+        <Route path={path} render={(props) => (
             !loggedIn ? (
                 <Redirect to="/" />
                 ) : (

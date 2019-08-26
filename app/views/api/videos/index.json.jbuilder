@@ -5,5 +5,6 @@
         json.genres video.genres.map{|vid| vid.genre}
         json.photoUrl url_for(video.photo)
         json.videoUrl url_for(video.video_url)
+        video.genres
     end
 end

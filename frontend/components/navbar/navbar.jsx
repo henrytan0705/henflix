@@ -5,8 +5,12 @@ import { Search, Bell } from 'react-feather';
 class Navbar extends React.Component {
     constructor(props){
         super(props);
-        this.state = {scrolled: false}
+        this.state = {
+            scrolled: false,
+            switchTab: false
+                }
         this.addScrollListener = this.addScrollListener.bind(this);
+        this.switchTab = this.switchTab.bind(this);
     }
 
     addScrollListener() {
@@ -20,9 +24,14 @@ class Navbar extends React.Component {
         })
     }
 
+    switchTab() {
+        this.setState({switchTab: true})
+    }
+
     componentDidMount() {
         if (this.props.url === "main"){
             this.addScrollListener();
+            this.props.retrieveGenres();
         }
         this._mount = true;
     }
@@ -34,6 +43,17 @@ class Navbar extends React.Component {
     render(){
         let display;
         const hasBackground = this.state.scrolled ? "bg" : "bg-none";
+        let showPath = "";
+        let moviePath = "";
+
+        if (this.props.url === "main") {
+            if (!this.props.genres.length) return null;
+            // debugger
+            let tvGenreId = this.props.genres.filter(genre => genre.genre ==="TV Show")[0].id;
+            let movieGenreId = this.props.genres.filter(genre => genre.genre ==="Movie")[0].id;
+            showPath = `/browse/genre/${tvGenreId}`;
+            moviePath = `/browse/genre/${movieGenreId}`;
+        }
 
         if(this.props.url === "splash") {
             display = (
@@ -64,8 +84,21 @@ class Navbar extends React.Component {
 
                     <ul className="navbar-left-wrapper">
                         <li className="home-tab selected-tab"><Link className="tab" to="/browse">Home</Link></li>
-                        <li className="nav-tab"><Link className="tab" to="/browse/genre/">TV Shows</Link>   </li>
-                        <li className="nav-tab"><Link className="tab" to="/brpwse/genre/">Movies</Link></li>
+                        <li className="nav-tab">
+                            <Link className="tab" 
+                                to={showPath}
+                                onClick={this.switchTab}
+                            >
+                                TV Shows
+                            </Link>   
+                        </li>
+                        <li className="nav-tab">
+                            <Link className="tab" to={moviePath}
+                                onClick={this.switchTab}
+                            >
+                                Movies
+                            </Link>
+                        </li>
                         <li className="nav-tab"><Link className="tab" to="/browse">Recently Added</Link></li>
                         <li className="nav-tab"><Link className="tab" to="/browse">My List</Link></li>
                     </ul>
@@ -82,7 +115,7 @@ class Navbar extends React.Component {
                         </div>
 
                         <div className="nav-tab2">
-                            <Link className="nav-right" to="/browse">KIDS</Link>
+                            <Link className="nav-right" to="/browse/">KIDS</Link>
                         </div>
 
                         <div className="nav-tab2">

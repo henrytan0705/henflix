@@ -6,6 +6,6 @@
 #     end
 # end
 
-json.genre @genre.genre
+# json.genre @genre.genre
 
 # @genre.each do |genre|

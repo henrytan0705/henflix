@@ -11,6 +11,7 @@ class VideoIndex extends React.Component {
         this.description = null;
         this.showDescription = this.showDescription.bind(this);
         this.closeDescription = this.closeDescription.bind(this);
+        this.visibleX = false;
     }
 
     componentDidMount() {
@@ -22,15 +23,17 @@ class VideoIndex extends React.Component {
     }
 
     showDescription(video) {
-       return () => {
-           this.description = <VideoDescriptionContainer key={`info-${video.id}`} video={video}/>
-           this.setState({showDescription: true});
-           return;
+        return () => {
+            this.visibleX = true;
+            this.description = <VideoDescriptionContainer key={`info-${video.id}`} video={video}/>
+            this.setState({showDescription: true});
+            return;
        }
     }
 
     closeDescription() {
         this.description = null;
+        this.visibleX = false;
         this.setState({showDescription: false});
     }
 
@@ -39,11 +42,12 @@ class VideoIndex extends React.Component {
         if(!this.props.videos) return null;
 
         let videoItems = Object.values(this.props.videos).map((video,idx) => {
-
             return (
                 <VideoIndexItemContainer key={`${video}${idx}`} video={video} show={this.showDescription}/>
             )
         });
+
+        let visible = (this.visibleX === true) ? "close-description-button" : "no-button"
 
         return (
             <>
@@ -57,8 +61,9 @@ class VideoIndex extends React.Component {
                 <div className="description-outer-wrapper">
                     {this.description}
                     <button onClick={this.closeDescription}
-                        className="close-description-button">
-                        X
+                        className={`${visible}`}
+                        >
+                        <i class="fas fa-times"></i>
                     </button>
                 </div>
             </>

@@ -11,9 +11,22 @@
 }
 
 .close-description-button {
-    background-color: red;
+    // background-color: red;
     padding: 4px;
-    border-radius: 4px;
+    // border-radius: 4px;
+    position: absolute;
+    top: 20px;
+    left: 97vw;
+}
+
+.no-button {
+    display: none;
+}
+
+.fa-times {
+    color: gray;
+    // opacity: 0.7;
+    font-size: 30px;
 }
 
 .description-container {
@@ -65,8 +78,8 @@
 }
 
 .description-title {
-    // font-size: 45px;
-    font-size: 1.275vw;
+    font-size: 45px;
+    // font-size: 1.275vw;
     text-align: center;
     font-weight: bold;
 }

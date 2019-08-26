@@ -26,7 +26,16 @@
 }
 
 .description-side {
-    background-color: blue;
+    // background-color: blue;
+}
+
+.description-outer-wrapper {
+    position: relative;
+    // background-color: red;
+    z-index: 50;
+    top: -23px;
+    // height: 70vh;
+    // width: 100%;
 }
 
 .description-wrapper {
@@ -47,4 +56,35 @@
 
 .description-side {
     color: white;
+}
+
+///////////////////////////////////////////////////////////////////
+
+.title-container {
+    padding: 30px 0;
+}
+
+.description-title {
+    // font-size: 45px;
+    font-size: 1.275vw;
+    text-align: center;
+    font-weight: bold;
+}
+
+.year-container {
+    padding: 30px 20px;
+}
+
+.description-year {
+    font-size: 1.1vw;
+    font-weight: bold;
+}
+
+.desc-container {
+    padding: 0 20px;
+}
+
+.description {
+    font-size: 22px;
+    color: #999;
 }

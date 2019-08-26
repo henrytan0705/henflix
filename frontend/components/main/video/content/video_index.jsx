@@ -54,7 +54,7 @@ class VideoIndex extends React.Component {
                     
                 </div>
 
-                <div>
+                <div className="description-outer-wrapper">
                     {this.description}
                     <button onClick={this.closeDescription}
                         className="close-description-button">

@@ -33,9 +33,19 @@ class VideoDescription extends React.Component {
         
         let content = (
             <>
-                <h1>{video.title}</h1>
-                <h1>{video.year}</h1>
-                <p>{video.description}</p>
+                <div className="title-container">
+                    <h1 className="description-title">{video.title}</h1>
+                </div>
+
+                <div className="bottom-description-container">
+                    <div className="year-container">
+                        <h1 className="description-year">{video.year}</h1>
+                    </div>
+
+                    <div className="desc-container">
+                        <p className="description">{video.description}</p>
+                    </div>
+                </div>
                 {/* <h1>{`EST: ${Math.ceil(vid.duration/ 60)} m`}</h1> */}
             </>
         )

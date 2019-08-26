@@ -13,7 +13,6 @@ import { PlayerAuthRoute } from '../utils/video_player_route_util';
 const App = () => {
     return (
         <>
-            {/* <NavbarContainer /> */}
             <AuthRoute exact path="/" component={SplashContainer}/>
             <AuthRoute exact path="/signup" component={SignupFormContainer}/>
             <AuthRoute exact path="/login" component={LoginFormContainer}/>

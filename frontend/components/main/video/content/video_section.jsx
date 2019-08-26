@@ -4,14 +4,18 @@ import VideoIndexContainer from './video_index_container'
 class VideoSection extends React.Component {
     render() {
         let videosArray = Object.values(this.props.videos);
+        // debugger
+        
+        let genres = Object.values(this.props.genres).filter(genre => genre.genre != "TV Show" && genre.genre != "Movie");
 
-        // let animationVideos = videosArray.filter(video => video.genre === "Animation");
+        // let animation = genres.
+
         let animationVideos = videosArray.filter(video => video.genres.includes("Animation")); 
-        // let foodVideos = videosArray.filter(video => video.genre === "Food");
+ 
         let foodVideos = videosArray.filter(video => video.genres.includes("Food"));
-        // let liveActionVideos = videosArray.filter(video => video.genre === "Live Action");
+        
         let liveActionVideos = videosArray.filter(video => video.genres.includes("Live Action"));
-        // let educationalVideos = videosArray.filter(video => video.genre === "Educational")
+        
         let educationalVideos = videosArray.filter(video => video.genres.includes("Educational"));
 
         return (

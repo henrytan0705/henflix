@@ -15,7 +15,7 @@ class Main extends React.Component {
 
     render() {
         if (!Object.values(this.props.videos).length || !Object.values(this.props.genres).length) return null;
-
+        // debugger
         let videosArray = Object.values(this.props.videos);
         let displayVideo = videosArray.filter(video => video.title === "The Angry Birds Movie 2");
         let videos = this.props.videos;
@@ -27,9 +27,12 @@ class Main extends React.Component {
             let id = parseInt(path[path.length - 1]);
             // debugger
             let genre = this.props.genres[id];
-            let videoIds = genre.videos.map(genre => genre.movie_id);
             // debugger
-            let genreVideos = videosArray.filter(vid => videoIds.includes(vid.id));
+            // let videoIds = genre.vide_ids;
+            // let videoIds = genre.id;
+            // debugger
+            // let genreVideos = videosArray.filter(vid => vid.genres.includes(id));
+            let genreVideos = videosArray.filter(vid => vid.genres.includes(genre.genre));
             // displayVideo = VideosArray.filter(video => video.)
             videos = genreVideos;
             // debugger
@@ -41,7 +44,7 @@ class Main extends React.Component {
                 <NavbarMainContainer /> 
                 <div className="main-content">
                     <VideoDisplayContainer video={displayVideo[0]}/>                
-                    <VideoSection videos={videos}/>
+                    <VideoSection videos={videos} genres={this.props.genres}/>
                 </div>
 
             </div>

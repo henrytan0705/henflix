@@ -1,10 +1,13 @@
 import { connect } from 'react-redux';
 import { retrieveVideo, retrieveVideos } from '../../../../actions/video_actions';
 import VideoDisplay from './video_display';
+import { withRouter } from 'react-router-dom'
 
-const msp = state => {
+const msp = (state, ownProps) => {
+    // debugger
     return {
         // video: state.videos[18],
+        path: ownProps.location.pathname
     }
 }
 
@@ -15,4 +18,4 @@ const mdp = dispatch => {
     }
 }
 
-export default connect(msp, mdp)(VideoDisplay);
+export default withRouter(connect(msp, mdp)(VideoDisplay));

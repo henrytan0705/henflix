@@ -69,6 +69,7 @@
 
 .description-side {
     color: white;
+    align-items: left;
 }
 
 ///////////////////////////////////////////////////////////////////
@@ -100,4 +101,18 @@
 .description {
     font-size: 22px;
     color: #999;
+}
+
+.description-play-button {
+    // display: block;
+    // padding: 14px 25px;
+    padding: 4px 5px;
+    background-color: red;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.play-button-text {
+    
+    background-color: red;
 }

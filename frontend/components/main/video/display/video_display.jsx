@@ -3,6 +3,7 @@ import React from 'react';
 class VideoDisplay extends React.Component {
     constructor(props) {
         super(props);
+        this.state = { pathChange: false }
         // debugger
     }
 
@@ -11,6 +12,13 @@ class VideoDisplay extends React.Component {
         // this.props.retrieveVideo();
     }
 
+    componentDidUpdate(prevProps) {
+        // debugger
+        if(prevProps.location.pathname !== this.props.path) {
+            // debugger
+            this.setState({ pathChange: true })
+        }
+    }
 
     render(){
         let video = this.props.video || {
@@ -21,6 +29,7 @@ class VideoDisplay extends React.Component {
             videoUrl: "",
         }
 
+        // debugger
         
         return (
             <div className="video-display">

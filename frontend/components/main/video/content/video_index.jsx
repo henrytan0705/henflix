@@ -63,7 +63,7 @@ class VideoIndex extends React.Component {
                     <button onClick={this.closeDescription}
                         className={`${visible}`}
                         >
-                        <i class="fas fa-times"></i>
+                        <i className="fas fa-times"></i>
                     </button>
                 </div>
             </>

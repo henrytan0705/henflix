@@ -45,6 +45,22 @@ class VideoDescription extends React.Component {
                     <div className="desc-container">
                         <p className="description">{video.description}</p>
                     </div>
+
+                    <div 
+                    // className="description-play-button"
+                    >
+                        
+                        <span className="description-play-button">
+                            <span className="description-play-butto">
+                                <i className="fas fa-play"></i>
+                            </span>
+
+                            <span className="play-button-text">
+                                Play
+                            </span>
+
+                        </span>
+                    </div>
                 </div>
                 {/* <h1>{`EST: ${Math.ceil(vid.duration/ 60)} m`}</h1> */}
             </>

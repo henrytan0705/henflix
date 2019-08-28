@@ -17,23 +17,23 @@
     height: 100%;
     width: 20vw;
     // background: black;
-    transition-duration: 0.3s;
+    transition-duration: 0.2s;
     // transition-timing-function: ease-in;
 }
 
 .video-item { //video
     display: block;
     height: 100%;
-    width: 20vw;
+    // width: 20vw;
     // border: 1px solid pink;
 }
 
-.video-item-1 { //video
-    display: block;
-    height: 80%;
-    width: 20vw;
-    // border: 1px solid pink;
-}
+// .video-item-1 { //video
+//     display: block;
+//     height: 80%;
+//     width: 20vw;
+//     // border: 1px solid pink;
+// }
 
 .display-play-button {
     display: block;
@@ -55,7 +55,7 @@
     display: block;
     margin: 0;
     box-sizing: border-box;
-    // background-color: black;
+    background-color: black;
     // border: 1px solid blue;
     height: 80%;
     width: 15vw;

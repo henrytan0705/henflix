@@ -34,7 +34,7 @@ class VideoIndexItem extends React.Component {
                 if (this._mounted) this.setState({ hover: true });
             }
             .bind(this),
-            700
+            600
         );  
     }
 

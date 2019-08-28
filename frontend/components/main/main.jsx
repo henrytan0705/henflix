@@ -15,35 +15,31 @@ class Main extends React.Component {
 
     render() {
         if (!Object.values(this.props.videos).length || !Object.values(this.props.genres).length) return null;
-        // debugger
+
+        // let displayVideo = videosArray.filter(video => video.title === "The Angry Birds Movie 2");
         let videosArray = Object.values(this.props.videos);
-        let displayVideo = videosArray.filter(video => video.title === "The Angry Birds Movie 2");
         let videos = this.props.videos;
-
         let path = this.props.path;
-        // debugger
-
+        
         if (path.length > 2) {
             let id = parseInt(path[path.length - 1]);
-            // debugger
             let genre = this.props.genres[id];
-            // debugger
+            let genreVideos = videosArray.filter(vid => vid.genres.includes(genre.genre));
+            videos = genreVideos;
+
             // let videoIds = genre.vide_ids;
             // let videoIds = genre.id;
-            // debugger
             // let genreVideos = videosArray.filter(vid => vid.genres.includes(id));
-            let genreVideos = videosArray.filter(vid => vid.genres.includes(genre.genre));
             // displayVideo = VideosArray.filter(video => video.)
-            videos = genreVideos;
-            // debugger
         }
-
-
+        let filteredVideos = Object.values(videos);
+        // let displayVideo = filteredVideos[Math.floor(Math.random() * filteredVideos.length)];
+        let displayVideo = filteredVideos[0];
         return(
             <div className="main-page">
                 <NavbarMainContainer /> 
                 <div className="main-content">
-                    <VideoDisplayContainer video={displayVideo[0]}/>                
+                    <VideoDisplayContainer video={displayVideo}/>                
                     <VideoSection videos={videos} genres={this.props.genres}/>
                 </div>
 

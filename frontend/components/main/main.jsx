@@ -16,7 +16,19 @@ class Main extends React.Component {
     render() {
         if (!Object.values(this.props.videos).length || !Object.values(this.props.genres).length) return null;
 
-        // let displayVideo = videosArray.filter(video => video.title === "The Angry Birds Movie 2");
+
+
+        if(this.props.url === "Search") {
+            return (
+                <div>
+                    <NavbarMainContainer />
+                    <div className="">
+                       <VideoIndex videos={videos}/>
+                    </div>
+                </div>
+            )
+        }
+        
         let videosArray = Object.values(this.props.videos);
         let videos = this.props.videos;
         let path = this.props.path;

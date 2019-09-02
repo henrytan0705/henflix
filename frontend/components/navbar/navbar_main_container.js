@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Navbar from './navbar';
 import { logout } from '../../actions/session_actions';
-import { retrieveGenres } from '../../actions/video_actions';
+import { retrieveGenres, retrieveSearch } from '../../actions/video_actions';
 
 const msp = state => {
     return {
@@ -14,7 +14,8 @@ const msp = state => {
 const mdp = dispatch => {
     return {
         logout: () => dispatch(logout()),
-        retrieveGenres: () => dispatch(retrieveGenres())
+        retrieveGenres: () => dispatch(retrieveGenres()),
+        // retrieveSearch: query => dispatch(retrieveSearch(query))
     }
 }
 

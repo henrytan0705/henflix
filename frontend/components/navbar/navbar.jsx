@@ -8,12 +8,15 @@ class Navbar extends React.Component {
         this.state = {
             scrolled: false,
             switchTab: false,
-            searchBox: false
+            searchBox: false,
+            searchInput: ""
         }
+        this.searchField = React.createRef();
         this.addScrollListener = this.addScrollListener.bind(this);
         this.switchTab = this.switchTab.bind(this);
         this.displaySearchBox = this.displaySearchBox.bind(this);
         this.hideSearchBox = this.hideSearchBox.bind(this);
+        this.updateSearch = this.updateSearch.bind(this);
     }
 
     addScrollListener() {
@@ -32,11 +35,22 @@ class Navbar extends React.Component {
     }
 
     displaySearchBox() {
+        document.getElementById("search-input-box").focus();
         this.setState({searchBox: true});
     }
 
     hideSearchBox() {
         this.setState({searchBox: false});
+    }
+
+    updateSearch(){
+        debugger
+        if (this._mount) {
+            setTimeout(() => {
+                // debugger
+                this.setState({searchInput: this.searchField.current})
+            }, 200);
+        }s
     }
 
     componentDidMount() {
@@ -119,6 +133,7 @@ class Navbar extends React.Component {
 
                     <div className="navbar-right-wrapper">
                         <div className="nav-tab2">
+
                             <div className="search-box">
                                 <button className={`search-tab ${visibleSearchIcon}`}>
                                     <span className="search-icon nav-right">
@@ -128,14 +143,24 @@ class Navbar extends React.Component {
                                         </i>
                                     </span>
                                 </button>
-                                {/* <div className="search-input"{`${visibleSearchBox}`}> */}
+                               
                                 <div className={`search-input ${visibleSearchBox}`}
                                     onBlur={this.hideSearchBox}>
-                                    <span className="search-icon-in-box"><i className="fas fa-search"></i></span>
-                                    <input placeholder="Titles, people, genres" autoFocus></input>
-                                    <span></span>
+                                    <form>
+                                        <span className="search-icon-in-box"><i className="fas fa-search"></i></span>
+                                        <input 
+                                            id="search-input-box"
+                                            type="text"
+                                            placeholder="Titles, people, genres"
+                                            ref={this.searchField}
+                                            onChange={this.updateSearch}
+                                            >
+                                        </input>
+                                        <span></span>
+                                    </form>
                                 </div>
                             </div>
+                            
                         </div>
 
                         <div className="nav-tab2">

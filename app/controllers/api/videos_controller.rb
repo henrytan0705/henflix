@@ -9,4 +9,16 @@ class Api::VideosController < ApplicationController
         # debugger
        render :show
     end
+
+    def search 
+        title = params[:title]
+        @videos = Video.where('title iLIKE ?', "%#{title}%")
+
+        if @videos.nil?
+            render json: 'Search returned no results'
+        else
+            render "api/movies/index")
+        end
+    end
+
 end

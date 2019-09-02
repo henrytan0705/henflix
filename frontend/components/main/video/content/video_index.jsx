@@ -52,9 +52,21 @@ class VideoIndex extends React.Component {
         return (
             <>
                 <div className="index-size-limit">
+                    
+
                     <div className="video-index scrolling-wrapper"> 
+                        {/* <div className="video-arrows">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>         */}
+
                         {videoItems}
+
+                        {/* <div className="video-arrows">
+                            <i class="fas fa-chevron-right"></i>
+                        </div> */}
                     </div>
+
+                   
                     
                 </div>
 

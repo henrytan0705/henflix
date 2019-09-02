@@ -33,13 +33,19 @@
     width: 20vw;
     height: 25px;
     background-color: red;
-    // z-index: 50;
+    z-index: 50;
     position: absolute;
-    top: 23vh;
+    top: 21.5vh;
 }
 
 .description-side {
     // background-color: blue;
+}
+
+.fa-angle-down {
+    padding-left: 10vw;
+    height: 25px;
+    color: white;
 }
 
 .description-outer-wrapper {
@@ -113,6 +119,5 @@
 }
 
 .play-button-text {
-    
     background-color: red;
 }

@@ -101,7 +101,9 @@ class VideoIndexItem extends React.Component {
                     <PlayCircle />
                 </Link>
 
-                <span className="description-container" onClick={this.props.show(video)}></span>
+                <span className="description-container" onClick={this.props.show(video)}>
+                        {/* <i class="fas fa-angle-down"></i> */}
+                </span>
                 {/* <span className="description-container" onClick={this.focusVideo(this.props, video)}></span> */}
             </>
             );
@@ -111,6 +113,7 @@ class VideoIndexItem extends React.Component {
         return (
             <div className="video-index-item tabindex='0'"
                 onMouseEnter={this.playTrailer}
+                // onClick={this.playTrailer}
                 onMouseLeave={this.showThumbnail}
             >
                 {content1}

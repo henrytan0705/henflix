@@ -141,6 +141,10 @@ li {
     margin-right: 30px;
 }
 
+.fa-search::before {
+    font-size: 20px;
+}
+
 .nav-tab-2 {
     background-color: red;
 }
@@ -166,3 +170,34 @@ li {
 // .navbar-left-wrapper, .navbar-right-wrapper {
 //     // margin-top: 20px;
 // }
+
+.search-input {
+    width: 200px;
+    background-color: black;
+    // line-height: 20px;
+    padding: 5px 0;
+    border: 1px solid white;
+}
+
+.search-icon-in-box {
+    margin: 0 10px;
+    // background-color: red;
+}
+
+.show-search {
+    animation: show-serach;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.hide-search {
+    display: none;
+}
+
+.show-icon {
+
+}
+
+.hide-icon {
+    display: none;
+}

@@ -7,10 +7,13 @@ class Navbar extends React.Component {
         super(props);
         this.state = {
             scrolled: false,
-            switchTab: false
-                }
+            switchTab: false,
+            searchBox: false
+        }
         this.addScrollListener = this.addScrollListener.bind(this);
         this.switchTab = this.switchTab.bind(this);
+        this.displaySearchBox = this.displaySearchBox.bind(this);
+        this.hideSearchBox = this.hideSearchBox.bind(this);
     }
 
     addScrollListener() {
@@ -25,7 +28,15 @@ class Navbar extends React.Component {
     }
 
     switchTab() {
-        this.setState({switchTab: true})
+        this.setState({switchTab: true});
+    }
+
+    displaySearchBox() {
+        this.setState({searchBox: true});
+    }
+
+    hideSearchBox() {
+        this.setState({searchBox: false});
     }
 
     componentDidMount() {
@@ -45,6 +56,9 @@ class Navbar extends React.Component {
         const hasBackground = this.state.scrolled ? "bg" : "bg-none";
         let showPath = "";
         let moviePath = "";
+
+        let visibleSearchBox = (this.state.searchBox) ? "show-search" : "hide-search";
+        let visibleSearchIcon = (this.state.searchBox) ? "hide-icon" : "show-icon";
 
         if (this.props.url === "main") {
             if (!this.props.genres.length) return null;
@@ -106,11 +120,21 @@ class Navbar extends React.Component {
                     <div className="navbar-right-wrapper">
                         <div className="nav-tab2">
                             <div className="search-box">
-                                <button className="search-tab">
+                                <button className={`search-tab ${visibleSearchIcon}`}>
                                     <span className="search-icon nav-right">
-                                        <Search />
+                                        <i className="fas fa-search"
+                                        onClick={this.displaySearchBox}
+                                        >
+                                        </i>
                                     </span>
                                 </button>
+                                {/* <div className="search-input"{`${visibleSearchBox}`}> */}
+                                <div className={`search-input ${visibleSearchBox}`}
+                                    onBlur={this.hideSearchBox}>
+                                    <span className="search-icon-in-box"><i className="fas fa-search"></i></span>
+                                    <input placeholder="Titles, people, genres" autoFocus></input>
+                                    <span></span>
+                                </div>
                             </div>
                         </div>
 

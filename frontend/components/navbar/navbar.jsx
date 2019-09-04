@@ -77,10 +77,10 @@ class Navbar extends React.Component {
         if (this.props.url === "main") {
             if (!this.props.genres.length) return null;
             // debugger
-            let tvGenreId = this.props.genres.filter(genre => genre.genre ==="TV Show")[0].id;
-            let movieGenreId = this.props.genres.filter(genre => genre.genre ==="Movie")[0].id;
-            showPath = `/browse/genre/${tvGenreId}`;
-            moviePath = `/browse/genre/${movieGenreId}`;
+            // let tvGenreId = this.props.genres.filter(genre => genre.genre ==="TV Show")[0].id;
+            // let movieGenreId = this.props.genres.filter(genre => genre.genre ==="Movie")[0].id;
+            // showPath = `/browse/genre/${tvGenreId}`;
+            // moviePath = `/browse/genre/${movieGenreId}`;
         }
 
         if(this.props.url === "splash") {
@@ -114,14 +114,17 @@ class Navbar extends React.Component {
                         <li className="home-tab selected-tab"><Link className="tab" to="/browse">Home</Link></li>
                         <li className="nav-tab">
                             <Link className="tab" 
-                                to={showPath}
+                                // to={showPath}
+                                to="/browse"
                                 onClick={this.switchTab}
                             >
                                 TV Shows
                             </Link>   
                         </li>
                         <li className="nav-tab">
-                            <Link className="tab" to={moviePath}
+                            <Link className="tab" 
+                                // to={moviePath}
+                                to="/browse"
                                 onClick={this.switchTab}
                             >
                                 Movies

@@ -1,11 +1,11 @@
 .video-index-item { 
     display: inline-block;
     height: 80%;
-    width: 15vw;
+    width: 15%;
     // margin-left: 0.5vw;
     margin-right: 0.2vw;
     overflow: hidden;
-    transition-duration: 0.3s;
+    transition-duration: 0.4s;
     // transition-timing-function: ease-in;
     // transition-timing-function: ease-out;
     // border: 1px solid red;
@@ -15,9 +15,9 @@
 .video-index-item:hover {
     z-index: 100;
     height: 100%;
-    width: 20vw;
+    width: 20%;
     // background: black;
-    transition-duration: 0.2s;
+    transition-duration: 0.4s;
     // transition-timing-function: ease-in;
 }
 
@@ -31,7 +31,7 @@
 .video-item-1 { //video
     display: block;
     // height: 25vh;
-    
+    // height: 100%;
     width: 100%;
     // border: 1px solid pink;
 }
@@ -59,7 +59,7 @@
     background-color: black;
     // border: 1px solid blue;
     height: 80%;
-    width: 15vw;
+    width: 100%;
     transition-duration: 0.5s;
 }
 
@@ -70,7 +70,7 @@
     // border: 1px solid red;
     height: 100%;
     width: 20vw;
-    transition-duration: 0.6s;
+    transition-duration: 0.5s;
     // transition-duration: 2s;
 }
 

@@ -84,17 +84,17 @@ class VideoIndexItem extends React.Component {
             </div>
             ) : (
             <>
-            <Link to={path}
-                className="video-item"
-            >
-                <video
-                    // className="video-item"
-                    className="video-item-1"
-                    src={video.videoUrl}
-                    autoPlay
+                <Link to={path}
+                    className="video-item"
                 >
-                </video>
-            </Link>
+                    <video
+                        // className="video-item"
+                        className="video-item-1"
+                        src={video.videoUrl}
+                        autoPlay
+                    >
+                    </video>
+                </Link>
 
                 <Link to={path}
                     className="display-play-button">

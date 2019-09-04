@@ -2,9 +2,10 @@
     display: flex;
     align-items: center;
     height: 25vh;
-    width: 100vw;
+    // height: 100%;
+    width: 100%;
     // border: 1px solid black;
-    // border: 1px solid white;
+    border: 1px solid white;
     margin-left: 2.5vw;
     // overflow-x: scroll;
     white-space: nowrap;
@@ -22,10 +23,11 @@
 
 .index-size-limit {
     display: block;
-    // border: 1px solid green;
+    border: 1px solid green;
     // background-color: green;
+    // height: 30vh;
     height: 30vh;
-    width: 100vw;
+    width: 100%;
     // margin:0 5vw;
     // overflow: hidden;
 }

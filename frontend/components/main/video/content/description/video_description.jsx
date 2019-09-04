@@ -30,6 +30,7 @@ class VideoDescription extends React.Component {
         // let vid = document.getElementById(`video-${video.id}`);
         // console.log(vid);
         // debugger
+        let path = `/watch/${video.id}`;
         
         let content = (
             <>
@@ -49,24 +50,25 @@ class VideoDescription extends React.Component {
                     <div 
                     // className="description-play-button"
                     >
-                        
-                        <span className="description-play-button">
-                            <span className="description-play-butto">
+                        <Link to={path}>
+                            <span className="description-play-button">
+                                <span className="description-play-butto">
                                 <i className="fas fa-play"></i>
-                            </span>
+                                </span>
 
-                            <span className="play-button-text">
-                                Play
-                            </span>
+                                <span className="play-button-text">
+                                    Play
+                                </span>
 
-                        </span>
+                            </span>
+                        </Link>
                     </div>
                 </div>
                 {/* <h1>{`EST: ${Math.ceil(vid.duration/ 60)} m`}</h1> */}
             </>
         )
 
-        let path = `/watch/${video.id}`;
+        
 
         return (
             <div className="display-video-details show-description">

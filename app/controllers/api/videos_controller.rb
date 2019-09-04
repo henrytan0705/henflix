@@ -17,7 +17,7 @@ class Api::VideosController < ApplicationController
         if @videos.nil?
             render json: 'Search returned no results'
         else
-            render "api/movies/index")
+            render "api/movies/index"
         end
     end
 

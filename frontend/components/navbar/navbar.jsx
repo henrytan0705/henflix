@@ -153,7 +153,7 @@ class Navbar extends React.Component {
                                             type="text"
                                             placeholder="Titles, people, genres"
                                             ref={this.searchField}
-                                            onChange={this.updateSearch}
+                                            // onChange={this.updateSearch}
                                             >
                                         </input>
                                         <span></span>

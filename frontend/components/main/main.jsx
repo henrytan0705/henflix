@@ -16,11 +16,9 @@ class Main extends React.Component {
     render() {
         if (!Object.values(this.props.videos).length || !Object.values(this.props.genres).length) return null;
 
-
-
         if(this.props.url === "Search") {
             return (
-                <div>
+                <div className="main-page">
                     <NavbarMainContainer />
                     <div className="">
                        <VideoIndex videos={videos}/>

@@ -44,7 +44,7 @@ class Navbar extends React.Component {
     }
 
     updateSearch(){
-        debugger
+        // debugger
         if (this._mount) {
             setTimeout(() => {
                 // debugger
@@ -76,11 +76,13 @@ class Navbar extends React.Component {
 
         if (this.props.url === "main") {
             if (!this.props.genres.length) return null;
-            // debugger
+            debugger
             let tvGenreId = this.props.genres.filter(genre => genre.genre ==="TV Show")[0].id;
             let movieGenreId = this.props.genres.filter(genre => genre.genre ==="Movie")[0].id;
-            showPath = `/browse/genre/${tvGenreId}`;
-            moviePath = `/browse/genre/${movieGenreId}`;
+            // showPath = `/browse/genre/${tvGenreId}`;
+            // moviePath = `/browse/genre/${movieGenreId}`;
+            showPath = `/browse/genre/39`;
+            moviePath = `/browse/genre/40`;
         }
 
         if(this.props.url === "splash") {

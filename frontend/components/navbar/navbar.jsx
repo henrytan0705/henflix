@@ -211,11 +211,19 @@ class Navbar extends React.Component {
                         </div>
 
                         <div className="nav-tab2">
-                            <Link className="nav-right" to="/browse/">KIDS</Link>
+                            <a target="_blank" href="https://github.com/henrytan0705/henflix" className="nav-right">
+                                <i class="fab fa-github"></i>
+                            </a>
+                           
+                        
+                            {/* <Link className="nav-right" to="/browse/">KIDS</Link> */}
                         </div>
 
                         <div className="nav-tab2">
-                            <Link className="nav-right" to="/browse">DVD</Link>
+                            <a target="_blank" href="https://www.linkedin.com/in/henry-0705/" className="nav-right">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            {/* <Link className="nav-right" to="/browse">DVD</Link> */}
                         </div>
 
                         <div className="nav-tab2">

@@ -4,7 +4,6 @@ class VideoDisplay extends React.Component {
     constructor(props) {
         super(props);
         this.state = { pathChange: false }
-        // debugger
         this.vidRef = React.createRef();
     }
 
@@ -20,7 +19,6 @@ class VideoDisplay extends React.Component {
         //     this.setState({ pathChange: true })
         // }
         if (this.props.previewVideoId) {
-            // debugger
             this.vidRef.current.pause();
         } else if (!this.props.previewVideoId) {
             this.vidRef.current.play();
@@ -37,8 +35,6 @@ class VideoDisplay extends React.Component {
             videoUrl: "",
         }
 
-        // debugger
-        
         return (
             <div className="video-display">
                 <div className="video-display-item">

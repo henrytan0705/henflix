@@ -6,13 +6,11 @@ class VideoDescription extends React.Component {
 
     constructor(props) {
         super(props);
-        // this.content = null;
         this.state = {focus: false}
         this.setVideoToState = this.setVideoToState.bind(this);
     }
 
     componentDidMount() {
-        // this.props.retrieveVideo(this.props.id);
         this.setVideoToState(this.props.video);
         this.setState({focus: true})
     }
@@ -23,13 +21,9 @@ class VideoDescription extends React.Component {
 
 
     render() {
-        // debugger
         if (this.props.video === undefined) return null;
 
         let video = this.props.video;
-        // let vid = document.getElementById(`video-${video.id}`);
-        // console.log(vid);
-        // debugger
         let path = `/watch/${video.id}`;
         
         let content = (

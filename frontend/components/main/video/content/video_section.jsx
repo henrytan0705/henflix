@@ -38,27 +38,9 @@ class VideoSection extends React.Component {
         
         return (
             <div className="video-section">
-                {/* {/* <h1 className="categories">Trending Now</h1> */}
-                {/* <VideoIndexContainer genre="Trending" videos={trendingVideos}/> */}
-                
-                {/* <h1 className="categories">Animations</h1>
-                <VideoIndexContainer genre="Animation" videos={animationVideos}/>   */}
-           
                 {animationRow}
-
-                {/* <h1 className="categories">Food/Horror</h1>
-                <VideoIndexContainer genre="Food" videos={foodVideos}/> */}
-             
                 {foodRow}
-                
-                {/* <h1 className="categories">Live Action</h1>
-                <VideoIndexContainer genre="Live Action" videos={liveActionVideos}/>   */}
-
                 {liveRow}
-
-                {/* <h1 className="categories">Educational</h1>
-                <VideoIndexContainer genre="Educational" videos={educationalVideos}/> */}
-
                 {educationalRow}
             </div>
         )

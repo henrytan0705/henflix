@@ -10,14 +10,12 @@ Henflix is a Netflix clone, a media streaming site, built using React/Redux for 
 * Video description is available upon clicking video thumbnail/drop down arrow of video trailer
 * Users will be brought to a watch page upon clicking a video trailer
 * Users can filter out videos according to TV Shows/Movies Categories when clicking on either genre tabs
-* Users can search videos according to video titles or genres
 
 ## Features
-* Videos transition between thumbnails and trailers with a hover a hover effect upon mouseenter and mouseleave event listeners 
-* Users can watch video on a video player by clicking on video trailer
+* Videos transition between thumbnails and trailers with a hover a hover effect upon mouseenter and mouseleave event listeners preventing multiple videos from firing when hovering over
 
 ## Future Features
-* Genres Lists
+* Genres List Dropdown
 * Video Search
 * Profiles
 * Recently Added

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 class VideoDisplay extends React.Component {
     constructor(props) {
         super(props);
@@ -27,22 +27,31 @@ class VideoDisplay extends React.Component {
     }
 
     render(){
-        let video = this.props.video || {
-            title: "",
-            description: "",
-            year: "",
-            photo: "",
-            videoUrl: "",
-        }
+        // let video = this.props.video || {
+        //     title: "",
+        //     description: "",
+        //     year: "",
+        //     photo: "",
+        //     videoUrl: "",
+        // }
+
+        if (!this.props.video) return null;
+
+        let video = this.props.video;
+        let path = `/watch/${video.id}`
 
         return (
             <div className="video-display">
                 <div className="video-display-item">
-                    {/* <h1>{video.title}</h1> */}
+                    <h1 className="display-title">{video.title}</h1>
                     {/* <p>{video.description}</p> */}
                     {/* <h2>{video.year}</h2> */}
-
-                    <div></div>
+                    <Link className="display-play-icon" to={path}>
+                        <i className="fas fa-play"></i>
+                        <span className="gap"></span>
+                        PLAY
+                    </Link>
+                    {/* <div></div> */}
 
                     <video 
                         className="display-video" 

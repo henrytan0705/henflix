@@ -22,7 +22,7 @@
 .display-video {
     // height: 100vh;
     // height: 90vh;
-    // width: 100%;
+    width: 100%;
     // height: 110vh;
 }
 
@@ -32,4 +32,30 @@
     width: 100vw;
     min-width: 100%;
     // overflow: hidden;
+}
+
+.display-title {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    font-size: 55px;
+    color: white;
+    font-weight: 700;
+}
+
+.display-play-icon {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    z-index: 100;
+    color: white;
+    font-size: 30px;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px;
+    // background-color: lightgrey;
+}
+
+.gap {
+    padding: 0 5px;
 }

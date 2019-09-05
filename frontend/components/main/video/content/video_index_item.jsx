@@ -28,7 +28,9 @@ class VideoIndexItem extends React.Component {
     }
 
     playTrailer(){
+        // debugger
         if (!this.props.previewVideoId) {
+            // debugger
             this.setVideoToState(this.props.video);
             this.playId = setTimeout(
                 function () {
@@ -46,6 +48,7 @@ class VideoIndexItem extends React.Component {
         // if (this.props.previewVideoId) {
 
         // }
+        // debugger
         clearTimeout(this.playId);
         this.props.clearCurrentVideo();
         if (this._mounted) this.setState({hover: false});

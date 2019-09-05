@@ -29,10 +29,10 @@ class VideoIndexItem extends React.Component {
 
     playTrailer(){
         if (!this.props.previewVideoId) {
+            this.setVideoToState(this.props.video);
             this.playId = setTimeout(
                 function () {
                     if (this._mounted) {
-                        this.setVideoToState(this.props.video);
                         this.setState({ hover: true });
                     }
                 }
@@ -55,6 +55,7 @@ class VideoIndexItem extends React.Component {
     setVideoToState(video) {
         // return () => { this.props.retrieveVideo(video.id);}
         this.props.retrieveVideo(video.id);
+        // this.props.receiveCurrentVideo(video.id);
     }
 
     render(){   

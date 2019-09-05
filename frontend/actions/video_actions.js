@@ -5,6 +5,7 @@ export const RECEIVE_VIDEO = "RECEIVE_VIDEO";
 export const RECEIVE_GENRES = "RECEIVE_GENRES";
 export const SEARCH_VIDEOS = "SEARCH_VIDEOS"
 export const CLEAR_VIDEO = "CLEAR_VIDEO";
+export const RECEIVE_CURRENT_VIDEO = "RECEIEVE_CURRENT_VIDEO";
 
 export const receiveVideos = (videos) => {
     return {
@@ -19,6 +20,14 @@ export const receiveVideo = (video) => {
         video
     }
 }
+
+// export const recieveCurrentVideo = (video) => {
+//     return {
+//         type: RECEIVE_CURRENT_VIDEO,
+//         video
+//     }
+// }
+
 
 export const receiveGenres = (genres) => {
     return {

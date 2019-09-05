@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { retrieveVideo, clearCurrentVideo } from '../../../../actions/video_actions';
+import { retrieveVideo, clearCurrentVideo, receiveCurrentVideo } from '../../../../actions/video_actions';
 import VideoIndexItem from './video_index_item';
 
 const msp = state => {
@@ -11,8 +11,8 @@ const msp = state => {
 const mdp = dispatch => {
     return {
         retrieveVideo: (id) => dispatch(retrieveVideo(id)),
-        clearCurrentVideo: () => dispatch(clearCurrentVideo())
-        // retrieveVideos: () => dispatch(retrieveVideos())
+        clearCurrentVideo: () => dispatch(clearCurrentVideo()),
+        // receiveCurrentVideo: (id) => dispatch(receiveCurrentVideo(id))
     }
 }
 

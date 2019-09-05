@@ -17,7 +17,9 @@
     height: 100%;
     width: 20%;
     background: black;
-    transition-duration: 0.4s;
+    transition-duration: 0.3s;
+    // transform: scale(1.3);
+ 
     // transition-timing-function: ease-in;
 }
 
@@ -70,6 +72,7 @@
     // border: 1px solid red;
     height: 100%;
     width: 20vw;
+    // transform: scale(1);
     transition-duration: 0.5s;
     // transition-duration: 2s;
 }

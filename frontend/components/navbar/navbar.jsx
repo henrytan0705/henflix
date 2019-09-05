@@ -212,7 +212,7 @@ class Navbar extends React.Component {
 
                         <div className="nav-tab2">
                             <a target="_blank" href="https://github.com/henrytan0705/henflix" className="nav-right">
-                                <i class="fab fa-github"></i>
+                                <i className="fab fa-github"></i>
                             </a>
                            
                         
@@ -221,7 +221,7 @@ class Navbar extends React.Component {
 
                         <div className="nav-tab2">
                             <a target="_blank" href="https://www.linkedin.com/in/henry-0705/" className="nav-right">
-                                <i class="fab fa-linkedin"></i>
+                                <i className="fab fa-linkedin"></i>
                             </a>
                             {/* <Link className="nav-right" to="/browse">DVD</Link> */}
                         </div>

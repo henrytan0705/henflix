@@ -47,7 +47,9 @@ class VideoDisplay extends React.Component {
                     <video 
                         className="display-video" 
                         src={video.videoUrl} 
-                        autoPlay={this.props.previewVideoId ? false : true}
+                        // autoPlay={this.props.previewVideoId ? false : true}
+                        autoPlay
+                        // loop
                         ref={this.vidRef}
                         // onKeyPress={this.togglePlay}
                         // ref="featureRef"

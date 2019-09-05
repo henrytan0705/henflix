@@ -18,7 +18,7 @@ class VideoDescription extends React.Component {
     }
 
     setVideoToState(video) {
-        return () => { this.props.retrieveVideo(video.id); }
+        this.props.retrieveVideo(video.id);
     }
 
 
@@ -52,8 +52,8 @@ class VideoDescription extends React.Component {
                     >
                         <Link to={path}>
                             <span className="description-play-button">
-                                <span className="description-play-butto">
-                                <i className="fas fa-play"></i>
+                                <span className="">
+                                    <i className="fas fa-play"></i>
                                 </span>
 
                                 <span className="play-button-text">

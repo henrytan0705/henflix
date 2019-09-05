@@ -27,13 +27,13 @@ class VideoIndex extends React.Component {
             this.visibleX = true;
             this.description = <VideoDescriptionContainer key={`info-${video.id}`} video={video}/>
             this.setState({showDescription: true});
-            return;
        }
     }
 
     closeDescription() {
         this.description = null;
         this.visibleX = false;
+        this.props.clearCurrentVideo();
         this.setState({showDescription: false});
     }
 

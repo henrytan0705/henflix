@@ -1,16 +1,18 @@
 import { connect } from 'react-redux';
 import VideoIndex from './video_index';
-import { retrieveVideos, retrieveGenreVideos } from '../../../../actions/video_actions';
+import { retrieveVideos, retrieveGenreVideos, clearCurrentVideo } from '../../../../actions/video_actions';
 
 const msp = state => {
     return {
         // videos: state.videos,
+        previewVideoId : Object.keys(state.ui).length
     }
 }
 
 const mdp = dispatch => {
     return {
         retrieveVideos: () => dispatch(retrieveVideos()),
+        clearCurrentVideo: () => dispatch(clearCurrentVideo())
         // retrieveGenreVideos: (id) => dispatch(retrieveGenreVideos(id)),
     }   
 }

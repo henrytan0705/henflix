@@ -11,6 +11,7 @@ ul li{
     position: relative;
     line-height: 26px;
     text-align: right;
+    margin: 0 4px;
 }
 
 ul li a{
@@ -123,7 +124,7 @@ ul li ul.dropdown li{
     display: flex;
     justify-content: space-between;
     padding-left: 40px;
-    width: 25vw;
+    // width: 25vw;
     font-weight: 500;
 }
 

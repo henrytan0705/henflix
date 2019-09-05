@@ -28,17 +28,24 @@ class VideoIndexItem extends React.Component {
     }
 
     playTrailer(){
-        this.setVideoToState(this.props.video);
-        this.playId = setTimeout(
-            function () {
-                if (this._mounted) this.setState({ hover: true });
-            }
-            .bind(this),
-            600
-        );  
+        if (!this.props.previewVideoId) {
+            this.playId = setTimeout(
+                function () {
+                    if (this._mounted) {
+                        this.setVideoToState(this.props.video);
+                        this.setState({ hover: true });
+                    }
+                }
+                .bind(this),
+                600
+            );  
+        }
     }
 
     showThumbnail(){
+        // if (this.props.previewVideoId) {
+
+        // }
         clearTimeout(this.playId);
         this.props.clearCurrentVideo();
         if (this._mounted) this.setState({hover: false});
@@ -50,15 +57,6 @@ class VideoIndexItem extends React.Component {
         this.props.retrieveVideo(video.id);
     }
 
-    // focusVideo(props, video) {
-    //     return () => {
-    //         props.show(video);
-    //         this.setVideoToState(video);
-    //         this.setState({description: true})
-    //     }
-    // }
-
-
     render(){   
         let video = this.props.video || {
             id: "",
@@ -68,6 +66,8 @@ class VideoIndexItem extends React.Component {
             photoUrl: "",
             videoUrl: "", 
         }
+        
+        
         
         let path = `/watch/${video.id}`;
         
@@ -112,8 +112,12 @@ class VideoIndexItem extends React.Component {
 
         // debugger
      
+        // let indexItemHoverEffect = (this.props.previewVideoId) ? "vid" : "video-index-item";
+
         return (
-            <div className="video-index-item tabindex='0'"
+            <div 
+                className="video-index-item"
+                // className={indexItemHoverEffect}
                 onMouseEnter={this.playTrailer}
                 onMouseLeave={this.showThumbnail}
             >

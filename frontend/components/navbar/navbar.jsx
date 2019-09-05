@@ -70,6 +70,10 @@ class Navbar extends React.Component {
         const hasBackground = this.state.scrolled ? "bg" : "bg-none";
         let showPath = "";
         let moviePath = "";
+        let animationPath = "";
+        let foodPath = "";
+        let liveActionPath = "";
+        let educationalPath = "";
 
         let visibleSearchBox = (this.state.searchBox) ? "show-search" : "hide-search";
         let visibleSearchIcon = (this.state.searchBox) ? "hide-icon" : "show-icon";
@@ -79,9 +83,17 @@ class Navbar extends React.Component {
             // debugger
             let tvGenreId = this.props.genres.filter(genre => genre.genre ==="TV Show")[0].id;
             let movieGenreId = this.props.genres.filter(genre => genre.genre ==="Movie")[0].id;
+            let animationGenreId = this.props.genres.filter(genre => genre.genre ==="Animation")[0].id;
+            let foodGenreId = this.props.genres.filter(genre => genre.genre ==="Food")[0].id;
+            let liveActionGenreId = this.props.genres.filter(genre => genre.genre ==="Live Action")[0].id;
+            let educationalGenreId = this.props.genres.filter(genre => genre.genre ==="Educational")[0].id;
             // debugger
             showPath = `/browse/genre/${tvGenreId}`;
             moviePath = `/browse/genre/${movieGenreId}`;
+            animationPath = `/browse/genre/${animationGenreId}`;
+            foodPath = `/browse/genre/${foodGenreId}`;
+            liveActionPath = `/browse/genre/${liveActionGenreId}`;
+            educationalPath = `/browse/genre/${educationalGenreId}`;
         }
 
         if(this.props.url === "splash") {
@@ -116,7 +128,6 @@ class Navbar extends React.Component {
                         <li className="nav-tab">
                             <Link className="tab" 
                                 to={showPath}
-                                // to="/browse"
                                 onClick={this.switchTab}
                             >
                                 TV Shows
@@ -125,14 +136,46 @@ class Navbar extends React.Component {
                         <li className="nav-tab">
                             <Link className="tab" 
                                 to={moviePath}
-                                // to="/browse"
                                 onClick={this.switchTab}
                             >
                                 Movies
                             </Link>
                         </li>
-                        <li className="nav-tab"><Link className="tab" to="/browse">Recently Added</Link></li>
-                        <li className="nav-tab"><Link className="tab" to="/browse">My List</Link></li>
+                        <li className="nav-tab">
+                            <Link className="tab" 
+                                to={animationPath}
+                                onClick={this.switchTab}
+                            >
+                                Animation
+                            </Link>
+                        </li>
+                        <li className="nav-tab">
+                            <Link className="tab" 
+                                to={foodPath}
+                                onClick={this.switchTab}
+                            >
+                                Food/Horror
+                            </Link>
+                        </li>
+                        <li className="nav-tab">
+                            <Link className="tab" 
+                                to={liveActionPath}
+                                onClick={this.switchTab}
+                            >
+                                Live Action
+                            </Link>
+                        </li>
+                        <li className="nav-tab">
+                            <Link className="tab" 
+                                to={educationalPath}
+                                // to="/browse"
+                                onClick={this.switchTab}
+                            >
+                                Educational
+                            </Link>
+                        </li>
+                        {/* <li className="nav-tab"><Link className="tab" to="/browse">Recently Added</Link></li> */}
+                        {/* <li className="nav-tab"><Link className="tab" to="/browse">My List</Link></li> */}
                     </ul>
 
                     <div className="navbar-right-wrapper">

@@ -7,7 +7,7 @@ const msp = state => {
         // video: state.videos[2],
         // videos: state.videos
         // genre: ""
-        
+        previewVideoId: Object.keys(state.ui).length
     }
 }
 

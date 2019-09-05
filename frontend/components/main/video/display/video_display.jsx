@@ -5,6 +5,7 @@ class VideoDisplay extends React.Component {
         super(props);
         this.state = { pathChange: false }
         // debugger
+        this.vidRef = React.createRef();
     }
 
 
@@ -14,10 +15,17 @@ class VideoDisplay extends React.Component {
 
     componentDidUpdate(prevProps) {
         // debugger
-        if(prevProps.location.pathname !== this.props.path) {
+        // if(prevProps.location.pathname !== this.props.path) {
+        //     // debugger
+        //     this.setState({ pathChange: true })
+        // }
+        if (this.props.previewVideoId) {
             // debugger
-            this.setState({ pathChange: true })
+            this.vidRef.current.pause();
+        } else if (!this.props.previewVideoId) {
+            this.vidRef.current.play();
         }
+
     }
 
     render(){
@@ -43,7 +51,8 @@ class VideoDisplay extends React.Component {
                     <video 
                         className="display-video" 
                         src={video.videoUrl} 
-                        // autoPlay
+                        autoPlay={this.props.previewVideoId ? false : true}
+                        ref={this.vidRef}
                         // onKeyPress={this.togglePlay}
                         // ref="featureRef"
                     > 

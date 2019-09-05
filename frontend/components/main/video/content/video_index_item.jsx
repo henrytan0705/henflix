@@ -40,12 +40,14 @@ class VideoIndexItem extends React.Component {
 
     showThumbnail(){
         clearTimeout(this.playId);
+        this.props.clearCurrentVideo();
         if (this._mounted) this.setState({hover: false});
+
     }
 
     setVideoToState(video) {
-        return () => { this.props.retrieveVideo(video.id);}
-        
+        // return () => { this.props.retrieveVideo(video.id);}
+        this.props.retrieveVideo(video.id);
     }
 
     // focusVideo(props, video) {
@@ -113,7 +115,6 @@ class VideoIndexItem extends React.Component {
         return (
             <div className="video-index-item tabindex='0'"
                 onMouseEnter={this.playTrailer}
-                // onClick={this.playTrailer}
                 onMouseLeave={this.showThumbnail}
             >
                 {content1}

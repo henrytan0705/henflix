@@ -7,7 +7,8 @@ const msp = (state, ownProps) => {
     // debugger
     return {
         // video: state.videos[18],
-        path: ownProps.location.pathname
+        // path: ownProps.location.pathname
+        previewVideoId: Object.keys(state.ui).length
     }
 }
 

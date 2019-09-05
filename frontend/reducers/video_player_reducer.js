@@ -1,4 +1,4 @@
-import { RECEIVE_VIDEO } from '../actions/video_actions';
+import { RECEIVE_VIDEO, CLEAR_VIDEO } from '../actions/video_actions';
 import { merge } from 'lodash'
 
 const videoPlayerReducer = (state = {}, action) => {
@@ -7,6 +7,8 @@ const videoPlayerReducer = (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_VIDEO:
             return merge({}, action.video);
+        case CLEAR_VIDEO:
+            return {};
         default:
             return state;
     }

@@ -29,19 +29,22 @@ class VideoIndexItem extends React.Component {
 
     playTrailer(){
         // debugger
-        if (!this.props.previewVideoId) {
-            // debugger
-            this.setVideoToState(this.props.video);
-            this.playId = setTimeout(
-                function () {
-                    if (this._mounted) {
-                        this.setState({ hover: true });
-                    }
-                }
-                .bind(this),
-                600
-            );  
+        // if (!this.props.previewVideoId) {
+        if (this.props.previewBool) {
+            debugger
+            return
         }
+        this.setVideoToState(this.props.video);
+
+        this.playId = setTimeout(
+            function () {
+                if (this._mounted) {
+                    this.setState({ hover: true });
+                }
+            }
+            .bind(this),
+            600
+        );  
     }
 
     showThumbnail(){
@@ -57,8 +60,8 @@ class VideoIndexItem extends React.Component {
 
     setVideoToState(video) {
         // return () => { this.props.retrieveVideo(video.id);}
-        this.props.retrieveVideo(video.id);
-        // this.props.receiveCurrentVideo(video.id);
+        // this.props.retrieveVideo(video.id);
+        this.props.receiveCurrentVideo(video, {preview: true});
     }
 
     render(){   
@@ -122,7 +125,7 @@ class VideoIndexItem extends React.Component {
             <div 
                 className="video-index-item"
                 // className={indexItemHoverEffect}
-                onMouseEnter={this.playTrailer}
+                onMouseEnter= {this.props.previewBool ? this.showThumbnail : this.playTrailer}
                 onMouseLeave={this.showThumbnail}
             >
                 {content1}

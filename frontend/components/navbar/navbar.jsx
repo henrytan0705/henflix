@@ -44,10 +44,8 @@ class Navbar extends React.Component {
     }
 
     updateSearch(){
-        // debugger
         if (this._mount) {
             setTimeout(() => {
-                // debugger
                 this.setState({searchInput: this.searchField.current})
             }, 200);
         }s
@@ -56,7 +54,9 @@ class Navbar extends React.Component {
     componentDidMount() {
         if (this.props.url === "main"){
             this.addScrollListener();
-            this.props.retrieveGenres();
+            if (!Object.keys(this.props.genres).length){
+                this.props.retrieveGenres();
+            }
         }
         this._mount = true;
     }
@@ -80,14 +80,12 @@ class Navbar extends React.Component {
 
         if (this.props.url === "main") {
             if (!this.props.genres.length) return null;
-            // debugger
             let tvGenreId = this.props.genres.filter(genre => genre.genre ==="TV Show")[0].id;
             let movieGenreId = this.props.genres.filter(genre => genre.genre ==="Movie")[0].id;
             let animationGenreId = this.props.genres.filter(genre => genre.genre ==="Animation")[0].id;
             let foodGenreId = this.props.genres.filter(genre => genre.genre ==="Food")[0].id;
             let liveActionGenreId = this.props.genres.filter(genre => genre.genre ==="Live Action")[0].id;
             let educationalGenreId = this.props.genres.filter(genre => genre.genre ==="Educational")[0].id;
-            // debugger
             showPath = `/browse/genre/${tvGenreId}`;
             moviePath = `/browse/genre/${movieGenreId}`;
             animationPath = `/browse/genre/${animationGenreId}`;
@@ -214,16 +212,12 @@ class Navbar extends React.Component {
                             <a target="_blank" href="https://github.com/henrytan0705/henflix" className="nav-right">
                                 <i className="fab fa-github"></i>
                             </a>
-                           
-                        
-                            {/* <Link className="nav-right" to="/browse/">KIDS</Link> */}
                         </div>
 
                         <div className="nav-tab2">
                             <a target="_blank" href="https://www.linkedin.com/in/henry-0705/" className="nav-right">
                                 <i className="fab fa-linkedin"></i>
                             </a>
-                            {/* <Link className="nav-right" to="/browse">DVD</Link> */}
                         </div>
 
                         <div className="nav-tab2">

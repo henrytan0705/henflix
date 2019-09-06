@@ -5,8 +5,8 @@ const videoPlayerReducer = (state = {}, action) => {
     Object.freeze(state);
 
     switch (action.type) {
-    //     case RECEIVE_CURRENT_VIDEO:
-    //         return merge({}, action.video);
+        case RECEIVE_CURRENT_VIDEO:
+            return merge({}, action.video.id, action.preview);
         case RECEIVE_VIDEO:
             return merge({}, action.video);
         case CLEAR_VIDEO:

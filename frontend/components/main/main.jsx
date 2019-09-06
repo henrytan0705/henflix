@@ -9,8 +9,13 @@ class Main extends React.Component {
     }
 
     componentDidMount(){
-        this.props.retrieveVideos();
-        this.props.retrieveGenres();
+        // debugger
+        if(!Object.keys(this.props.videos).length || 
+            !Object.keys(this.props.genres).length){
+                // debugger
+            this.props.retrieveVideos();
+            this.props.retrieveGenres();
+        }
     }
 
     render() {

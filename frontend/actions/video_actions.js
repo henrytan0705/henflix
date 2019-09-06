@@ -21,12 +21,13 @@ export const receiveVideo = (video) => {
     }
 }
 
-// export const recieveCurrentVideo = (video) => {
-//     return {
-//         type: RECEIVE_CURRENT_VIDEO,
-//         video
-//     }
-// }
+export const receiveCurrentVideo = (video, preview) => {
+    return {
+        type: RECEIVE_CURRENT_VIDEO,
+        video,
+        preview
+    }
+}
 
 
 export const receiveGenres = (genres) => {

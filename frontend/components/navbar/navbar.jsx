@@ -23,9 +23,9 @@ class Navbar extends React.Component {
         window.addEventListener('scroll', () => {
             let yOffset = window.pageYOffset;
             if (yOffset === 0 && this._mount) {
-                if (this.state.scrolled) this.setState({scrolled: false})
+                if (this.state.scrolled && this._mount) this.setState({scrolled: false})
             } else {
-                if (!this.state.scrolled) this.setState({scrolled: true})
+                if (!this.state.scrolled && this._mount) this.setState({scrolled: true})
             }
         })
     }

@@ -10,7 +10,7 @@ const videoPlayerReducer = (state = {}, action) => {
         case RECEIVE_VIDEO:
             return merge({}, action.video);
         case CLEAR_VIDEO:
-            return {};
+            return merge({}, action.preview);
         default:
             return state;
     }

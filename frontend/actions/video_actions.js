@@ -44,12 +44,19 @@ export const searchVideos = (videos) => {
     }
 }
 
-export const clearCurrentVideo = () => {
+export const clearCurrentVideo = (preview) => {
     return {
-        type: CLEAR_VIDEO
+        type: CLEAR_VIDEO,
+        preview
     }
 }
 
+export const recieveCurrentDescription = video => {
+    return {
+        type: RECEIVE_DESCRIPTION,
+        video
+    }
+}
 
 
 

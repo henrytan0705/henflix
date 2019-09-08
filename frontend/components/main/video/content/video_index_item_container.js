@@ -6,14 +6,15 @@ const msp = state => {
     // debugger
     return {
         previewVideoId: Object.keys(state.ui).length,
-        previewBool: Object.keys(state.ui).length ? state.ui[Object.keys(state.ui)[0]]["preview"] : false
+        // previewBool: Object.keys(state.ui).length ? state.ui[Object.keys(state.ui)[0]]["preview"] : false
+        previewBool: state.ui.preview 
     }
 }
 
 const mdp = dispatch => {
     return {
         retrieveVideo: (id) => dispatch(retrieveVideo(id)),
-        clearCurrentVideo: () => dispatch(clearCurrentVideo()),
+        clearCurrentVideo: (preview) => dispatch(clearCurrentVideo(preview)),
         receiveCurrentVideo: (video, preview) => dispatch(receiveCurrentVideo(video, preview))
     }
 }

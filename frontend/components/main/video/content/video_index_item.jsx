@@ -53,7 +53,7 @@ class VideoIndexItem extends React.Component {
         // }
         // debugger
         clearTimeout(this.playId);
-        this.props.clearCurrentVideo();
+        this.props.clearCurrentVideo({preview: false});
         if (this._mounted) this.setState({hover: false});
 
     }

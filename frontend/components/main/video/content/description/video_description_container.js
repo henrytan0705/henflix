@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import VideoDescription from './video_description.jsx';
 // import { withRouter } from 'react-router-dom';
-import { retrieveVideo, clearCurrentVideo, receiveCurrentVideo, receiveCurrentDescription } from '../../../../../actions/video_actions';
+import { retrieveVideo, clearCurrentVideo, receiveCurrentVideo, receiveCurrentDescription, clearDescription } from '../../../../../actions/video_actions';
 
 const msp = (state, ownProps) => {
     return {
@@ -15,7 +15,9 @@ const mdp = dispatch => {
         retrieveVideo: id => dispatch(retrieveVideo(id)),
         clearCurrentVideo: (video, preview) => dispatch(clearCurrentVideo(video, preview)),
         receiveCurrentVideo: (video, preview ) => dispatch(receiveCurrentVideo(video, preview)),
-        receiveCurrentDescription: video => dispatch(receiveCurrentDescription(video))
+        receiveCurrentDescription: video => dispatch(receiveCurrentDescription(video)),
+        clearDescription: () => dispatch(clearDescription()),
+
     }
 }
 

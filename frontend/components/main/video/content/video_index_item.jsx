@@ -14,7 +14,7 @@ class VideoIndexItem extends React.Component {
         this.playTrailer = this.playTrailer.bind(this);
         this.showThumbnail = this.showThumbnail.bind(this);
         this.setVideoToState = this.setVideoToState.bind(this);
-        // this.showDescription = this.showDescription.bind(this);
+        this.showDescription = this.showDescription.bind(this);
         // this.description = null;
         // this.vidRef = React.createRef();
     }
@@ -30,9 +30,9 @@ class VideoIndexItem extends React.Component {
     playTrailer(){
         // debugger
         // if (!this.props.previewVideoId) {
-        if (this.props.previewBool) {
+        if (this.props.descriptionOpen) {
             // debugger
-            return
+            return;
         }
 
         this.setVideoToState(this.props.video);
@@ -42,7 +42,7 @@ class VideoIndexItem extends React.Component {
                 if (this._mounted) {
                     this.setState({ hover: true });
                 }
-            }
+            }   
             .bind(this),
             600
         );  
@@ -53,16 +53,24 @@ class VideoIndexItem extends React.Component {
 
         // }
         // debugger
+        // if (this.props.descriptionOpen) return;
         clearTimeout(this.playId);
+        // if (this.props.descriptionOpen) return;
         this.props.clearCurrentVideo({preview: false});
         if (this._mounted) this.setState({hover: false});
 
     }
 
     setVideoToState(video) {
+        // debugger
         // return () => { this.props.retrieveVideo(video.id);}
         // this.props.retrieveVideo(video.id);
         this.props.receiveCurrentVideo(video, {preview: true});
+    }
+
+    showDescription() {
+        this.props.show(this.props.video);
+        this.setState({hover: false});
     }
 
     render(){   
@@ -75,8 +83,6 @@ class VideoIndexItem extends React.Component {
             videoUrl: "", 
         }
         
-        
-        
         let path = `/watch/${video.id}`;
         
         let content1 =
@@ -86,7 +92,8 @@ class VideoIndexItem extends React.Component {
                         id={`video-${video.id}`}
                         className="video-thumbnail"
                         src={video.photoUrl}
-                        onClick={this.props.show(video)}
+                        onClick={this.showDescription}
+                        // onClick={this.props.show(video)}
                     >
                     </img>
                 
@@ -126,7 +133,8 @@ class VideoIndexItem extends React.Component {
             <div 
                 className="video-index-item"
                 // className={indexItemHoverEffect}
-                onMouseEnter= {this.props.previewBool ? this.showThumbnail : this.playTrailer}
+                // onMouseEnter= {this.props.previewBool ? this.showThumbnail : this.playTrailer}
+                onMouseEnter= {this.playTrailer}
                 onMouseLeave={this.showThumbnail}
             >
                 {content1}

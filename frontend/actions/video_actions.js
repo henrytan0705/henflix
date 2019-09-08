@@ -7,6 +7,7 @@ export const SEARCH_VIDEOS = "SEARCH_VIDEOS"
 export const CLEAR_VIDEO = "CLEAR_VIDEO";
 export const RECEIVE_CURRENT_VIDEO = "RECEIEVE_CURRENT_VIDEO";
 export const RECEIVE_CURRENT_DESCRIPTION = "RECEIVE_CURRENT_DESCRIPTION";
+export const CLEAR_DESCRIPTION = "CLEAR_DESCRIPTION";
 
 export const receiveVideos = (videos) => {
     return {
@@ -59,7 +60,11 @@ export const receiveCurrentDescription = (video) => {
     }
 }
 
-
+export const clearDescription = () => {
+    return {
+        type: CLEAR_DESCRIPTION
+    }
+}
 
 
 export const retrieveVideos = () => dispatch => {

@@ -33,7 +33,8 @@ class VideoIndex extends React.Component {
     closeDescription() {
         this.description = null;
         this.visibleX = false;
-        this.props.clearCurrentVideo();
+        // this.props.clearCurrentVideo();
+        this.props.clearDescription();
         this.setState({showDescription: false});
     }
 

@@ -31,9 +31,10 @@ class VideoIndexItem extends React.Component {
         // debugger
         // if (!this.props.previewVideoId) {
         if (this.props.previewBool) {
-            debugger
+            // debugger
             return
         }
+
         this.setVideoToState(this.props.video);
 
         this.playId = setTimeout(

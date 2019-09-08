@@ -1,23 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
 class VideoDescription extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {focus: false}
+        // this.state = {focus: false}
         this.setVideoToState = this.setVideoToState.bind(this);
     }
 
     componentDidMount() {
         this.setVideoToState(this.props.video);
-        this.setState({focus: true})
+        // this.setState({focus: true});
     }
 
     setVideoToState(video) {
         // this.props.retrieveVideo(video.id);
-        this.props.receiveCurrentVideo(video, {preview: true});
+        // this.props.receiveCurrentVideo(video, {preview: true});
+        this.props.receiveCurrentDescription(video);
     }
 
 

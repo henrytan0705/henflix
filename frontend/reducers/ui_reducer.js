@@ -1,9 +1,10 @@
-import { combineReducers } from ' redux';
-import videoPlayerReducer from './video_player_reducer';
+import { combineReducers } from 'redux';
+import previewReducer from './preview_reducer';
+import descriptionReducer from './description_display_reducer';
 
 const uiReducer = combineReducers({
-    videoPlayer: videoPlayerReducer,
-    
+    preview: previewReducer,
+    description: descriptionReducer,
 })
 
 export default uiReducer;

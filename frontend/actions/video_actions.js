@@ -68,6 +68,7 @@ export const clearDescription = () => {
 
 
 export const retrieveVideos = () => dispatch => {
+    // debugger    
     return VideoAPIUtil.fetchVideos()
         .then(videos => dispatch(receiveVideos(videos)))
 }

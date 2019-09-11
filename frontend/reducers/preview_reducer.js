@@ -8,8 +8,8 @@ const previewReducer = (state = {}, action) => {
         case RECEIVE_CURRENT_VIDEO:
         // debugger
             return merge({}, action.video.id, action.preview);
-        // case RECEIVE_VIDEO:
-        //     return merge({}, action.video);
+        case RECEIVE_VIDEO:
+            return merge({}, action.video);
         case CLEAR_VIDEO:
             return merge({}, action.preview);
         default:

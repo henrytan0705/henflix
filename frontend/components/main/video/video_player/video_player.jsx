@@ -10,7 +10,7 @@ class VideoPlayer extends React.Component {
 
     render(){
         if(!this.props.video) return null;
-
+ 
         return(
             <div className="video-wrapper">
                 <Link to="/browse" className="back-button"><ArrowLeft/></Link>

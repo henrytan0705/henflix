@@ -193,14 +193,14 @@ class Navbar extends React.Component {
 
                             <div className="search-box">
                                 {/* <button className={`search-tab ${visibleSearchIcon}`}> */}
-                                <button className={`search-tab hide-icon"`}>
+                                {/* <button className={`search-tab hide-icon"`}>
                                     <span className="search-icon nav-right">
                                         <i className="fas fa-search"
                                         onClick={this.displaySearchBox}    
                                         >
                                         </i>
                                     </span>
-                                </button>
+                                </button> */}
                                
                                 {/* <div className={`search-input ${visibleSearchBox}`} */}
                                 <div className={`search-input show-search`}

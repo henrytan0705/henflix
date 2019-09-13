@@ -92,8 +92,7 @@ class VideoIndexItem extends React.Component {
                         id={`video-${video.id}`}
                         className="video-thumbnail"
                         src={video.photoUrl}
-                        onClick={this.showDescription}
-                        // onClick={this.props.show(video)}
+                        onClick={this.props.show(video)}
                     >
                     </img>
                 {/* <span className="description-container" onClick={this.props.show(video)}></span> */}

@@ -7,6 +7,7 @@ class VideoDescription extends React.Component {
         super(props);
         // this.state = {focus: false}
         this.setVideoToState = this.setVideoToState.bind(this);
+        this.closeDescription = this.closeDescription.bind(this);
     }
 
     componentDidMount() {
@@ -16,13 +17,23 @@ class VideoDescription extends React.Component {
 
     setVideoToState(video) {
         // this.props.retrieveVideo(video.id);
-        this.props.receiveCurrentVideo(video, {preview: true});
+        // this.props.receiveCurrentVideo(video, {preview: true});
         this.props.receiveCurrentDescription(video);
+        // this.props.clearDescription();
+        // this.closeDescription();
+    }
+
+    closeDescription() {
+        // this.description = null;
+        // this.visibleX = false;
+        // this.props.clearCurrentVideo();
+        this.props.clearDescription();
+        // this.setState({ showDescription: false });
     }
 
     componentDidUpdate(prevProps) {
         debugger
-        
+
     }
 
     render() {
@@ -79,7 +90,8 @@ class VideoDescription extends React.Component {
 
                     <div className="description-video-container">
                         <Link to={path}
-                            onClick={this.setVideoToState(video)}
+                            // onClick={this.setVideoToState}
+                            onClick={this.closeDescription}
                             >
                             <video className="description-video" 
                                     src={video.videoUrl} 

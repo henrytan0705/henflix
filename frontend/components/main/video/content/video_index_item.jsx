@@ -34,7 +34,7 @@ class VideoIndexItem extends React.Component {
             return;
         }
 
-        this.setVideoToState(this.props.video);
+        // this.setVideoToState(this.props.video);
 
         this.playId = setTimeout(
             function () {
@@ -55,7 +55,7 @@ class VideoIndexItem extends React.Component {
         // if (this.props.descriptionOpen) return;
         clearTimeout(this.playId);
         // if (this.props.descriptionOpen) return;
-        this.props.clearCurrentVideo({preview: false});
+        // this.props.clearCurrentVideo({preview: false});
         if (this._mounted) this.setState({hover: false});
 
     }

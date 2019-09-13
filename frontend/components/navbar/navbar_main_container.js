@@ -15,7 +15,7 @@ const mdp = dispatch => {
     return {
         logout: () => dispatch(logout()),
         retrieveGenres: () => dispatch(retrieveGenres()),
-        // retrieveSearch: query => dispatch(retrieveSearch(query))
+        retrieveSearch: query => dispatch(retrieveSearch(query))
     }
 }
 

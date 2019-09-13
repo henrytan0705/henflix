@@ -16,10 +16,14 @@ class VideoDescription extends React.Component {
 
     setVideoToState(video) {
         // this.props.retrieveVideo(video.id);
-        // this.props.receiveCurrentVideo(video, {preview: true});
+        this.props.receiveCurrentVideo(video, {preview: true});
         this.props.receiveCurrentDescription(video);
     }
 
+    componentDidUpdate(prevProps) {
+        debugger
+        
+    }
 
     render() {
         if (this.props.video === undefined) return null;

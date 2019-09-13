@@ -11,13 +11,15 @@ class Api::VideosController < ApplicationController
     end
 
     def search 
+        # debugger
         title = params[:title]
         @videos = Video.where('title ILIKE ?', "%#{title}%")
+        # debugger
 
         if @videos.nil?
             render json: 'Search returned no results'
         else
-            render "api/videos/index"
+            render "api/videos/search"
         end
     end
 

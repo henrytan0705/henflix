@@ -44,11 +44,23 @@ class Navbar extends React.Component {
     }
 
     updateSearch(){
+        clearTimeout(this.searchId);
+
+        // let data = event.data;
+        // debugger
+        if (this.searchField.current.value.length === 0) return; 
+        // if (data.length === 0) return;
+        // debugger
         if (this._mount) {
-            setTimeout(() => {
-                this.setState({searchInput: this.searchField.current})
-            }, 200);
-        }s
+            this.searchId = setTimeout(function() {
+                // debugger                               
+                this.setState({searchInput: this.searchField.current});
+                // debugger
+                this.props.retrieveSearch(this.searchField.current.value);
+                // this.retrieveSearh(e.nativeEvent.data);
+            }.bind(this), 1000) ;
+        }
+    
     }
 
     componentDidMount() {
@@ -59,7 +71,7 @@ class Navbar extends React.Component {
             }
         }
         this._mount = true;
-    }
+    }                
 
     componentWillUnmount() {
         this._mount = false
@@ -180,16 +192,18 @@ class Navbar extends React.Component {
                         <div className="nav-tab2">
 
                             <div className="search-box">
-                                <button className={`search-tab ${visibleSearchIcon}`}>
+                                {/* <button className={`search-tab ${visibleSearchIcon}`}> */}
+                                <button className={`search-tab hide-icon"`}>
                                     <span className="search-icon nav-right">
                                         <i className="fas fa-search"
-                                        onClick={this.displaySearchBox}
+                                        onClick={this.displaySearchBox}    
                                         >
                                         </i>
                                     </span>
                                 </button>
                                
-                                <div className={`search-input ${visibleSearchBox}`}
+                                {/* <div className={`search-input ${visibleSearchBox}`} */}
+                                <div className={`search-input show-search`}
                                     onBlur={this.hideSearchBox}>
                                     <form>
                                         <span className="search-icon-in-box"><i className="fas fa-search"></i></span>
@@ -198,7 +212,7 @@ class Navbar extends React.Component {
                                             type="text"
                                             placeholder="Titles, people, genres"
                                             ref={this.searchField}
-                                            // onChange={this.updateSearch}
+                                            onChange={this.updateSearch}
                                             >
                                         </input>
                                         <span></span>

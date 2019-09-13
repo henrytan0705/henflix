@@ -31,7 +31,6 @@ class VideoIndexItem extends React.Component {
         // debugger
         // if (!this.props.previewVideoId) {
         if (this.props.descriptionOpen) {
-            // debugger
             return;
         }
 
@@ -69,8 +68,9 @@ class VideoIndexItem extends React.Component {
     }
 
     showDescription() {
+        // debugger
         this.props.show(this.props.video);
-        this.setState({hover: false});
+        // this.setState({hover: false});
     }
 
     render(){   
@@ -85,7 +85,7 @@ class VideoIndexItem extends React.Component {
         
         let path = `/watch/${video.id}`;
         
-        let content1 =
+        this.content1 =
             this.state.hover === false ? (
             <div className="thumbnail-position">
                     <img
@@ -96,7 +96,6 @@ class VideoIndexItem extends React.Component {
                         // onClick={this.props.show(video)}
                     >
                     </img>
-                
                 {/* <span className="description-container" onClick={this.props.show(video)}></span> */}
             </div>
             ) : (
@@ -125,6 +124,8 @@ class VideoIndexItem extends React.Component {
             </>
             );
 
+   
+
         // debugger
      
         // let indexItemHoverEffect = (this.props.previewVideoId) ? "vid" : "video-index-item";
@@ -136,8 +137,9 @@ class VideoIndexItem extends React.Component {
                 // onMouseEnter= {this.props.previewBool ? this.showThumbnail : this.playTrailer}
                 onMouseEnter= {this.playTrailer}
                 onMouseLeave={this.showThumbnail}
+                onClick={this.showDescription}
             >
-                {content1}
+                {this.content1}
             
                 {/* {this.description} */}
 

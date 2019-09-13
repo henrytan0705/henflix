@@ -13,7 +13,8 @@ const mdp = dispatch => {
     return {
         retrieveVideos: () => dispatch(retrieveVideos()),
         clearCurrentVideo: () => dispatch(clearCurrentVideo()),
-        clearDescription: () => dispatch(clearDescription())
+        clearDescription: () => dispatch(clearDescription()),
+        
         // retrieveGenreVideos: (id) => dispatch(retrieveGenreVideos(id)),
     }   
 }

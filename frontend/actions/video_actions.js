@@ -39,6 +39,7 @@ export const receiveGenres = (genres) => {
 }
 
 export const searchVideos = (videos) => {
+    // debugger
     return {
         type: SEARCH_VIDEOS,
         videos
@@ -83,7 +84,8 @@ export const retrieveGenres = () => dispatch => {
         .then(genres => dispatch(receiveGenres(genres)))
 }
 
-export const retrieveSearch = () => dispatch => {
+export const retrieveSearch = (query) => dispatch => {
+    // debugger
     return VideoAPIUtil.fetchSearch(query)
         .then(videos => dispatch(searchVideos(videos)))
 }

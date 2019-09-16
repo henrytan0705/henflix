@@ -54,12 +54,14 @@ class SessionForm extends React.Component {
         for (let i = 0; i < this.props.errors.length; i++) {
             let error = this.props.errors[i];
             // debugger
-            if (error.includes("Email")) {
+            if (error.includes("Email") || error.includes("email")){
                 emailError = error;
-            } else if (error.includes("Password")) {
+            } else if (error.includes("Password") || error.includes("password")) {
                 passwordError = error;
             }
         }
+
+        // debugger
 
         const linkText = (this.props.formType === "Sign In") ? 
             "New to Netflix?" : "Already have an account?"

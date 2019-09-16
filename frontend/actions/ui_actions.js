@@ -4,7 +4,8 @@ export const RECEIVE_CURRENT_VIDEO = "RECEIEVE_CURRENT_VIDEO";
 export const CLEAR_VIDEO = "CLEAR_VIDEO";
 export const RECEIVE_CURRENT_DESCRIPTION = "RECEIVE_CURRENT_DESCRIPTION";
 export const CLEAR_DESCRIPTION = "CLEAR_DESCRIPTION";
-export const SEARCH_VIDEOS = "SEARCH_VIDEOS"
+export const SEARCH_VIDEOS = "SEARCH_VIDEOS";
+export const SEARCHING_FOR_VIDEOS = "SEARCHING_FOR_VIDEOS";
 
 export const receiveCurrentVideo = (video, preview) => {
     return {
@@ -39,6 +40,14 @@ export const searchVideos = (videos) => {
         videos
     }
 }
+
+export const searchingForVideos = (query) => {
+    return {
+        type: SEARCHING_FOR_VIDEOS,
+        query
+    }
+}
+
 
 export const retrieveSearch = (query) => dispatch => {
     return VideoAPIUtil.fetchSearch(query)

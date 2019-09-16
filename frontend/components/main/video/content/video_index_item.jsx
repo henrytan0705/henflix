@@ -13,7 +13,7 @@ class VideoIndexItem extends React.Component {
         }
         this.playTrailer = this.playTrailer.bind(this);
         this.showThumbnail = this.showThumbnail.bind(this);
-        this.setVideoToState = this.setVideoToState.bind(this);
+        // this.setVideoToState = this.setVideoToState.bind(this);
         this.showDescription = this.showDescription.bind(this);
         // this.description = null;
         // this.vidRef = React.createRef();
@@ -60,12 +60,12 @@ class VideoIndexItem extends React.Component {
 
     }
 
-    setVideoToState(video) {
-        // debugger
-        // return () => { this.props.retrieveVideo(video.id);}
-        // this.props.retrieveVideo(video.id);
-        this.props.receiveCurrentVideo(video, {preview: true});
-    }
+    // setVideoToState(video) {
+    //     // debugger
+    //     // return () => { this.props.retrieveVideo(video.id);}
+    //     // this.props.retrieveVideo(video.id);
+    //     this.props.receiveCurrentVideo(video, {preview: true});
+    // }
 
     showDescription() {
         // debugger

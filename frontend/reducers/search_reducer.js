@@ -6,7 +6,6 @@ const searchReducer = (state = {}, action) => {
 
     switch(action.type) {
         case SEARCH_VIDEOS:
-            // debugger
             return merge({}, action.videos);
         default: 
             return state;

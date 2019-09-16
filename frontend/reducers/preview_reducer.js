@@ -4,10 +4,8 @@ import { merge } from 'lodash'
 
 const previewReducer = (state = {}, action) => {
     Object.freeze(state);
-// debugger
     switch (action.type) {
         case RECEIVE_CURRENT_VIDEO:
-        // debugger
             return merge({}, action.video.id, action.preview);
         case RECEIVE_VIDEO:
             return merge({}, action.video);

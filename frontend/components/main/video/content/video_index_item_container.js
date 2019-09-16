@@ -17,7 +17,7 @@ const mdp = dispatch => {
     return {
         retrieveVideo: (id) => dispatch(retrieveVideo(id)),
         clearCurrentVideo: (preview) => dispatch(clearCurrentVideo(preview)),
-        receiveCurrentVideo: (video, preview) => dispatch(receiveCurrentVideo(video, preview))
+        // receiveCurrentVideo: (video, preview) => dispatch(receiveCurrentVideo(video, preview))
     }
 }
 

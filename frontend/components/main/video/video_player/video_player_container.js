@@ -1,6 +1,6 @@
 import VideoPlayer from './video_player';
 import { connect } from 'react-redux';
-import { retrieveVideo } from '../../../../actions/video_actions';
+import { retrieveVideo, clearCurrentVideo } from '../../../../actions/video_actions';
 import { withRouter } from 'react-router-dom';
 
 const msp = (state, ownProps) => {
@@ -15,6 +15,7 @@ const msp = (state, ownProps) => {
 const mdp = dispatch => {
     return {
         retrieveVideo: (id) => dispatch(retrieveVideo(id)),
+        clearCurrentVideo: () => dispatch(clearCurrentVideo())
     }
 }
 

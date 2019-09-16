@@ -6,7 +6,7 @@ const msp = state => {
     // debugger
     return {
         // previewVideoId: Object.keys(state.ui).length,
-        previewBool: Object.keys(state.ui.preview).length ? state.ui[Object.keys(state.ui)[0]]["preview"] : false,
+        // previewBool: Object.keys(state.ui.searching).length ? state.ui[Object.keys(state.ui)[0]]["preview"] : false,
         descriptionOpen: Object.values(state.ui.description).length
         // previewBool: state.ui.preview 
     }

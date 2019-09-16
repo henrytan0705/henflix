@@ -13,7 +13,11 @@ class VideoPlayer extends React.Component {
  
         return(
             <div className="video-wrapper">
-                <Link to="/browse" className="back-button"><ArrowLeft/></Link>
+                <Link to="/browse" 
+                    className="back-button"
+                    onClick={this.props.clearCurrentVideo}>
+                    <ArrowLeft/>
+                </Link>
                 
                 <video 
                     src={this.props.video.videoUrl} 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { PlayCircle } from 'react-feather';
-import VideoDescriptionContainer from './description/video_description_container.js';
+// import VideoDescriptionContainer from './description/video_description_container.js';
 
 class VideoIndexItem extends React.Component {
     constructor(props) {

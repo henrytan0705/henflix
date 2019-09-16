@@ -158,7 +158,7 @@ class Navbar extends React.Component {
                             >
                                 Animation
                             </Link>
-                        </li>
+                        </li>                   
                         <li className="nav-tab">
                             <Link className="tab" 
                                 to={foodPath}
@@ -192,7 +192,7 @@ class Navbar extends React.Component {
                         <div className="nav-tab2">
 
                             <div className="search-box">
-                                {/* <button className={`search-tab ${visibleSearchIcon}`}> */}
+                                                                                           {/* <button className={`search-tab ${visibleSearchIcon}`}> */}
                                 {/* <button className={`search-tab hide-icon"`}>
                                     <span className="search-icon nav-right">
                                         <i className="fas fa-search"

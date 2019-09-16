@@ -88,21 +88,22 @@ class Navbar extends React.Component {
             if (!Object.keys(this.props.genres).length){
                 this.props.retrieveGenres();
             }
+            
+            if (this.props.path !== "/browse"){
+    
+                // debugger
+                // this.searchButton.current.click();
+                this.state.searchBox = true;
+                // this.searchField.current = {value: this.props.search};
+                this.searchField.current.value = this.props.search;
+                // debugger
+                // if (this.props.searching.status === true) {
+                //     debugger
+                //     // this.updateSearch();
+                // }
+            }
         }
         // debugger
-        if (this.props.path !== "/browse"){
-
-            // debugger
-            // this.searchButton.current.click();
-            this.state.searchBox = true;
-            // this.searchField.current = {value: this.props.search};
-            this.searchField.current.value = this.props.search;
-            // debugger
-            // if (this.props.searching.status === true) {
-            //     debugger
-            //     // this.updateSearch();
-            // }
-        }
         // debugger
         // if (this.searchField.current) {
             // debugger

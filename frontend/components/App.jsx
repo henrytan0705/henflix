@@ -19,7 +19,7 @@ const App = () => {
             <AuthRoute exact path="/login" component={LoginFormContainer}/>
             <MainAuthRoute path="/browse" component={MainContainer}/>
             <PlayerAuthRoute exact path="/watch/:id" component={VideoPlayerContainer}/>
-            {/* <SearchAuthRoute path ="/search/:query" component={SearchContainer}/> */}
+            <SearchAuthRoute path ="/search/:query" component={SearchContainer}/>
             {/* <Footer /> */}
         </>
     )

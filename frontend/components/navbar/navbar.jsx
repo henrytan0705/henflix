@@ -47,29 +47,38 @@ class Navbar extends React.Component {
         clearTimeout(this.searchId);
         let searchQuery = this.searchField.current.value
         let emptySearch = true;
-
+        // debugger
         if (searchQuery.length === 0) {
-            this.props.searchingForVideos(false);
+            this.props.searchingForVideos(false, searchQuery);
+            this.props.history.push('/browse');
             return;
         }
+        // debugger
 
         for(let i = 0; i < searchQuery.length; i++) {
             if(searchQuery[i] !== " ") emptySearch = false;
         }
-        
+        // debugger
         if (emptySearch === true) {
             this.searchId = setTimeout(() => {
-                this.props.searchingForVideos(false);
+                this.props.searchingForVideos(false, searchQuery);
+                this.props.history.push('/browse');
             }, 1000)
         } else {
             this.searchId = setTimeout(function () {
-                this.props.searchingForVideos(true);
+                // debugger
+                this.props.searchingForVideos(true, searchQuery);
                 this.setState({ searchInput: this.searchField.current });
                 this.props.retrieveSearch(searchQuery);
+                // debugger
+                // this.searchField.current.value = searchQuery;
+                this.props.history.push(`/search/${searchQuery}`);
             }.bind(this), 1000);
         }
-
+        // debugger
     }
+
+
 
     componentDidMount() {
         if (this.props.url === "main"){
@@ -79,6 +88,7 @@ class Navbar extends React.Component {
             }
         }
         this._mount = true;
+        this.searchField.current.value = this.props.search;
     }                
 
     componentWillUnmount() {
@@ -221,6 +231,7 @@ class Navbar extends React.Component {
                                             placeholder="Titles, people, genres"
                                             ref={this.searchField}
                                             onChange={this.updateSearch}
+                                            // value = {this.props.search}
                                             >
                                         </input>
                                         <span></span>

@@ -10,7 +10,8 @@ const msp = (state, ownProps) => {
         loggedIn: Boolean(state.session.userId),
         videos: state.entities.videos,
         path: ownProps.location.pathname.split('/'),
-        genres: state.entities.genres
+        genres: state.entities.genres,
+        search: state.ui.searching
     }
 }
 

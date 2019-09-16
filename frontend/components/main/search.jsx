@@ -5,9 +5,9 @@ import VideoIndexContainer from './video/content/video_index_container';
 
 class Search extends React.Component {
     componentDidMount() {
-        if (!Object.keys(this.props.genres).length) {
-            // debugger
-            // this.props.retrieveVideos();
+        if (!Object.keys(this.props.videos).length ||
+            !Object.keys(this.props.genres).length) {
+            this.props.retrieveVideos();
             this.props.retrieveGenres();
         }
     }
@@ -15,7 +15,7 @@ class Search extends React.Component {
     render() {
         return (
             <div className="main-page">
-                <NavbarMainContainer />
+                <NavbarMainContainer/>
                 <div className='main-content'>
                     {/* <VideoSection videos={this.props.searchResults} genres={this.props.genres} /> */}
                     <VideoIndexContainer videos={this.props.searchResults}/>

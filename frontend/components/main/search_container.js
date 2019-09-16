@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Search from './search';
-import { retrieveGenres } from '../../actions/video_actions'
+import { retrieveVideos, retrieveGenres } from '../../actions/video_actions'
 import { retrieveSearch } from '../../actions/ui_actions';
 
 const msp = state => {
@@ -12,7 +12,7 @@ const msp = state => {
         searchStatus: state.ui.searching,
         searchResults: state.ui.searchResults,
         // type: "Search",
-        // videos,
+        videos: state.entities.videos,
         genres: state.entities.genres
         
     }
@@ -20,6 +20,7 @@ const msp = state => {
 
 const mdp = dispatch => {
     return {
+        retrieveVideos: () => dispatch(retrieveVideos()),
         retrieveGenres: () => dispatch(retrieveGenres()),
         retrieveSearch: query => dispatch(retrieveSearch(query))
     }

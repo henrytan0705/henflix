@@ -12,6 +12,7 @@ class Navbar extends React.Component {
             searchInput: ""
         }
         this.searchField = React.createRef();
+        this.searchButton = React.createRef();
         this.addScrollListener = this.addScrollListener.bind(this);
         this.switchTab = this.switchTab.bind(this);
         this.displaySearchBox = this.displaySearchBox.bind(this);
@@ -35,7 +36,9 @@ class Navbar extends React.Component {
     }
 
     displaySearchBox() {
-        document.getElementById("search-input-box").focus();
+        // document.getElementById("search-input-box").focus();
+        // debugger
+        this.searchField.current.focus();
         this.setState({searchBox: true});
     }
 
@@ -48,7 +51,7 @@ class Navbar extends React.Component {
         let searchQuery = this.searchField.current.value
         let emptySearch = true;
         // debugger
-        if (searchQuery.length === 0) {
+        if (searchQuery === undefined) {
             this.props.searchingForVideos(false, searchQuery);
             this.props.history.push('/browse');
             return;
@@ -75,10 +78,9 @@ class Navbar extends React.Component {
                 this.props.history.push(`/search/${searchQuery}`);
             }.bind(this), 1000);
         }
+        // this.searchField.focus();
         // debugger
     }
-
-
 
     componentDidMount() {
         if (this.props.url === "main"){
@@ -87,8 +89,27 @@ class Navbar extends React.Component {
                 this.props.retrieveGenres();
             }
         }
+        // debugger
+        if (this.props.path !== "/browse"){
+
+            // debugger
+            this.searchButton.current.click();
+            // this.searchField.current = {value: this.props.search};
+            this.searchField.current.value = this.props.search;
+            // debugger
+            // if (this.props.searching.status === true) {
+            //     debugger
+            //     // this.updateSearch();
+            // }
+        }
+        // debugger
+        // if (this.searchField.current) {
+            // debugger
+            // this.props.searchingForVideos(true, this.searchField.current.value)
+            // this.props.retrieveSearch(this.searchField.current.value);
+        // }
+        // debugger
         this._mount = true;
-        this.searchField.current.value = this.props.search;
     }                
 
     componentWillUnmount() {
@@ -210,18 +231,19 @@ class Navbar extends React.Component {
                         <div className="nav-tab2">
 
                             <div className="search-box">
-                                                                                           {/* <button className={`search-tab ${visibleSearchIcon}`}> */}
-                                {/* <button className={`search-tab hide-icon"`}>
+                                <button className={`search-tab ${visibleSearchIcon}`}>
+                                {/* <button className={`search-tab hide-icon"`}> */}
                                     <span className="search-icon nav-right">
                                         <i className="fas fa-search"
-                                        onClick={this.displaySearchBox}    
+                                        onClick={this.displaySearchBox}  
+                                        ref={this.searchButton}  
                                         >
                                         </i>
                                     </span>
-                                </button> */}
+                                </button>
                                
-                                {/* <div className={`search-input ${visibleSearchBox}`} */}
-                                <div className={`search-input show-search`}
+                                <div className={`search-input ${visibleSearchBox}`}
+                                // {/* <div className={`search-input show-search`} */}
                                     onBlur={this.hideSearchBox}>
                                     <form>
                                         <span className="search-icon-in-box"><i className="fas fa-search"></i></span>

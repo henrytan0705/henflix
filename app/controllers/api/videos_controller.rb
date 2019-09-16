@@ -13,7 +13,8 @@ class Api::VideosController < ApplicationController
     def search 
         # debugger
         title = params[:title]
-        @videos = Video.where('title ILIKE ?', "%#{title}%")
+        # @videos = Video.where('title ILIKE ?', "%#{title}%")
+        @videos = Video.with_attached_photo.with_attached_video_url.all.includes(:genres).where('title ILIKE ?', "%#{title}%")
         # debugger
 
         if @videos.nil?

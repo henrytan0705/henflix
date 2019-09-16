@@ -73,6 +73,12 @@ class VideoIndexItem extends React.Component {
         // this.setState({hover: false});
     }
 
+    // componentDidUpdate() {
+    //     if (this.props.descriptionOpen) {
+    //         this.setState({hover: false});
+    //     }
+    // }
+
     render(){   
         let video = this.props.video || {
             id: "",
@@ -93,6 +99,7 @@ class VideoIndexItem extends React.Component {
                         className="video-thumbnail"
                         src={video.photoUrl}
                         onClick={this.props.show(video)}
+                        // onClick={this.showDescription}
                     >
                     </img>
                 {/* <span className="description-container" onClick={this.props.show(video)}></span> */}
@@ -116,7 +123,9 @@ class VideoIndexItem extends React.Component {
                     <PlayCircle />
                 </Link>
 
-                <span className="description-container" onClick={this.props.show(video)}>
+                <span className="description-container" 
+                    onClick={this.props.show(video)}>
+                    {/* onClick={this.showDescription}> */}
                         {/* <i class="fas fa-angle-down"></i> */}
                 </span>
                 {/* <span className="description-container" onClick={this.focusVideo(this.props, video)}></span> */}

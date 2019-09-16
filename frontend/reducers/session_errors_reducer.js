@@ -6,7 +6,6 @@ const sessionErrorsReducers = (state = [], action) => {
     // debugger
     switch (action.type) {
         case RECEIVE_ERRORS:{
-            // debugger
             // return merge({}, action.errors);
             // return merge({}, { ["errors"]: action.errors });
             return [].concat(action.errors);

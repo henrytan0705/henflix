@@ -47,6 +47,20 @@ class SessionForm extends React.Component {
             <button className="demo-button" onClick={this.demoLogin}>DEMO LOGIN</button>
         ) : null
 
+        let emailError = "";
+        let passwordError = "";
+
+        // debugger
+        for (let i = 0; i < this.props.errors.length; i++) {
+            let error = this.props.errors[i];
+            // debugger
+            if (error.includes("Email")) {
+                emailError = error;
+            } else if (error.includes("Password")) {
+                passwordError = error;
+            }
+        }
+
         const linkText = (this.props.formType === "Sign In") ? 
             "New to Netflix?" : "Already have an account?"
             
@@ -68,7 +82,8 @@ class SessionForm extends React.Component {
                                         <div className="email-label-wrapper">
                                             <label> 
                                                 <input id="email" className="email-input" type="text" value={this.state.email} onChange={this.update("email")} placeholder="Email or phone number"/>
-                                                <div className="errors">{this.props.errors[0]}</div>
+                                                {/* <div className="errors">{this.props.errors[0]}</div> */}
+                                                <div className="errors">{emailError}</div>
                                                 {/* <label for="email" className="email-label">Email or phone number</label> */}
                                             </label>
                                         </div>
@@ -81,7 +96,8 @@ class SessionForm extends React.Component {
                                             <label>
                                                 {/* <label className="password-label"> Password */}
                                                     <input className="password-input" type="password" value={this.state.password} onChange={this.update("password")} placeholder="Password"/>
-                                                    <div className="errors">{this.props.errors[1]}</div>
+                                                    {/* <div className="errors">{this.props.errors[1]}</div> */}
+                                                    <div className="errors">{passwordError}</div>
                                                 {/* </label> */}
                                             </label>
                                         </div>

@@ -93,7 +93,8 @@ class Navbar extends React.Component {
         if (this.props.path !== "/browse"){
 
             // debugger
-            this.searchButton.current.click();
+            // this.searchButton.current.click();
+            this.state.searchBox = true;
             // this.searchField.current = {value: this.props.search};
             this.searchField.current.value = this.props.search;
             // debugger

@@ -1,6 +1,7 @@
 import VideoPlayer from './video_player';
 import { connect } from 'react-redux';
-import { retrieveVideo, clearCurrentVideo } from '../../../../actions/video_actions';
+import { retrieveVideo } from '../../../../actions/video_actions';
+import { clearCurrentVideo } from '../../../../actions/ui_actions';
 import { withRouter } from 'react-router-dom';
 
 const msp = (state, ownProps) => {

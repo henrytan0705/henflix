@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
-import { retrieveVideo, clearCurrentVideo, receiveCurrentVideo } from '../../../../actions/video_actions';
+import { retrieveVideo} from '../../../../actions/video_actions';
+import { clearCurrentVideo, receiveCurrentVideo } from '../../../../actions/ui_actions';
 import VideoIndexItem from './video_index_item';
 
 const msp = state => {

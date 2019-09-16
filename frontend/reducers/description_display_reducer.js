@@ -1,4 +1,4 @@
-import { RECEIVE_CURRENT_DESCRIPTION, CLEAR_DESCRIPTION } from '../actions/video_actions';
+import { RECEIVE_CURRENT_DESCRIPTION, CLEAR_DESCRIPTION } from '../actions/ui_actions';
 import { merge } from 'lodash';
 
 const descriptionReducer = (state = {}, action) => {

@@ -3,11 +3,11 @@ import * as VideoAPIUtil from '../utils/video_api_utils';
 export const RECEIVE_VIDEOS = "RECEIVE_VIDEOS";
 export const RECEIVE_VIDEO = "RECEIVE_VIDEO";
 export const RECEIVE_GENRES = "RECEIVE_GENRES";
-export const SEARCH_VIDEOS = "SEARCH_VIDEOS"
-export const CLEAR_VIDEO = "CLEAR_VIDEO";
-export const RECEIVE_CURRENT_VIDEO = "RECEIEVE_CURRENT_VIDEO";
-export const RECEIVE_CURRENT_DESCRIPTION = "RECEIVE_CURRENT_DESCRIPTION";
-export const CLEAR_DESCRIPTION = "CLEAR_DESCRIPTION";
+// export const RECEIVE_CURRENT_VIDEO = "RECEIEVE_CURRENT_VIDEO";
+// export const CLEAR_VIDEO = "CLEAR_VIDEO";
+// export const RECEIVE_CURRENT_DESCRIPTION = "RECEIVE_CURRENT_DESCRIPTION";
+// export const CLEAR_DESCRIPTION = "CLEAR_DESCRIPTION";
+// export const SEARCH_VIDEOS = "SEARCH_VIDEOS"
 
 export const receiveVideos = (videos) => {
     return {
@@ -23,13 +23,6 @@ export const receiveVideo = (video) => {
     }
 }
 
-export const receiveCurrentVideo = (video, preview) => {
-    return {
-        type: RECEIVE_CURRENT_VIDEO,
-        video,
-        preview
-    }
-}
 
 export const receiveGenres = (genres) => {
     return {
@@ -38,34 +31,41 @@ export const receiveGenres = (genres) => {
     }
 }
 
-export const searchVideos = (videos) => {
-    // debugger
-    return {
-        type: SEARCH_VIDEOS,
-        videos
-    }
-}
+// export const searchVideos = (videos) => {
+//     // debugger
+//     return {
+//         type: SEARCH_VIDEOS,
+//         videos
+//     }
+// }
 
-export const clearCurrentVideo = (preview) => {
-    return {
-        type: CLEAR_VIDEO,
-        preview
-    }
-}
+// export const receiveCurrentVideo = (video, preview) => {
+//     return {
+//         type: RECEIVE_CURRENT_VIDEO,
+//         video,
+//         preview
+//     }
+// }
+// export const clearCurrentVideo = (preview) => {
+//     return {
+//         type: CLEAR_VIDEO,
+//         preview
+//     }
+// }
 
-export const receiveCurrentDescription = (video) => {
-    // debugger
-    return {
-        type: RECEIVE_CURRENT_DESCRIPTION,
-        video
-    }
-}
+// export const receiveCurrentDescription = (video) => {
+//     // debugger
+//     return {
+//         type: RECEIVE_CURRENT_DESCRIPTION,
+//         video
+//     }
+// }
 
-export const clearDescription = () => {
-    return {
-        type: CLEAR_DESCRIPTION
-    }
-}
+// export const clearDescription = () => {
+//     return {
+//         type: CLEAR_DESCRIPTION
+//     }
+// }
 
 
 export const retrieveVideos = () => dispatch => {
@@ -84,8 +84,8 @@ export const retrieveGenres = () => dispatch => {
         .then(genres => dispatch(receiveGenres(genres)))
 }
 
-export const retrieveSearch = (query) => dispatch => {
-    // debugger
-    return VideoAPIUtil.fetchSearch(query)
-        .then(videos => dispatch(searchVideos(videos)))
-}
+// export const retrieveSearch = (query) => dispatch => {
+//     // debugger
+//     return VideoAPIUtil.fetchSearch(query)
+//         .then(videos => dispatch(searchVideos(videos)))
+// }

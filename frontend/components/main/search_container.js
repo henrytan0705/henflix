@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Search from './search';
-import { retrieveSearch } from '../../actions/video_actions';
+import { retrieveSearch } from '../../actions/ui_actions';
 
 const msp = state => {
     const videos = entities.videos;

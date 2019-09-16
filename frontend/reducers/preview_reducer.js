@@ -1,4 +1,5 @@
-import { RECEIVE_VIDEO, CLEAR_VIDEO, RECEIVE_CURRENT_VIDEO } from '../actions/video_actions';
+import { RECEIVE_VIDEO } from '../actions/video_actions';
+import { CLEAR_VIDEO, RECEIVE_CURRENT_VIDEO } from '../actions/ui_actions';
 import { merge } from 'lodash'
 
 const previewReducer = (state = {}, action) => {

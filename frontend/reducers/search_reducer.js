@@ -1,4 +1,4 @@
-import { SEARCH_VIDEOS } from '../actions/video_actions';
+import { SEARCH_VIDEOS } from '../actions/ui_actions';
 import { merge } from 'lodash';
 
 const searchReducer = (state = {}, action) => {

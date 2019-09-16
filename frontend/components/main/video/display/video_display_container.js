@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { retrieveVideo, retrieveVideos } from '../../../../actions/video_actions';
+// import { retrieveVideo, retrieveVideos } from '../../../../actions/video_actions';
 import VideoDisplay from './video_display';
 import { withRouter } from 'react-router-dom'
 

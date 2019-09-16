@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import Navbar from './navbar';
 import { logout } from '../../actions/session_actions';
-import { retrieveGenres, retrieveSearch } from '../../actions/video_actions';
+import { retrieveGenres } from '../../actions/video_actions';
+import { retrieveSearch } from '../../actions/ui_actions';
 
 const msp = state => {
     return {

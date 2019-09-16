@@ -1,6 +1,5 @@
 import React from 'react';
 import NavbarMainContainer from '../navbar/navbar_main_container';
-// import VideoSection from './video/content/video_section';
 import VideoIndexContainer from './video/content/video_index_container';
 
 class Search extends React.Component {
@@ -14,12 +13,11 @@ class Search extends React.Component {
 
     render() {
         return (
-            <div className="main-page">
-                <NavbarMainContainer/>
-                <div className='main-content'>
-                    {/* <VideoSection videos={this.props.searchResults} genres={this.props.genres} /> */}
+            <div className="search-page">
+                {/* <NavbarMainContainer/> */}
+                {/* <div className='main-content'> */}
                     <VideoIndexContainer videos={this.props.searchResults}/>
-                </div>
+                {/* </div> */}
             </div>
         )
     }

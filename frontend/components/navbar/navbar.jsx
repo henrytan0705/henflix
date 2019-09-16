@@ -12,7 +12,7 @@ class Navbar extends React.Component {
             searchInput: ""
         }
         this.searchField = React.createRef();
-        this.searchButton = React.createRef();
+        // this.searchButton = React.createRef();
         this.addScrollListener = this.addScrollListener.bind(this);
         this.switchTab = this.switchTab.bind(this);
         this.displaySearchBox = this.displaySearchBox.bind(this);
@@ -38,21 +38,26 @@ class Navbar extends React.Component {
     displaySearchBox() {
         // document.getElementById("search-input-box").focus();
         // debugger
-        this.searchField.current.focus();
+        // this.searchField.current.focus();
         this.setState({searchBox: true});
     }
 
     hideSearchBox() {
+        // debugger
         this.setState({searchBox: false});
     }
 
     updateSearch(){
         clearTimeout(this.searchId);
-        let searchQuery = this.searchField.current.value
+        // this.props.searchingForVideos(false, "");
+        let searchQuery = this.searchField.current.value;
+        debugger
         let emptySearch = true;
         // debugger
         if (searchQuery === undefined) {
+            debugger
             this.props.searchingForVideos(false, searchQuery);
+            this.hideSearchBox();
             this.props.history.push('/browse');
             return;
         }
@@ -65,6 +70,7 @@ class Navbar extends React.Component {
         if (emptySearch === true) {
             this.searchId = setTimeout(() => {
                 this.props.searchingForVideos(false, searchQuery);
+                // this.hideSearchBox();
                 this.props.history.push('/browse');
             }, 1000)
         } else {
@@ -85,37 +91,48 @@ class Navbar extends React.Component {
     componentDidMount() {
         if (this.props.url === "main"){
             this.addScrollListener();
-            if (!Object.keys(this.props.genres).length){
-                this.props.retrieveGenres();
-            }
-            
+            // if (!Object.keys(this.props.genres).length){
+            //     this.props.retrieveGenres();
+            // }
+
             if (this.props.path !== "/browse"){
-    
+                let emptySearch = true;
                 // debugger
-                // this.searchButton.current.click();
-                this.state.searchBox = true;
-                // this.searchField.current = {value: this.props.search};
-                this.searchField.current.value = this.props.search;
-                // debugger
-                // if (this.props.searching.status === true) {
-                //     debugger
-                //     // this.updateSearch();
+                if(this.props.search){
+                
+                for (let i = 0; i < this.props.search.length; i++) {
+                    // debugger
+                    if (this.props.search[i] !== " ") {
+                        // debugger
+                        emptySearch = false;
+                    }
+                }
+
+                this.setState({searchBox: true});
+                this.searchField.current = {value: this.props.search};
+                // this.setState({searchInput: this.searchField.current.value});
+                // if(this.searchField.current) {
+                    // this.searchField.current.value = this.props.search;
                 // }
+                // this.searchField.current.value = this.props.search;
+                // debugger
+
+                // debugger
+                if (!emptySearch) {
+                    // this.props.history.push(`/search/${this.searchField.current.value}`);
+                    this.props.retrieveSearch(this.props.search);
+                    this.props.searchingForVideos(true, this.props.search);
+                }
+
+            }
             }
         }
-        // debugger
-        // debugger
-        // if (this.searchField.current) {
-            // debugger
-            // this.props.searchingForVideos(true, this.searchField.current.value)
-            // this.props.retrieveSearch(this.searchField.current.value);
-        // }
-        // debugger
         this._mount = true;
     }                
 
     componentWillUnmount() {
-        this._mount = false
+        this._mount = false;
+        // this.searchField = null;
     }
 
     render(){
@@ -238,7 +255,7 @@ class Navbar extends React.Component {
                                     <span className="search-icon nav-right">
                                         <i className="fas fa-search"
                                         onClick={this.displaySearchBox}  
-                                        ref={this.searchButton}  
+                                        // ref={this.searchButton}  
                                         >
                                         </i>
                                     </span>
@@ -247,6 +264,7 @@ class Navbar extends React.Component {
                                 <div className={`search-input ${visibleSearchBox}`}
                                 // {/* <div className={`search-input show-search`} */}
                                     onBlur={this.hideSearchBox}>
+                                
                                     <form>
                                         <span className="search-icon-in-box"><i className="fas fa-search"></i></span>
                                         <input 
@@ -255,7 +273,7 @@ class Navbar extends React.Component {
                                             placeholder="Titles, people, genres"
                                             ref={this.searchField}
                                             onChange={this.updateSearch}
-                                            // value = {this.props.search}
+                                            value = {this.props.search}
                                             >
                                         </input>
                                         <span></span>

@@ -5,6 +5,7 @@ import SplashContainer from './splash/splash_container';
 import MainContainer from './main/new_main_container';
 import VideoPlayerContainer from './main/video/video_player/video_player_container';
 import SearchContainer from './main/search_container';
+import NavbarMainContainer from './navbar/navbar_main_container';
 // import Footer from './footer/footer';
 // import { Route } from 'react-router-dom';
 import { AuthRoute } from '../utils/route_util';
@@ -17,9 +18,13 @@ const App = () => {
             <AuthRoute exact path="/" component={SplashContainer}/>
             <AuthRoute exact path="/signup" component={SignupFormContainer}/>
             <AuthRoute exact path="/login" component={LoginFormContainer}/>
-            <MainAuthRoute path="/browse" component={MainContainer}/>
             <PlayerAuthRoute exact path="/watch/:id" component={VideoPlayerContainer}/>
-            <SearchAuthRoute path ="/search/:query" component={SearchContainer}/>
+
+            <div className="main-page">
+                <NavbarMainContainer /> 
+                <MainAuthRoute path="/browse" component={MainContainer}/>
+                <SearchAuthRoute path ="/search/:query" component={SearchContainer}/>
+            </div>
             {/* <Footer /> */}
         </>
     )

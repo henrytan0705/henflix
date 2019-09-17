@@ -6,12 +6,14 @@ import MainContainer from './main/new_main_container';
 import VideoPlayerContainer from './main/video/video_player/video_player_container';
 import SearchContainer from './main/search_container';
 import NavbarMainContainer from './navbar/navbar_main_container';
+import ContentContainer from './main/content_container';
 // import Footer from './footer/footer';
 // import { Route } from 'react-router-dom';
 import { AuthRoute } from '../utils/route_util';
 import { MainAuthRoute } from '../utils/main_route_util';
 import { PlayerAuthRoute } from '../utils/video_player_route_util';
 import { SearchAuthRoute } from '../utils/search_route_util';
+
 const App = () => {
     return (
         <>
@@ -19,12 +21,15 @@ const App = () => {
             <AuthRoute exact path="/signup" component={SignupFormContainer}/>
             <AuthRoute exact path="/login" component={LoginFormContainer}/>
             <PlayerAuthRoute exact path="/watch/:id" component={VideoPlayerContainer}/>
+            
+            <MainAuthRoute path="/" component={ContentContainer}/>
 
-            <div className="main-page">
+            {/* <div className="main-page">
                 <NavbarMainContainer /> 
                 <MainAuthRoute path="/browse" component={MainContainer}/>
                 <SearchAuthRoute path ="/search/:query" component={SearchContainer}/>
-            </div>
+            </div> */}
+
             {/* <Footer /> */}
         </>
     )

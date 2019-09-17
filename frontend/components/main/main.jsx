@@ -60,14 +60,14 @@ class Main extends React.Component {
  
 
         return(
-            <div className="main-page">
-                <NavbarMainContainer /> 
+            // <div className="main-page">
+                // <NavbarMainContainer /> 
                 <div className="main-content">
                     <VideoDisplayContainer video={displayVideo}/>                
                     <VideoSection videos={videos} genres={this.props.genres}/>
                 </div>
-                {/* {content} */}
-            </div>
+                // {/* {content} */}
+            // </div>
         )
     }
 }

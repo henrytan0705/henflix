@@ -51,11 +51,11 @@ class Navbar extends React.Component {
         clearTimeout(this.searchId);
         // this.props.searchingForVideos(false, "");
         let searchQuery = this.searchField.current.value;
-        debugger
+        // debugger
         let emptySearch = true;
         // debugger
         if (searchQuery === undefined) {
-            debugger
+            // debugger
             this.props.searchingForVideos(false, searchQuery);
             this.hideSearchBox();
             this.props.history.push('/browse');

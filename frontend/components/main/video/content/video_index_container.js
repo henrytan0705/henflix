@@ -6,7 +6,8 @@ import { clearCurrentVideo, clearDescription } from '../../../../actions/ui_acti
 const msp = state => {
     return {
         // videos: state.videos,
-        previewVideoId : Object.keys(state.ui).length
+        // previewVideoId : Object.keys(state.ui).length
+        componentType: "main"
     }
 }
 

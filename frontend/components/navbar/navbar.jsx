@@ -18,6 +18,8 @@ class Navbar extends React.Component {
         this.displaySearchBox = this.displaySearchBox.bind(this);
         this.hideSearchBox = this.hideSearchBox.bind(this);
         this.updateSearch = this.updateSearch.bind(this);
+        this.query = "";
+        this.searchId;
     }
 
     addScrollListener() {
@@ -36,53 +38,46 @@ class Navbar extends React.Component {
     }
 
     displaySearchBox() {
-        // document.getElementById("search-input-box").focus();
-        // debugger
-        // this.searchField.current.focus();
         this.setState({searchBox: true});
     }
 
     hideSearchBox() {
-        // debugger
         this.setState({searchBox: false});
     }
 
     updateSearch(){
-        clearTimeout(this.searchId);
-        // this.props.searchingForVideos(false, "");
+        // debugger
+        if(!!this.searchId){
+            clearTimeout(this.searchId);
+        }
+        // debugger
         let searchQuery = this.searchField.current.value;
-        // debugger
         let emptySearch = true;
-        // debugger
+
         if (searchQuery === undefined) {
-            // debugger
             this.props.searchingForVideos(false, searchQuery);
             this.hideSearchBox();
             this.props.history.push('/browse');
             return;
         }
-        // debugger
 
         for(let i = 0; i < searchQuery.length; i++) {
             if(searchQuery[i] !== " ") emptySearch = false;
         }
-        // debugger
+
         if (emptySearch === true) {
             this.searchId = setTimeout(() => {
                 this.props.searchingForVideos(false, searchQuery);
                 // this.hideSearchBox();
                 this.props.history.push('/browse');
-            }, 1000)
+            }, 500)
         } else {
             this.searchId = setTimeout(function () {
-                // debugger
                 this.props.searchingForVideos(true, searchQuery);
                 this.setState({ searchInput: this.searchField.current });
                 this.props.retrieveSearch(searchQuery);
-                // debugger
-                // this.searchField.current.value = searchQuery;
                 this.props.history.push(`/search/${searchQuery}`);
-            }.bind(this), 1000);
+            }.bind(this), 800);
         }
         // this.searchField.focus();
         // debugger
@@ -91,40 +86,31 @@ class Navbar extends React.Component {
     componentDidMount() {
         if (this.props.url === "main"){
             this.addScrollListener();
-            // if (!Object.keys(this.props.genres).length){
-            //     this.props.retrieveGenres();
-            // }
 
             if (this.props.path !== "/browse"){
                 let emptySearch = true;
+                this.query = this.props.search[this.props.search.length - 1];
                 // debugger
-                if(this.props.search){
-                
-                for (let i = 0; i < this.props.search.length; i++) {
-                    // debugger
-                    if (this.props.search[i] !== " ") {
-                        // debugger
-                        emptySearch = false;
+                // if(this.props.search){
+                if(this.query){
+                    for (let i = 0; i < this.query.length; i++) {
+                        if (this.query[i] !== " ") {
+
+                            emptySearch = false;
+                        }
                     }
+
+                    this.setState({searchBox: true});
+                    this.searchField.current = {value: this.query};
+  
+                    if (!emptySearch) {
+                        // debugger
+                        // this.props.history.push(`/search/${this.searchField.current.value}`);
+                        this.props.retrieveSearch(this.query);
+                        this.props.searchingForVideos(true, this.query);
+                    }
+
                 }
-
-                this.setState({searchBox: true});
-                this.searchField.current = {value: this.props.search};
-                // this.setState({searchInput: this.searchField.current.value});
-                // if(this.searchField.current) {
-                    // this.searchField.current.value = this.props.search;
-                // }
-                // this.searchField.current.value = this.props.search;
-                // debugger
-
-                // debugger
-                if (!emptySearch) {
-                    // this.props.history.push(`/search/${this.searchField.current.value}`);
-                    this.props.retrieveSearch(this.props.search);
-                    this.props.searchingForVideos(true, this.props.search);
-                }
-
-            }
             }
         }
         this._mount = true;
@@ -162,6 +148,10 @@ class Navbar extends React.Component {
             foodPath = `/browse/genre/${foodGenreId}`;
             liveActionPath = `/browse/genre/${liveActionGenreId}`;
             educationalPath = `/browse/genre/${educationalGenreId}`;
+
+            if(this.props.path !== "/browse"){
+                this.query = this.props.search[this.props.search.length - 1];
+            }
         }
 
         if(this.props.url === "splash") {
@@ -273,7 +263,9 @@ class Navbar extends React.Component {
                                             placeholder="Titles, people, genres"
                                             ref={this.searchField}
                                             onChange={this.updateSearch}
-                                            value = {this.props.search}
+                                            // value = {this.props.search}
+                                            // value={this.query}
+                                            value={this.props.query}
                                             >
                                         </input>
                                         <span></span>

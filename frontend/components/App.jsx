@@ -20,9 +20,10 @@ const App = () => {
             <AuthRoute exact path="/" component={SplashContainer}/>
             <AuthRoute exact path="/signup" component={SignupFormContainer}/>
             <AuthRoute exact path="/login" component={LoginFormContainer}/>
-            <PlayerAuthRoute exact path="/watch/:id" component={VideoPlayerContainer}/>
+            <PlayerAuthRoute path="/watch/:id" component={VideoPlayerContainer}/>
             
-            <MainAuthRoute path="/" component={ContentContainer}/>
+            <MainAuthRoute path={["/browse", "/search/:query"]} component={ContentContainer}/>
+            {/* <MainAuthRoute path="/" component={ContentContainer}/> */}
 
             {/* <div className="main-page">
                 <NavbarMainContainer /> 

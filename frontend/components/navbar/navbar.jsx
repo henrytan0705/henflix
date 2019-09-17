@@ -80,7 +80,6 @@ class Navbar extends React.Component {
                 this.props.history.push(`/search/${searchQuery}`);
             }.bind(this), 1000);
         }
-
     }
 
     componentDidMount() {
@@ -91,8 +90,6 @@ class Navbar extends React.Component {
                 let emptySearch = true;
                 // this.query = this.props.search[this.props.search.length - 1];
                 this.query = this.props.search;
-                // debugger
-                // if(this.props.search){
                 if(this.query){
                     for (let i = 0; i < this.query.length; i++) {
                         if (this.query[i] !== " ") {
@@ -148,12 +145,6 @@ class Navbar extends React.Component {
             foodPath = `/browse/genre/${foodGenreId}`;
             liveActionPath = `/browse/genre/${liveActionGenreId}`;
             educationalPath = `/browse/genre/${educationalGenreId}`;
-
-            // if(this.props.path !== "/browse"){
-            //     // debugger
-            //     this.query = this.props.search[this.props.search.length - 1];
-            //     // this.query = this.props.search;
-            // }
         }
 
         if(this.props.url === "splash") {
@@ -243,7 +234,6 @@ class Navbar extends React.Component {
 
                             <div className="search-box">
                                 <button className={`search-tab ${visibleSearchIcon}`}>
-                                {/* <button className={`search-tab hide-icon"`}> */}
                                     <span className="search-icon nav-right">
                                         <i className="fas fa-search"
                                         onClick={this.displaySearchBox}  
@@ -254,10 +244,8 @@ class Navbar extends React.Component {
                                 </button>
                                
                                 <div className={`search-input ${visibleSearchBox}`}
-                                // {/* <div className={`search-input show-search`} */}
                                     onBlur={this.hideSearchBox}>
-                                
-                                    <form>
+                                    <form className="show-search-form">
                                         <span className="search-icon-in-box"><i className="fas fa-search"></i></span>
                                         <input 
                                             id="search-input-box"
@@ -273,6 +261,7 @@ class Navbar extends React.Component {
                                         <span></span>
                                     </form>
                                 </div>
+
                             </div>
                             
                         </div>

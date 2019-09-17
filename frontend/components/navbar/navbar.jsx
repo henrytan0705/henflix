@@ -61,26 +61,26 @@ class Navbar extends React.Component {
             return;
         }
 
-        for(let i = 0; i < searchQuery.length; i++) {
+        for (let i = 0; i < searchQuery.length; i++) {
             if(searchQuery[i] !== " ") emptySearch = false;
         }
 
         if (emptySearch === true) {
             this.props.searchingForVideos(false, searchQuery);
+
             this.searchId = setTimeout(() => {
-                // this.hideSearchBox();
                 this.props.history.push('/browse');
             }, 1000)
         } else {
             this.props.searchingForVideos(true, searchQuery);
+
             this.searchId = setTimeout(function () {
                 this.setState({ searchInput: this.searchField.current });
                 this.props.retrieveSearch(searchQuery);
                 this.props.history.push(`/search/${searchQuery}`);
             }.bind(this), 1000);
         }
-        // this.searchField.focus();
-        // debugger
+
     }
 
     componentDidMount() {
@@ -89,13 +89,13 @@ class Navbar extends React.Component {
 
             if (this.props.path !== "/browse"){
                 let emptySearch = true;
-                this.query = this.props.search[this.props.search.length - 1];
+                // this.query = this.props.search[this.props.search.length - 1];
+                this.query = this.props.search;
                 // debugger
                 // if(this.props.search){
                 if(this.query){
                     for (let i = 0; i < this.query.length; i++) {
                         if (this.query[i] !== " ") {
-
                             emptySearch = false;
                         }
                     }
@@ -149,9 +149,11 @@ class Navbar extends React.Component {
             liveActionPath = `/browse/genre/${liveActionGenreId}`;
             educationalPath = `/browse/genre/${educationalGenreId}`;
 
-            if(this.props.path !== "/browse"){
-                this.query = this.props.search[this.props.search.length - 1];
-            }
+            // if(this.props.path !== "/browse"){
+            //     // debugger
+            //     this.query = this.props.search[this.props.search.length - 1];
+            //     // this.query = this.props.search;
+            // }
         }
 
         if(this.props.url === "splash") {

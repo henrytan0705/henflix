@@ -12,8 +12,8 @@ const msp = (state, ownProps) => {
         url: "main",
         genres: Object.values(state.entities.genres),
         history: ownProps.history,
-        // search: ownProps.match.params.query,
-        search: ownProps.location.pathname.split('/'),
+        search: ownProps.match.params.query,
+        // search: ownProps.location.pathname.split('/'),
         path: ownProps.match.path,
         query: state.ui.searching.query
     }

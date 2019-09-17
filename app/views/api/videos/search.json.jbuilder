@@ -1,3 +1,4 @@
+# debugger
 @videos.each do |video|
     json.set! video.id do
         json.extract! video, :id, :title, :description, :year
@@ -7,6 +8,7 @@
         json.videoUrl url_for(video.video_url)
     end
 end
+
 # json.set! json.results do
 #     @videos.each do |video|
 #         debugger

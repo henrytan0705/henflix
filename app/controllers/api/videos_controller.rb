@@ -14,8 +14,9 @@ class Api::VideosController < ApplicationController
         # debugger
         # @videos = Video.where('title ILIKE ?', "%#{title}%")
         @videos = Video.with_attached_photo.with_attached_video_url.all.includes(:genres).where('title ILIKE ?', "%#{title}%")
-        if @videos.nil?
-            render json: 'Search returned no results'
+       
+        if @videos.length == 0
+            render json: {}
         else
             render "api/videos/search"
         end

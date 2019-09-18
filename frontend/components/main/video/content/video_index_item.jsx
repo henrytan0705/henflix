@@ -111,17 +111,37 @@ class VideoIndexItem extends React.Component {
                         autoPlay
                     >
                     </video>
+
+                    <i className="far fa-play-circle display-play-button"></i>
+                    <h1 className="video-hover-description">{video.title}</h1>
+
                 </Link>
 
-                <Link to={path}
-                    className="display-play-button">
-                    <PlayCircle />
-                </Link>
+                    {/* <div className="video-hover-description-container"> */}
+                    {/* </div> */}
 
-                <span className="description-container" 
+                {/* <Link to={path}> */}
+                
+                    {/* <h1 className="video-hover-description">{video.title}</h1> */}
+
+                {/* </Link> */}
+
+                {/* <Link to={path}> */}
+                    {/* className="display-play-button"> */}
+                    {/* <PlayCircle /> */}
+
+                    {/* <i className="far fa-play-circle display-play-button"></i> */}
+                    
+                {/* </Link> */}
+                
+                <span 
+                    className="description-button-container" 
                     onClick={this.props.show(video)}>
                     {/* onClick={this.showDescription}> */}
-                        {/* <i class="fas fa-angle-down"></i> */}
+                        <div className="arrow-container">
+                            <i className="fas fa-angle-down"></i>
+                        </div>
+                        {/* <i className="fas fa-chevron-down"></i> */}
                 </span>
                 {/* <span className="description-container" onClick={this.focusVideo(this.props, video)}></span> */}
             </>

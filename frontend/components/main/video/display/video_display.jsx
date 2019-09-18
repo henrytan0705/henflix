@@ -64,7 +64,7 @@ class VideoDisplay extends React.Component {
 
         return (
             <div className="video-display">
-                <div className="video-display-item">
+                {/* <div className="video-display-item"> */}
                     <h1 className="display-title">{video.title}</h1>
                     {/* <p>{video.description}</p> */}
                     {/* <h2>{video.year}</h2> */}
@@ -87,7 +87,7 @@ class VideoDisplay extends React.Component {
                         // ref="featureRef"
                     > 
                     </video>
-                </div>
+                {/* </div> */}
             </div>
         )
     }

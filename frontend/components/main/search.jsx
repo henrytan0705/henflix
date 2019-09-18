@@ -26,11 +26,7 @@ class Search extends React.Component {
                 }
             }
     
-            this.content = videoItems.map((row) => {
-                return (
-                    <VideoIndexContainer videos={row}/>
-                )
-            })
+            this.content = videoItems.map((row, idx) => <VideoIndexContainer key={`${row}-${idx}`} videos={row}/>)
         } else {
             this.content = ((<div className="no-search-result">
                 <h1>

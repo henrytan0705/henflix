@@ -18,6 +18,7 @@ class Navbar extends React.Component {
         this.displaySearchBox = this.displaySearchBox.bind(this);
         this.hideSearchBox = this.hideSearchBox.bind(this);
         this.updateSearch = this.updateSearch.bind(this);
+        this.clearSearchBox = this.clearSearchBox.bind(this);
         this.query = "";
         this.searchId;
     }
@@ -46,11 +47,10 @@ class Navbar extends React.Component {
     }
 
     updateSearch(){
-        // debugger
-        if(!!this.searchId){
+        if (!!this.searchId) {
             clearTimeout(this.searchId);
         }
-        // debugger
+
         let searchQuery = this.searchField.current.value;
         let emptySearch = true;
 
@@ -82,13 +82,18 @@ class Navbar extends React.Component {
         }
     }
 
+    clearSearchBox() {
+        this.searchField.current.value = "";
+        this.updateSearch();
+        this.hideSearchBox();
+    }
+
     componentDidMount() {
         if (this.props.url === "main"){
             this.addScrollListener();
 
             if (this.props.path !== "/browse"){
                 let emptySearch = true;
-                // this.query = this.props.search[this.props.search.length - 1];
                 this.query = this.props.search;
                 if(this.query){
                     for (let i = 0; i < this.query.length; i++) {
@@ -101,8 +106,6 @@ class Navbar extends React.Component {
                     this.searchField.current = {value: this.query};
   
                     if (!emptySearch) {
-                        // debugger
-                        // this.props.history.push(`/search/${this.searchField.current.value}`);
                         this.props.retrieveSearch(this.query);
                         this.props.searchingForVideos(true, this.query);
                     }
@@ -170,7 +173,9 @@ class Navbar extends React.Component {
         } else if (this.props.url === "main"){
             display = (
                 <nav className={`browse-navbar ${hasBackground}`}>
-                    <Link className="browse-logo" to="/browse">
+                    <Link className="browse-logo" 
+                        to="/browse"
+                        onClick={this.clearSearchBox}>
                         <img className="browse-logo-image" src={window.logo}/>
                     </Link>
 

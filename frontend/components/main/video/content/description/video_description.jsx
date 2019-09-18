@@ -19,12 +19,43 @@ class VideoDescription extends React.Component {
         if (this.props.video.id !== this.props.currentDescription.id && this.props.currentDescription.id) {
     //         this.closeDescription();
         let description = document.getElementsByClassName("close-button");
+        // debugger
         for (let i = 0; i < description.length; i++) {
-            description[i].click();
+            let arr = [];
+
+            for (let x = 0; x < description[i].classList.length; x++) {
+                let classItem = description[i].classList[x];
+                arr.push(classItem);
+                // debugger
+            }
+
+            // debugger
+            
+            for (let j = 0; j < this.props.video.genres.length; j++) {
+                let genre = this.props.video.genres[j];
+                if (genre === "Live Action") genre = "Live";
+                // FIX BY CHANGING SEED FILE - GENRE "LIVE ACTION" TO "LIVE-ACTION"
+
+                // debugger
+                if (!arr.includes(genre) && genre !== "Movie" && genre !== "TV Show") {
+                    // debugger
+                    description[i].click();
+                    break;
+                }
+
+            }
         }
         // this.props.receiveCurrentDescription(this.props.video);
         }
     }
+
+    // componentDidUpdate(prevProps) {
+    //     debugger
+    //     if (this.props.currentDescription.id) {
+    //         debugger
+    //         this.props.receiveCurrentDescription(this.props.video);
+    //     }
+    // }
 
     render() {
         if (this.props.video === undefined) return null;

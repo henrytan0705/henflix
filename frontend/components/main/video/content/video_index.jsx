@@ -12,6 +12,7 @@ class VideoIndex extends React.Component {
         this.showDescription = this.showDescription.bind(this);
         this.closeDescription = this.closeDescription.bind(this);
         this.visibleX = false;
+        // debugger
     }
 
     componentDidMount() {
@@ -197,7 +198,8 @@ class VideoIndex extends React.Component {
                 <div className="description-outer-wrapper">
                     {this.description}
                     <button onClick={this.closeDescription}
-                        className={`${visible} close-button`}
+                        // className={`${visible} close-button-${this.props.genre}`}
+                        className={`${visible} close-button ${this.props.genre}`}
                         >
                         <i className="fas fa-times"></i>
                     </button>

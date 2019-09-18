@@ -256,7 +256,7 @@ class Navbar extends React.Component {
                                         <input 
                                             id="search-input-box"
                                             type="text"
-                                            placeholder="Titles, people, genres"
+                                            placeholder="Titles, genres"
                                             ref={this.searchField}
                                             onChange={this.updateSearch}
                                             // value = {this.props.search}
@@ -284,13 +284,20 @@ class Navbar extends React.Component {
                             </a>
                         </div>
 
-                        <div className="nav-tab2">
-                            <button>
+                        <div>
+                            <a target="_blank" href="https://www.angel.co/henry-tan-8/" className="nav-right">
+                                    <i className="fab fa-angellist"></i>
+                            </a>
+                        </div>
+
+                        {/* <div className="nav-tab2"> */}
+                            {/* <button>
                                 <span className="nav-right">
                                     <Bell/>
                                 </span>
                             </button>
-                        </div>
+                        </div> */}
+
 
                         <div className="nav-tab2">
                             <ul className="user-dropdown">

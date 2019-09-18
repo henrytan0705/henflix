@@ -65,11 +65,13 @@ class VideoIndexItem extends React.Component {
         // this.setState({hover: false});
     }
 
-    // componentDidUpdate() {
-    //     if (this.props.descriptionOpen) {
-    //         this.setState({hover: false});
-    //     }
-    // }
+    componentDidUpdate() {
+        // debugger
+        if (this.props.descriptionOpen && this.state.hover === true) {
+            // debugger
+            this.showThumbnail();
+        }
+    }
 
     render(){   
         let video = this.props.video || {

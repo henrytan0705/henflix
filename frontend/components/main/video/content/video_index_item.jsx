@@ -48,16 +48,8 @@ class VideoIndexItem extends React.Component {
     }
 
     showThumbnail(){
-        // if (this.props.previewVideoId) {
-
-        // }
-        // debugger
-        // if (this.props.descriptionOpen) return;
         clearTimeout(this.playId);
-        // if (this.props.descriptionOpen) return;
-        // this.props.clearCurrentVideo({preview: false});
         if (this._mounted) this.setState({hover: false});
-
     }
 
     // setVideoToState(video) {

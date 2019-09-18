@@ -2,54 +2,27 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class VideoDescription extends React.Component {
-
     constructor(props) {
         super(props);
-        // this.state = {focus: false}
-        this.setVideoToState = this.setVideoToState.bind(this);
         this.closeDescription = this.closeDescription.bind(this);
     }
 
     componentDidMount() {
-        this.setVideoToState(this.props.video);
-        // this.setState({focus: true});
-    }
-
-    setVideoToState(video) {
-        this.props.receiveCurrentDescription(video);
-        // this.props.retrieveVideo(video.id);
-        // this.props.receiveCurrentVideo(video, {preview: true});
-        // this.props.clearDescription();
-        // this.closeDescription();
+        this.props.receiveCurrentDescription(this.props.video);
     }
 
     closeDescription() {
-        // this.description = null;
-        // this.visibleX = false;
-        // this.props.clearCurrentVideo();
         this.props.clearDescription();
-        // this.setState({ showDescription: false });
-    }
-
-    componentDidUpdate(prevProps) {
-        // debugger
-        if (!Object.values(this.props.currentDescription).length) {
-            this.closeDescription();
-        }
-
     }
 
     componentWillMount() {
-        // debugger
         if (this.props.video.id !== this.props.currentDescription.id && this.props.currentDescription.id) {
     //         this.closeDescription();
         let description = document.getElementsByClassName("close-button");
-        for(let i = 0; i < description.length; i++) {
+        for (let i = 0; i < description.length; i++) {
             description[i].click();
         }
-        // debugger
-            // description.click();
-            // console.log("CLICKED")
+        // this.props.receiveCurrentDescription(this.props.video);
         }
     }
 

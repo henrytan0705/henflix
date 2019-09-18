@@ -7,7 +7,8 @@ const msp = state => {
     return {
         // videos: state.videos,
         // previewVideoId : Object.keys(state.ui).length
-        componentType: "main"
+        componentType: "main",
+        description: state.ui.description
     }
 }
 

@@ -16,9 +16,9 @@ class VideoDescription extends React.Component {
     }
 
     setVideoToState(video) {
+        this.props.receiveCurrentDescription(video);
         // this.props.retrieveVideo(video.id);
         // this.props.receiveCurrentVideo(video, {preview: true});
-        this.props.receiveCurrentDescription(video);
         // this.props.clearDescription();
         // this.closeDescription();
     }
@@ -32,8 +32,25 @@ class VideoDescription extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        debugger
+        // debugger
+        if (!Object.values(this.props.currentDescription).length) {
+            this.closeDescription();
+        }
 
+    }
+
+    componentWillMount() {
+        // debugger
+        if (this.props.video.id !== this.props.currentDescription.id && this.props.currentDescription.id) {
+    //         this.closeDescription();
+        let description = document.getElementsByClassName("close-button");
+        for(let i = 0; i < description.length; i++) {
+            description[i].click();
+        }
+        // debugger
+            // description.click();
+            // console.log("CLICKED")
+        }
     }
 
     render() {

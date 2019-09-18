@@ -8,6 +8,7 @@ const msp = (state, ownProps) => {
     return {
         // path: ownProps.match.params.id
         // previewVideoId: Object.keys(state.ui).length
+        currentDescription: state.ui.description
     }
 }
 

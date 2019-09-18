@@ -49,7 +49,11 @@ class VideoIndex extends React.Component {
         // if (this.props.componentType === "main") {
             let videoItems = Object.values(this.props.videos).map((video, idx) => {
                 return (
-                    <VideoIndexItemContainer key={`${video}${idx}`} video={video} show={this.showDescription} />
+                    <VideoIndexItemContainer 
+                    key={`${video}${idx}`} 
+                    video={video} 
+                    show={this.showDescription} 
+                    close={this.closeDescription}/>
                 )
             });
 
@@ -174,7 +178,7 @@ class VideoIndex extends React.Component {
                 <div className="description-outer-wrapper">
                     {this.description}
                     <button onClick={this.closeDescription}
-                        className={`${visible}`}
+                        className={`${visible} close-button`}
                         >
                         <i className="fas fa-times"></i>
                     </button>

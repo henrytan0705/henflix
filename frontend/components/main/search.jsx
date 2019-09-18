@@ -1,6 +1,6 @@
 import React from 'react';
 // import NavbarMainContainer from '../navbar/navbar_main_container';
-import VideoIndexContainer from './video/content/search_video_index_container';
+import VideoIndexContainer from './video/content/video_index_container';
 
 class Search extends React.Component {
     componentDidMount() {
@@ -43,14 +43,6 @@ class Search extends React.Component {
             )
             )
         }
-
-
-
-        // let content = (Object.keys(this.props.searchResults).length > 0) ?
-            // (<SearchVideoIndexContainer videos={this.props.searchResults} />) 
-                // :
-            
-
 
         return (
             <div className="search-page">

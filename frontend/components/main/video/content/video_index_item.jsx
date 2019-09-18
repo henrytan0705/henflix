@@ -13,7 +13,7 @@ class VideoIndexItem extends React.Component {
         }
         this.playTrailer = this.playTrailer.bind(this);
         this.showThumbnail = this.showThumbnail.bind(this);
-        // this.setVideoToState = this.setVideoToState.bind(this);
+        this.setVideoToState = this.setVideoToState.bind(this);
         this.showDescription = this.showDescription.bind(this);
         // this.description = null;
         // this.vidRef = React.createRef();
@@ -34,7 +34,7 @@ class VideoIndexItem extends React.Component {
             return;
         }
 
-        // this.setVideoToState(this.props.video);
+        this.setVideoToState(this.props.video);
 
         this.playId = setTimeout(
             function () {
@@ -50,14 +50,15 @@ class VideoIndexItem extends React.Component {
     showThumbnail(){
         clearTimeout(this.playId);
         if (this._mounted) this.setState({hover: false});
+        this.props.clearCurrentVideo();
     }
 
-    // setVideoToState(video) {
+    setVideoToState(video) {
     //     // debugger
     //     // return () => { this.props.retrieveVideo(video.id);}
     //     // this.props.retrieveVideo(video.id);
-    //     this.props.receiveCurrentVideo(video, {preview: true});
-    // }
+        this.props.receiveCurrentVideo(video, {preview: true});
+    }
 
     showDescription() {
         // debugger

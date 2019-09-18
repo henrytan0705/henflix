@@ -8,7 +8,8 @@ const msp = state => {
     return {
         // previewVideoId: Object.keys(state.ui).length,
         // previewBool: Object.keys(state.ui.searching).length ? state.ui[Object.keys(state.ui)[0]]["preview"] : false,
-        descriptionOpen: Object.values(state.ui.description).length
+        descriptionOpen: Object.values(state.ui.description).length,
+        previewVideoId: state.ui.preview.preview
         // previewBool: state.ui.preview 
     }
 }
@@ -17,7 +18,7 @@ const mdp = dispatch => {
     return {
         retrieveVideo: (id) => dispatch(retrieveVideo(id)),
         clearCurrentVideo: (preview) => dispatch(clearCurrentVideo(preview)),
-        // receiveCurrentVideo: (video, preview) => dispatch(receiveCurrentVideo(video, preview))
+        receiveCurrentVideo: (video, preview) => dispatch(receiveCurrentVideo(video, preview))
     }
 }
 

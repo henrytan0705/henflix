@@ -3,27 +3,49 @@ import { Link } from 'react-router-dom';
 class VideoDisplay extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { pathChange: false }
+        this.state = { 
+            pathChange: false,
+            scrolled: false
+        }
         this.vidRef = React.createRef();
+        this.addScrollListener = this.addScrollListener.bind(this);
     }
 
+    addScrollListener() {
+        window.addEventListener('scroll', () => {
+            let yOffset = window.pageYOffset;
+            if (yOffset <= 300 && this._mount) {
+                this.setState({ scrolled: false })
+            } else {
+                this.setState({ scrolled: true })
+            }
+        })
+    }
 
     componentDidMount(){
         // this.props.retrieveVideo();
+        this._mount = true;
+        this.addScrollListener();
+        // if (this.state.scrolled) {
+        //     this.vidRef.current.pause();
+        // } else {
+
+        //     this.vidRef.current.play();
+        // }
+    }
+
+    componentWillUnmount(){
+        this._mount = false;
     }
 
     componentDidUpdate(prevProps) {
         // debugger
-        // if(prevProps.location.pathname !== this.props.path) {
-        //     // debugger
-        //     this.setState({ pathChange: true })
-        // }
-        if (this.props.previewVideoId) {
+        if (this.props.previewVideoId || this.state.scrolled) {
+            // debugger
             this.vidRef.current.pause();
-        } else if (!this.props.previewVideoId) {
+        } else if (!this.props.previewVideoId && !this.state.scrolled) {
             this.vidRef.current.play();
         }
-
     }
 
     render(){
@@ -56,8 +78,9 @@ class VideoDisplay extends React.Component {
                     <video 
                         className="display-video" 
                         src={video.videoUrl} 
+                        // poster={video.photo}
                         // autoPlay={this.props.previewVideoId ? false : true}
-                        // autoPlay
+                        autoPlay
                         // loop
                         ref={this.vidRef}
                         // onKeyPress={this.togglePlay}

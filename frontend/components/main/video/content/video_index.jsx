@@ -15,33 +15,6 @@ class VideoIndex extends React.Component {
         // debugger
     }
 
-    componentDidMount() {
-        this._mounted = true;
-    }
-
-    componentWillUpdate() {
-        // debugger
-        // if (Object.values(this.props.description).length) {
-        //     let correctVideoDescriptionRow = false;
-        //     for (let i = 0; i < this.props.videos.length; i++) {
-        //         // debugger
-        //         if (this.props.videos[i].id = this.props.description.id) {
-        //             debugger
-        //             correctVideoDescriptionRow = true;
-        //         }
-        //     }
-        //     debugger
-        //     if (!correctVideoDescriptionRow) {
-        //         debugger
-                // this.closeDescription();
-            // }
-        // }
-    }
-
-    componentWillUnmount() {
-        this._mounted = false;
-    }
-
     showDescription(video) {
         // debugger
         return () => {
@@ -54,10 +27,18 @@ class VideoIndex extends React.Component {
     closeDescription() {
         this.description = null;
         this.visibleX = false;
-        // this.props.clearCurrentVideo();
         this.props.clearDescription();
         this.setState({showDescription: false});
     }
+
+    componentDidMount() {
+        this._mounted = true;
+    }
+
+    componentWillUnmount() {
+        this._mounted = false;
+    }
+
 
     render() {
         if (!this.props.videos) return null;

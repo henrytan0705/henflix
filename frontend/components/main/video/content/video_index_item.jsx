@@ -103,7 +103,7 @@ class VideoIndexItem extends React.Component {
     showDescription() {
         // debugger
         if (this.props.video.id === this.props.previewVideo.id && !!this.props.previewVideo.id) {
-            debugger
+            // debugger
             this.props.receiveCurrentVideo(this.props.video, true, this.vidRef.current.currentTime);
             this.vidRef.current.currentTime = this.props.previewVideo.currentTime;
         }
@@ -175,9 +175,9 @@ class VideoIndexItem extends React.Component {
                     <i className="far fa-play-circle display-play-button"></i>
                     <h1 className="video-hover-description">{video.title}</h1>
                 </Link>
-                    <i className="fas fa-volume-up item-mute-icon"
+                    {/* <i className="fas fa-volume-up item-mute-icon"
                         onClick={this.toggleMute}>
-                    </i>
+                    </i> */}
 
                     {/* <div className="video-hover-description-container"> */}
                     {/* </div> */}

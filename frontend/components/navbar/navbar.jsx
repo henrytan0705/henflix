@@ -48,6 +48,7 @@ class Navbar extends React.Component {
         }
         // debugger
         window.scroll(0,0);
+        this.clearSearchBox();
 
     }
 
@@ -71,6 +72,7 @@ class Navbar extends React.Component {
             this.props.searchingForVideos(false, searchQuery);
             this.hideSearchBox();
             this.props.history.push('/browse');
+            this.props.clearDescription();
             return;
         }
 
@@ -93,6 +95,8 @@ class Navbar extends React.Component {
                 this.props.history.push(`/search/${searchQuery}`);
             }.bind(this), 1000);
         }
+        
+        this.props.clearDescription();
     }
 
     clearSearchBox() {
@@ -188,7 +192,9 @@ class Navbar extends React.Component {
                 <nav className={`browse-navbar ${hasBackground}`}>
                     <Link className="browse-logo" 
                         to="/browse"
-                        onClick={this.clearSearchBox}>
+                        // onClick={this.clearSearchBox}
+                        onClick={this.switchTab}
+                        >
                         <img className="browse-logo-image" src={window.logo}/>
                     </Link>
 

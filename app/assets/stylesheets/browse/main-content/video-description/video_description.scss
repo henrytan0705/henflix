@@ -153,23 +153,25 @@
 }
 
 .description {
-    font-size: 22px;
+    font-size: 20px;
     color: #999;
 }
 
 .description-play-button {
     // display: block;
-    padding: 10px 25px;
+    padding: 10px 15px;
     // padding: 4px 5px;
     background-color: #E50914;
     border-color: #FF0A16;
-    // margin-left: 20px;
-    // margin-top: 20px;
+    margin-left: 20px;
+    margin-top: 10px;
     font-size: 23px;
     // border: 1px solid red;
-    position: absolute;
+    // position: absolute;
+    display:block;
     top: 50%;
     left: 5%;
+    width: 100px;
     // padding: 18px 0 12px 4%;
 
 }

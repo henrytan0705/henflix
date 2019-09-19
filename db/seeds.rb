@@ -18,8 +18,7 @@ User.create!(email: "george@gmail.com", password:"asdf1234")
 User.create!(email: "max@gmail.com", password:"12345678")
 User.create!(email:"demoLogin@gmail.com" ,password:"asdf1234")
 
-
-angry_bird = Video.create!(title:"The Angry Birds Movie 2", description:"Red, Chuck, Bomb and the rest of their feathered friends are surprised when a green pig suggests that they put aside their differences and unite to fight a common threat. Aggressive birds from an island covered in ice are planning to use an elaborate weapon to destroy the fowl and swine way of life. After picking their best and brightest, the birds and pigs come up with a scheme to infiltrate the island, deactivate the device and return to their respective paradises intact.", year:"2019")
+angry_bird = Video.create!(title:"The Angry Birds Movie 2", description:"The flightless birds and scheming green pigs take their feud to the next level.", year:"2019")
 photo = EzDownload.open("https://active-storage-aa-seed.s3.amazonaws.com/the_angry_birds_movie.jpg")
 video = EzDownload.open("https://active-storage-aa-seed.s3.amazonaws.com/angry_birds_2.mp4")
 angry_bird.photo.attach(io: photo, filename:"angry_birds_2.jpg")

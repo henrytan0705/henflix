@@ -47,11 +47,13 @@ class VideoDisplay extends React.Component {
 
     componentDidUpdate(prevProps) {
         // debugger
-        if (!!this.props.previewVideo.status || this.state.scrolled || this.props.descriptionOpen) {
-            // debugger
-            this.vidRef.current.pause();
-        } else if (!this.props.previewVideo.status && !this.state.scrolled) {
-            this.vidRef.current.play();
+        if (this._mount) {
+                if (!!this.props.previewVideo.status || this.state.scrolled || this.props.descriptionOpen) {
+                    // debugger
+                    this.vidRef.current.pause();
+                } else if (!this.props.previewVideo.status && !this.state.scrolled) {
+                    this.vidRef.current.play();
+                }
         }
     }
 

@@ -161,6 +161,7 @@ class VideoIndexItem extends React.Component {
                         className="video-item-1"
                         src={video.videoUrl}
                         autoPlay
+                        loop
                         ref={this.vidRef}
                     >
                     </video>

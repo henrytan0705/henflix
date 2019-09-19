@@ -5,7 +5,8 @@ class VideoDisplay extends React.Component {
         super(props);
         this.state = { 
             pathChange: false,
-            scrolled: false
+            scrolled: false,
+            muted: false
         }
         this.vidRef = React.createRef();
         this.addScrollListener = this.addScrollListener.bind(this);
@@ -46,10 +47,10 @@ class VideoDisplay extends React.Component {
 
     componentDidUpdate(prevProps) {
         // debugger
-        if (this.props.previewVideoId || this.state.scrolled) {
+        if (!!this.props.previewVideo.status || this.state.scrolled) {
             // debugger
             this.vidRef.current.pause();
-        } else if (!this.props.previewVideoId && !this.state.scrolled) {
+        } else if (!this.props.previewVideo.status && !this.state.scrolled) {
             this.vidRef.current.play();
         }
     }

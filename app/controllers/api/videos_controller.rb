@@ -13,7 +13,19 @@ class Api::VideosController < ApplicationController
         title = params[:title]
         # debugger
         # @videos = Video.where('title ILIKE ?', "%#{title}%")
+        
+        # vids = Video.with_attached_photo.with_attached_video_url.all.includes(:genres)
+        # @videos = vids.where('title ILIKE ?', "%#{title}%")
+
+        # genres = vids.genres
+
+        # for (i = 0; i < genres.length; i++) {
+
+        # }
+
         @videos = Video.with_attached_photo.with_attached_video_url.all.includes(:genres).where('title ILIKE ?', "%#{title}%")
+        # .or('genres[0] ILIKE ?', "%#{title}%")
+        # debugger
        
         if @videos.length == 0
             render json: {}

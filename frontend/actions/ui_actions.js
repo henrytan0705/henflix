@@ -7,13 +7,15 @@ export const CLEAR_DESCRIPTION = "CLEAR_DESCRIPTION";
 export const SEARCH_VIDEOS = "SEARCH_VIDEOS";
 export const SEARCHING_FOR_VIDEOS = "SEARCHING_FOR_VIDEOS";
 
-export const receiveCurrentVideo = (video, preview) => {
+export const receiveCurrentVideo = (video, preview, time) => {
     return {
         type: RECEIVE_CURRENT_VIDEO,
         video,
-        preview
+        preview,
+        time
     }
 }
+
 export const clearCurrentVideo = (preview) => {
     return {
         type: CLEAR_VIDEO,

@@ -6,7 +6,9 @@ const previewReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_CURRENT_VIDEO:
-            return merge({}, action.video.id, action.preview);
+        // debugger
+            // return merge({}, {id: action.video.id, status: action.preview});
+            return merge({}, {id: action.video.id, status: action.preview, currentTime: action.time});
         case RECEIVE_VIDEO:
             return merge({}, action.video);
         case CLEAR_VIDEO:

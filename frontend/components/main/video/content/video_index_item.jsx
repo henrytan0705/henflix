@@ -15,12 +15,18 @@ class VideoIndexItem extends React.Component {
         this.showThumbnail = this.showThumbnail.bind(this);
         this.setVideoToState = this.setVideoToState.bind(this);
         this.showDescription = this.showDescription.bind(this);
+        this.vidRef = React.createRef();
         // this.description = null;
         // this.vidRef = React.createRef();
     }
 
     componentDidMount(){
         this._mounted = true;
+        // if (this.props.video.id === this.props.previewVideo.id) {
+        //     debugger
+        //     // this.vidRef.current.currentTime = this.props.previewVideo.currentTime;
+        //     this.vidRef.current = {currentTime: this.props.previewVideo.currentTime};
+        // }
     }
 
     componentWillUnmount(){
@@ -34,12 +40,17 @@ class VideoIndexItem extends React.Component {
             return;
         }
 
+        // if (this.props.video.id !== this.props.previewVideo.id) {
+        //     this.props.clearCurrentVideo(false);
+        // }
+
         this.setVideoToState(this.props.video);
 
         this.playId = setTimeout(
             function () {
                 if (this._mounted) {
                     this.setState({ hover: true });
+                    this.vidRef.current.currentTime = this.props.previewVideo.currentTime;
                 }
             }   
             .bind(this),
@@ -49,15 +60,30 @@ class VideoIndexItem extends React.Component {
 
     showThumbnail(){
         clearTimeout(this.playId);
+        this.props.receiveCurrentVideo(this.props.video, true, this.vidRef.current.currentTime);
         if (this._mounted) this.setState({hover: false});
-        this.props.clearCurrentVideo();
+        // debugger
+        // debugger
+        // if (this.props.video.id !== this.props.previewVideoId) {
+        //     this.props.clearCurrentVideo(false);
+        // }
     }
 
     setVideoToState(video) {
     //     // debugger
     //     // return () => { this.props.retrieveVideo(video.id);}
     //     // this.props.retrieveVideo(video.id);
-        this.props.receiveCurrentVideo(video, {preview: true});
+
+            if (this.props.video.id === this.props.previewVideo.id) {
+                // debugger
+                // this.vidRef.current.currentTime = this.props.previewVideo.currentTime;
+            } else {
+                // debugger
+                this.props.receiveCurrentVideo(video, true, 0);
+            }
+        //    debugger
+            // this.vidRef.current.currentTime = this.props.previewVideo.currentTime;
+        // }
     }
 
     showDescription() {
@@ -72,6 +98,12 @@ class VideoIndexItem extends React.Component {
             // debugger
             this.showThumbnail();
         }
+
+        // if (this.props.video.id === this.props.previewVideo.id) {
+        //     debugger
+        //     // this.vidRef.current.currentTime = this.props.previewVideo.currentTime;
+        //     this.vidRef.current = { currentTime: this.props.previewVideo.currentTime };
+        // }
     }
 
     render(){   
@@ -109,6 +141,7 @@ class VideoIndexItem extends React.Component {
                         className="video-item-1"
                         src={video.videoUrl}
                         autoPlay
+                        ref = {this.vidRef}
                     >
                     </video>
 

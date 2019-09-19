@@ -25,9 +25,9 @@ class Navbar extends React.Component {
 
     addScrollListener() {
         window.addEventListener('scroll', () => {
-            let yOffset = window.pageYOffset;
+            this.yOffset = window.pageYOffset;
             // console.log(`${yOffset}`);
-            if (yOffset === 0 && this._mount) {
+            if (this.yOffset === 0 && this._mount) {
                 if (this.state.scrolled) this.setState({scrolled: false})
             } else {
                 if (!this.state.scrolled) this.setState({scrolled: true})
@@ -37,6 +37,18 @@ class Navbar extends React.Component {
 
     switchTab() {
         this.setState({switchTab: true});
+        // debugger
+        if (!!this.props.descriptionOpen) {
+            let closeButtons = document.getElementsByClassName("close-button");
+    
+            for (let i = 0; i < closeButtons.length; i++) {
+                closeButtons[i].click();
+            }
+            
+        }
+        // debugger
+        window.scroll(0,0);
+
     }
 
     displaySearchBox() {
@@ -181,7 +193,14 @@ class Navbar extends React.Component {
                     </Link>
 
                     <ul className="navbar-left-wrapper">
-                        <li className="home-tab selected-tab"><Link className="tab" to="/browse">Home</Link></li>
+                        <li className="home-tab selected-tab">
+                            <Link className="tab" 
+                                to="/browse"
+                                onClick={this.switchTab}
+                            >
+                                Home
+                            </Link>
+                        </li>
                         <li className="nav-tab">
                             <Link className="tab" 
                                 to={showPath}

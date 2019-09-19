@@ -15,6 +15,7 @@ class VideoIndexItem extends React.Component {
         this.showThumbnail = this.showThumbnail.bind(this);
         this.setVideoToState = this.setVideoToState.bind(this);
         this.showDescription = this.showDescription.bind(this);
+        this.toggleMute = this.toggleMute.bind(this);
         this.vidRef = React.createRef();
         // this.description = null;
         // this.vidRef = React.createRef();
@@ -36,6 +37,9 @@ class VideoIndexItem extends React.Component {
     toggleMute() {
         // debugger
         this.vidRef.current.muted = !this.vidRef.current.muted;
+        // this.vidRef.current.currentTime = this.vidRef.current.currentTime;
+        // debugger
+        // this.props.receiveCurrentVideo()
     }
 
     playTrailer(){
@@ -68,8 +72,9 @@ class VideoIndexItem extends React.Component {
 
     showThumbnail(){
         clearTimeout(this.playId);
-
+        // debugger
         if (!this.props.descriptionOpen && this.state.hover) {
+            // debugger
             this.props.receiveCurrentVideo(this.props.video, false, this.vidRef.current.currentTime);
         }
 
@@ -78,7 +83,7 @@ class VideoIndexItem extends React.Component {
     }
 
     setVideoToState(video) {
-    //     // debugger
+        // debugger
     //     // return () => { this.props.retrieveVideo(video.id);}
     //     // this.props.retrieveVideo(video.id);
 
@@ -98,7 +103,7 @@ class VideoIndexItem extends React.Component {
     showDescription() {
         // debugger
         if (this.props.video.id === this.props.previewVideo.id && !!this.props.previewVideo.id) {
-            // debugger
+            debugger
             this.props.receiveCurrentVideo(this.props.video, true, this.vidRef.current.currentTime);
             this.vidRef.current.currentTime = this.props.previewVideo.currentTime;
         }
@@ -156,17 +161,23 @@ class VideoIndexItem extends React.Component {
                         className="video-item-1"
                         src={video.videoUrl}
                         autoPlay
-                        ref = {this.vidRef}
+                        ref={this.vidRef}
                     >
                     </video>
 
-                    <i className="fas fa-volume-up item-mute-icon"
-                        onClick={this.toggleMute}>
-                    </i>
+                    {/* <button> */}
+
+                        {/* <i className="fas fa-volume-up item-mute-icon"
+                            onClick={this.toggleMute}>
+                        </i> */}
+                    {/* </button> */}
 
                     <i className="far fa-play-circle display-play-button"></i>
                     <h1 className="video-hover-description">{video.title}</h1>
                 </Link>
+                    <i className="fas fa-volume-up item-mute-icon"
+                        onClick={this.toggleMute}>
+                    </i>
 
                     {/* <div className="video-hover-description-container"> */}
                     {/* </div> */}

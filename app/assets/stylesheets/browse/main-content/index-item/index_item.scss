@@ -158,12 +158,13 @@
 }
 
 .item-mute-icon {
+    display: block;
     position: absolute;
-    z-index: 300;
-    // top: 20%;    
-    // left: 90%;
+    z-index: 400;
+    top: 40%;    
+    left: 90%;
     color: white;
     font-size: 30px;
-    background-color: red;
-    border: 1px solid yellow;
+    // background-color: red;
+    // border: 1px solid yellow;
 }

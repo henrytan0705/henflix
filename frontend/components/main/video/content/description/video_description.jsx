@@ -124,6 +124,7 @@ class VideoDescription extends React.Component {
                             <video className="description-video" 
                                     src={video.videoUrl} 
                                     autoPlay
+                                    loop
                                     ref={this.vidRef}
                                     >
                             </video>

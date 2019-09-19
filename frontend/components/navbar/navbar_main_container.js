@@ -6,7 +6,6 @@ import { retrieveSearch, searchingForVideos } from '../../actions/ui_actions';
 import { withRouter } from 'react-router-dom';
 
 const msp = (state, ownProps) => {
-    // debugger
     return {
         currentUser: state.session.userId,
         url: "main",
@@ -15,7 +14,8 @@ const msp = (state, ownProps) => {
         search: ownProps.match.params.query,
         // search: ownProps.location.pathname.split('/'),
         path: ownProps.match.path,
-        query: state.ui.searching.query
+        query: state.ui.searching.query,
+        descriptionOpen: Object.keys(state.ui.description).length
     }
 }
 

@@ -252,6 +252,9 @@ label {
     box-shadow: none;
 }
 
+.email-error-highlight, .password-error-highlight {
+    border-bottom: 2px solid #e87c03;
+}
 // input {
 //     -webkit-writing-mode: horizontal-tb !important;
 //     text-rendering: auto;

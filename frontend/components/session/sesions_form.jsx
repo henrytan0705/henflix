@@ -50,18 +50,20 @@ class SessionForm extends React.Component {
         let emailError = "";
         let passwordError = "";
 
-        // debugger
+        let emailErrorStyle = "none";
+        let passwordErrorStyle = "none";
+
         for (let i = 0; i < this.props.errors.length; i++) {
             let error = this.props.errors[i];
-            // debugger
+
             if (error.includes("Email") || error.includes("email")){
                 emailError = error;
+                emailErrorStyle = "email-error-highlight";
             } else if (error.includes("Password") || error.includes("password")) {
                 passwordError = error;
+                passwordErrorStyle = "password-error-highlight";
             }
         }
-
-        // debugger
 
         const linkText = (this.props.formType === "Sign In") ? 
             "New to Netflix?" : "Already have an account?"
@@ -83,7 +85,7 @@ class SessionForm extends React.Component {
                                     <div className="input">
                                         <div className="email-label-wrapper">
                                             <label> 
-                                                <input id="email" className="email-input" type="text" value={this.state.email} onChange={this.update("email")} placeholder="Email or phone number"/>
+                                                <input id="email" className={`${emailErrorStyle} email-input`} type="text" value={this.state.email} onChange={this.update("email")} placeholder="Email or phone number"/>
                                                 {/* <div className="errors">{this.props.errors[0]}</div> */}
                                                 <div className="errors">{emailError}</div>
                                                 {/* <label for="email" className="email-label">Email or phone number</label> */}
@@ -97,7 +99,7 @@ class SessionForm extends React.Component {
                                         <div className="password-label-wrapper">
                                             <label>
                                                 {/* <label className="password-label"> Password */}
-                                                    <input className="password-input" type="password" value={this.state.password} onChange={this.update("password")} placeholder="Password"/>
+                                                    <input className={`${passwordErrorStyle} password-input`} type="password" value={this.state.password} onChange={this.update("password")} placeholder="Password"/>
                                                     {/* <div className="errors">{this.props.errors[1]}</div> */}
                                                     <div className="errors">{passwordError}</div>
                                                 {/* </label> */}

@@ -10,6 +10,7 @@ class Api::SessionsController < ApplicationController
         else
             # render json: ["Invalid Credentials"], status: 422
             render json: ["Please enter a valid email or phone number.", "Your password must contain between 6 and 60 characters."], status: 422
+            # render json: @user.error.full_messages, status: 422
             # render "api/users/error"
         end
     end

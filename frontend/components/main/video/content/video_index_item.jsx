@@ -34,8 +34,10 @@ class VideoIndexItem extends React.Component {
         this._mounted = false;
     }
 
-    toggleMute() {
+    toggleMute(e) {
         // debugger
+        e.preventDefault();
+        e.stopPropagation();
         this.vidRef.current.muted = !this.vidRef.current.muted;
         // this.vidRef.current.currentTime = this.vidRef.current.currentTime;
         // debugger
@@ -61,6 +63,7 @@ class VideoIndexItem extends React.Component {
                     this.setVideoToState(this.props.video);
                     // this.props.receiveCurrentVideo(this.props.video, true, this.props.previewVideo.currentTime);
                     if (!!this.props.previewVideo.currentTime) {
+                        debugger
                         this.vidRef.current.currentTime = this.props.previewVideo.currentTime;
                     }
                 }
@@ -76,6 +79,7 @@ class VideoIndexItem extends React.Component {
         if (!this.props.descriptionOpen && this.state.hover) {
             // debugger
             this.props.receiveCurrentVideo(this.props.video, false, this.vidRef.current.currentTime);
+            // debugger
         }
 
         if (this._mounted) this.setState({hover: false});
@@ -88,12 +92,13 @@ class VideoIndexItem extends React.Component {
     //     // this.props.retrieveVideo(video.id);
 
             if (this.props.video.id === this.props.previewVideo.id && !!this.props.previewVideo.id) {
-                // debugger
                 // this.vidRef.current.currentTime = this.props.previewVideo.currentTime;
                 this.props.receiveCurrentVideo(this.props.video, true, this.props.previewVideo.currentTime);
+                debugger
             } else {
                 // debugger
                 this.props.receiveCurrentVideo(video, true, 0);
+                debugger
             }
         //    debugger
             // this.vidRef.current.currentTime = this.props.previewVideo.currentTime;
@@ -104,7 +109,9 @@ class VideoIndexItem extends React.Component {
         // debugger
         if (this.props.video.id === this.props.previewVideo.id && !!this.props.previewVideo.id) {
             // debugger
+            // e.preventDefault();
             this.props.receiveCurrentVideo(this.props.video, true, this.vidRef.current.currentTime);
+            // debugger
             this.vidRef.current.currentTime = this.props.previewVideo.currentTime;
         }
 
@@ -176,9 +183,9 @@ class VideoIndexItem extends React.Component {
                     <i className="far fa-play-circle display-play-button"></i>
                     <h1 className="video-hover-description">{video.title}</h1>
                 </Link>
-                    {/* <i className="fas fa-volume-up item-mute-icon"
+                    <i className="fas fa-volume-up item-mute-icon"
                         onClick={this.toggleMute}>
-                    </i> */}
+                    </i>
 
                     {/* <div className="video-hover-description-container"> */}
                     {/* </div> */}

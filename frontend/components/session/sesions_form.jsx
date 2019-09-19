@@ -55,7 +55,7 @@ class SessionForm extends React.Component {
 
         for (let i = 0; i < this.props.errors.length; i++) {
             let error = this.props.errors[i];
-
+            debugger
             if (error.includes("Email") || error.includes("email")){
                 emailError = error;
                 emailErrorStyle = "email-error-highlight";

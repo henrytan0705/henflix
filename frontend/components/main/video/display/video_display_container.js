@@ -9,6 +9,7 @@ const msp = (state, ownProps) => {
         // video: state.videos[18],
         // path: ownProps.location.pathname
         // previewVideoId: Object.keys(state.ui).length
+        descriptionOpen: Object.keys(state.ui.description).length,
         previewVideo: state.ui.preview
     }
 }

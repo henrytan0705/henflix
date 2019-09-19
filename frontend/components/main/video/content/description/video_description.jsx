@@ -92,6 +92,8 @@ class VideoDescription extends React.Component {
                                     <i className="fas fa-play"></i>
                                 </span>
 
+                                {/* <span className=""></span> */}
+
                                 <span className="play-button-text">
                                     Play
                                 </span>

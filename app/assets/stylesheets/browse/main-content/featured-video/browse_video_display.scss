@@ -60,7 +60,7 @@
     position: absolute;
     top: 20%;
     left: 5%;
-    z-index: 100;
+    z-index: 250;
     color: white;
     font-size: 30px;
     border: 1px solid white;
@@ -71,4 +71,25 @@
 
 .gap {
     padding: 0 5px;
+}
+
+// .fa-volume-up {
+//     position: absolute;
+//     z-index: 100;
+//     top: 30%;
+//     left: 70%;
+//     color: white;
+//     font-size: 30px;
+
+// }
+
+.display-mute-icon {
+    position: absolute;
+    z-index: 250;
+    top: 60%;
+    left: 80%;
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    border: 1px solid white;
 }

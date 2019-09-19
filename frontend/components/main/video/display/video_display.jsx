@@ -9,6 +9,7 @@ class VideoDisplay extends React.Component {
         }
         this.vidRef = React.createRef();
         this.addScrollListener = this.addScrollListener.bind(this);
+        this.toggleMute = this.toggleMute.bind(this);
     }
 
     addScrollListener() {
@@ -20,6 +21,11 @@ class VideoDisplay extends React.Component {
                 this.setState({ scrolled: true })
             }
         })
+    }
+
+    toggleMute() {
+        debugger
+        this.vidRef.current.muted = !this.vidRef.current.muted;
     }
 
     componentDidMount(){
@@ -68,11 +74,20 @@ class VideoDisplay extends React.Component {
                     <h1 className="display-title">{video.title}</h1>
                     {/* <p>{video.description}</p> */}
                     {/* <h2>{video.year}</h2> */}
+
                     <Link className="display-play-icon" to={path}>
                         <i className="fas fa-play"></i>
                         <span className="gap"></span>
                         PLAY
                     </Link>
+
+                    <button className="display-mute-icon"
+                        // onClick={() => {this.vidRef.current.muted = !this.vidRef.current.muted}}>
+                        onClick={this.toggleMute}>
+                        <i className="fas fa-volume-up"
+                        // onClick={() => { this.vidRef.current.muted = !this.vidRef.current.muted }}
+                        ></i>
+                    </button>
                     {/* <div></div> */}
 
                     <video 

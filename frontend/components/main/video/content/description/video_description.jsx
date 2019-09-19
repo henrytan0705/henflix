@@ -5,10 +5,15 @@ class VideoDescription extends React.Component {
     constructor(props) {
         super(props);
         this.closeDescription = this.closeDescription.bind(this);
+        this.vidRef = React.createRef();
     }
 
     componentDidMount() {
         this.props.receiveCurrentDescription(this.props.video);
+        if (this.props.video.id === this.props.previewVideo.id) {
+            this.vidRef.current.currentTime = this.props.previewVideo.currentTime;
+        }
+
     }
 
     closeDescription() {
@@ -117,6 +122,7 @@ class VideoDescription extends React.Component {
                             <video className="description-video" 
                                     src={video.videoUrl} 
                                     autoPlay
+                                    ref={this.vidRef}
                                     >
                             </video>
                         </Link>

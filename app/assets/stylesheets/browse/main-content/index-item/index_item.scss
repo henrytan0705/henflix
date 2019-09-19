@@ -157,3 +157,13 @@
     font-weight: 500;
 }
 
+.item-mute-icon {
+    position: absolute;
+    z-index: 300;
+    // top: 20%;    
+    // left: 90%;
+    color: white;
+    font-size: 30px;
+    background-color: red;
+    border: 1px solid yellow;
+}

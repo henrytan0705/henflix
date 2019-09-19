@@ -33,6 +33,11 @@ class VideoIndexItem extends React.Component {
         this._mounted = false;
     }
 
+    toggleMute() {
+        // debugger
+        this.vidRef.current.muted = !this.vidRef.current.muted;
+    }
+
     playTrailer(){
         // debugger
         // if (!this.props.previewVideoId) {
@@ -61,7 +66,12 @@ class VideoIndexItem extends React.Component {
 
     showThumbnail(){
         clearTimeout(this.playId);
-        this.props.receiveCurrentVideo(this.props.video, false, this.vidRef.current.currentTime);
+        // debugger
+
+        if (!!this.vidRef.current) {
+            this.props.receiveCurrentVideo(this.props.video, false, this.vidRef.current.currentTime);
+        }
+
         if (this._mounted) this.setState({hover: false});
         // debugger
         // debugger
@@ -75,7 +85,7 @@ class VideoIndexItem extends React.Component {
     //     // return () => { this.props.retrieveVideo(video.id);}
     //     // this.props.retrieveVideo(video.id);
 
-            if (this.props.video.id === this.props.previewVideo.id) {
+            if (this.props.video.id === this.props.previewVideo.id && !!this.props.previewVideo.id) {
                 // debugger
                 // this.vidRef.current.currentTime = this.props.previewVideo.currentTime;
                 this.props.receiveCurrentVideo(this.props.video, true, this.props.previewVideo.currentTime);
@@ -90,8 +100,13 @@ class VideoIndexItem extends React.Component {
 
     showDescription() {
         // debugger
+        if (this.props.video.id === this.props.previewVideo.id && !!this.props.previewVideo.id) {
+            this.props.receiveCurrentVideo(this.props.video, true, this.vidRef.current.currentTime);
+            this.vidRef.current.currentTime = this.props.previewVideo.currentTime;
+        }
+
         this.props.show(this.props.video);
-        // this.setState({hover: false});
+
     }
 
     componentDidUpdate() {
@@ -147,9 +162,12 @@ class VideoIndexItem extends React.Component {
                     >
                     </video>
 
+                    <i className="fas fa-volume-up item-mute-icon"
+                        onClick={this.toggleMute}>
+                    </i>
+
                     <i className="far fa-play-circle display-play-button"></i>
                     <h1 className="video-hover-description">{video.title}</h1>
-
                 </Link>
 
                     {/* <div className="video-hover-description-container"> */}

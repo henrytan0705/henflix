@@ -14,7 +14,7 @@ const previewReducer = (state = {}, action) => {
         case CLEAR_VIDEO:
             return merge({}, action.preview);
         default:
-            return state;
+            return {};
     }
 }
 

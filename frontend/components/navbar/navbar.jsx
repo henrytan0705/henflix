@@ -61,42 +61,45 @@ class Navbar extends React.Component {
     }
 
     updateSearch(){
-        if (!!this.searchId) {
-            clearTimeout(this.searchId);
-        }
+        if (this._mount) {
+            if (!!this.searchId) {
+                clearTimeout(this.searchId);
+            }
 
-        let searchQuery = this.searchField.current.value;
-        let emptySearch = true;
+            let searchQuery = this.searchField.current.value;
+            let emptySearch = true;
 
-        if (searchQuery === undefined) {
-            this.props.searchingForVideos(false, searchQuery);
-            this.hideSearchBox();
-            this.props.history.push('/browse');
-            this.props.clearDescription();
-            return;
-        }
-
-        for (let i = 0; i < searchQuery.length; i++) {
-            if(searchQuery[i] !== " ") emptySearch = false;
-        }
-
-        if (emptySearch === true) {
-            this.props.searchingForVideos(false, searchQuery);
-
-            this.searchId = setTimeout(() => {
+            if (searchQuery === undefined) {
+                this.props.searchingForVideos(false, searchQuery);
+                this.hideSearchBox();
                 this.props.history.push('/browse');
-            }, 1000)
-        } else {
-            this.props.searchingForVideos(true, searchQuery);
+                this.props.clearDescription();
+                return;
+            }
 
-            this.searchId = setTimeout(function () {
-                this.setState({ searchInput: this.searchField.current });
-                this.props.retrieveSearch(searchQuery);
-                this.props.history.push(`/search/${searchQuery}`);
-            }.bind(this), 1000);
+            for (let i = 0; i < searchQuery.length; i++) {
+                if (searchQuery[i] !== " ") emptySearch = false;
+            }
+
+            if (emptySearch === true) {
+                this.props.searchingForVideos(false, searchQuery);
+
+                this.searchId = setTimeout(() => {
+                    this.props.history.push('/browse');
+                }, 1000)
+            } else {
+                this.props.searchingForVideos(true, searchQuery);
+
+                this.searchId = setTimeout(function () {
+                    this.setState({ searchInput: this.searchField.current });
+                    this.props.retrieveSearch(searchQuery);
+                    this.props.history.push(`/search/${searchQuery}`);
+                }.bind(this), 1000);
+            }
+
+            this.props.clearDescription();
         }
         
-        this.props.clearDescription();
     }
 
     clearSearchBox() {

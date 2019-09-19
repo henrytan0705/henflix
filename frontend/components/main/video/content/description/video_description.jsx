@@ -118,6 +118,7 @@ class VideoDescription extends React.Component {
 
                     <div className="description-video-container">
                         <Link to={path}
+                            className="description-video-section"
                             // onClick={this.setVideoToState}
                             onClick={this.closeDescription}
                             >

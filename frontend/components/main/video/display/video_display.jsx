@@ -14,14 +14,16 @@ class VideoDisplay extends React.Component {
     }
 
     addScrollListener() {
-        window.addEventListener('scroll', () => {
-            let yOffset = window.pageYOffset;
-            if (yOffset <= 300 && this._mount) {
-                this.setState({ scrolled: false })
-            } else {
-                this.setState({ scrolled: true })
-            }
-        })
+        if (this._mount) {
+            window.addEventListener('scroll', () => {
+                let yOffset = window.pageYOffset;
+                if (yOffset <= 300 && this._mount) {
+                    this.setState({ scrolled: false })
+                } else {
+                    this.setState({ scrolled: true })
+                }
+            })
+        }
     }
 
     toggleMute() {
@@ -58,14 +60,6 @@ class VideoDisplay extends React.Component {
     }
 
     render(){
-        // let video = this.props.video || {
-        //     title: "",
-        //     description: "",
-        //     year: "",
-        //     photo: "",
-        //     videoUrl: "",
-        // }
-
         if (!this.props.video) return null;
 
         let video = this.props.video;

@@ -93,6 +93,7 @@ tasty_2.video_url.attach(io: tasty_2_video, filename:"tasty_2.mp4")
 
 animation = Genre.create!(genre:"Animation")
 food = Genre.create!(genre:"Food")
+horror = Genre.create!(genre:"Horror")
 live_action = Genre.create!(genre:"Live Action")
 educational = Genre.create!(genre:"Educational")
 tv_show = Genre.create!(genre:"TV Show")
@@ -115,12 +116,15 @@ VideoGenre.create!(genre: tv_show , movie: eggs_change)
 
 VideoGenre.create!(genre: food, movie: master_chef_junior)
 VideoGenre.create!(genre: tv_show, movie: master_chef_junior)
+VideoGenre.create!(genre: horror, movie:master_chef_junior)
 
 VideoGenre.create!(genre: food, movie: tasty)
 VideoGenre.create!(genre: tv_show, movie: tasty)
+VideoGenre.create!(genre: horror, movie:tasty)
 
 VideoGenre.create!(genre: food, movie: tasty_2)
 VideoGenre.create!(genre: tv_show, movie: tasty_2)
+VideoGenre.create!(genre: horror, movie:tasty_2)
 
 VideoGenre.create!(genre: live_action, movie:hen_and_chicken)
 VideoGenre.create!(genre: tv_show, movie:hen_and_chicken)

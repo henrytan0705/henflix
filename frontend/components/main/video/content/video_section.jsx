@@ -17,7 +17,7 @@ class VideoSection extends React.Component {
         let foodRow = (!Object.values(foodVideos).length) ? null : (
             <>
                 <h1 className="categories">Food/Horror</h1>
-                <VideoIndexContainer genre="Food" videos={foodVideos} />
+                <VideoIndexContainer genre="Food Horror" videos={foodVideos} />
             </>
         )
         let liveActionVideos = videosArray.filter(video => video.genres.includes("Live Action"));

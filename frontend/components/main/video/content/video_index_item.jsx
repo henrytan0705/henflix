@@ -66,18 +66,13 @@ class VideoIndexItem extends React.Component {
 
     showThumbnail(){
         clearTimeout(this.playId);
-        debugger
 
-        if (!this.props.descriptionOpen) {
+        if (!this.props.descriptionOpen && this.state.hover) {
             this.props.receiveCurrentVideo(this.props.video, false, this.vidRef.current.currentTime);
         }
 
         if (this._mounted) this.setState({hover: false});
-        // debugger
-        // debugger
-        // if (this.props.video.id !== this.props.previewVideoId) {
-        //     this.props.clearCurrentVideo(false);
-        // }
+
     }
 
     setVideoToState(video) {
@@ -90,7 +85,7 @@ class VideoIndexItem extends React.Component {
                 // this.vidRef.current.currentTime = this.props.previewVideo.currentTime;
                 this.props.receiveCurrentVideo(this.props.video, true, this.props.previewVideo.currentTime);
             } else {
-                debugger
+                // debugger
                 this.props.receiveCurrentVideo(video, true, 0);
             }
         //    debugger
@@ -101,7 +96,7 @@ class VideoIndexItem extends React.Component {
     showDescription() {
         // debugger
         if (this.props.video.id === this.props.previewVideo.id && !!this.props.previewVideo.id) {
-            debugger
+            // debugger
             this.props.receiveCurrentVideo(this.props.video, true, this.vidRef.current.currentTime);
             this.vidRef.current.currentTime = this.props.previewVideo.currentTime;
         }

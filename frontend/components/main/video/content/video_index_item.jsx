@@ -49,12 +49,12 @@ class VideoIndexItem extends React.Component {
         //     this.props.clearCurrentVideo(false);
         // }
 
-        this.setVideoToState(this.props.video);
-
+        
         this.playId = setTimeout(
             function () {
                 if (this._mounted) {
                     this.setState({ hover: true });
+                    this.setVideoToState(this.props.video);
                     // this.props.receiveCurrentVideo(this.props.video, true, this.props.previewVideo.currentTime);
                     this.vidRef.current.currentTime = this.props.previewVideo.currentTime;
                 }

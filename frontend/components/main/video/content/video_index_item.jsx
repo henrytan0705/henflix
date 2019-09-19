@@ -56,7 +56,9 @@ class VideoIndexItem extends React.Component {
                     this.setState({ hover: true });
                     this.setVideoToState(this.props.video);
                     // this.props.receiveCurrentVideo(this.props.video, true, this.props.previewVideo.currentTime);
-                    this.vidRef.current.currentTime = this.props.previewVideo.currentTime;
+                    if (!!this.props.previewVideo.currentTime) {
+                        this.vidRef.current.currentTime = this.props.previewVideo.currentTime;
+                    }
                 }
             }   
             .bind(this),

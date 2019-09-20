@@ -1,5 +1,7 @@
 class List < ApplicationRecord
-    belongs_to :videos,
+    validates :video_id, uniqueness: { scope: :user_id }, presence: true
+
+    belongs_to :video,
         foreign_key: :video_id,
         class_name: :Video
 

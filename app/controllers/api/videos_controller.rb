@@ -17,7 +17,8 @@ class Api::VideosController < ApplicationController
         if @videos.length == 0
             render json: {}
         else
-            render "api/videos/search"
+            # render "api/videos/search"
+            render :search
         end
     end
 

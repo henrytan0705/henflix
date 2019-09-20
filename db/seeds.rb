@@ -10,13 +10,14 @@ User.destroy_all
 Video.destroy_all
 Genre.destroy_all
 VideoGenre.destroy_all
+List.destroy_all
 
-User.create!(email: "henry@gmail.com", password:"asdf1234")
-User.create!(email: "danieldog@gmail.com", password:"asdf1234")
-User.create!(email: "lillian@gmail.com", password:"lillian")
-User.create!(email: "george@gmail.com", password:"asdf1234")
-User.create!(email: "max@gmail.com", password:"12345678")
-User.create!(email:"demoLogin@gmail.com" ,password:"asdf1234")
+henry = User.create!(email: "henry@gmail.com", password:"asdf1234")
+daniel = User.create!(email: "danieldog@gmail.com", password:"asdf1234")
+lillian = User.create!(email: "lillian@gmail.com", password:"lillian")
+george = User.create!(email: "george@gmail.com", password:"asdf1234")
+max = User.create!(email: "max@gmail.com", password:"12345678")
+demo = User.create!(email:"demoLogin@gmail.com" ,password:"asdf1234")
 
 angry_bird = Video.create!(title:"The Angry Birds Movie 2", description:"The flightless birds and scheming green pigs take their feud to the next level.", year:"2019")
 photo = EzDownload.open("https://active-storage-aa-seed.s3.amazonaws.com/the_angry_birds_movie.jpg")
@@ -135,6 +136,12 @@ VideoGenre.create!(genre: tv_show, movie:chick_hatching)
 VideoGenre.create!(genre: educational, movie:chicken_embryo_development)
 VideoGenre.create!(genre: tv_show, movie:chicken_embryo_development)
 
+List.create!(user: demo, video: angry_bird)
+List.create!(user: demo, video: eggs_change)
+
+# List.create!(user: demo, videos:)
+# List.create!(user: demo, videos:)
+# List.create!(user: demo, videos:)
 
 # Genre.create(genre:"") 
 # Genre.create(genre:"")

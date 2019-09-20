@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
     has_many :list_shows,
         through: :list,
-        source: :videos
+        source: :video
 
     #FIGVAPER
     attr_reader :password

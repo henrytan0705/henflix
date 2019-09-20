@@ -12,11 +12,9 @@ class VideoIndex extends React.Component {
         this.showDescription = this.showDescription.bind(this);
         this.closeDescription = this.closeDescription.bind(this);
         this.visibleX = false;
-        // debugger
     }
 
     showDescription(video) {
-        // debugger
         return () => {
             this.visibleX = true;
             this.description = <VideoDescriptionContainer key={`info-${video.id}`} video={video}/>

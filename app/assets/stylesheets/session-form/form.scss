@@ -211,7 +211,7 @@
 }
 
 .form-email-input, .form-password-input {
-    padding-bottom: 16px;
+    // padding-bottom: 16px;
     max-width: 100%;
     display: block;
 }
@@ -293,7 +293,7 @@ label {
     border-radius: 4px;
     font-size: 16px;
     font-weight: 700;
-    margin: 24px 0 12px;
+    margin: 24px 0 0;
     width: 100%;
     max-width: 100%;
     padding: 16px;
@@ -318,7 +318,7 @@ label {
     width: 100%;
     max-width: 100%;
     border-radius: 4px;
-    margin-top: 25px;
+    margin-top: 12px;
     color: #fff;
     font-weight: 700;
     text-align: center;

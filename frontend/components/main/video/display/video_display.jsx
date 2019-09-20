@@ -27,20 +27,12 @@ class VideoDisplay extends React.Component {
     }
 
     toggleMute() {
-        // debugger
         this.vidRef.current.muted = !this.vidRef.current.muted;
     }
 
     componentDidMount(){
-        // this.props.retrieveVideo();
         this._mount = true;
         this.addScrollListener();
-        // if (this.state.scrolled) {
-        //     this.vidRef.current.pause();
-        // } else {
-
-        //     this.vidRef.current.play();
-        // }
     }
 
     componentWillUnmount(){
@@ -48,10 +40,8 @@ class VideoDisplay extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        // debugger
         if (this._mount) {
                 if (!!this.props.previewVideo.status || this.state.scrolled || this.props.descriptionOpen) {
-                    // debugger
                     this.vidRef.current.pause();
                 } else if (!this.props.previewVideo.status && !this.state.scrolled) {
                     this.vidRef.current.play();
@@ -79,27 +69,21 @@ class VideoDisplay extends React.Component {
                     </Link>
 
                     <button className="display-mute-icon"
-                        // onClick={() => {this.vidRef.current.muted = !this.vidRef.current.muted}}>
                         onClick={this.toggleMute}>
-                        <i className="fas fa-volume-up"
-                        // onClick={() => { this.vidRef.current.muted = !this.vidRef.current.muted }}
-                        ></i>
+                        <i className="fas fa-volume-up"></i>
                     </button>
-                    {/* <div></div> */}
+
 
                     <video 
                         className="display-video" 
                         src={video.videoUrl} 
                         // poster={video.photo}
-                        // autoPlay={this.props.previewVideoId ? false : true}
                         autoPlay
-                        // loop
                         ref={this.vidRef}
                         // onKeyPress={this.togglePlay}
                         // ref="featureRef"
                     > 
                     </video>
-                {/* </div> */}
             </div>
         )
     }

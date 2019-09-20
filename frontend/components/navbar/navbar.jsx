@@ -12,7 +12,6 @@ class Navbar extends React.Component {
             searchInput: ""
         }
         this.searchField = React.createRef();
-        // this.searchButton = React.createRef();
         this.addScrollListener = this.addScrollListener.bind(this);
         this.switchTab = this.switchTab.bind(this);
         this.displaySearchBox = this.displaySearchBox.bind(this);
@@ -26,7 +25,6 @@ class Navbar extends React.Component {
     addScrollListener() {
         window.addEventListener('scroll', () => {
             this.yOffset = window.pageYOffset;
-            // console.log(`${yOffset}`);
             if (this.yOffset === 0 && this._mount) {
                 if (this.state.scrolled) this.setState({scrolled: false})
             } else {
@@ -37,7 +35,6 @@ class Navbar extends React.Component {
 
     switchTab() {
         this.setState({switchTab: true});
-        // debugger
         if (!!this.props.descriptionOpen) {
             let closeButtons = document.getElementsByClassName("close-button");
     
@@ -46,7 +43,6 @@ class Navbar extends React.Component {
             }
             
         }
-        // debugger
         window.scroll(0,0);
         this.clearSearchBox();
 
@@ -138,7 +134,6 @@ class Navbar extends React.Component {
 
     componentWillUnmount() {
         this._mount = false;
-        // this.searchField = null;
     }
 
     render(){
@@ -195,7 +190,6 @@ class Navbar extends React.Component {
                 <nav className={`browse-navbar ${hasBackground}`}>
                     <Link className="browse-logo" 
                         to="/browse"
-                        // onClick={this.clearSearchBox}
                         onClick={this.switchTab}
                         >
                         <img className="browse-logo-image" src={window.logo}/>
@@ -271,7 +265,6 @@ class Navbar extends React.Component {
                                     <span className="search-icon nav-right">
                                         <i className="fas fa-search"
                                         onClick={this.displaySearchBox}  
-                                        // ref={this.searchButton}  
                                         >
                                         </i>
                                     </span>
@@ -287,8 +280,6 @@ class Navbar extends React.Component {
                                             placeholder="Titles, genres"
                                             ref={this.searchField}
                                             onChange={this.updateSearch}
-                                            // value = {this.props.search}
-                                            // value={this.query}
                                             value={this.props.query}
                                             >
                                         </input>
@@ -343,16 +334,12 @@ class Navbar extends React.Component {
                 </nav>
             )
         }
-
-    // if (this.props.url === "main"){
-    //     this.addScrollListener();
-    // }
-        
-    return (
-        <>  
-            {display}
-        </>
-    )
+   
+        return (
+            <>  
+                {display}
+            </>
+        )
     }
 }
 export default Navbar;

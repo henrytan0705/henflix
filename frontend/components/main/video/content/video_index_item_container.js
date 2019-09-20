@@ -4,13 +4,9 @@ import { clearCurrentVideo, receiveCurrentVideo } from '../../../../actions/ui_a
 import VideoIndexItem from './video_index_item';
 
 const msp = state => {
-    // debugger
     return {
-        // previewVideoId: Object.keys(state.ui).length,
-        // previewBool: Object.keys(state.ui.searching).length ? state.ui[Object.keys(state.ui)[0]]["preview"] : false,
         descriptionOpen: Object.values(state.ui.description).length,
         previewVideo: state.ui.preview
-        // previewBool: state.ui.preview 
     }
 }
 

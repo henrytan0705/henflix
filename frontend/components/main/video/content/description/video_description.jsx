@@ -22,45 +22,32 @@ class VideoDescription extends React.Component {
 
     componentWillMount() {
         if (this.props.video.id !== this.props.currentDescription.id && this.props.currentDescription.id) {
-    //         this.closeDescription();
-        let description = document.getElementsByClassName("close-button");
-        // debugger
-        for (let i = 0; i < description.length; i++) {
-            let arr = [];
+            let description = document.getElementsByClassName("close-button");
 
-            for (let x = 0; x < description[i].classList.length; x++) {
-                let classItem = description[i].classList[x];
-                arr.push(classItem);
-                // debugger
-            }
+            for (let i = 0; i < description.length; i++) {
+                let arr = [];
 
-            // debugger
-            
-            for (let j = 0; j < this.props.video.genres.length; j++) {
-                let genre = this.props.video.genres[j];
-                if (genre === "Live Action") genre = "Live";
-                // FIX BY CHANGING SEED FILE - GENRE "LIVE ACTION" TO "LIVE-ACTION"
-
-                // debugger
-                if (!arr.includes(genre) && genre !== "Movie" && genre !== "TV Show") {
-                    // debugger
-                    description[i].click();
-                    break;
+                for (let x = 0; x < description[i].classList.length; x++) {
+                    let classItem = description[i].classList[x];
+                    arr.push(classItem);
+        
                 }
+                
+                for (let j = 0; j < this.props.video.genres.length; j++) {
+                    let genre = this.props.video.genres[j];
+                    if (genre === "Live Action") genre = "Live";
+                    // FIX BY CHANGING SEED FILE - GENRE "LIVE ACTION" TO "LIVE-ACTION"
 
+                    if (!arr.includes(genre) && genre !== "Movie" && genre !== "TV Show") {
+                        description[i].click();
+                        break;
+                    }
+
+                }
             }
-        }
-        // this.props.receiveCurrentDescription(this.props.video);
         }
     }
 
-    // componentDidUpdate(prevProps) {
-    //     debugger
-    //     if (this.props.currentDescription.id) {
-    //         debugger
-    //         this.props.receiveCurrentDescription(this.props.video);
-    //     }
-    // }
 
     render() {
         if (this.props.video === undefined) return null;
@@ -83,16 +70,12 @@ class VideoDescription extends React.Component {
                         <p className="description">{video.description}</p>
                     </div>
 
-                    <div 
-                    // className="description-play-button"
-                    >
+                    <div>
                         <Link to={path}>
                             <span className="description-play-button">
                                 <span className="">
                                     <i className="fas fa-play"></i>
                                 </span>
-
-                                {/* <span className=""></span> */}
 
                                 <span className="play-button-text">
                                     Play
@@ -119,7 +102,6 @@ class VideoDescription extends React.Component {
                     <div className="description-video-container">
                         <Link to={path}
                             className="description-video-section"
-                            // onClick={this.setVideoToState}
                             onClick={this.closeDescription}
                             >
                             <video className="description-video" 

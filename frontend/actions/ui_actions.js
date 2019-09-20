@@ -44,7 +44,6 @@ export const searchVideos = (videos) => {
 }
 
 export const searchingForVideos = (status, query) => {
-    // debugger
     return {
         type: SEARCHING_FOR_VIDEOS,
         status,

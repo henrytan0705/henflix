@@ -8,18 +8,40 @@ class SessionForm extends React.Component {
         this.state = {
             email: "",
             password: "",
+            error: false
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.demoLogin = this.demoLogin.bind(this);
         this.update = this.update.bind(this);
         this.checkLoginAttempt = this.checkLoginAttempt.bind(this);
         this.checkErrors = this.checkErrors.bind(this);
-        this.invalidCredentials = "none";
+        this.checkField = this.checkField.bind(this);
+        this.emailError = null;
+        this.passwordError = null;
+        this.emailErrorStyle = "none";
+        // this.passwordErrorStyle = "none";
+        // this.invalidCredentials = "none";
     }
 
     componentWillUnmount(){
         this.props.clearErrors();
     }
+
+    // componentDidUpdate(){
+    //     // debugger
+    //     // if (!!this.props.errors.length) this.checkErrors();
+    //     if ((/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.state.email))) {
+    //         this.emailError = "";
+    //         this.emailErrorStyle = "none";
+    //     } else {
+    //         this.emailError = "Please enter a valid email or phone number.";
+    //         this.emailErrorStyle = "email-error-highlight";
+    //     }
+    //     // } else if (error.includes("Password") || error.includes("password") && this.state.password.length < 6) {
+    //     //     this.passwordError = error;
+    //     //     this.passwordErrorStyle = "password-error-highlight";
+    //     // }
+    // }
 
     handleSubmit(e){
         e.preventDefault();
@@ -28,7 +50,7 @@ class SessionForm extends React.Component {
     }
     
     checkErrors() {
-        this.emailError = null;
+        this.emailError = null;  
         this.passwordError = null;
         this.emailErrorStyle = "none";
         this.passwordErrorStyle = "none";
@@ -47,12 +69,7 @@ class SessionForm extends React.Component {
     }
 
     checkLoginAttempt() {
-        // debugger
-        // if (this.props.errors.length) {
-            
-        // }
         if (!!this.props.errors.length && !this.emailError && !this.passwordError) {
-            // debugger
             this.incorrectPasswordMessage = "Incorrect Password." 
             this.tryAgainMessage = " Please try again."
             this.invalidCredentials = "display-error-message"
@@ -61,14 +78,32 @@ class SessionForm extends React.Component {
             // this.tryAgainMessage = "";
             // this.invalidCredentials = "none";
         }
+    }
 
+    checkField(e) {
+        // debugger
+        if (!this.props.errors.length) {
+            if (e.target.id === "email" && !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(e.target.value)) ) {
+                // debugger
+                this.emailError = "Please enter a valid email or phone number.";
+                this.emailErrorStyle = "email-error-highlight";
+                this.setState({ error: true });
+            } else {
+                // debugger
+                if (e.target.value.length < 6) {
+                    this.passwordError = "Your password must contain between 6 and 60 characters.";
+                    this.passwordErrorStyle = "password-error-highlight";
+                    this.setState({ error: true });
+                }
+            }
+        }
     }
 
     update(field) {
+        // this.checkErrors();
         return (e) => {
-            this.setState({[field]: e.target.value}) 
-            // this.checkLoginAttempt(e);
-            }
+            this.setState({[field]: e.target.value})    
+        }
     }
 
     demoLogin(e) {
@@ -94,10 +129,6 @@ class SessionForm extends React.Component {
         "New to Netflix?" : "Already have an account?"
         
         this.checkErrors();
-            // debugger
-        // if (this.props.errors.length) {
-        //     this.checkLoginAttempt();
-        // }
 
         return(
             <>
@@ -131,6 +162,7 @@ class SessionForm extends React.Component {
                                                             type="text" 
                                                             value={this.state.email} 
                                                             onChange={this.update("email")}
+                                                            onBlur={this.checkField}
                                                             placeholder="Email or phone number"/>
 
                                                         <div className="errors">{this.emailError}</div>
@@ -147,6 +179,7 @@ class SessionForm extends React.Component {
                                                             type="password" 
                                                             value={this.state.password} 
                                                             onChange={this.update("password")}
+                                                            onBlur={this.checkField}
                                                             placeholder="Password"/>
 
                                                         <div className="errors">{this.passwordError}</div>

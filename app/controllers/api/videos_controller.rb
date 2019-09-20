@@ -12,7 +12,7 @@ class Api::VideosController < ApplicationController
     def search 
         query = params[:query]
         # @videos = Video.with_attached_photo.with_attached_video_url.all.includes(:genres).where('title ILIKE ?', "%#{title}%")
-        @videos = Video.with_attached_photo.with_attached_video_url.all.joins(:genres).distinct.where('title ILIKE ? OR genre ILIKE ?', "%#{query}%", "#{query}")
+        @videos = Video.with_attached_photo.with_attached_video_url.all.joins(:genres).distinct.where('title ILIKE ? OR genre ILIKE ?', "%#{query}%", "#{query}").distinct
 
         if @videos.length == 0
             render json: {}

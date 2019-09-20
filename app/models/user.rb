@@ -4,6 +4,14 @@ class User < ApplicationRecord
     validates :email, format: { with: URI::MailTo::EMAIL_REGEXP } 
     validates :password, length: { minimum: 6 }, allow_nil: true
 
+    has_many :list,
+        foreign_key: :user_id,
+        class_name: :List
+
+    has_many :list_shows,
+        through: :list,
+        source: :videos
+
     #FIGVAPER
     attr_reader :password
     after_initialize :ensure_session_token

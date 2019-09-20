@@ -14,4 +14,11 @@ class Video < ApplicationRecord
 
     has_one_attached :video_url
     
+    has_many :lists,
+        foreign_key: :video_id,
+        class_name: :List
+
+    has_many :list_users,
+        through: :lists,
+        source: :user
 end

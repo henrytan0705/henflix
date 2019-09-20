@@ -54,9 +54,11 @@ class SessionForm extends React.Component {
         if (!!this.props.errors.length && !this.emailError && !this.passwordError) {
             // debugger
             this.incorrectPasswordMessage = "Incorrect Password." 
-            this.tryAgainMessage = "Please try again."
+            this.tryAgainMessage = " Please try again."
             this.invalidCredentials = "display-error-message"
         } else {
+            this.incorrectPasswordMessage = "";
+            this.tryAgainMessage = "";
             this.invalidCredentials = "none";
         }
 

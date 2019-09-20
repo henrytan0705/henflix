@@ -11,6 +11,10 @@ class SessionForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.demoLogin = this.demoLogin.bind(this);
+        this.update = this.update.bind(this);
+        this.checkLoginAttempt = this.checkLoginAttempt.bind(this);
+        this.checkErrors = this.checkErrors.bind(this);
+        this.invalidCredentials = "none";
     }
 
     componentWillUnmount(){
@@ -22,17 +26,57 @@ class SessionForm extends React.Component {
         const user = Object.assign({}, this.state);
         this.props.formAction(user)
     }
+    
+    checkErrors() {
+        this.emailError = null;
+        this.passwordError = null;
+        this.emailErrorStyle = "none";
+        this.passwordErrorStyle = "none";
+
+        for (let i = 0; i < this.props.errors.length; i++) {
+            let error = this.props.errors[i];
+
+            if (error.includes("Email") || error.includes("email") && !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.state.email))) {
+                this.emailError = error;
+                this.emailErrorStyle = "email-error-highlight";
+            } else if (error.includes("Password") || error.includes("password") && this.state.password.length < 6) {
+                this.passwordError = error;
+                this.passwordErrorStyle = "password-error-highlight";
+            }
+        }
+    }
+
+    checkLoginAttempt() {
+        // debugger
+        // if (this.props.errors.length) {
+            
+        // }
+        if (!!this.props.errors.length && !this.emailError && !this.passwordError) {
+            // debugger
+            this.incorrectPasswordMessage = "Incorrect Password." 
+            this.tryAgainMessage = "Please try again."
+            this.invalidCredentials = "display-error-message"
+        } else {
+            this.invalidCredentials = "none";
+        }
+
+    }
 
     update(field) {
-        return e => this.setState({[field]: e.target.value})
+        return (e) => {
+            this.setState({[field]: e.target.value}) 
+            // this.checkLoginAttempt(e);
+            }
     }
 
     demoLogin(e) {
         e.preventDefault();
+
         const user = {
             email: "demoLogin@gmail.com", 
             password: "asdf1234"
         }
+
         this.props.formAction(user);
     }
 
@@ -40,32 +84,19 @@ class SessionForm extends React.Component {
         const formlink = this.props.formType === "Sign In" ? "/signup" : "/login";
         const linkName = this.props.formType === "Sign In" ? "Sign Up" : "Sign In";
 
-        
         const demo = (this.props.formType === "Sign In") ? (
             <button className="demo-button" onClick={this.demoLogin}>DEMO LOGIN</button>
         ) : null
 
-        let emailError = "";
-        let passwordError = "";
-
-        let emailErrorStyle = "none";
-        let passwordErrorStyle = "none";
-
-        for (let i = 0; i < this.props.errors.length; i++) {
-            let error = this.props.errors[i];
-            
-            if (error.includes("Email") || error.includes("email")){
-                emailError = error;
-                emailErrorStyle = "email-error-highlight";
-            } else if (error.includes("Password") || error.includes("password")) {
-                passwordError = error;
-                passwordErrorStyle = "password-error-highlight";
-            }
-        }
-
         const linkText = (this.props.formType === "Sign In") ? 
-            "New to Netflix?" : "Already have an account?"
-            
+        "New to Netflix?" : "Already have an account?"
+        
+        this.checkErrors();
+            // debugger
+        // if (this.props.errors.length) {
+        //     this.checkLoginAttempt();
+        // }
+
         return(
             <>
                 <NavbarFormContainer/>
@@ -77,6 +108,16 @@ class SessionForm extends React.Component {
                                 
                                     <h1 className="formtype">{this.props.formType}</h1>
 
+                                    <div className={`${this.invalidCredentials}`}>
+                                        <span className="display-error-message-1">
+                                            {this.incorrectPasswordMessage}
+                                        </span>
+
+                                        <span className="display-error-message-2">
+                                            {this.tryAgainMessage}
+                                        </span>
+                                    </div>
+
                                     <form className="form" onSubmit={this.handleSubmit}>
 
                                         <div className="form-email-input">
@@ -84,13 +125,13 @@ class SessionForm extends React.Component {
                                                 <div className="email-label-wrapper">
                                                     <label> 
                                                         <input id="email" 
-                                                            className={`${emailErrorStyle} email-input`} 
+                                                            className={`${this.emailErrorStyle} email-input`} 
                                                             type="text" 
                                                             value={this.state.email} 
-                                                            onChange={this.update("email")} 
+                                                            onChange={this.update("email")}
                                                             placeholder="Email or phone number"/>
-                                                            
-                                                        <div className="errors">{emailError}</div>
+
+                                                        <div className="errors">{this.emailError}</div>
                                                     </label>
                                                 </div>
                                             </div>
@@ -100,19 +141,23 @@ class SessionForm extends React.Component {
                                             <div className="input">
                                                 <div className="password-label-wrapper">
                                                     <label>
-                                                        <input className={`${passwordErrorStyle} password-input`} 
+                                                        <input className={`${this.passwordErrorStyle} password-input`} 
                                                             type="password" 
                                                             value={this.state.password} 
-                                                            onChange={this.update("password")} 
+                                                            onChange={this.update("password")}
                                                             placeholder="Password"/>
 
-                                                        <div className="errors">{passwordError}</div>
+                                                        <div className="errors">{this.passwordError}</div>
                                                     </label>
                                                 </div>
                                             </div>
                                         </div>
 
-                                        <button className="form-button" type="submit">{this.props.formType}</button>
+                                        <button className="form-button" 
+                                            type="submit"
+                                            onClick={this.checkLoginAttempt}>
+                                                {this.props.formType}
+                                        </button>
 
                                         {demo}
 

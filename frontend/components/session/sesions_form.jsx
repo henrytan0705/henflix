@@ -57,9 +57,9 @@ class SessionForm extends React.Component {
             this.tryAgainMessage = " Please try again."
             this.invalidCredentials = "display-error-message"
         } else {
-            this.incorrectPasswordMessage = "";
-            this.tryAgainMessage = "";
-            this.invalidCredentials = "none";
+            // this.incorrectPasswordMessage = "";
+            // this.tryAgainMessage = "";
+            // this.invalidCredentials = "none";
         }
 
     }

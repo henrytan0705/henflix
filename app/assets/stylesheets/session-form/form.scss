@@ -159,7 +159,7 @@
 
 
 .form-content {
-    background-color: rgba(0,0,0,.8);
+    background-color: rgba(0,0,0,.75);
     border-radius: 4px;
     box-sizing: border-box;
     display: flex;
@@ -250,9 +250,10 @@ label {
 
 .email-input:valid, .password-input:valid {
     box-shadow: none;
+    background-color: #333;
 }
 
-.email-xlight, .password-error-highlight {
+.email-error-highlight, .password-error-highlight {
     border-bottom: 2px solid #e87c03;
 }
 // input {
@@ -346,7 +347,7 @@ label {
     // display: block;
     color: #e87c03;
     background-color: none;
-    padding: 6px 3px;
+    padding: 6px 3px 12px;
     font-size: 13px;
 }
 

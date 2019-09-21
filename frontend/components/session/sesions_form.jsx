@@ -18,7 +18,7 @@ class SessionForm extends React.Component {
         this.checkField = this.checkField.bind(this);
         this.emailError = null;
         this.passwordError = null;
-        this.emailErrorStyle = "none";
+        // this.emailErrorStyle = "none";
         // this.passwordErrorStyle = "none";
         // this.invalidCredentials = "none";
     }

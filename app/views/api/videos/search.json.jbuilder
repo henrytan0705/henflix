@@ -1,4 +1,3 @@
-# debugger
 @videos.each do |video|
     json.set! video.id do
         json.extract! video, :id, :title, :description, :year
@@ -9,9 +8,3 @@
     end
 end
 
-# json.set! json.results do
-#     @videos.each do |video|
-#         debugger
-#         json.extract! video, :id
-#     end
-# end

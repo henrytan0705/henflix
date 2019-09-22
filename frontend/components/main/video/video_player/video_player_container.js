@@ -5,7 +5,6 @@ import { clearCurrentVideo } from '../../../../actions/ui_actions';
 import { withRouter } from 'react-router-dom';
 
 const msp = (state, ownProps) => {
-    // debugger
     return {
         path: ownProps.match.params.id,
         currentUser: state.session.userId,

@@ -44,7 +44,6 @@ class VideoIndexItem extends React.Component {
                     this.setVideoToState(this.props.video);
 
                     if (!!this.props.previewVideo.currentTime) {
-                        debugger
                         this.vidRef.current.currentTime = this.props.previewVideo.currentTime;
                     }
                 }
@@ -68,7 +67,6 @@ class VideoIndexItem extends React.Component {
     setVideoToState(video) {
         if (this.props.video.id === this.props.previewVideo.id && !!this.props.previewVideo.id) {
             this.props.receiveCurrentVideo(this.props.video, true, this.props.previewVideo.currentTime);
-            debugger
         } else {
             this.props.receiveCurrentVideo(video, true, 0);
         }

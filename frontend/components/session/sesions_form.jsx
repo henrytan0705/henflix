@@ -28,7 +28,7 @@ class SessionForm extends React.Component {
     }
 
     // componentDidUpdate(){
-    //     // debugger
+
     //     // if (!!this.props.errors.length) this.checkErrors();
     //     if ((/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.state.email))) {
     //         this.emailError = "";
@@ -81,16 +81,13 @@ class SessionForm extends React.Component {
     }
 
     checkField(e) {
-        // debugger
         if (!this.props.errors.length) {
             if (e.target.id === "email" && !(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(e.target.value)) ) {
-                // debugger
-                this.emailError = "Please enter a valid email or phone number.";
+                        this.emailError = "Please enter a valid email or phone number.";
                 this.emailErrorStyle = "email-error-highlight";
                 this.setState({ error: true });
             } else {
-                // debugger
-                if (e.target.value.length < 6) {
+                        if (e.target.value.length < 6) {
                     this.passwordError = "Your password must contain between 6 and 60 characters.";
                     this.passwordErrorStyle = "password-error-highlight";
                     this.setState({ error: true });

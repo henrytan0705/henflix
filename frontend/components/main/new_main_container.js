@@ -5,7 +5,6 @@ import { withRouter } from 'react-router-dom';
 
 
 const msp = (state, ownProps) => {
-    // debugger
     return {
         loggedIn: Boolean(state.session.userId),
         videos: state.entities.videos,

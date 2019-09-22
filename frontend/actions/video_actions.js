@@ -3,11 +3,6 @@ import * as VideoAPIUtil from '../utils/video_api_utils';
 export const RECEIVE_VIDEOS = "RECEIVE_VIDEOS";
 export const RECEIVE_VIDEO = "RECEIVE_VIDEO";
 export const RECEIVE_GENRES = "RECEIVE_GENRES";
-// export const RECEIVE_CURRENT_VIDEO = "RECEIEVE_CURRENT_VIDEO";
-// export const CLEAR_VIDEO = "CLEAR_VIDEO";
-// export const RECEIVE_CURRENT_DESCRIPTION = "RECEIVE_CURRENT_DESCRIPTION";
-// export const CLEAR_DESCRIPTION = "CLEAR_DESCRIPTION";
-// export const SEARCH_VIDEOS = "SEARCH_VIDEOS"
 
 export const receiveVideos = (videos) => {
     return {
@@ -31,45 +26,9 @@ export const receiveGenres = (genres) => {
     }
 }
 
-// export const searchVideos = (videos) => {
-//     // debugger
-//     return {
-//         type: SEARCH_VIDEOS,
-//         videos
-//     }
-// }
-
-// export const receiveCurrentVideo = (video, preview) => {
-//     return {
-//         type: RECEIVE_CURRENT_VIDEO,
-//         video,
-//         preview
-//     }
-// }
-// export const clearCurrentVideo = (preview) => {
-//     return {
-//         type: CLEAR_VIDEO,
-//         preview
-//     }
-// }
-
-// export const receiveCurrentDescription = (video) => {
-//     // debugger
-//     return {
-//         type: RECEIVE_CURRENT_DESCRIPTION,
-//         video
-//     }
-// }
-
-// export const clearDescription = () => {
-//     return {
-//         type: CLEAR_DESCRIPTION
-//     }
-// }
 
 
 export const retrieveVideos = () => dispatch => {
-    // debugger    
     return VideoAPIUtil.fetchVideos()
         .then(videos => dispatch(receiveVideos(videos)))
 }
@@ -83,9 +42,3 @@ export const retrieveGenres = () => dispatch => {
     return VideoAPIUtil.fetchGenres()
         .then(genres => dispatch(receiveGenres(genres)))
 }
-
-// export const retrieveSearch = (query) => dispatch => {
-//     // debugger
-//     return VideoAPIUtil.fetchSearch(query)
-//         .then(videos => dispatch(searchVideos(videos)))
-// }

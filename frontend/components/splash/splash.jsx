@@ -12,10 +12,6 @@ class Splash extends React.Component {
         this.demoLogin = this.demoLogin.bind(this);
     }
 
-    componentDidMount(){
-        // this.props.checkUrl();
-    }
-
     demoLogin(e){
         e.preventDefault();
         const user = {

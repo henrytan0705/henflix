@@ -1,13 +1,10 @@
 import { connect } from 'react-redux';
 import VideoDescription from './video_description.jsx';
-// import { withRouter } from 'react-router-dom';
 import { retrieveVideo } from '../../../../../actions/video_actions';
 import { clearCurrentVideo, receiveCurrentVideo, receiveCurrentDescription, clearDescription } from '../../../../../actions/ui_actions';
 
-const msp = (state, ownProps) => {
+const msp = state => {
     return {
-        // path: ownProps.match.params.id
-        // previewVideoId: Object.keys(state.ui).length
         currentDescription: state.ui.description,
         previewVideo: state.ui.preview
     }

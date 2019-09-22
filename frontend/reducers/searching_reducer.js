@@ -6,7 +6,6 @@ const searchingReducer = (state = {status: false, query: ""}, action) => {
 
     switch(action.type) {
         case SEARCHING_FOR_VIDEOS: 
-        // debugger
             return merge({}, {status: action.status, query: action.query})
         default:
             return state;

@@ -13,9 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let store;
 
-    // debugger
     if (window.currentUser) {
-        // debugger
         const preloadedState = {
             entities: {
                 users: {
@@ -29,12 +27,10 @@ document.addEventListener("DOMContentLoaded", () => {
         store = configureStore(preloadedState);
 
     } else {
-        // debugger
         store = configureStore();
     }
 
     //TESTING
-    // const store = configureStore();
     window.getState = store.getState;
     window.dispatch = store.dispatch;
     //TESTING

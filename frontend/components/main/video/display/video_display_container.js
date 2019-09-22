@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-// import { retrieveVideo, retrieveVideos } from '../../../../actions/video_actions';
 import VideoDisplay from './video_display';
 import { withRouter } from 'react-router-dom'
 
@@ -12,8 +11,7 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => {
     return {
-        // retrieveVideo: (id) => dispatch(retrieveVideo(id)),
-        // retrieveVideos: () => dispatch(retrieveVideos())
+
     }
 }
 

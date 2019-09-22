@@ -4,14 +4,10 @@ import { retrieveVideos, retrieveGenres } from '../../actions/video_actions'
 import { retrieveSearch } from '../../actions/ui_actions';
 
 const msp = state => {
-    // const videos = entities.videos;
-    // const genres = entities.genres;
-
     return {
         currentUser: state.session.userId,
         searchStatus: state.ui.searching,
         searchResults: state.ui.searchResults,
-        // type: "Search",
         videos: state.entities.videos,
         genres: state.entities.genres
         

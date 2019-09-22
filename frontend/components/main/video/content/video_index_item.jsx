@@ -17,8 +17,6 @@ class VideoIndexItem extends React.Component {
         this.showDescription = this.showDescription.bind(this);
         this.toggleMute = this.toggleMute.bind(this);
         this.vidRef = React.createRef();
-        // this.description = null;
-        // this.vidRef = React.createRef();
     }
 
     componentDidMount(){
@@ -143,23 +141,6 @@ class VideoIndexItem extends React.Component {
                     <i className="fas fa-volume-up item-mute-icon"
                         onClick={this.toggleMute}>
                     </i>
-
-                    {/* <div className="video-hover-description-container"> */}
-                    {/* </div> */}
-
-                {/* <Link to={path}> */}
-                
-                    {/* <h1 className="video-hover-description">{video.title}</h1> */}
-
-                {/* </Link> */}
-
-                {/* <Link to={path}> */}
-                    {/* className="display-play-button"> */}
-                    {/* <PlayCircle /> */}
-
-                    {/* <i className="far fa-play-circle display-play-button"></i> */}
-                    
-                {/* </Link> */}
                 
                 <span 
                     className="description-button-container" 

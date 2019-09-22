@@ -44,8 +44,8 @@ class Navbar extends React.Component {
             
         }
         window.scroll(0,0);
-        this.clearSearchBox();
-
+        this.searchField.current.value = "";
+        this.hideSearchBox();
     }
 
     displaySearchBox() {

@@ -25,6 +25,7 @@ class Navbar extends React.Component {
     addScrollListener() {
         window.addEventListener('scroll', () => {
             this.yOffset = window.pageYOffset;
+
             if (this.yOffset === 0 && this._mount) {
                 if (this.state.scrolled) this.setState({scrolled: false})
             } else {
@@ -35,6 +36,7 @@ class Navbar extends React.Component {
 
     switchTab() {
         this.setState({switchTab: true});
+
         if (!!this.props.descriptionOpen) {
             let closeButtons = document.getElementsByClassName("close-button");
     
@@ -43,8 +45,10 @@ class Navbar extends React.Component {
             }
             
         }
+
         window.scroll(0,0);
         this.searchField.current.value = "";
+        this.props.searchingForVideos(false, "");
         this.hideSearchBox();
     }
 

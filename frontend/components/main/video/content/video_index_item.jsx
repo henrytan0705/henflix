@@ -61,7 +61,6 @@ class VideoIndexItem extends React.Component {
         }
 
         if (this._mounted) this.setState({hover: false});
-
     }
 
     setVideoToState(video) {

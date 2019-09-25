@@ -13,6 +13,10 @@ class Main extends React.Component {
             this.props.retrieveVideos();
             this.props.retrieveGenres();
         }
+
+        if (!this.props.myList.fetched) {
+            this.props.retrieveList(this.props.userId);
+        }
     }
 
     render() {

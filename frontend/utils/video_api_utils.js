@@ -25,3 +25,10 @@ export const fetchSearch = (query) => {
         url: `/api/videos/search/${query}`,
     })
 }
+
+export const fetchList = (list) => {
+    return $.ajax({
+        method: "GET",
+        url: `/api/lists/${list}`
+    })
+}

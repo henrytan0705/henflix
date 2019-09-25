@@ -19,7 +19,7 @@ const App = () => {
             <AuthRoute exact path="/login" component={LoginFormContainer}/>
             <PlayerAuthRoute path="/watch/:id" component={VideoPlayerContainer}/>
             
-            <MainAuthRoute path={["/browse", "/search/:query"]} component={ContentContainer}/>
+            <MainAuthRoute path={["/browse", "/search/:query", "/list"]} component={ContentContainer}/>
             {/* <MainAuthRoute path="/" component={ContentContainer}/> */}
 
             {/* <div className="main-page">

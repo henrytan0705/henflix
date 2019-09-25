@@ -12,14 +12,12 @@ class Api::ListsController < ApplicationController
 
     def create #add video to list
         video_id = Integer(params[:id])
-        debugger
 
         if List.create(user_id: current_user.id, video_id: video_id)
-            debugger
             @videos = User.where(id: current_user.id)[0].list_shows.with_attached_photo.with_attached_video_url
             render :show
         else
-            debugger
+            # debugger
             render json ["Fail to add video to list"]
         end
     end

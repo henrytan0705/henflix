@@ -11,14 +11,21 @@ class MyList extends React.Component {
 
     componentDidMount() {
         if (!Object.keys(this.props.videos).length ||
-            !Object.keys(this.props.genres).length) {
-            this.props.retrieveVideos();
-            this.props.retrieveGenres();
+            !Object.keys(this.props.genres).length 
+            || !this.props.myList.fetched) 
+            {
+
+            const promiseList = [this.props.retrieveVideos, this.props.retrieveGenres];
+            Promise.all([
+                this.props.retrieveVideos(),
+                this.props.retrieveGenres(),
+            ]).then(() => this.props.retrieveList() )
+
+            // Promise.all(promiseList.map(ajax => ajax()))
+            //     .then(() => this.props.retrieveList());
+                
         }
 
-        if (!this.props.myList.fetched) {
-            this.props.retrieveList();
-        }
     }
 
     render() {

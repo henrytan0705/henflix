@@ -80,8 +80,8 @@ export const retrieveSearch = query => dispatch => {
         .then(videos => dispatch(searchVideos(videos)))
 }
 
-export const retrieveList = id => dispatch => {
-    return VideoAPIUtil.fetchList(id)
+export const retrieveList = () => dispatch => {
+    return VideoAPIUtil.fetchList()
         .then(videos => dispatch(receiveList(videos)))
 }
 

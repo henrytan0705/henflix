@@ -112,10 +112,10 @@ class Navbar extends React.Component {
         if (this.props.url === "main"){
             this.addScrollListener();
 
-            if (this.props.path !== "/browse"){
+            if (this.props.path !== "/browse" && this.props.path !== "/list"){
                 let emptySearch = true;
                 this.query = this.props.search;
-                if(this.query){
+                if (this.query){
                     for (let i = 0; i < this.query.length; i++) {
                         if (this.query[i] !== " ") {
                             emptySearch = false;
@@ -255,6 +255,15 @@ class Navbar extends React.Component {
                                 onClick={this.switchTab}
                             >
                                 Educational
+                            </Link>
+                        </li>
+
+                        <li className="nav-tab">
+                            <Link className="tab" 
+                                to='/list'
+                                onClick={this.switchTab}
+                            >
+                                My List
                             </Link>
                         </li>
                         {/* <li className="nav-tab"><Link className="tab" to="/browse">Recently Added</Link></li> */}

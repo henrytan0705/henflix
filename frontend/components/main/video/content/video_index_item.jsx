@@ -17,6 +17,7 @@ class VideoIndexItem extends React.Component {
         this.showDescription = this.showDescription.bind(this);
         this.toggleMute = this.toggleMute.bind(this);
         this.vidRef = React.createRef();
+        this.addVideo = this.addVideo.bind(this);
     }
 
     componentDidMount(){
@@ -30,6 +31,10 @@ class VideoIndexItem extends React.Component {
     toggleMute(e) {
         e.stopPropagation();
         this.vidRef.current.muted = !this.vidRef.current.muted;
+    }
+
+    addVideo() {
+        this.props.addToList(this.props.video.id);
     }
 
     playTrailer(){
@@ -135,8 +140,14 @@ class VideoIndexItem extends React.Component {
                     <i className="far fa-play-circle display-play-button"></i>
                     <h1 className="video-hover-description">{video.title}</h1>
                 </Link>
+
                     <i className="fas fa-volume-up item-mute-icon"
                         onClick={this.toggleMute}>
+                    </i>
+
+                    <i className="fas fa-plus-circle add-icon"
+                        onClick={this.addVideo}>
+                        {/* {this.props.addVideoToList(this.props.video)}> */}
                     </i>
                 
                 <span 

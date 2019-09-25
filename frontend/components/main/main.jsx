@@ -15,7 +15,7 @@ class Main extends React.Component {
         }
 
         if (!this.props.myList.fetched) {
-            this.props.retrieveList(this.props.userId);
+            this.props.retrieveList();
         }
     }
 

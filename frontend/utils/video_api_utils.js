@@ -26,9 +26,26 @@ export const fetchSearch = (query) => {
     })
 }
 
-export const fetchList = (list) => {
+export const fetchList = () => {
     return $.ajax({
         method: "GET",
-        url: `/api/lists/${list}`
+        url: `/api/lists/1`
+    })
+}
+
+export const addList = id => {
+    return $.ajax({
+        method: "POST",
+        url: "/api/lists",
+        data: {
+            id
+        }
+    })
+}
+
+export const deleteList = id => {
+    return $.ajax({
+        method: "DELETE",
+        url: `/api/lists/${id}`
     })
 }

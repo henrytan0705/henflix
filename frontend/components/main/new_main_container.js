@@ -21,7 +21,7 @@ const mdp = dispatch => {
     return {
         retrieveVideos: () => dispatch(retrieveVideos()),
         retrieveGenres: () => dispatch(retrieveGenres()),
-        retrieveList: (id) => dispatch(retrieveList(id))
+        retrieveList: () => dispatch(retrieveList())
     }
 }
 

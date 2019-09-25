@@ -17,13 +17,11 @@ class MyList extends React.Component {
         }
 
         if (!this.props.myList.fetched) {
-            this.props.retrieveList(this.props.userId);
-            // this.setState( {retrieveList: true});
+            this.props.retrieveList();
         }
     }
 
     render() {
-        // if (!this.props.myList.fetched) return null;
     
         if (Object.keys(this.props.myList).length > 0) {
             let videoItems = [];

@@ -54,34 +54,43 @@ export const searchingForVideos = (status, query) => {
     }
 }
 
-export const receiveList = (list) => {
+export const receiveList = list => {
     return {
         type: RECEIVE_LIST,
         list
     }
 }
 
-// export const removeFromList = video => {
-//     return {
-//         type: REMOVE_FROM_LIST,
+export const addVideoToList = videos => {
+    return {
+        type: ADD_TO_LIST,
+        videos
+    }
+}
 
-//     }
-// }
+export const removeVideoFromList = videos => {
+    return {
+        type: REMOVE_FROM_LIST,
+        videos
+    }
+}
 
-// export const addToList = video => {
-//     return {
-//         type: ADD_TO_LIST,
-//     }
-// }
-
-
-export const retrieveSearch = (query) => dispatch => {
+export const retrieveSearch = query => dispatch => {
     return VideoAPIUtil.fetchSearch(query)
         .then(videos => dispatch(searchVideos(videos)))
 }
 
-export const retrieveList = (id) => dispatch => {
+export const retrieveList = id => dispatch => {
     return VideoAPIUtil.fetchList(id)
         .then(videos => dispatch(receiveList(videos)))
 }
 
+export const addToList = video => dispatch => {
+    return VideoAPIUtil.addList(video)
+        .then(videos => dispatch(addVideoToList(videos)))
+}
+
+export const removeFromList = video => dispatch => {
+    return VideoAPIUtil.removeList(video)
+        .then(videos => dispatch(removeVideoFromList(videos)))
+}

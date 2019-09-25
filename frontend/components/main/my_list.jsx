@@ -1,12 +1,15 @@
 import React from 'react';
+import VideoIndexContainer from './video/content/video_index_container';
 
 class MyList extends React.Component {
     constructor(props) {
         super(props);
+        // this.state = {
+        //     retrieveList: false
+        // }
     }
 
     componentDidMount() {
-        // debugger
         if (!Object.keys(this.props.videos).length ||
             !Object.keys(this.props.genres).length) {
             this.props.retrieveVideos();
@@ -15,15 +18,33 @@ class MyList extends React.Component {
 
         if (!this.props.myList.fetched) {
             this.props.retrieveList(this.props.userId);
+            // this.setState( {retrieveList: true});
         }
     }
 
     render() {
-        // if (!Object.values(this.props.videos).length || !Object.values(this.props.genres).length) return null;
+        // if (!this.props.myList.fetched) return null;
+    
+        if (Object.keys(this.props.myList).length > 0) {
+            let videoItems = [];
+            let arr = [];
+            let videos = Object.values(this.props.myList);
+
+            for (let i = 0; i < videos.length; i++) {
+                arr.push(videos[i])
+
+                if (arr.length === 6 || i === videos.length - 1) {
+                    videoItems.push(arr);
+                    arr = [];
+                }
+            }
+
+            this.content = videoItems.map((row, idx) => <VideoIndexContainer key={`${row}-${idx}`} videos={row} />)
+        } 
 
         return (
-            <div>
-                {/* <h1 className="text">MY LIST PAGE</h1> */}
+            <div className="list-page">
+                {this.content}
             </div>
         )
     }

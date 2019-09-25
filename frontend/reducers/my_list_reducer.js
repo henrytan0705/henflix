@@ -8,7 +8,8 @@ const myListReducer = (state = {}, action) => {
         case RECEIVE_LIST:
             return merge({}, action.list)
         default:
-            return { fetched: false };
+            // return { fetched: false };
+            return state;
     }
 }
 

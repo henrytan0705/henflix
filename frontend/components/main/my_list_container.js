@@ -4,7 +4,6 @@ import { retrieveVideos, retrieveGenres } from '../../actions/video_actions';
 import { retrieveList } from '../../actions/ui_actions';
 
 const msp = state => {
-    // debugger
     return {
         videos: state.entities.videos,
         genres: state.entities.genres,

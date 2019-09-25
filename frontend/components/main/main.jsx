@@ -9,7 +9,7 @@ class Main extends React.Component {
 
     componentDidMount(){
         if(!Object.keys(this.props.videos).length || 
-            !Object.keys(this.props.genres).length){
+            !Object.keys(this.props.genres).length ){
             this.props.retrieveVideos();
             this.props.retrieveGenres();
         }

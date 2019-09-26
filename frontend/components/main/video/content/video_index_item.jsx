@@ -34,7 +34,10 @@ class VideoIndexItem extends React.Component {
     }
 
     addVideo() {
-        this.props.addToList(this.props.video.id);
+        debugger
+        if (!this.props.myList.includes(this.props.video)) {
+            this.props.addToList(this.props.video.id);
+        }
     }
 
     playTrailer(){

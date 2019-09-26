@@ -5,7 +5,6 @@ class Api::ListsController < ApplicationController
     # end
 
     def show #show videos in list
-        # debugger
         @videos = User.where(id: current_user.id)[0].list_shows.with_attached_photo.with_attached_video_url
         render :show
     end 
@@ -17,8 +16,7 @@ class Api::ListsController < ApplicationController
             @videos = User.where(id: current_user.id)[0].list_shows.with_attached_photo.with_attached_video_url
             render :show
         else
-            # debugger
-            render json ["Fail to add video to list"]
+                render json ["Fail to add video to list"]
         end
     end
     

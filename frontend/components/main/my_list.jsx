@@ -11,15 +11,17 @@ class MyList extends React.Component {
 
     componentDidMount() {
         if (!Object.keys(this.props.videos).length ||
-            !Object.keys(this.props.genres).length 
-            || !this.props.myList.fetched) 
+            !Object.keys(this.props.genres).length)
+            // || !this.props.myList.fetched) 
             {
+            this.props.retrieveVideos();
+            this.props.retrieveGenres();
 
-            const promiseList = [this.props.retrieveVideos, this.props.retrieveGenres];
-            Promise.all([
-                this.props.retrieveVideos(),
-                this.props.retrieveGenres(),
-            ]).then(() => this.props.retrieveList() )
+            // const promiseList = [this.props.retrieveVideos, this.props.retrieveGenres];
+            // Promise.all([
+            //     this.props.retrieveVideos(),
+            //     this.props.retrieveGenres(),
+            // ]).then(() => this.props.retrieveList() )
 
             // Promise.all(promiseList.map(ajax => ajax()))
             //     .then(() => this.props.retrieveList());
@@ -29,16 +31,17 @@ class MyList extends React.Component {
     }
 
     render() {
+        // debugger
     
-        if (Object.keys(this.props.myList).length > 0) {
+        if ((this.props.myList).length > 0) {
             let videoItems = [];
             let arr = [];
-            let videos = Object.values(this.props.myList);
+            // let videos = Object.values(this.props.myList);
 
-            for (let i = 0; i < videos.length; i++) {
-                arr.push(videos[i])
+            for (let i = 0; i < this.props.myList.length; i++) {
+                arr.push(this.props.myList[i])
 
-                if (arr.length === 6 || i === videos.length - 1) {
+                if (arr.length === 6 || i === this.props.myList.length - 1) {
                     videoItems.push(arr);
                     arr = [];
                 }
@@ -50,6 +53,7 @@ class MyList extends React.Component {
         return (
             <div className="list-page">
                 {this.content}
+                {/* <h1 className="text"> HELLO </h1> */}
             </div>
         )
     }

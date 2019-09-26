@@ -6,7 +6,8 @@ import VideoIndexItem from './video_index_item';
 const msp = state => {
     return {
         descriptionOpen: Object.values(state.ui.description).length,
-        previewVideo: state.ui.preview
+        previewVideo: state.ui.preview,
+        myList: state.entities.myList
     }
 }
 

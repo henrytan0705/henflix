@@ -9,14 +9,18 @@ class Main extends React.Component {
 
     componentDidMount(){
         if(!Object.keys(this.props.videos).length || 
-            !Object.keys(this.props.genres).length ){
+            !Object.keys(this.props.genres).length){
             this.props.retrieveVideos();
             this.props.retrieveGenres();
+            // Promise.all([
+            //     this.props.retrieveVideos(),
+            //     this.props.retrieveGenres(),
+            // ]).then(() => this.props.retrieveList())
         }
 
-        if (!this.props.myList.fetched) {
-            this.props.retrieveList();
-        }
+        // if (!this.props.myList.fetched) {
+        //     this.props.retrieveList();
+        // }
     }
 
     render() {

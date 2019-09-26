@@ -3,10 +3,9 @@ class Api::SessionsController < ApplicationController
         @user = User.find_by_credentials(
             params[:user][:email,],
             params[:user][:password])
-
-        if @user 
+        if @user
             login!(@user)
-            render "api/users/show"
+            render :show
         else
             render json: ["Please enter a valid email or phone number.", "Your password must contain between 6 and 60 characters."], status: 422
         end

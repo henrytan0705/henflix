@@ -7,8 +7,8 @@ const msp = state => {
     return {
         videos: state.entities.videos,
         genres: state.entities.genres,
-        myList: state.entities.myList,
-        listVideos: state.entities.myList,
+        myList: Object.values(state.entities.users)[0].list,
+        // listVideos: state.entities.myList,
         userId: state.session.userId
     }
 }

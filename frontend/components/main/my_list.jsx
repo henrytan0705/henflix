@@ -33,15 +33,15 @@ class MyList extends React.Component {
     render() {
         // debugger
     
-        if ((this.props.myList).length > 0) {
+        if (Object.keys(this.props.myList).length > 0) {
             let videoItems = [];
             let arr = [];
-            // let videos = Object.values(this.props.myList);
+            let videos = Object.values(this.props.myList);
 
-            for (let i = 0; i < this.props.myList.length; i++) {
-                arr.push(this.props.myList[i])
+            for (let i = 0; i < videos.length; i++) {
+                arr.push(videos[i])
 
-                if (arr.length === 6 || i === this.props.myList.length - 1) {
+                if (arr.length === 6 || i === videos.length - 1) {
                     videoItems.push(arr);
                     arr = [];
                 }

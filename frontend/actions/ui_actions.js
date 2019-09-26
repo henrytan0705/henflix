@@ -6,9 +6,9 @@ export const RECEIVE_CURRENT_DESCRIPTION = "RECEIVE_CURRENT_DESCRIPTION";
 export const CLEAR_DESCRIPTION = "CLEAR_DESCRIPTION";
 export const SEARCH_VIDEOS = "SEARCH_VIDEOS";
 export const SEARCHING_FOR_VIDEOS = "SEARCHING_FOR_VIDEOS";
-export const RECEIVE_LIST = "RECEIVE_LIST";
-export const REMOVE_FROM_LIST = "REMOVE_FROM_LIST";
-export const ADD_TO_LIST = "ADD_TO_LIST";
+// export const RECEIVE_LIST = "RECEIVE_LIST";
+export const REMOVE_VIDEO_FROM_LIST = "REMOVE_VIDEO_FROM_LIST";
+export const ADD_VIDEO_TO_LIST = "ADD_VIDEO_TO_LIST";
 
 export const receiveCurrentVideo = (video, preview, time) => {
     return {
@@ -54,12 +54,12 @@ export const searchingForVideos = (status, query) => {
     }
 }
 
-export const receiveList = list => {
-    return {
-        type: RECEIVE_LIST,
-        list
-    }
-}
+// export const receiveList = list => {
+//     return {
+//         type: RECEIVE_LIST,
+//         list
+//     }
+// }
 
 export const addVideoToList = videos => {
     return {
@@ -80,10 +80,10 @@ export const retrieveSearch = query => dispatch => {
         .then(videos => dispatch(searchVideos(videos)))
 }
 
-export const retrieveList = () => dispatch => {
-    return VideoAPIUtil.fetchList()
-        .then(videos => dispatch(receiveList(videos)))
-}
+// export const retrieveList = () => dispatch => {
+//     return VideoAPIUtil.fetchList()
+//         .then(videos => dispatch(receiveList(videos)))
+// }
 
 export const addToList = video => dispatch => {
     return VideoAPIUtil.addList(video)
@@ -91,6 +91,6 @@ export const addToList = video => dispatch => {
 }
 
 export const removeFromList = video => dispatch => {
-    return VideoAPIUtil.removeList(video)
+    return VideoAPIUtil.deleteList(video)
         .then(videos => dispatch(removeVideoFromList(videos)))
 }

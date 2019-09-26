@@ -7,7 +7,7 @@ const msp = state => {
     return {
         descriptionOpen: Object.values(state.ui.description).length,
         previewVideo: state.ui.preview,
-        myList: state.entities.myList
+        myList: Object.values(state.entities.users)[0].list
     }
 }
 

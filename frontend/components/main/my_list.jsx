@@ -7,6 +7,9 @@ class MyList extends React.Component {
         // this.state = {
         //     retrieveList: false
         // }
+        // this.state = {
+        //     mounted: false
+        // }
     }
 
     componentDidMount() {
@@ -27,16 +30,29 @@ class MyList extends React.Component {
             //     .then(() => this.props.retrieveList());
                 
         }
-
+        // this.setState({mounted: true});
     }
 
     render() {
-        // debugger
+        debugger
+
+        // if (!this.props.myList) return null;
+        let keys = Object.values(this.props.myList);
+        let list;
+
+        for (let i = 0; i < keys.length; i++) {
+            if ( typeof keys[i] === "object") {
+                list = keys[i];
+            }
+        }
     
-        if (Object.keys(this.props.myList).length > 0) {
+        debugger
+        if (Object.keys(list).length > 0) {
             let videoItems = [];
             let arr = [];
-            let videos = Object.values(this.props.myList);
+            // debugger
+            let videos = Object.values(list);
+            // debugger
 
             for (let i = 0; i < videos.length; i++) {
                 arr.push(videos[i])

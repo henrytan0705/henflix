@@ -34,31 +34,33 @@ class VideoIndexItem extends React.Component {
     }
 
     addVideo() {
-        debugger
-        if (!this.props.myList.includes(this.props.video)) {
+        // debugger
+        if (!Object.values(this.props.myList).includes(this.props.video)) {
             this.props.addToList(this.props.video.id);
         }
     }
 
     playTrailer(){
-        if (this.props.descriptionOpen) {
-            return;
-        }
-        
-        this.playId = setTimeout(
-            function () {
-                if (this._mounted) {
-                    this.setState({ hover: true });
-                    this.setVideoToState(this.props.video);
-
-                    if (!!this.props.previewVideo.currentTime) {
-                        this.vidRef.current.currentTime = this.props.previewVideo.currentTime;
+        if (this._mounted) {
+            if (this.props.descriptionOpen) {
+                return;
+            }
+            
+            this.playId = setTimeout(
+                function () {
+                    if (this._mounted) {
+                        this.setState({ hover: true });
+                        this.setVideoToState(this.props.video);
+    
+                        if (!!this.props.previewVideo.currentTime) {
+                            this.vidRef.current.currentTime = this.props.previewVideo.currentTime;
+                        }
                     }
-                }
-            }   
-            .bind(this),
-            600
-        );  
+                }   
+                .bind(this),
+                600
+            );  
+        }
     }
 
     showThumbnail(){

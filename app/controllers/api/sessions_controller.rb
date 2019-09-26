@@ -5,7 +5,7 @@ class Api::SessionsController < ApplicationController
             params[:user][:password])
         if @user
             login!(@user)
-            render :show
+            render "/api/users/show"
         else
             render json: ["Please enter a valid email or phone number.", "Your password must contain between 6 and 60 characters."], status: 422
         end

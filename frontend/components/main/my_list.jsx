@@ -34,7 +34,7 @@ class MyList extends React.Component {
     }
 
     render() {
-        debugger
+        // debugger
 
         // if (!this.props.myList) return null;
         let keys = Object.values(this.props.myList);
@@ -46,7 +46,7 @@ class MyList extends React.Component {
             }
         }
     
-        debugger
+        // debugger
         if (Object.keys(list).length > 0) {
             let videoItems = [];
             let arr = [];

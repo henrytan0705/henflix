@@ -18,6 +18,7 @@ class Navbar extends React.Component {
         this.hideSearchBox = this.hideSearchBox.bind(this);
         this.updateSearch = this.updateSearch.bind(this);
         this.clearSearchBox = this.clearSearchBox.bind(this);
+        this.logout = this.logout.bind(this);
         this.query = "";
         this.searchId;
     }
@@ -106,6 +107,11 @@ class Navbar extends React.Component {
         this.searchField.current.value = "";
         this.updateSearch();
         this.hideSearchBox();
+    }
+
+    logout() {
+        this.props.clearList();
+        this.props.logout();
     }
 
     componentDidMount() {
@@ -339,7 +345,7 @@ class Navbar extends React.Component {
                                     <ul className="dropdown">
                                         <li className=""><Link className="nav-right-font" to="/browse">Account</Link></li>
                                         <li className=""><Link className="nav-right-font" to="/browse">Help Center</Link></li>
-                                        <li className="" onClick={this.props.logout}><Link className="nav-right-font" to="/">Sign out of Henflix</Link></li>
+                                        <li className="" onClick={this.logout}><Link className="nav-right-font" to="/">Sign out of Henflix</Link></li>
                                     </ul>
                                 </li>
                             </ul>

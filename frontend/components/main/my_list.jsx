@@ -19,6 +19,7 @@ class MyList extends React.Component {
             {
             this.props.retrieveVideos();
             this.props.retrieveGenres();
+            // this.props.retrieveList();
 
             // const promiseList = [this.props.retrieveVideos, this.props.retrieveGenres];
             // Promise.all([
@@ -28,36 +29,30 @@ class MyList extends React.Component {
 
             // Promise.all(promiseList.map(ajax => ajax()))
             //     .then(() => this.props.retrieveList());
-                
+        }
+        // debugger
+        if (this.props.myList) {
+
         }
         // this.setState({mounted: true});
     }
 
     render() {
         // debugger
-
-        // if (!this.props.myList) return null;
+        if (Object.values(this.props.myList).length === 1) {
+            return null;
+        } 
+        
         let keys = Object.values(this.props.myList);
-        let list;
 
-        for (let i = 0; i < keys.length; i++) {
-            if ( typeof keys[i] === "object") {
-                list = keys[i];
-            }
-        }
-    
-        // debugger
-        if (Object.keys(list).length > 0) {
+        if (Object.values(keys).length > 0) {
             let videoItems = [];
             let arr = [];
-            // debugger
-            let videos = Object.values(list);
-            // debugger
+ 
+            for (let i = 0; i < keys.length; i++) {
+                arr.push(keys[i])
 
-            for (let i = 0; i < videos.length; i++) {
-                arr.push(videos[i])
-
-                if (arr.length === 6 || i === videos.length - 1) {
+                if (arr.length === 6 || i === keys.length - 1) {
                     videoItems.push(arr);
                     arr = [];
                 }

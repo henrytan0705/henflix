@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import Navbar from './navbar';
 import { logout } from '../../actions/session_actions';
 import { retrieveGenres } from '../../actions/video_actions';
-import { retrieveSearch, searchingForVideos, clearDescription } from '../../actions/ui_actions';
+import { retrieveSearch, searchingForVideos, clearDescription, clearList } from '../../actions/ui_actions';
 import { withRouter } from 'react-router-dom';
 
 const msp = (state, ownProps) => {
@@ -25,6 +25,7 @@ const mdp = dispatch => {
         retrieveSearch: query => dispatch(retrieveSearch(query)),
         searchingForVideos: (status, query) => (dispatch(searchingForVideos(status, query))),
         clearDescription: () => dispatch(clearDescription()),
+        clearList: () => dispatch(clearList())
     }
 }
 

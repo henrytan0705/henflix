@@ -8,19 +8,27 @@ class Main extends React.Component {
     }
 
     componentDidMount(){
+        this._mount = true;
+
         if(!Object.keys(this.props.videos).length || 
             !Object.keys(this.props.genres).length){
             this.props.retrieveVideos();
             this.props.retrieveGenres();
+            // this.props.retrieveList();
             // Promise.all([
-            //     this.props.retrieveVideos(),
-            //     this.props.retrieveGenres(),
-            // ]).then(() => this.props.retrieveList())
+                //     this.props.retrieveVideos(),
+                //     this.props.retrieveGenres(),
+                // ]).then(() => this.props.retrieveList())
+            }
+            // debugger
+        if (Object.values(this.props.myList).length === 1 && this._mount) {
+            this.props.retrieveList();
         }
+            
+    }
 
-        // if (!this.props.myList.fetched) {
-        //     this.props.retrieveList();
-        // }
+    componentWillUnmount() {
+        this.mounted = false;
     }
 
     render() {

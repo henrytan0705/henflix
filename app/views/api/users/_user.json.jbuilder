@@ -1,4 +1,5 @@
 json.extract! user, :id, :email
+
 json.list do
     user.list_shows.each do |video|
         json.set! video.id do 
@@ -8,3 +9,4 @@ json.list do
         end
     end
 end
+

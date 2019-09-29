@@ -71,7 +71,7 @@ export const addVideoToList = videos => {
 
 export const removeVideoFromList = videos => {
     return {
-        type: REMOVE_FROM_LIST,
+        type: REMOVE_VIDEO_FROM_LIST,
         videos
     }
 }

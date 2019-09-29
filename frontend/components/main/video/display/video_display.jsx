@@ -27,7 +27,9 @@ class VideoDisplay extends React.Component {
     }
 
     toggleMute() {
-        this.vidRef.current.muted = !this.vidRef.current.muted;
+        if (this.mount) {
+            this.vidRef.current.muted = !this.vidRef.current.muted;
+        }
     }
 
     componentDidMount(){

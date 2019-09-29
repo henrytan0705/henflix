@@ -18,6 +18,7 @@ class VideoIndexItem extends React.Component {
         this.toggleMute = this.toggleMute.bind(this);
         this.vidRef = React.createRef();
         this.addVideo = this.addVideo.bind(this);
+        this.removeVideo = this.removeVideo.bind(this);
     }
 
     componentDidMount(){
@@ -34,9 +35,24 @@ class VideoIndexItem extends React.Component {
     }
 
     addVideo() {
-        debugger
         if (!Object.values(this.props.myList).includes(this.props.video)) {
             this.props.addToList(this.props.video.id);
+        }
+    }
+
+    removeVideo() {
+        // debugger
+        // if (Object.values(this.props.myList).includes(this.props.video)) {
+        //     debugger
+        //     this.props.removeFromList(this.props.video.id);
+        // }
+        let list = Object.values(this.props.myList);
+        for (let i = 0; i < list.length; i++) {
+            // debugger
+            if (!!list[i].id && list[i].id === this.props.video.id) {
+                // debugger
+                this.props.removeFromList(this.props.video.id);
+            }
         }
     }
 
@@ -153,6 +169,10 @@ class VideoIndexItem extends React.Component {
                     <i className="fas fa-plus-circle add-icon"
                         onClick={this.addVideo}>
                         {/* {this.props.addVideoToList(this.props.video)}> */}
+                    </i>
+
+                    <i className="fas fa-minus-circle minus-icon"
+                        onClick={this.removeVideo}>
                     </i>
                 
                 <span 

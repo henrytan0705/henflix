@@ -6,7 +6,6 @@ class Api::ListsController < ApplicationController
 
     def show #show videos in list
         @videos = User.where(id: current_user.id)[0].list_shows.with_attached_photo.with_attached_video_url
-        # debugger
         render :show
     end 
 
@@ -17,15 +16,18 @@ class Api::ListsController < ApplicationController
             @videos = User.where(id: current_user.id)[0].list_shows.with_attached_photo.with_attached_video_url
             render :show
         else
-                render json ["Fail to add video to list"]
+            render json ["Fail to add video to list"]
         end
     end
     
     def destroy #remove video from list
         video_id = Integer(params[:id])
-        search = List.where(user: current_user.id).where(video_id: video_id)[0]
-        # @videos = User.where(id: current_user.id)[0].list_shows.with_attached_photo.with_attached_video_url
+        search = List.where(user: current_user.id).where(video_id: video_id)[0].destroy
+        # debugger
+        @videos = User.where(id: current_user.id)[0].list_shows.with_attached_photo.with_attached_video_url
 
+        render :show
+        
     end
 
     def list_params

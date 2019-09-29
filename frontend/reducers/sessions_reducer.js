@@ -9,7 +9,6 @@ const sessionsReducer = (state = _nullSession, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
-        // debugger
             const { user } = action;
             return merge({}, {["userId"]: user.id});
                 // {"userId": Object.values(action.user)[0].id } );

@@ -30,15 +30,13 @@ class MyList extends React.Component {
             // Promise.all(promiseList.map(ajax => ajax()))
             //     .then(() => this.props.retrieveList());
         }
-        // debugger
-        if (this.props.myList) {
-
-        }
+        // if (Object.values(this.props.myList).length === 1) {
+            this.props.retrieveList();
+        // }
         // this.setState({mounted: true});
     }
 
     render() {
-        // debugger
         if (Object.values(this.props.myList).length === 1) {
             return null;
         } 
@@ -52,7 +50,7 @@ class MyList extends React.Component {
             for (let i = 0; i < keys.length; i++) {
                 arr.push(keys[i])
 
-                if (arr.length === 6 || i === keys.length - 1) {
+                if (arr.length === 6 || i === keys.length - 2) {
                     videoItems.push(arr);
                     arr = [];
                 }

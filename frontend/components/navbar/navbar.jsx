@@ -117,7 +117,6 @@ class Navbar extends React.Component {
     componentDidMount() {
         if (this.props.url === "main"){
             this.addScrollListener();
-            // debugger
             if (!this.props.path.includes("/browse") && this.props.path !== "/list"){
                 let emptySearch = true;
                 this.query = this.props.search;

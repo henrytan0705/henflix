@@ -20,7 +20,7 @@ class Main extends React.Component {
                 //     this.props.retrieveGenres(),
                 // ]).then(() => this.props.retrieveList())
             }
-            // debugger
+
         if (Object.values(this.props.myList).length === 1 && this._mount) {
             this.props.retrieveList();
         }

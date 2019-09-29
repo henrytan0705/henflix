@@ -6,7 +6,7 @@ const myListReducer = (state = {fetched: false}, action) => {
 
     switch(action.type) {
         case RECEIVE_LIST:
-            return merge({fetched: true}, action.list)
+            return merge({fetched: true}, action.list) 
         case CLEAR_LIST:
             return {fetched: false};
         default:

@@ -54,11 +54,12 @@ class Navbar extends React.Component {
     }
 
     displaySearchBox() {
+        if (this._mount)
         this.setState({searchBox: true});
     }
 
     hideSearchBox() {
-        this.setState({searchBox: false});
+        if (this._mount) this.setState({searchBox: false});
     }
 
     updateSearch(){

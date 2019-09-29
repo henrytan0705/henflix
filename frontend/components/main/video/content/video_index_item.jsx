@@ -9,7 +9,8 @@ class VideoIndexItem extends React.Component {
         this.state = {
             hover: false,
             description: false, 
-            focus: false
+            focus: false,
+            onList: false
         }
         this.playTrailer = this.playTrailer.bind(this);
         this.showThumbnail = this.showThumbnail.bind(this);
@@ -34,26 +35,35 @@ class VideoIndexItem extends React.Component {
         this.vidRef.current.muted = !this.vidRef.current.muted;
     }
 
-    addVideo() {
-        if (!Object.values(this.props.myList).includes(this.props.video)) {
-            this.props.addToList(this.props.video.id);
-        }
-    }
-
-    removeVideo() {
-        // debugger
-        // if (Object.values(this.props.myList).includes(this.props.video)) {
-        //     debugger
-        //     this.props.removeFromList(this.props.video.id);
+    addVideo(e) {
+        // if (!Object.values(this.props.myList).includes(this.props.video)) {
+        //     this.props.addToList(this.props.video.id);
         // }
+        e.stopPropagation();
         let list = Object.values(this.props.myList);
         for (let i = 0; i < list.length; i++) {
-            // debugger
             if (!!list[i].id && list[i].id === this.props.video.id) {
-                // debugger
-                this.props.removeFromList(this.props.video.id);
+                return;
             }
         }
+        Promise.all([this.props.addToList(this.props.video.id)])
+            .then( () => this.props.retrieveList() )
+
+        this.setState({ onList: true })
+
+    }
+
+    removeVideo(e) {
+        e.stopPropagation();
+        let list = Object.values(this.props.myList);
+
+        for (let i = 0; i < list.length; i++) {
+            if (!!list[i].id && list[i].id === this.props.video.id) {
+                Promise.all([this.props.removeFromList(this.props.video.id)])
+                    .then( () => this.props.retrieveList() )
+            }
+        } 
+        this.setState({ onList: false })
     }
 
     playTrailer(){
@@ -121,6 +131,27 @@ class VideoIndexItem extends React.Component {
             photoUrl: "",
             videoUrl: "", 
         }
+
+        let list = Object.values(this.props.myList);
+        for (let i = 0; i < list.length; i++) {
+            // debugger
+            if (!!list[i].id && list[i].id === this.props.video.id) {
+                // debugger
+                this.listButton = (
+                    <i className="fas fa-minus-circle minus-icon"
+                        onClick={this.removeVideo}>
+                    </i>
+                )
+                
+            } else {
+                // debugger
+                this.listButton = (
+                    <i className="fas fa-plus-circle add-icon"
+                    onClick={this.addVideo}>
+                    </i>
+                )
+            }
+        }
         
         let path = `/watch/${video.id}`;
         
@@ -166,15 +197,15 @@ class VideoIndexItem extends React.Component {
                         onClick={this.toggleMute}>
                     </i>
 
-                    <i className="fas fa-plus-circle add-icon"
+                    {/* <i className="fas fa-plus-circle add-icon"
                         onClick={this.addVideo}>
-                        {/* {this.props.addVideoToList(this.props.video)}> */}
                     </i>
 
                     <i className="fas fa-minus-circle minus-icon"
                         onClick={this.removeVideo}>
-                    </i>
+                    </i> */}
                 
+                    {this.listButton}
                 <span 
                     className="description-button-container" 
                     onClick={this.props.show(video)}>

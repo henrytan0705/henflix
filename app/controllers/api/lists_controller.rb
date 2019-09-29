@@ -23,7 +23,6 @@ class Api::ListsController < ApplicationController
     def destroy #remove video from list
         video_id = Integer(params[:id])
         search = List.where(user: current_user.id).where(video_id: video_id)[0].destroy
-        # debugger
         @videos = User.where(id: current_user.id)[0].list_shows.with_attached_photo.with_attached_video_url
 
         render :show

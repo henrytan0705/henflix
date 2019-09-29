@@ -20,10 +20,12 @@ class VideoIndexItem extends React.Component {
         this.vidRef = React.createRef();
         this.addVideo = this.addVideo.bind(this);
         this.removeVideo = this.removeVideo.bind(this);
+        this.buttonType = this.buttonType.bind(this);
     }
 
     componentDidMount(){
         this._mounted = true;
+        this.buttonType();
     }
 
     componentWillUnmount(){
@@ -36,21 +38,19 @@ class VideoIndexItem extends React.Component {
     }
 
     addVideo(e) {
-        // if (!Object.values(this.props.myList).includes(this.props.video)) {
-        //     this.props.addToList(this.props.video.id);
-        // }
         e.stopPropagation();
         let list = Object.values(this.props.myList);
+
         for (let i = 0; i < list.length; i++) {
             if (!!list[i].id && list[i].id === this.props.video.id) {
                 return;
             }
         }
+
         Promise.all([this.props.addToList(this.props.video.id)])
             .then( () => this.props.retrieveList() )
 
         this.setState({ onList: true })
-
     }
 
     removeVideo(e) {
@@ -64,6 +64,28 @@ class VideoIndexItem extends React.Component {
             }
         } 
         this.setState({ onList: false })
+    }
+
+    buttonType() {
+        let list = Object.values(this.props.myList);
+
+        for (let i = 0; i < list.length; i++) {
+            if (!!list[i].id && list[i].id === this.props.video.id) {
+                this.listButton = (
+                    <i class="fas fa-check-circle check-icon"
+                        onClick={this.removeVideo}>
+                    </i>
+                )
+
+            return;
+            }
+        }
+
+        this.listButton = (
+            <i className="fas fa-plus-circle add-icon"
+                onClick={this.addVideo}>
+            </i>
+        )
     }
 
     playTrailer(){
@@ -130,27 +152,6 @@ class VideoIndexItem extends React.Component {
             year: "",
             photoUrl: "",
             videoUrl: "", 
-        }
-
-        let list = Object.values(this.props.myList);
-        for (let i = 0; i < list.length; i++) {
-            // debugger
-            if (!!list[i].id && list[i].id === this.props.video.id) {
-                // debugger
-                this.listButton = (
-                    <i className="fas fa-minus-circle minus-icon"
-                        onClick={this.removeVideo}>
-                    </i>
-                )
-                
-            } else {
-                // debugger
-                this.listButton = (
-                    <i className="fas fa-plus-circle add-icon"
-                    onClick={this.addVideo}>
-                    </i>
-                )
-            }
         }
         
         let path = `/watch/${video.id}`;

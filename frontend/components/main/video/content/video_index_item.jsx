@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import IndexItemButtonsContainer from './buttons/index_item_buttons_container';
+
 // import { PlayCircle } from 'react-feather';
 // import VideoDescriptionContainer from './description/video_description_container.js';
 
@@ -144,7 +146,7 @@ class VideoIndexItem extends React.Component {
         }
     }
 
-    render(){   
+    render() {   
         let video = this.props.video || {
             id: "",
             title: "",
@@ -194,9 +196,9 @@ class VideoIndexItem extends React.Component {
                     <h1 className="video-hover-description">{video.title}</h1>
                 </Link>
 
-                    <i className="fas fa-volume-up item-mute-icon"
+                    {/* <i className="fas fa-volume-up item-mute-icon"
                         onClick={this.toggleMute}>
-                    </i>
+                    </i> */}
 
                     {/* <i className="fas fa-plus-circle add-icon"
                         onClick={this.addVideo}>
@@ -206,7 +208,14 @@ class VideoIndexItem extends React.Component {
                         onClick={this.removeVideo}>
                     </i> */}
                 
-                    {this.listButton}
+                    {/* {this.listButton} */}
+
+                    <IndexItemButtonsContainer 
+                    removeVideo={this.removeVideo} 
+                    addVideo={this.props.addVideo} 
+                    muteVideo={this.toggleMute}
+                    vidRef={this.vidRef}/>
+
                 <span 
                     className="description-button-container" 
                     onClick={this.props.show(video)}>

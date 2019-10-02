@@ -2,11 +2,43 @@
     // background-color: red;
     // height: 100px;
     // width: 100px;
-    display: block;
+    display: flex;
+    flex-direction: column;
     position: absolute;
     z-index: 400;
     top: 20%;    
     left: 90%;
     color: white;
+    height: 100%;
     // font-size: 20px;
+}
+
+.item-mute-icon {
+    display: block;
+    position: absolute;
+    z-index: 400;
+    top: 10%;    
+    left: 90%;
+    color: white;
+    font-size: 20px;
+}
+
+.add-icon {
+    display: block;
+    position: absolute;
+    z-index: 400;
+    top: 30%;    
+    left: 90%;
+    color: white;
+    font-size: 20px;
+}
+
+.check-icon {
+    display: block;
+    position: absolute;
+    z-index: 400;
+    top: 30%;    
+    left: 90%;
+    color: white;
+    font-size: 20px;
 }

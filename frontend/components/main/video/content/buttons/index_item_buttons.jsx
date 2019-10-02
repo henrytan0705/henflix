@@ -30,7 +30,7 @@ class IndexItemButtons extends React.Component {
             }
         }
 
-        Promise.all([this.props.addToList(this.props.video.id)])
+        Promise.all( [this.props.addToList(this.props.video.id)] )
             .then(() => this.props.retrieveList())
 
         this.setState({ onList: true })
@@ -55,11 +55,11 @@ class IndexItemButtons extends React.Component {
         for (let i = 0; i < list.length; i++) {
             if (!!list[i].id && list[i].id === this.props.video.id) {
                 this.listButton = (
-                    <i class="fas fa-check-circle check-icon"
+                    <i className="fas fa-check-circle check-icon"
                         onClick={this.removeVideo}>
                     </i>
                 )
-
+                // this.setState( { onList: true } )
                 return;
             }
         }
@@ -69,8 +69,13 @@ class IndexItemButtons extends React.Component {
                 onClick={this.addVideo}>
             </i>
         )
+        // this.setState( { onList: false } )
     }
 
+    componentDidMount() {
+        this._mounted = true
+        // this.buttonType();
+    }
 
     render() {
         if (!this.state.muted) {
@@ -87,9 +92,14 @@ class IndexItemButtons extends React.Component {
             )
         }
 
+        this.buttonType();
+
+        if (!this.listButton) return null;
+
         return (
             <div className="buttons-container">
                 {this.volumeType}
+                {this.listButton}
             </div>
         )
     }

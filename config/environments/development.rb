@@ -1,7 +1,8 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
-  config.middleware.insert_before Rack::Runtime, Rack::LiveReload
+  # config.middleware.insert_after Rack::Runtime, Rack::LiveReload
+  # config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload
 
 
   # In the development environment your application's code is reloaded on

@@ -11,6 +11,7 @@ class IndexItemButtons extends React.Component {
         this.addVideo = this.addVideo.bind(this);
         this.removeVideo = this.removeVideo.bind(this);
         this.buttonType = this.buttonType.bind(this);
+        this.thumbsButton = this.thumbsButton.bind(this);
         this.volumeType;
     }
 
@@ -55,7 +56,7 @@ class IndexItemButtons extends React.Component {
         for (let i = 0; i < list.length; i++) {
             if (!!list[i].id && list[i].id === this.props.video.id) {
                 this.listButton = (
-                    <i className="fas fa-check-circle check-icon"
+                    <i className="fas fa-check-circle status-icon"
                         onClick={this.removeVideo}>
                     </i>
                 )
@@ -65,11 +66,16 @@ class IndexItemButtons extends React.Component {
         }
 
         this.listButton = (
-            <i className="fas fa-plus-circle add-icon"
+            <i className="fas fa-plus-circle status-icon"
                 onClick={this.addVideo}>
             </i>
         )
         // this.setState( { onList: false } )
+    }
+
+    thumbsButton(e) {
+        e.stopPropagation();
+        e.preventDefault();
     }
 
     componentDidMount() {
@@ -99,6 +105,14 @@ class IndexItemButtons extends React.Component {
         return (
             <div className="buttons-container">
                 {this.volumeType}
+                {/* <button className="thumbs-up-icon"> */}
+                    <i className="far fa-thumbs-up thumbs-up-icon" onClick={this.thumbsButton}></i>
+                {/* </button> */}
+
+                {/* <button> */}
+                    <i className="far fa-thumbs-down thumbs-down-icon" onClick={this.thumbsButton}></i>
+                {/* </button> */}
+
                 {this.listButton}
             </div>
         )

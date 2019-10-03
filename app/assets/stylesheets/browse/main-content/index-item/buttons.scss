@@ -23,21 +23,41 @@
     font-size: 20px;
 }
 
-.add-icon {
+.status-icon {
     display: block;
     position: absolute;
     z-index: 400;
-    top: 30%;    
+    top: 55%;    
     left: 90%;
     color: white;
     font-size: 20px;
 }
 
-.check-icon {
+// .check-icon {
+//     display: block;
+//     position: absolute;
+//     z-index: 400;
+//     top: 30%;    
+//     left: 90%;
+//     color: white;
+//     font-size: 20px;
+// }
+
+.thumbs-up-icon {
     display: block;
     position: absolute;
     z-index: 400;
-    top: 30%;    
+    top: 25%;    
+    left: 90%;
+    color: white;
+    font-size: 20px;
+}
+
+.thumbs-down-icon {
+    display: block;
+    position: absolute;
+    z-index: 400;
+    top: 40%;    
     left: 90%;
     color: white;
     font-size: 20px;

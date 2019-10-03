@@ -179,7 +179,7 @@
     left: 5%;
     width: 100px;
     // padding: 18px 0 12px 4%;
-
+    margin-right: 2.5vw;
 }
 
 .play-button-text {
@@ -188,5 +188,33 @@
     font-weight: 500;
     padding-left: 10px;
     // padding: 0 10px;
+}
+
+.description-list-icon {
+    font-size: 23px;
+    padding-right: 10px;
+}
+
+.description-buttons {
+    display: flex;
+    // align-items: center;
+}
+
+.list-box {
+    border: 1px solid white;
+    padding: 4px 25px;
+    display: flex;
+    align-items: center;
+}
+
+.list-button {
+    display: flex;
+    justify-content: space-around;
+}
+
+.list-text {
+    font-size: 23px;
+    font-weight: 500;
+    // padding-right: 10px;
 }
 

@@ -83,13 +83,14 @@
 
 // }
 
-.display-mute-icon {
+.display-volume-icon {
+    display: block;
     position: absolute;
     z-index: 250;
     top: 65%;
     left: 90%;
     color: white;
-    font-size: 30px;
+    // font-size: 60px;
     // padding: 10px;
     // border: 1px solid white;
 }

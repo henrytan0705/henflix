@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import IndexItemButtonsContainer from '../content/buttons/index_item_buttons_container';
+
 class VideoDisplay extends React.Component {
     constructor(props) {
         super(props);
@@ -70,11 +72,10 @@ class VideoDisplay extends React.Component {
                         PLAY
                     </Link>
 
-                    <button className="display-mute-icon"
+                    {/* <button className="display-mute-icon"
                         onClick={this.toggleMute}>
                         <i className="fas fa-volume-up"></i>
-                    </button>
-
+                    </button> */}
 
                     <video 
                         className="display-video" 
@@ -86,6 +87,8 @@ class VideoDisplay extends React.Component {
                         // ref="featureRef"
                     > 
                     </video>
+                    
+                    <IndexItemButtonsContainer type={"display"} video={video} vidRef={this.vidRef}/>
             </div>
         )
     }

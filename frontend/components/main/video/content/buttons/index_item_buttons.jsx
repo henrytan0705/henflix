@@ -98,19 +98,29 @@ class IndexItemButtons extends React.Component {
             )
         }
 
+        if (!!this.props.type) {
+            return (
+                <div className="display-volume-icon">
+                    {this.volumeType}
+                </div>
+            )
+        }
+
+
         this.buttonType();
 
         if (!this.listButton) return null;
 
+       
         return (
             <div className="buttons-container">
                 {this.volumeType}
                 {/* <button className="thumbs-up-icon"> */}
-                    <i className="far fa-thumbs-up thumbs-up-icon" onClick={this.thumbsButton}></i>
+                    {/* <i className="far fa-thumbs-up thumbs-up-icon" onClick={this.thumbsButton}></i> */}
                 {/* </button> */}
 
                 {/* <button> */}
-                    <i className="far fa-thumbs-down thumbs-down-icon" onClick={this.thumbsButton}></i>
+                    {/* <i className="far fa-thumbs-down thumbs-down-icon" onClick={this.thumbsButton}></i> */}
                 {/* </button> */}
 
                 {this.listButton}

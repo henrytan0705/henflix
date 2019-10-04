@@ -58,14 +58,14 @@ Henflix is a Netflix clone, a media streaming site, built using React/Redux for 
 ### Event Listeners on Video Index Item Component
 
     <div 
-                className="video-index-item"
-                onMouseEnter= {this.playTrailer}
-                onMouseLeave={this.showThumbnail}
-                onClick={this.showDescription}
-            >
-                {this.content1}
+        className="video-index-item"
+        onMouseEnter= {this.playTrailer}
+        onMouseLeave={this.showThumbnail}
+        onClick={this.showDescription}>
+        
+        {this.content1}
 
-        </div>
+    </div>
 
 
 

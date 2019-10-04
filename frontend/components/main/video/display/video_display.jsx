@@ -41,6 +41,14 @@ class VideoDisplay extends React.Component {
 
     componentWillUnmount(){
         this._mount = false;
+        window.removeEventListener("scroll", () => {
+            let yOffset = window.pageYOffset;
+            if (yOffset <= 300 && this._mount) {
+                this.setState({ scrolled: false })
+            } else {
+                this.setState({ scrolled: true })
+            }
+        })
     }
 
     componentDidUpdate(prevProps) {
@@ -87,7 +95,7 @@ class VideoDisplay extends React.Component {
                         // ref="featureRef"
                     > 
                     </video>
-                    
+
                     <IndexItemButtonsContainer type={"display"} video={video} vidRef={this.vidRef}/>
             </div>
         )

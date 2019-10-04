@@ -18,11 +18,7 @@ class VideoIndexItem extends React.Component {
         this.showThumbnail = this.showThumbnail.bind(this);
         this.setVideoToState = this.setVideoToState.bind(this);
         this.showDescription = this.showDescription.bind(this);
-        // this.toggleMute = this.toggleMute.bind(this);
         this.vidRef = React.createRef();
-        // this.addVideo = this.addVideo.bind(this);
-        // this.removeVideo = this.removeVideo.bind(this);
-        // this.buttonType = this.buttonType.bind(this);
     }
 
     componentDidMount(){
@@ -33,62 +29,6 @@ class VideoIndexItem extends React.Component {
     componentWillUnmount(){
         this._mounted = false;
     }
-
-    // toggleMute(e) {
-    //     e.stopPropagation();
-    //     this.vidRef.current.muted = !this.vidRef.current.muted;
-    // }
-
-    // addVideo(e) {
-    //     e.stopPropagation();
-    //     let list = Object.values(this.props.myList);
-
-    //     for (let i = 0; i < list.length; i++) {
-    //         if (!!list[i].id && list[i].id === this.props.video.id) {
-    //             return;
-    //         }
-    //     }
-
-    //     Promise.all([this.props.addToList(this.props.video.id)])
-    //         .then( () => this.props.retrieveList() )
-
-    //     this.setState({ onList: true })
-    // }
-
-    // removeVideo(e) {
-    //     e.stopPropagation();
-    //     let list = Object.values(this.props.myList);
-
-    //     for (let i = 0; i < list.length; i++) {
-    //         if (!!list[i].id && list[i].id === this.props.video.id) {
-    //             Promise.all([this.props.removeFromList(this.props.video.id)])
-    //                 .then( () => this.props.retrieveList() )
-    //         }
-    //     } 
-    //     this.setState({ onList: false })
-    // }
-
-    // buttonType() {
-    //     let list = Object.values(this.props.myList);
-
-    //     for (let i = 0; i < list.length; i++) {
-    //         if (!!list[i].id && list[i].id === this.props.video.id) {
-    //             this.listButton = (
-    //                 <i class="fas fa-check-circle check-icon"
-    //                     onClick={this.removeVideo}>
-    //                 </i>
-    //             )
-
-    //         return;
-    //         }
-    //     }
-
-    //     this.listButton = (
-    //         <i className="fas fa-plus-circle add-icon"
-    //             onClick={this.addVideo}>
-    //         </i>
-    //     )
-    // }
 
     playTrailer(){
         if (this._mounted) {
@@ -108,7 +48,7 @@ class VideoIndexItem extends React.Component {
                     }
                 }   
                 .bind(this),
-                600
+                500
             );  
         }
     }
@@ -184,36 +124,12 @@ class VideoIndexItem extends React.Component {
                     >
                     </video>
 
-                    {/* <button> */}
-
-                        {/* <i className="fas fa-volume-up item-mute-icon"
-                            onClick={this.toggleMute}>
-                        </i> */}
-
-                    {/* </button> */}
-
                     <i className="far fa-play-circle display-play-button"></i>
                     <h1 className="video-hover-description">{video.title}</h1>
                 </Link>
 
-                    {/* <i className="fas fa-volume-up item-mute-icon"
-                        onClick={this.toggleMute}>
-                    </i> */}
-
-                    {/* <i className="fas fa-plus-circle add-icon"
-                        onClick={this.addVideo}>
-                    </i>
-
-                    <i className="fas fa-minus-circle minus-icon"
-                        onClick={this.removeVideo}>
-                    </i> */}
-                
-                    {/* {this.listButton} */}
-
                     <IndexItemButtonsContainer 
-                    // removeVideo={this.removeVideo} 
-                    // addVideo={this.props.addVideo} 
-                    // muteVideo={this.toggleMute}
+
                     vidRef={this.vidRef}
                     video={this.props.video}/>
 

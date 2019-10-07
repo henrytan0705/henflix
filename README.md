@@ -15,13 +15,11 @@ Henflix is a Netflix clone, a media streaming site, built using React/Redux for 
 # Features
 
 ## Dynamic Video Thumbnails
-
-- Video index items have event listeners (onMouseEnter and onMouseLeave) to trigger the thumbnail to convert to a video and begin playing after hovering over it for 0.5 seconds. Else,the component remains as a thumbnail if you hover off.
-
-
-- Videos also continues playing from where it left off if you are consecutively hovering over the same video. 
-
 ![](./app/assets/images/dynamic_video_thumbnail.gif)
+
+- Video index items have event listeners to trigger the thumbnail to convert to a video and begin playing after hovering over it for 0.5 seconds. Else the component remains as a thumbnail if you hover off.
+
+- Videos also continue playing from where it left off if it is consecutively hovered over.
 
 ### Functions used to switch between thumbnail and video
 

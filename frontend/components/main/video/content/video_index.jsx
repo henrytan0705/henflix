@@ -40,119 +40,16 @@ class VideoIndex extends React.Component {
 
     render() {
         if (!this.props.videos) return null;
-        
-        // let videoItems; 
-        // this.content;
-        // let visible = (this.visibleX === true) ? "close-description-button" : "no-button";
-        
-        // if (this.props.componentType === "main") {
-            let videoItems = Object.values(this.props.videos).map((video, idx) => {
-                return (
-                    <VideoIndexItemContainer 
-                    key={`${video}${idx}`} 
-                    video={video} 
-                    show={this.showDescription} 
-                    close={this.closeDescription}/>
-                )
-            });
 
-        //     this.content = (
-        //         <>
-        //             <div className="index-size-limit">
-
-        //                 <div className="video-index scrolling-wrapper">
-        //                     {/* <div className="video-arrows">
-        //                     <i class="fas fa-chevron-left"></i>
-        //                 </div>         */}
-
-        //                     {videoItems}
-
-        //                     {/* <div className="video-arrows">
-        //                     <i class="fas fa-chevron-right"></i>
-        //                 </div> */}
-        //                 </div>
-
-        //             </div>
-
-        //             <div className="description-outer-wrapper">
-        //                 {this.description}
-        //                 <button onClick={this.closeDescription}
-        //                     className={`${visible}`}
-        //                 >
-        //                     <i className="fas fa-times"></i>
-        //                 </button>
-        //             </div>
-        //         </>
-        //     )
-
-        // } else {
-        //     videoItems = [];
-        //     let arr = [];
-        //     let videos = Object.values(this.props.videos);
-
-        //     for (let i = 0; i < videos.length; i++) {
-        //         arr.push(
-        //             <VideoIndexItemContainer
-        //              key={`${videos[i]}-${i}`}
-        //              video={videos[i]} show={this.showDescription} />
-        //         )
-    
-        //         if (arr.length === 6 || i === videos.length - 1) {
-        //             videoItems.push(<div className="search-result-row">{arr}</div>)
-        //             // videoItems.push(arr);
-        //             arr = []; 
-        //         }
-        //     }
-            
-        //     this.content = videoItems.map((row) => {
-        //         return (
-        //             <>
-        //                 <div className="index-size-limit">
-        //                     <div className="video-index scrolling-wrapper">
-        //                         {row}
-        //                     </div>
-        //                 </div>
-
-        //                 <div className="description-outer-wrapper">
-        //                     {this.description}
-        //                     <button onClick={this.closeDescription}
-        //                         className={`${visible}`}
-        //                     >
-        //                         <i className="fas fa-times"></i>
-        //                     </button>
-        //                 </div>
-        //             </>
-        //         )
-        //     })
-
-        //     // content = (
-        //     //     <>
-        //     //         <div className="index-size-limit">
-        //     //             <div className="video-index scrolling-wrapper">
-        //     //                 {row}
-        //     //             </div>
-
-        //     //         </div>
-
-        //     //         <div className="description-outer-wrapper">
-        //     //             {this.description}
-        //     //             <button onClick={this.closeDescription}
-        //     //                 className={`${visible}`}
-        //     //             >
-        //     //                 <i className="fas fa-times"></i>
-        //     //             </button>
-        //     //         </div>
-        //     //     </>
-        //     // )
-        // }
-
-        
-
-        // videoItems = Object.values(this.props.videos).map((video,idx) => {
-        //     return (
-        //         <VideoIndexItemContainer key={`${video}${idx}`} video={video} show={this.showDescription}/>
-        //     )
-        // });
+        let videoItems = Object.values(this.props.videos).map((video, idx) => {
+            return (
+                <VideoIndexItemContainer 
+                key={`${video}${idx}`} 
+                video={video} 
+                show={this.showDescription} 
+                close={this.closeDescription}/>
+            )
+        });
 
         let visible = (this.visibleX === true) ? "close-description-button" : "no-button"
 
@@ -177,16 +74,13 @@ class VideoIndex extends React.Component {
                 <div className="description-outer-wrapper">
                     {this.description}
                     <button onClick={this.closeDescription}
-                        // className={`${visible} close-button-${this.props.genre}`}
                         className={`${visible} close-button ${this.props.genre}`}
                         >
                         <i className="fas fa-times"></i>
                     </button>
                 </div>
             </>
-            // <>
-            //     {this.content}
-            // </>
+
         )
     }
 }

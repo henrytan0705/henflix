@@ -11,7 +11,6 @@ class VideoDescription extends React.Component {
         this.buttonType = this.buttonType.bind(this);
     }
 
-    
     closeDescription() {
         this.props.clearDescription();
     }

@@ -18,6 +18,9 @@ Henflix is a Netflix clone, a media streaming site, built using React/Redux for 
 
 - Video index items have event listeners (onMouseEnter and onMouseLeave) to trigger the thumbnail to convert to a video and begin playing after hovering over it for 0.5 seconds. Else,the component remains as a thumbnail if you hover off.
 
+
+- Videos also continues playing from where it left off if you are consecutively hovering over the same video. 
+
 ![](./app/assets/images/dynamic_video_thumbnail.gif)
 
 ### Functions used to switch between thumbnail and video
@@ -56,7 +59,7 @@ Henflix is a Netflix clone, a media streaming site, built using React/Redux for 
     }
 
 ### Event Listeners on Video Index Item Component
-
+ 
     <div 
         className="video-index-item"
         onMouseEnter= {this.playTrailer}
@@ -68,10 +71,19 @@ Henflix is a Netflix clone, a media streaming site, built using React/Redux for 
     </div>
 
 
+## Dynamic Video Descriptions
 
+![](./app/assets/images/dynamic_description.gif)
 
-- Videos also continues playing from where it left off if you are consecutively hovering over the same video. 
+    showDescription(video) {
+        return () => {
+            this.visibleX = true;
+            this.description = <VideoDescriptionContainer key={`info-${video.id}`} video={video}/>
+            this.setState({showDescription: true});
+        }
+    }
 
+- Video Description Component switches content based on video selected
 
 ## Future Features
 * Genres List Dropdown

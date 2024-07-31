@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "package.json", "use": "@vercel/node" },
+    { "src": "Gemfile", "use": "@vercel/ruby" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "public/$1" }
+  ],
+  "build": {
+    "env": {
+      "RUBY_VERSION": "2.5.1"
+    },
+    "src": "Gemfile",
+    "use": "@vercel/ruby",
+    "config": {
+      "buildCommand": "./.vercel_build.sh"
+    }
+  }
+}

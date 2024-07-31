@@ -7,5 +7,5 @@
   "routes": [
     { "src": "/(.*)", "dest": "public/$1" }
   ],
-  "buildCommand": "./.vercel_build.sh"
+    "buildCommand": "NODE_OPTIONS=--openssl-legacy-provider npm install && ./vercel_build.sh"
 }

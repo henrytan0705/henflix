@@ -7,14 +7,5 @@
   "routes": [
     { "src": "/(.*)", "dest": "public/$1" }
   ],
-  "build": {
-    "env": {
-      "RUBY_VERSION": "2.5.1"
-    },
-    "src": "Gemfile",
-    "use": "@vercel/ruby",
-    "config": {
-      "buildCommand": "./.vercel_build.sh"
-    }
-  }
+  "buildCommand": "./.vercel_build.sh"
 }
